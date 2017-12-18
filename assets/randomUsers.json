@@ -1,0 +1,347 @@
+[
+  {
+    "_id": "5a33672acd583c198d12b3d2",
+    "firstname": "Rollins",
+    "lastname": "Silva",
+    "email": "rollinssilva@lyrichord.com",
+    "phone": "+1 (905) 558-3702",
+    "image": "test27",
+    "password": "asd123",
+    "username": "smartface",
+    "work": [
+      {
+        "workid1": "test25",
+        "workid2": "test39",
+        "workid3": "test35",
+        "worksummary": [
+          {
+            "worksumid1": "test23",
+            "worksumid2": "test38"
+          },
+          {
+            "worksumid1": "test36",
+            "worksumid2": "test22"
+          },
+          {
+            "worksumid1": "test30",
+            "worksumid2": "test29"
+          }
+        ]
+      },
+      {
+        "workid1": "test34",
+        "workid2": "test25",
+        "workid3": "test27",
+        "worksummary": [
+          {
+            "worksumid1": "test37",
+            "worksumid2": "test27"
+          },
+          {
+            "worksumid1": "test33",
+            "worksumid2": "test35"
+          },
+          {
+            "worksumid1": "test29",
+            "worksumid2": "test30"
+          }
+        ]
+      },
+      {
+        "workid1": "test32",
+        "workid2": "test31",
+        "workid3": "test39",
+        "worksummary": [
+          {
+            "worksumid1": "test27",
+            "worksumid2": "test24"
+          },
+          {
+            "worksumid1": "test36",
+            "worksumid2": "test32"
+          },
+          {
+            "worksumid1": "test39",
+            "worksumid2": "test40"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "5a33672ac3d717c232658928",
+    "firstname": "Barron",
+    "lastname": "Madden",
+    "email": "barronmadden@lyrichord.com",
+    "phone": "+1 (873) 446-2945",
+    "image": "test40",
+    "password": "asd123",
+    "username": "smartface",
+    "work": [
+      {
+        "workid1": "test35",
+        "workid2": "test21",
+        "workid3": "test37",
+        "worksummary": [
+          {
+            "worksumid1": "test26",
+            "worksumid2": "test27"
+          },
+          {
+            "worksumid1": "test20",
+            "worksumid2": "test35"
+          },
+          {
+            "worksumid1": "test37",
+            "worksumid2": "test24"
+          }
+        ]
+      },
+      {
+        "workid1": "test33",
+        "workid2": "test20",
+        "workid3": "test27",
+        "worksummary": [
+          {
+            "worksumid1": "test35",
+            "worksumid2": "test36"
+          },
+          {
+            "worksumid1": "test24",
+            "worksumid2": "test37"
+          },
+          {
+            "worksumid1": "test37",
+            "worksumid2": "test34"
+          }
+        ]
+      },
+      {
+        "workid1": "test26",
+        "workid2": "test34",
+        "workid3": "test38",
+        "worksummary": [
+          {
+            "worksumid1": "test35",
+            "worksumid2": "test21"
+          },
+          {
+            "worksumid1": "test37",
+            "worksumid2": "test24"
+          },
+          {
+            "worksumid1": "test21",
+            "worksumid2": "test30"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "5a33672a572f1af4c5c85ab2",
+    "firstname": "Nixon",
+    "lastname": "Peterson",
+    "email": "nixonpeterson@lyrichord.com",
+    "phone": "+1 (890) 441-2058",
+    "image": "test39",
+    "password": "asd123",
+    "username": "smartface",
+    "work": [
+      {
+        "workid1": "test24",
+        "workid2": "test35",
+        "workid3": "test40",
+        "worksummary": [
+          {
+            "worksumid1": "test38",
+            "worksumid2": "test28"
+          },
+          {
+            "worksumid1": "test28",
+            "worksumid2": "test36"
+          },
+          {
+            "worksumid1": "test31",
+            "worksumid2": "test31"
+          }
+        ]
+      },
+      {
+        "workid1": "test22",
+        "workid2": "test25",
+        "workid3": "test29",
+        "worksummary": [
+          {
+            "worksumid1": "test39",
+            "worksumid2": "test36"
+          },
+          {
+            "worksumid1": "test34",
+            "worksumid2": "test30"
+          },
+          {
+            "worksumid1": "test27",
+            "worksumid2": "test37"
+          }
+        ]
+      },
+      {
+        "workid1": "test29",
+        "workid2": "test38",
+        "workid3": "test40",
+        "worksummary": [
+          {
+            "worksumid1": "test40",
+            "worksumid2": "test37"
+          },
+          {
+            "worksumid1": "test20",
+            "worksumid2": "test23"
+          },
+          {
+            "worksumid1": "test37",
+            "worksumid2": "test21"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "5a33672a85e2bd6f685bd11c",
+    "firstname": "Juliette",
+    "lastname": "Horne",
+    "email": "juliettehorne@lyrichord.com",
+    "phone": "+1 (818) 483-3509",
+    "image": "test36",
+    "password": "asd123",
+    "username": "smartface",
+    "work": [
+      {
+        "workid1": "test39",
+        "workid2": "test33",
+        "workid3": "test30",
+        "worksummary": [
+          {
+            "worksumid1": "test24",
+            "worksumid2": "test26"
+          },
+          {
+            "worksumid1": "test23",
+            "worksumid2": "test39"
+          },
+          {
+            "worksumid1": "test35",
+            "worksumid2": "test28"
+          }
+        ]
+      },
+      {
+        "workid1": "test20",
+        "workid2": "test40",
+        "workid3": "test30",
+        "worksummary": [
+          {
+            "worksumid1": "test40",
+            "worksumid2": "test24"
+          },
+          {
+            "worksumid1": "test34",
+            "worksumid2": "test23"
+          },
+          {
+            "worksumid1": "test26",
+            "worksumid2": "test35"
+          }
+        ]
+      },
+      {
+        "workid1": "test26",
+        "workid2": "test21",
+        "workid3": "test27",
+        "worksummary": [
+          {
+            "worksumid1": "test30",
+            "worksumid2": "test29"
+          },
+          {
+            "worksumid1": "test23",
+            "worksumid2": "test21"
+          },
+          {
+            "worksumid1": "test32",
+            "worksumid2": "test34"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "5a33672a5f585d35d5df7686",
+    "firstname": "Tammi",
+    "lastname": "Bowman",
+    "email": "tammibowman@lyrichord.com",
+    "phone": "+1 (842) 439-2244",
+    "image": "test21",
+    "password": "asd123",
+    "username": "smartface",
+    "work": [
+      {
+        "workid1": "test25",
+        "workid2": "test38",
+        "workid3": "test39",
+        "worksummary": [
+          {
+            "worksumid1": "test32",
+            "worksumid2": "test33"
+          },
+          {
+            "worksumid1": "test33",
+            "worksumid2": "test33"
+          },
+          {
+            "worksumid1": "test27",
+            "worksumid2": "test37"
+          }
+        ]
+      },
+      {
+        "workid1": "test28",
+        "workid2": "test39",
+        "workid3": "test26",
+        "worksummary": [
+          {
+            "worksumid1": "test22",
+            "worksumid2": "test30"
+          },
+          {
+            "worksumid1": "test31",
+            "worksumid2": "test26"
+          },
+          {
+            "worksumid1": "test24",
+            "worksumid2": "test31"
+          }
+        ]
+      },
+      {
+        "workid1": "test21",
+        "workid2": "test21",
+        "workid3": "test21",
+        "worksummary": [
+          {
+            "worksumid1": "test21",
+            "worksumid2": "test23"
+          },
+          {
+            "worksumid1": "test27",
+            "worksumid2": "test23"
+          },
+          {
+            "worksumid1": "test21",
+            "worksumid2": "test21"
+          }
+        ]
+      }
+    ]
+  }
+]
