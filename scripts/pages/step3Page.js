@@ -4,6 +4,7 @@
 const extend = require('js-base/core/extend');
 const Step3PageDesign = require('ui/ui_step3Page');
 const Router = require("sf-core/ui/router");
+const Tab = require("components/Tab");
 
 const Step3Page = extend(Step3PageDesign)(
   // Constructor
@@ -34,9 +35,22 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  
+  var tabIndicator = new Tab();
+  var stepPage = this;
 
-    this.completefl.completeButton.onPress = function(){
-    Router.go("step2Page");
+  stepPage.tab.summaryButton.onPress = function() {
+    tabIndicator.animateRightButton = stepPage;
+    //Write chaneable flex here
+  }.bind(this);
+
+  stepPage.tab.instructionButton.onPress = function() {
+    tabIndicator.animateLeftButton = stepPage;
+    //Write changeable flex here
+  }.bind(this);
+
+  this.completefl.completeButton.onPress = function() {
+    Router.go("step3Page");
   }.bind(this);
 }
 

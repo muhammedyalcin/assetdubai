@@ -2,11 +2,9 @@
 		You can modify its contents.
 */
 const extend = require('js-base/core/extend');
-const Step2PageDesign = require('ui/ui_step2Page');
-const Router = require("sf-core/ui/router");
-const Tab = require("components/Tab");
+const ConfirmPgDesign = require('ui/ui_confirmPg');
 
-const Step2Page = extend(Step2PageDesign)(
+const ConfirmPg = extend(ConfirmPgDesign)(
   // Constructor
   function(_super) {
     // Initalizes super class for this page scope
@@ -35,23 +33,6 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
-
-  var tabIndicator = new Tab();
-  var stepPage = this;
-
-  stepPage.tab.summaryButton.onPress = function() {
-    tabIndicator.animateRightButton = stepPage;
-    //Write chaneable flex here
-  }.bind(this);
-
-  stepPage.tab.instructionButton.onPress = function() {
-    tabIndicator.animateLeftButton = stepPage;
-    //Write changeable flex here
-  }.bind(this);
-
-  this.completefl.completeButton.onPress = function() {
-    Router.go("step3Page");
-  }.bind(this);
 }
 
-module && (module.exports = Step2Page);
+module && (module.exports = ConfirmPg);
