@@ -32,6 +32,7 @@ Router.add("step2Page", require("./pages/step2Page"));
 Router.add("step3Page", require("./pages/step3Page"));
 Router.add("workOrders", require("./pages/workOrders"));
 Router.add("workOrderSumpg", require("./pages/workOrderSumpg"));
+Router.add("confirmPg", require("./pages/confirmPg"));
 Router.go("assetLoginPage");
 
 

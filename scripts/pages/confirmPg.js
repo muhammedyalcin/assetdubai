@@ -3,6 +3,7 @@
 */
 const extend = require('js-base/core/extend');
 const ConfirmPgDesign = require('ui/ui_confirmPg');
+const Router = require("sf-core/ui/router");
 
 const ConfirmPg = extend(ConfirmPgDesign)(
   // Constructor
@@ -33,6 +34,13 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  
+  this.completefl.completeButton.text = "Confirm Status";
+  this.completefl.completeButton.onPress = completBtn_onPress.bind(this);
+}
+
+function completBtn_onPress(){
+  Router.go("confirmPg");
 }
 
 module && (module.exports = ConfirmPg);
