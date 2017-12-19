@@ -3,7 +3,8 @@
 */
 const extend = require('js-base/core/extend');
 const DashboardPgDesign = require('ui/ui_dashboardPg');
-const sliderDrawer = require("../sliderDrawer");
+const Router = require("sf-core/ui/router");
+// const sliderDrawer = require("../sliderDrawer");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const Image = require("sf-core/ui/image");
 const Color = require("sf-core/ui/color");
@@ -20,11 +21,13 @@ const DashboardPg = extend(DashboardPgDesign)(
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
+
     console.log("Dashboard is loaded");
-    dashboardListview = this.dashboardListview;
+    //dashboardListview = this.dashboardListview;
     //sliderDrawer.setFlexlayout;
     // sliderDrawer.layout.addChild(SliderFlexlayout);
-    sliderDrawer.setLeftItem(this.headerBar);
+
+    // Router.sliderDrawer.setCurrentData();
   });
 
 var dashboardData;
@@ -33,9 +36,12 @@ var dashboardListview;
 function initListview(dashData) {
 
   dashboardListview.onRowCreate = function() {
+    
     var listviewItem = new ListViewItem();
     var dashboardItem = Object.assign(new DashBoardItem(), {
-      id: 15
+      id: 15,
+      height : NaN,
+      flexGrow: 1
     });
     listviewItem.addChild(dashboardItem);
 
@@ -81,10 +87,13 @@ function onShow(superOnShow) {
  * @param {function} superOnLoad super onLoad function
  */
 function onLoad(superOnLoad) {
+  superOnLoad();
   var dashboardObj = new DashBoardItem();
   dashboardData = dashboardObj.getDashboardData;
+  dashboardListview = this.dashboardListview;
   initListview(dashboardData);
-  
+  Router.sliderDrawer.setLeftItem(this.headerBar);
+
 }
 
 module && (module.exports = DashboardPg);

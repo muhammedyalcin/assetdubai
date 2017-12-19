@@ -34,7 +34,7 @@ const AssetLoginPage = extend(AssetLoginPageDesign)(
 function onShow(superOnShow) {
   superOnShow();
   const page= this;
-
+  
   fingerprint.init({
     userNameTextBox: this.userTextBox,
     passwordTextBox: this.passwordTextBox,
@@ -53,7 +53,10 @@ function onShow(superOnShow) {
         if (err) {
           return;
         }
+        
         User.currentUser = userData;
+        console.log("userData is "+User.currentUser);
+        Router.sliderDrawer.setCurrentData();
         fingerprintResult && fingerprintResult.success();
         loginSucceed();
       });
@@ -73,6 +76,11 @@ function onLoad(superOnLoad) {
   
   const signinAction = signin.bind(this.loginButton,this);
   page.loginButton.onPress = signinAction;
+  
+  page.dubaiImage.onTouch = function(){
+    page.userTextBox.text ="smartface";
+    page.passwordTextBox.text = "asd123";
+  }.bind(this);
 }
 
 function signin(page) {

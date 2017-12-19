@@ -9,13 +9,14 @@ const Label = require('sf-core/ui/label');
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const TextAlignment = require("sf-core/ui/textalignment");
 const Router = require("sf-core/ui/router");
+const User = require("./model/user");
 
 var sliderDrawerWidth = 333;
+var nameLabel;
 var sliderDrawer = new SliderDrawer({
     width: sliderDrawerWidth,
-    //enabled: false,
+    enabled: false,
     onLoad: function() {
-
         //User FlexLayout
         var userFlexLayout = new Flexlayout({
             flexGrow: 3,
@@ -58,7 +59,7 @@ var sliderDrawer = new SliderDrawer({
             flexDirection: Flexlayout.FlexDirection.COLUMN,
             justifyContent: Flexlayout.JustifyContent.CENTER
         });
-        var nameLabel = new Label({
+        nameLabel = new Label({
             height: 20,
             text: "<User Name>",
             textColor: Color.BLACK,
@@ -157,10 +158,7 @@ var sliderDrawer = new SliderDrawer({
             top: 0,
             text: "Orders",
             textColor: Color.BLACK,
-            positionType: Flexlayout.PositionType.ABSOLUTE,
-            onPress: function(){
-                Router.go("workOrders");
-            }
+            positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
         var ordersImage = Image.createFromFile("images://order_icon.png")
@@ -219,7 +217,7 @@ var sliderDrawer = new SliderDrawer({
             right: 0,
             bottom: 0,
             top: 0,
-            text: "Logout ",
+            text: "Logout",
             textColor: Color.BLACK,
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
@@ -244,11 +242,43 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.onShow = function sliderDrawer_onShow() {
             sliderDrawer.shown = true;
         };
-    }
-});
+        sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
+        sliderDrawer.layout.backgroundColor = Color.create("#4A4A4A");
 
-sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
-sliderDrawer.layout.backgroundColor = Color.create("#4A4A4A");
+        sliderDrawer.setCurrentData = function setCurrentData() {
+            var currentUser = User.currentUser;
+            if (currentUser) {
+                nameLabel.text = currentUser.firstname;
+                //userImageView.image = currentUser.image;
+            }
+            else console.log("currentUser is null");
+        }
+        sliderDrawer.setCurrentData();
+
+        sliderDrawer.setActions = function setActions() {
+            ordersLabel.onTouch = function() {
+                console.log("Orders clicke");
+                Router.go("workOrders");
+            };
+            settingsLabel.onTouch = function(){
+               console.log("setting is touched");
+               // Router.go("workOrders");
+            }
+            logoutLabel.onTouch = function(){
+               console.log("setting is touched");
+               // Router.go("workOrders");
+            }
+            dashboardLabel.onTouch = function(){
+               console.log("setting is touched");
+                Router.go("dashboardPg");
+            }
+
+        }
+        sliderDrawer.setActions();
+    }
+
+});
+sliderDrawer.setCurrentData = function() {};
 
 sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
 
@@ -263,6 +293,9 @@ sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
     });
     headerbar.setLeftItem(sliderDrawerItem);
     headerbar.leftItem = sliderDrawerItem;
+    sliderDrawer.enabled = true;
 };
+
+
 
 module.exports = exports = sliderDrawer;

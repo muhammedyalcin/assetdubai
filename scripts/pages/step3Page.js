@@ -3,6 +3,7 @@
 */
 const extend = require('js-base/core/extend');
 const Step3PageDesign = require('ui/ui_step3Page');
+const Router = require("sf-core/ui/router");
 
 const Step3Page = extend(Step3PageDesign)(
   // Constructor
@@ -33,6 +34,10 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+
+    this.completefl.completeButton.onPress = function(){
+    Router.go("step2Page");
+  }.bind(this);
 }
 
 module && (module.exports = Step3Page);
