@@ -170,6 +170,34 @@ var sliderDrawer = new SliderDrawer({
 
         ordersfl.addChild(ordersImageView);
         ordersfl.addChild(ordersLabel);
+        
+        
+         var assetfl = new Flexlayout({
+            flexGrow: 1,
+            positionType: Flexlayout.PositionType.RELATIVE,
+            flexDirection: Flexlayout.FlexDirection.ROW,
+            justifyContent: Flexlayout.JustifyContent.FLEX_START
+        });
+        var assetLabel = new Label({
+            left: 28,
+            right: 0,
+            height: 22,
+            top: 0,
+            text: "Assets",
+            textColor: Color.BLACK,
+            positionType: Flexlayout.PositionType.ABSOLUTE
+        });
+
+        var assetImage = Image.createFromFile("images://asseticon.png")
+        var assetImageView = new ImageView({
+            image: assetImage,
+            width: 22,
+            height: 22
+        });
+
+        assetfl.addChild(assetImageView);
+        assetfl.addChild(assetLabel);
+        
 
         var settingsfl = new Flexlayout({
             flexGrow: 1,
@@ -199,6 +227,7 @@ var sliderDrawer = new SliderDrawer({
         actionsfl.addChild(dashboardfl);
         actionsfl.addChild(ordersfl);
         actionsfl.addChild(settingsfl);
+        actionsfl.addChild(assetfl);
 
 
         //Log out Flex Layout

@@ -3,19 +3,19 @@
 */
 const extend = require('js-base/core/extend');
 
-const WorkRowDesign = require('library/WorkRow');
+const MapViewDesign = require('library/MapView');
+const Image = require("sf-core/ui/image");
 const Color = require("sf-core/ui/color");
-const HeaderBarItem = require("sf-core/ui/headerbaritem");
-const Image =require("sf-core/ui/image");
+const HeaderBarItem =require("sf-core/ui/headerbaritem");
 
-const WorkRow = extend(WorkRowDesign)(
+const MapView = extend(MapViewDesign)(
   //constructor
   function(_super, props, pageName) {
     // initalizes super class for this scope
-    _super(this, props || WorkRowDesign.defaults);
+    _super(this, props || MapViewDesign.defaults);
     this.pageName = pageName;
-    
-      Object.assign('assignHeaderImage', {
+
+    Object.assign('assignHeaderImage', {
       set: function(headerbar) {
         setLeftItem(headerbar);
       }
@@ -25,7 +25,7 @@ const WorkRow = extend(WorkRowDesign)(
   
       headerbar.leftItemEnabled = true;
       var workOrdersItem = new HeaderBarItem({
-        image: Image.createFromFile("images://locationicon.png"),
+        image: Image.createFromFile("images://listsicon.png"),
         color: Color.WHITE,
         onPress: function() {
         //
@@ -35,7 +35,6 @@ const WorkRow = extend(WorkRowDesign)(
       headerbar.setItems(arr);
     }
   }
-
 );
 
-module && (module.exports = WorkRow);
+module && (module.exports = MapView);
