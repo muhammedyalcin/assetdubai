@@ -8,6 +8,8 @@ const Tab = require("components/Tab");
 const Label = require("sf-core/ui/label");
 const TexAlignment = require("sf-core/ui/textalignment");
 const FlexLayout = require("sf-core/ui/flexlayout");
+const Uploadfl = require("../components/Uploadfl");
+const Multimedia = require("sf-core/device/multimedia");
 
 const Step3Page = extend(Step3PageDesign)(
   // Constructor
@@ -39,9 +41,12 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
 
+  page = this;
   var tabIndicator = new Tab();
   var stepPage = this;
-
+  
+  console.log("Page is started");
+  
   stepPage.tab.summaryButton.onPress = function() {
     tabIndicator.animateRightButton = stepPage;
     //Write chaneable flex here
@@ -60,8 +65,34 @@ function onLoad(superOnLoad) {
     textAlignment: TexAlignment.MIDLEFT
   });
   this.noteContainer.actionfl.addChild(uploadLabel);
-  
-  
+
+  var uploadfl = new Uploadfl();
+  uploadfl.uploadimg.onTouch = uploadOnPress.bind(this);
+
+  var placeHolder = new FlexLayout({
+    flexGrow: 3,
+    positionType: FlexLayout.PositionType.RELATIVE
+  });
+
+  this.noteContainer.emptyfl.addChild(uploadfl);
+  this.noteContainer.emptyfl.addChild(placeHolder);
+
+}
+
+var page;
+
+function uploadOnPress() {
+  console.log("Upload is pressed");
+  Multimedia.pickFromGallery({
+    type: Multimedia.Type.IMAGE,
+    onSuccess: onSuccess,
+    page: page
+  });
+
+  function onSuccess(picked) {
+    //Reassign here afterwards
+    var image = picked.image;
+  }
 }
 
 function confirmButton_onPress() {
