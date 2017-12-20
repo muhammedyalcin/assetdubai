@@ -5,6 +5,9 @@ const extend = require('js-base/core/extend');
 const Step3PageDesign = require('ui/ui_step3Page');
 const Router = require("sf-core/ui/router");
 const Tab = require("components/Tab");
+const Label = require("sf-core/ui/label");
+const TexAlignment = require("sf-core/ui/textalignment");
+const FlexLayout = require("sf-core/ui/flexlayout");
 
 const Step3Page = extend(Step3PageDesign)(
   // Constructor
@@ -35,7 +38,7 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
-  
+
   var tabIndicator = new Tab();
   var stepPage = this;
 
@@ -50,10 +53,19 @@ function onLoad(superOnLoad) {
   }.bind(this);
 
   this.completefl.completeButton.onPress = confirmButton_onPress.bind(this);
+
+  var uploadLabel = new Label({
+    text: "Upload infrared Camera Images",
+    flexGrow: 1,
+    textAlignment: TexAlignment.MIDLEFT
+  });
+  this.noteContainer.actionfl.addChild(uploadLabel);
+  
+  
 }
 
-function confirmButton_onPress(){
-   Router.go("confirmPg");
+function confirmButton_onPress() {
+  Router.go("confirmPg");
 }
 
 module && (module.exports = Step3Page);

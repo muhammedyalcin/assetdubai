@@ -5,6 +5,13 @@ const extend = require('js-base/core/extend');
 const Step1PageDesign = require('ui/ui_step1Page')
 const Tab = require("components/Tab");
 const Router = require("sf-core/ui/router");
+const Image = require("sf-core/ui/image");
+const ImageView = require("sf-core/ui/imageview");
+const FlexLayout = require("sf-core/ui/flexlayout");
+const TopPicker = require("components/Pickerfl");
+const EndTimePicker = require("components/EndTimePicker");
+const StartTimePicker = require("components/TimePickerfl");
+
 
 const Step1Page = extend(Step1PageDesign)(
   // Constructor
@@ -15,21 +22,21 @@ const Step1Page = extend(Step1PageDesign)(
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-    
+
     var tabIndicator = new Tab();
     var stepPage = this;
-    
-    stepPage.tab.summaryButton.onPress =function() {
+
+    stepPage.tab.summaryButton.onPress = function() {
       tabIndicator.animateRightButton = stepPage;
       //Write chaneable flex here
     }.bind(this);
-    
-     stepPage.tab.instructionButton.onPress =function() {
+
+    stepPage.tab.instructionButton.onPress = function() {
       tabIndicator.animateLeftButton = stepPage;
       //Write changeable flex here
     }.bind(this);
-    
-    
+
+
   });
 
 /**
@@ -49,17 +56,29 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
-   //set action button
-  this.completefl.completeButton.onPress = function(){
+  //set action button
+  this.completefl.completeButton.onPress = function() {
     Router.go("step2Page");
   }.bind(this);
+
+  var placeHolder = new FlexLayout({
+        flexGrow: 1,
+        positionType: FlexLayout.PositionType.RELATIVE
+   });
+
+  //sets picker top of the container
+  this.noteContainer.actionfl.addChild(new TopPicker());
   
-  var okImage =  Image.createFromFile("");
-  var okImageView = new ImageView({
-    
-  });
+  //sets start time picker
+  var startTimePicker = new StartTimePicker();
+  this.noteContainer.emptyfl.addChild(startTimePicker);
   
+  //placeholder
+  this.noteContainer.emptyfl.addChild(placeHolder);
   
+  //sets end time picker
+  var endTimePicker = new EndTimePicker();
+  this.noteContainer.emptyfl.addChild(endTimePicker);
 }
 
 module && (module.exports = Step1Page);

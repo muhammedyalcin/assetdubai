@@ -5,6 +5,12 @@ const extend = require('js-base/core/extend');
 const Step2PageDesign = require('ui/ui_step2Page');
 const Router = require("sf-core/ui/router");
 const Tab = require("components/Tab");
+const Label = require("sf-core/ui/label");
+const TexAlignment = require("sf-core/ui/textalignment");
+const FlexLayout = require("sf-core/ui/flexlayout");
+const Color = require("sf-core/ui/color");
+const nofl = require("components/Yesfl");
+const yesfl = require("components/Nofl");
 
 const Step2Page = extend(Step2PageDesign)(
   // Constructor
@@ -52,6 +58,22 @@ function onLoad(superOnLoad) {
   this.completefl.completeButton.onPress = function() {
     Router.go("step3Page");
   }.bind(this);
+
+  var quesLabel = new Label({
+    text: "Acustic Test: Is gas passing?",
+    flexGrow: 1,
+    textAlignment: TexAlignment.MIDLEFT
+  });
+
+  this.noteContainer.actionfl.addChild(quesLabel);
+
+  var placeHolder = new FlexLayout({
+    flexGrow: 1,
+    positionType: FlexLayout.PositionType.RELATIVE
+  });
+  this.noteContainer.emptyfl.addChild(new nofl());
+  this.noteContainer.emptyfl.addChild(new yesfl());
+  this.noteContainer.emptyfl.addChild(placeHolder);
 }
 
 module && (module.exports = Step2Page);
