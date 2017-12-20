@@ -53,6 +53,13 @@ function onLoad(superOnLoad) {
   this.completefl.completeButton.onPress = function(){
     Router.go("step2Page");
   }.bind(this);
+  
+  var okImage =  Image.createFromFile("");
+  var okImageView = new ImageView({
+    
+  });
+  
+  
 }
 
 module && (module.exports = Step1Page);

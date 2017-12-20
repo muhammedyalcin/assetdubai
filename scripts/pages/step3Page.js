@@ -49,9 +49,11 @@ function onLoad(superOnLoad) {
     //Write changeable flex here
   }.bind(this);
 
-  this.completefl.completeButton.onPress = function() {
-    Router.go("step3Page");
-  }.bind(this);
+  this.completefl.completeButton.onPress = confirmButton_onPress.bind(this);
+}
+
+function confirmButton_onPress(){
+   Router.go("confirmPg");
 }
 
 module && (module.exports = Step3Page);
