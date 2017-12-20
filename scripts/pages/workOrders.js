@@ -5,8 +5,11 @@ const extend = require('js-base/core/extend');
 const WorkOrdersDesign = require('ui/ui_workOrders');
 const User = require("../model/user");
 const WorkOrderItem = require("../components/WorkRow");
+var workOrder = new WorkOrderItem();
 const ListViewItem = require("sf-core/ui/listviewitem");
 const Router = require("sf-core/ui/router");
+const MapViewfl = require("../components/MapViewfl");
+var mapViewfl = new MapViewfl();
 
 const WorkOrders = extend(WorkOrdersDesign)(
   // Constructor
@@ -21,17 +24,21 @@ const WorkOrders = extend(WorkOrdersDesign)(
     page.onLoad = function() {
       pageonLoad && pageonLoad();
       workOL = this.workOrderListview;
-      console.log("list view is " + workOL);
+
       var currentUser = User.currentUser;
-     // console.log("current user is " + currentUser.firstname);
+      // console.log("current user is " + currentUser.firstname);
       initListview(currentUser.work);
+
+      //Assign map image and remove the listview when press
+      workOrder.assignImgandRmv = this;
+
+
     }
-    
-     var workOL; 
+
+    var workOL;
+
     function initListview(jsonData) {
 
-      console.log("json data " + jsonData.length);
-      console.log("list view is   " + workOL)
       workOL.rowHeight = 90;
       workOL.onRowCreate = function() {
         console.log("in row create");
@@ -46,7 +53,7 @@ const WorkOrders = extend(WorkOrdersDesign)(
       };
 
       workOL.onRowBind = function(listviewItem, index) {
-        console.log("in row bind create");
+
         var workRow = listviewItem.findChildById(8);
         var detailContainer = workRow.findChildById(9);
         var workData = detailContainer.findChildById(10);
@@ -55,15 +62,14 @@ const WorkOrders = extend(WorkOrdersDesign)(
         var workId1 = workLabels.findChildById(101);
         var workId2 = workLabels.findChildById(102);
         var workId3 = workLabels.findChildById(103);
-  
+
         workId3.text = jsonData[index].workid1;
         workId2.text = jsonData[index].workid2;
         workId1.text = jsonData[index].workid3;
       };
 
       workOL.onRowSelected = function(listViewItem, index) {
-        console.log("selected index = " + index)
-        Router.go("workOrderSumpg",jsonData[index]);
+        Router.go("workOrderSumpg", jsonData[index]);
       };
 
       /* dashboardListview.onPullRefresh = function() {
