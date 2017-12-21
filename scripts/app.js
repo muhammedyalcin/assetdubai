@@ -33,7 +33,10 @@ Router.add("step3Page", require("./pages/step3Page"));
 Router.add("workOrders", require("./pages/workOrders"));
 Router.add("workOrderSumpg", require("./pages/workOrderSumpg"));
 Router.add("confirmPg", require("./pages/confirmPg"));
-Router.go("step3Page");
+Router.add("workOrderProcPg", require("./pages/workOrderProcPg"));
+Router.add("locationPg", require("./pages/locationPg"));
+Router.add("assetPg", require("./pages/assetPg"));
+Router.go("assetLoginPage");
 
 
     var sliderDrawer = require("./sliderDrawer");

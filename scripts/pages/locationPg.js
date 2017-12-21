@@ -2,10 +2,11 @@
 		You can modify its contents.
 */
 const extend = require('js-base/core/extend');
-const ConfirmPgDesign = require('ui/ui_confirmPg');
-const Router = require("sf-core/ui/router");
+const LocationPgDesign = require('ui/ui_locationPg');
+const MapViewfl = require("../components/MapViewfl");
+var mapViewfl = new MapViewfl();
 
-const ConfirmPg = extend(ConfirmPgDesign)(
+const LocationPg = extend(LocationPgDesign)(
   // Constructor
   function(_super) {
     // Initalizes super class for this page scope
@@ -14,6 +15,7 @@ const ConfirmPg = extend(ConfirmPgDesign)(
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    
 
   });
 
@@ -25,6 +27,9 @@ const ConfirmPg = extend(ConfirmPgDesign)(
  */
 function onShow(superOnShow) {
   superOnShow();
+  
+  //sets current location
+  mapViewfl.assignLocation=this;
 }
 
 /**
@@ -34,13 +39,6 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
-  
-  this.completefl.completeButton.text = "Confirm Status";
-  this.completefl.completeButton.onPress = completBtn_onPress.bind(this);
 }
 
-function completBtn_onPress(){
-  Router.go("assetPg");
-}
-
-module && (module.exports = ConfirmPg);
+module && (module.exports = LocationPg);

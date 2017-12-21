@@ -301,6 +301,9 @@ var sliderDrawer = new SliderDrawer({
                console.log("setting is touched");
                 Router.go("dashboardPg");
             }
+            assetLabel.onTouch = function(){
+                Router.go("assetPg");
+            }
 
         }
         sliderDrawer.setActions();

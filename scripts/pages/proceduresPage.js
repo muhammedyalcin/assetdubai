@@ -10,7 +10,7 @@ const ProcedureRow = require("components/ProcedureRow");
 const ImageView = require("sf-core/ui/imageview");
 const User = require("../model/user");
 const Label = require("sf-core/ui/label");
-const TextAlignment =require("sf-core/ui/textalignment");
+const TextAlignment = require("sf-core/ui/textalignment");
 const Router = require("sf-core/ui/router");
 
 const ProceduresPage = extend(ProceduresPageDesign)(
@@ -34,30 +34,32 @@ const ProceduresPage = extend(ProceduresPageDesign)(
 
 function onShow(superOnShow, arr) {
   superOnShow();
-  console.log(arr[0]);
-  var procedureData = arr[0].procedure;
-  var workData = arr[1];
-  console.log("work data is " + workData.workid1);
-  //Sets the selected workid's
-  this.workid1.text = workData.workid1;
-  this.workid2.text = workData.workid2;
-  this.workid3.text = workData.workid3;
-  
-  //Sets scrollview 
-  this.procedureScroll.layout.positionType = FlexLayout.PositionType.ABSOLUTE;
-  this.procedureScroll.layout.height = 230 * procedureData.length;
-  this.procedureScroll.layout.left = 0;
-  this.procedureScroll.layout.right = 0;
-  this.procedureScroll.layout.top = 0;
-  
-  //set action button
-  this.startButton.onPress = function(){
-    Router.go("step1Page");
-  }.bind(this);
+  if (arr && arr[0] && arr[1]) {
+    var procedureData = arr[0].procedure;
+    var workData = arr[1];
 
-  for (var i = 0; procedureData.length > i; i++) {
-    this.initFL(procedureData[i], i, globalTop);
-    globalTop += height;
+    console.log("work data is " + workData.workid1);
+    //Sets the selected workid's
+    this.workid1.text = workData.workid1;
+    this.workid2.text = workData.workid2;
+    this.workid3.text = workData.workid3;
+
+    //Sets scrollview 
+    this.procedureScroll.layout.positionType = FlexLayout.PositionType.ABSOLUTE;
+    this.procedureScroll.layout.height = 230 * procedureData.length;
+    this.procedureScroll.layout.left = 0;
+    this.procedureScroll.layout.right = 0;
+    this.procedureScroll.layout.top = 0;
+
+    //set action button
+    this.startButton.onPress = function() {
+      Router.go("step1Page");
+    }.bind(this);
+
+    for (var i = 0; procedureData.length > i; i++) {
+      this.initFL(procedureData[i], i, globalTop);
+      globalTop += height;
+    }
   }
 }
 
@@ -70,7 +72,7 @@ var height = 230; //global height
 var globalTop = 0; //global top
 function onLoad(superOnLoad) {
   superOnLoad();
-  
+
   this.initFL = function initFL(data, index, top) {
     console.log("in initFL function");
     console.log("top value is" + top);
@@ -92,15 +94,15 @@ function onLoad(superOnLoad) {
       height: 230,
       positionType: FlexLayout.PositionType.ABSOLUTE
     });
-    
+
     var numberLabel = new Label({
       text: index + 1,
-      flexGrow:1,
+      flexGrow: 1,
       positionType: FlexLayout.PositionType.RELATIVE,
       textAlignment: TextAlignment.MIDCENTER
     });
     checkLine.ballfl.addChild(numberLabel);
-    
+
     // if(image){
     //   var imageUrl = data.imageUrl;
     //   var proImage = Image.createFromFile("images://loading.png");
@@ -109,7 +111,7 @@ function onLoad(superOnLoad) {
     //   });
     // }
     //checkLine.ballfl.addChild();
-  
+
     var procedureRow = Object.assign(new ProcedureRow(), {
       id: index,
       top: 0,
@@ -118,7 +120,7 @@ function onLoad(superOnLoad) {
       height: 230,
       positionType: FlexLayout.PositionType.ABSOLUTE
     });
-     procedureRow.descLabel.showScrollBar = true;
+    procedureRow.descLabel.showScrollBar = true;
     //procedureRow.descTextArea.nativeObject.setFocusable(false);
     //console.log("comp is "+procedureRow.descTextArea.text);
 

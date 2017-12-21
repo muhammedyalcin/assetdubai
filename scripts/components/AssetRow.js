@@ -11,6 +11,53 @@ const AssetRow = extend(AssetRowDesign)(
     // initalizes super class for this scope
     _super(this, props || AssetRowDesign.defaults);
     this.pageName = pageName;
+    
+      var obj = this;
+
+    var dashboardData = [{
+      title: "Barcode: 4901248127323",
+      desc: "Condition Monitoring Survey = Enhanced"
+      },
+      {
+      title: "Barcode: 4901248127323",
+      desc: "Condition Monitoring Survey = Enhanced"
+      },
+      {
+      title: "Barcode: 4901248127323",
+      desc: "Condition Monitoring Survey = Enhanced"
+      },
+      {
+      title: "Barcode: 4901248127323",
+      desc: "Condition Monitoring Survey = Enhanced"
+      },
+      {
+      title: "Barcode: 4901248127323",
+      desc: "Condition Monitoring Survey = Enhanced"
+      },
+      {
+      title: "Barcode: 4901248127323",
+      desc: "Condition Monitoring Survey = Enhanced"
+      },
+      {
+      title: "Barcode: 4901248127323",
+      desc: "Condition Monitoring Survey = Enhanced"
+      },
+      {
+      title: "Barcode: 4901248127323",
+      desc: "Condition Monitoring Survey = Enhanced"
+      }
+    ];
+
+    Object.defineProperties(obj, {
+      'getAssetTestData': {
+        enumerable: true,
+        configurable: true,
+        get: function() {
+          console.log("getAssetTestData is called");
+          return dashboardData;
+        }
+      }
+    });
   }
 
 );

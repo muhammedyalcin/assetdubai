@@ -38,6 +38,7 @@ function onShow(superOnShow, jsonData) {
   // if (index == undefined) {
   //   index = 0;
   // }
+   if(jsonData){
   this.headerBar.title = jsonData.workid1;
 
   var workSummary = jsonData.worksummary;
@@ -46,6 +47,7 @@ function onShow(superOnShow, jsonData) {
     this.initlist(workSummary);
   else
     alert("Nothing to display");
+   }
 }
 
 
@@ -103,7 +105,7 @@ function onLoad(superOnLoad) {
       console.log("work data is in workordersum page " +workData.workid1);
       var workSummary = jsonData[index];
       var arr = [workSummary,workData];
-      Router.go("proceduresPage", arr);
+      Router.go("workOrderProcPg", arr);
     };
 
     /* dashboardListview.onPullRefresh = function() {

@@ -57,7 +57,7 @@ function initListview(dashData) {
   }
 
   dashboardListview.onRowSelected = function(listViewItem, index) {
-    console.log("selected index = " + index)
+    console.log("selected index = " + index);
   };
 
   /* dashboardListview.onPullRefresh = function() {
