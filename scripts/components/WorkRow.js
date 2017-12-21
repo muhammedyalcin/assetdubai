@@ -48,7 +48,7 @@ const WorkRow = extend(WorkRowDesign)(
       //value.headerBar.leftItemEnabled = true
 
       var mapViewItem = new HeaderBarItem({
-        image: Image.createFromFile("images://listicon.png"),
+        image: Image.createFromFile("images://listsicon.png"),
         color: Color.WHITE,
         onPress: function() {
         value.mapViewfl.visible = false;

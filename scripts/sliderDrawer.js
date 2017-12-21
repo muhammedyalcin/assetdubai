@@ -10,6 +10,7 @@ const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const TextAlignment = require("sf-core/ui/textalignment");
 const Router = require("sf-core/ui/router");
 const User = require("./model/user");
+const ImageFillType = require('sf-core/ui/imagefilltype');
 
 var sliderDrawerWidth = 333;
 var nameLabel;
@@ -35,20 +36,32 @@ var sliderDrawer = new SliderDrawer({
             alignItems: Flexlayout.AlignItems.CENTER
         });
         var userImagefl = new Flexlayout({
-            flexGrow: 2,
+            flexGrow: 4,
             positionType: Flexlayout.PositionType.RELATIVE,
             flexDirection: Flexlayout.FlexDirection.COLUMN,
             justifyContent: Flexlayout.JustifyContent.CENTER
         });
         var userImage = Image.createFromFile("images://customers_1.png")
         var userImageView = new ImageView({
-            image: userImage,
+            //image: userImage,
+            // borderRadius: 20,
+            // //borderColor: Color.create(255, 255, 255, 255),
+            // //borderWidth: 1,
+            // left: 0,
+            // width: 96,
+            // height: 96,
+            // imageFillType: ImageFillType.STRETCH
+            backgroundColor: Color.create(0, 255, 255, 255),
+            alpha: 1,
             borderRadius: 48,
-            //borderColor: Color.create(255, 255, 255, 255),
-            //borderWidth: 1,
-            left: 0,
+            borderColor: Color.create(255, 255, 255, 255),
+            borderWidth: 1,
+            height: 96,
+            image: userImage,
+            imageFillType: ImageFillType.ASPECTFIT,
+            visible: true,
             width: 96,
-            height: 96
+            positionType: Flexlayout.PositionType.RELATIVE
         });
         userImagefl.addChild(userImageView);
 
@@ -136,11 +149,12 @@ var sliderDrawer = new SliderDrawer({
         });
 
 
-        var dashboardImage = Image.createFromFile("images://sliderdrawer_dashboard.png")
+        var dashboardImage = Image.createFromFile("images://dashboardicon.png")
         var dashboradImageView = new ImageView({
             image: dashboardImage,
             width: 22,
-            height: 22
+            height: 22,
+            imageFillType: ImageFillType.ASPECTFIT
         });
         dashboardfl.addChild(dashboradImageView);
         dashboardfl.addChild(dashboardLabel);
@@ -161,18 +175,19 @@ var sliderDrawer = new SliderDrawer({
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
-        var ordersImage = Image.createFromFile("images://order_icon.png")
+        var ordersImage = Image.createFromFile("images://workordericon.png")
         var ordersImageView = new ImageView({
             image: ordersImage,
             width: 22,
-            height: 22
+            height: 22,
+            imageFillType: ImageFillType.ASPECTFIT
         });
 
         ordersfl.addChild(ordersImageView);
         ordersfl.addChild(ordersLabel);
-        
-        
-         var assetfl = new Flexlayout({
+
+
+        var assetfl = new Flexlayout({
             flexGrow: 1,
             positionType: Flexlayout.PositionType.RELATIVE,
             flexDirection: Flexlayout.FlexDirection.ROW,
@@ -188,16 +203,17 @@ var sliderDrawer = new SliderDrawer({
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
-        var assetImage = Image.createFromFile("images://asseticon.png")
+        var assetImage = Image.createFromFile("images://assetsicon.png")
         var assetImageView = new ImageView({
             image: assetImage,
             width: 22,
-            height: 22
+            height: 22,
+            imageFillType: ImageFillType.ASPECTFIT
         });
 
         assetfl.addChild(assetImageView);
         assetfl.addChild(assetLabel);
-        
+
 
         var settingsfl = new Flexlayout({
             flexGrow: 1,
@@ -215,11 +231,12 @@ var sliderDrawer = new SliderDrawer({
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
-        var settingsImage = Image.createFromFile("images://sliderdrawer_settings.png")
+        var settingsImage = Image.createFromFile("images://settingsicon.png")
         var settingsImageView = new ImageView({
             image: settingsImage,
             width: 22,
-            height: 22
+            height: 22,
+            imageFillType: ImageFillType.ASPECTFIT
         });
 
         settingsfl.addChild(settingsImageView);
@@ -251,11 +268,12 @@ var sliderDrawer = new SliderDrawer({
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
-        var logoutImage = Image.createFromFile("images://logout.png")
+        var logoutImage = Image.createFromFile("images://logouticon.png")
         var logoutImageView = new ImageView({
             image: logoutImage,
             width: 22,
-            height: 22
+            height: 22,
+            imageFillType: ImageFillType.ASPECTFIT
         });
 
         logoutFlexLayout.addChild(logoutImageView);
@@ -272,7 +290,7 @@ var sliderDrawer = new SliderDrawer({
             sliderDrawer.shown = true;
         };
         sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
-        sliderDrawer.layout.backgroundColor = Color.create("#4A4A4A");
+        sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
 
         sliderDrawer.setCurrentData = function setCurrentData() {
             var currentUser = User.currentUser;
@@ -287,21 +305,26 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.setActions = function setActions() {
             ordersLabel.onTouch = function() {
                 console.log("Orders clicke");
+                sliderDrawer.hide();
                 Router.go("workOrders");
             };
-            settingsLabel.onTouch = function(){
-               console.log("setting is touched");
-               // Router.go("workOrders");
+            settingsLabel.onTouch = function() {
+                console.log("setting is touched");
+                sliderDrawer.hide();
+                // Router.go("workOrders");
             }
-            logoutLabel.onTouch = function(){
-               console.log("setting is touched");
-               // Router.go("workOrders");
+            logoutLabel.onTouch = function() {
+                console.log("setting is touched");
+                sliderDrawer.hide();
+                // Router.go("workOrders");
             }
-            dashboardLabel.onTouch = function(){
-               console.log("setting is touched");
+            dashboardLabel.onTouch = function() {
+                console.log("setting is touched");
+                sliderDrawer.hide();
                 Router.go("dashboardPg");
             }
-            assetLabel.onTouch = function(){
+            assetLabel.onTouch = function() {
+                sliderDrawer.hide();
                 Router.go("assetPg");
             }
 
@@ -317,7 +340,7 @@ sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
     headerbar.leftItemSetBy = sliderDrawer;
     headerbar.leftItemEnabled = true;
     var sliderDrawerItem = new HeaderBarItem({
-        image: Image.createFromFile("images://sliderdrawer.png"),
+        image: Image.createFromFile("images://slidericon.png"),
         color: Color.WHITE,
         onPress: function() {
             sliderDrawer.show();
