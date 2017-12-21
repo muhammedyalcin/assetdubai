@@ -14,6 +14,8 @@ const DashBoardItem = extend(DashBoardItemDesign)(
     this.pageName = pageName;
 
     var obj = this;
+    var redColor = Color.create("#D0021B");
+    var greenColor =  Color.create("#028433");
 
     var dashboardData = [{
         title: "All",
@@ -24,11 +26,11 @@ const DashBoardItem = extend(DashBoardItemDesign)(
       },
       {
         title: "Upcoming",
-        backgroundColor: Color.RED
+        backgroundColor: Color.create(100, 208, 2, 27)
       },
       {
         title: "Pending",
-        backgroundColor: Color.GREEN
+        backgroundColor: Color.create(100, 2, 132, 51)
       },
       {
         title: "Completed",

@@ -52,7 +52,7 @@ function onShow(superOnShow, arr) {
     this.procedureScroll.layout.top = 0;
 
     //set action button
-    this.startButton.onPress = function() {
+    this.completefl.completeButton.onPress = function() {
       Router.go("step1Page");
     }.bind(this);
 

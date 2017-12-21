@@ -11,6 +11,7 @@ const TextAlignment = require("sf-core/ui/textalignment");
 const Router = require("sf-core/ui/router");
 const User = require("./model/user");
 const ImageFillType = require('sf-core/ui/imagefilltype');
+const Application = require('sf-core/application');
 
 var sliderDrawerWidth = 333;
 var nameLabel;
@@ -75,7 +76,7 @@ var sliderDrawer = new SliderDrawer({
         nameLabel = new Label({
             height: 20,
             text: "<User Name>",
-            textColor: Color.BLACK,
+            textColor: Color.WHITE,
             positionType: Flexlayout.PositionType.RELATIVE,
             textAlignment: TextAlignment.MIDCENTER
         });
@@ -87,7 +88,7 @@ var sliderDrawer = new SliderDrawer({
             left: 0,
             bottom: 0,
             right: 0,
-            backgroundColor: Color.BLACK,
+            backgroundColor: Color.create("#979797"),
             positionType: Flexlayout.PositionType.ABSOLUTE,
             flexDirection: Flexlayout.FlexDirection.COLUMN,
             justifyContent: Flexlayout.JustifyContent.CENTER
@@ -143,7 +144,7 @@ var sliderDrawer = new SliderDrawer({
             right: 0,
             top: 0,
             text: "Dashboard",
-            textColor: Color.BLACK,
+            textColor: Color.WHITE,
             textAlignment: TextAlignment.MIDLEFT,
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
@@ -171,7 +172,7 @@ var sliderDrawer = new SliderDrawer({
             height: 22,
             top: 0,
             text: "Orders",
-            textColor: Color.BLACK,
+            textColor: Color.WHITE,
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
@@ -199,7 +200,7 @@ var sliderDrawer = new SliderDrawer({
             height: 22,
             top: 0,
             text: "Assets",
-            textColor: Color.BLACK,
+            textColor: Color.WHITE,
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
@@ -227,7 +228,7 @@ var sliderDrawer = new SliderDrawer({
             height: 22,
             top: 0,
             text: "Settings",
-            textColor: Color.BLACK,
+            textColor: Color.WHITE,
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
@@ -264,7 +265,7 @@ var sliderDrawer = new SliderDrawer({
             bottom: 0,
             top: 0,
             text: "Logout",
-            textColor: Color.BLACK,
+            textColor: Color.WHITE,
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
@@ -291,6 +292,7 @@ var sliderDrawer = new SliderDrawer({
         };
         sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
         sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
+        sliderDrawer.width= 200;
 
         sliderDrawer.setCurrentData = function setCurrentData() {
             var currentUser = User.currentUser;
@@ -316,6 +318,9 @@ var sliderDrawer = new SliderDrawer({
             logoutLabel.onTouch = function() {
                 console.log("setting is touched");
                 sliderDrawer.hide();
+                User.currentUser = null;
+                Router.go("assetLoginPage");
+                
                 // Router.go("workOrders");
             }
             dashboardLabel.onTouch = function() {

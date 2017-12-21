@@ -31,6 +31,8 @@ const WorkOrders = extend(WorkOrdersDesign)(
 
       //Assign map image and remove the listview when press
       workOrder.assignImgandRmv = this;
+      //sets location
+      mapViewfl.assignLocation=this;
 
 
     }
