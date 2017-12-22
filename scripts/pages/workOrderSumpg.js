@@ -5,6 +5,7 @@ const extend = require('js-base/core/extend');
 const WorkOrderSumpgDesign = require('ui/ui_workOrderSumpg');
 const ListViewItem = require("sf-core/ui/listviewitem");
 const WorkSummary = require("components/WorkSummary");
+const Color = require("sf-core/ui/color");
 //const User = require("../model/user");
 const Router = require("sf-core/ui/router");
 
@@ -19,6 +20,8 @@ const WorkOrderSumpg = extend(WorkOrderSumpgDesign)(
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
     workOL = this.wordOderSumListview;
 
+    this.headerBar.titleColor = Color.create("#FFFFFF");
+
   });
 
 /**
@@ -27,7 +30,8 @@ const WorkOrderSumpg = extend(WorkOrderSumpgDesign)(
  * @param {function} superOnShow super onShow function
  * @param {Object} parameters passed from Router.go function
  */
- var workData ;
+var workData;
+
 function onShow(superOnShow, jsonData) {
   superOnShow();
   //var currentUser = User.currentUser;
@@ -38,16 +42,16 @@ function onShow(superOnShow, jsonData) {
   // if (index == undefined) {
   //   index = 0;
   // }
-   if(jsonData){
-  this.headerBar.title = jsonData.workid1;
+  if (jsonData) {
+    this.headerBar.title = jsonData.workid1;
 
-  var workSummary = jsonData.worksummary;
-  workData = jsonData;
-  if (workSummary)
-    this.initlist(workSummary);
-  else
-    alert("Nothing to display");
-   }
+    var workSummary = jsonData.worksummary;
+    workData = jsonData;
+    if (workSummary)
+      this.initlist(workSummary);
+    else
+      alert("Nothing to display");
+  }
 }
 
 
@@ -57,6 +61,7 @@ function onShow(superOnShow, jsonData) {
  * @param {function} superOnLoad super onLoad function
  */
 var workOL;
+
 function onLoad(superOnLoad) {
   superOnLoad();
 
@@ -102,9 +107,9 @@ function onLoad(superOnLoad) {
 
     workOL.onRowSelected = function(listViewItem, index) {
       console.log("selected index = " + index);
-      console.log("work data is in workordersum page " +workData.workid1);
+      console.log("work data is in workordersum page " + workData.workid1);
       var workSummary = jsonData[index];
-      var arr = [workSummary,workData];
+      var arr = [workSummary, workData];
       Router.go("workOrderProcPg", arr);
     };
 

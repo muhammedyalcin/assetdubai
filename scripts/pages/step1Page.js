@@ -11,6 +11,8 @@ const FlexLayout = require("sf-core/ui/flexlayout");
 const TopPicker = require("components/Pickerfl");
 const EndTimePicker = require("components/EndTimePicker");
 const StartTimePicker = require("components/TimePickerfl");
+const Color = require("sf-core/ui/color");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
 
 
 const Step1Page = extend(Step1PageDesign)(
@@ -56,26 +58,32 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+
+  var backIconItem = new HeaderBarItem();
+  backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  backIconItem.itemColor = Color.create("#D5D4D4");
+  this.headerBar.setLeftItem(backIconItem);
+
   //set action button
   this.completefl.completeButton.onPress = function() {
     Router.go("step2Page");
   }.bind(this);
 
   var placeHolder = new FlexLayout({
-        flexGrow: 1,
-        positionType: FlexLayout.PositionType.RELATIVE
-   });
+    flexGrow: 1,
+    positionType: FlexLayout.PositionType.RELATIVE
+  });
 
   //sets picker top of the container
   this.noteContainer.actionfl.addChild(new TopPicker());
-  
+
   //sets start time picker
   var startTimePicker = new StartTimePicker();
   this.noteContainer.emptyfl.addChild(startTimePicker);
-  
+
   //placeholder
   this.noteContainer.emptyfl.addChild(placeHolder);
-  
+
   //sets end time picker
   var endTimePicker = new EndTimePicker();
   this.noteContainer.emptyfl.addChild(endTimePicker);

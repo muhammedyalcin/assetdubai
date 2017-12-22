@@ -19,6 +19,7 @@ const AssetLoginPage = extend(AssetLoginPageDesign)(
     // overrides super.onShow method
     this.onShow = onShow.bind(this, this.onShow);
    
+   
  
 
   });
@@ -34,6 +35,9 @@ const AssetLoginPage = extend(AssetLoginPageDesign)(
 function onShow(superOnShow) {
   superOnShow();
   const page= this;
+  
+  this.userTextBox.clearButtonEnabled = true;
+  this.passwordTextBox.clearButtonEnabled = true;
   
   fingerprint.init({
     userNameTextBox: this.userTextBox,

@@ -44,7 +44,7 @@ const Tab = extend(TabDesign)(
           page.tab.tabPlaceHolderRight.flexGrow = 0;
           page.tab.tabPlaceHolderRight.flexBasis = 0;
           page.tab.summaryButton.textColor = Color.RED;
-          page.tab.instructionButton.textColor = Color.WHITE;
+          page.tab.instructionButton.textColor = Color.create("#D5D4D4");
         });
       }
       },
@@ -60,7 +60,7 @@ const Tab = extend(TabDesign)(
           page.tab.tabPlaceHolderLeft.flexGrow = 0;
           page.tab.tabPlaceHolderRight.flexGrow = 1;
           page.tab.tabPlaceHolderLeft.flexBasis = 0;
-          page.tab.summaryButton.textColor = Color.WHITE;
+          page.tab.summaryButton.textColor = Color.create("#D5D4D4");
           page.tab.instructionButton.textColor = Color.RED;
         });
       }

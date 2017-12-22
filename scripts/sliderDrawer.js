@@ -12,6 +12,7 @@ const Router = require("sf-core/ui/router");
 const User = require("./model/user");
 const ImageFillType = require('sf-core/ui/imagefilltype');
 const Application = require('sf-core/application');
+const Font = require('sf-core/ui/font');
 
 var sliderDrawerWidth = 333;
 var nameLabel;
@@ -21,15 +22,15 @@ var sliderDrawer = new SliderDrawer({
     onLoad: function() {
         //User FlexLayout
         var userFlexLayout = new Flexlayout({
-            flexGrow: 3,
+            flexGrow: 2,
             positionType: Flexlayout.PositionType.RELATIVE,
             flexDirection: Flexlayout.FlexDirection.COLUMN,
             justifyContent: Flexlayout.JustifyContent.CENTER
         });
         var userinfoContainerfl = new Flexlayout({
             top: 5,
-            left: 10,
-            bottom: 0,
+            left: 20,
+            bottom: 20,
             right: 10,
             positionType: Flexlayout.PositionType.ABSOLUTE,
             flexDirection: Flexlayout.FlexDirection.COLUMN,
@@ -54,14 +55,14 @@ var sliderDrawer = new SliderDrawer({
             // imageFillType: ImageFillType.STRETCH
             backgroundColor: Color.create(0, 255, 255, 255),
             alpha: 1,
-            borderRadius: 48,
+            borderRadius: 35,
             borderColor: Color.create(255, 255, 255, 255),
             borderWidth: 1,
-            height: 96,
+            height: 66,
             image: userImage,
-            imageFillType: ImageFillType.ASPECTFIT,
+            imageFillType: ImageFillType.STRETCH,
             visible: true,
-            width: 96,
+            width: 66,
             positionType: Flexlayout.PositionType.RELATIVE
         });
         userImagefl.addChild(userImageView);
@@ -76,7 +77,8 @@ var sliderDrawer = new SliderDrawer({
         nameLabel = new Label({
             height: 20,
             text: "<User Name>",
-            textColor: Color.WHITE,
+            font: Font.create("Lato", 16, Font.NORMAL),
+            textColor: Color.create("#BDBCBC"),
             positionType: Flexlayout.PositionType.RELATIVE,
             textAlignment: TextAlignment.MIDCENTER
         });
@@ -84,11 +86,11 @@ var sliderDrawer = new SliderDrawer({
 
 
         var linefl = new Flexlayout({
-            height: 2,
-            left: 0,
+            height: 1,
+            left: 15,
             bottom: 0,
-            right: 0,
-            backgroundColor: Color.create("#979797"),
+            right: 15,
+            backgroundColor: Color.create("#AB0202"),
             positionType: Flexlayout.PositionType.ABSOLUTE,
             flexDirection: Flexlayout.FlexDirection.COLUMN,
             justifyContent: Flexlayout.JustifyContent.CENTER
@@ -120,7 +122,7 @@ var sliderDrawer = new SliderDrawer({
 
         var actionsfl = new Flexlayout({
             height: 200,
-            left: 10,
+            left: 20,
             top: 20,
             right: 10,
             positionType: Flexlayout.PositionType.ABSOLUTE,
@@ -144,7 +146,8 @@ var sliderDrawer = new SliderDrawer({
             right: 0,
             top: 0,
             text: "Dashboard",
-            textColor: Color.WHITE,
+            font: Font.create("Lato", 16, Font.NORMAL),
+            textColor: Color.create("#BDBCBC"),
             textAlignment: TextAlignment.MIDLEFT,
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
@@ -172,7 +175,8 @@ var sliderDrawer = new SliderDrawer({
             height: 22,
             top: 0,
             text: "Orders",
-            textColor: Color.WHITE,
+            font: Font.create("Lato", 16, Font.NORMAL),
+            textColor: Color.create("#BDBCBC"),
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
@@ -200,7 +204,8 @@ var sliderDrawer = new SliderDrawer({
             height: 22,
             top: 0,
             text: "Assets",
-            textColor: Color.WHITE,
+            font: Font.create("Lato", 16, Font.NORMAL),
+            textColor: Color.create("#BDBCBC"),
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
@@ -228,7 +233,8 @@ var sliderDrawer = new SliderDrawer({
             height: 22,
             top: 0,
             text: "Settings",
-            textColor: Color.WHITE,
+            font: Font.create("Lato", 16, Font.NORMAL),
+            textColor: Color.create("#BDBCBC"),
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
@@ -251,9 +257,9 @@ var sliderDrawer = new SliderDrawer({
         //Log out Flex Layout
         var logoutFlexLayout = new Flexlayout({
             height: 22,
-            right: 0,
-            left: 0,
-            bottom: 0,
+            right: 10,
+            left: 20,
+            bottom: 30,
             positionType: Flexlayout.PositionType.ABSOLUTE,
             flexDirection: Flexlayout.FlexDirection.ROW,
             justifyContent: Flexlayout.JustifyContent.FLEX_START
@@ -265,7 +271,8 @@ var sliderDrawer = new SliderDrawer({
             bottom: 0,
             top: 0,
             text: "Logout",
-            textColor: Color.WHITE,
+            font: Font.create("Lato", 16, Font.NORMAL),
+            textColor: Color.create("#BDBCBC"),
             positionType: Flexlayout.PositionType.ABSOLUTE
         });
 
@@ -292,7 +299,7 @@ var sliderDrawer = new SliderDrawer({
         };
         sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
         sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
-        sliderDrawer.width= 200;
+        sliderDrawer.width = 200;
 
         sliderDrawer.setCurrentData = function setCurrentData() {
             var currentUser = User.currentUser;
@@ -320,7 +327,7 @@ var sliderDrawer = new SliderDrawer({
                 sliderDrawer.hide();
                 User.currentUser = null;
                 Router.go("assetLoginPage");
-                
+
                 // Router.go("workOrders");
             }
             dashboardLabel.onTouch = function() {

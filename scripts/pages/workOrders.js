@@ -8,6 +8,7 @@ const WorkOrderItem = require("../components/WorkRow");
 var workOrder = new WorkOrderItem();
 const ListViewItem = require("sf-core/ui/listviewitem");
 const Router = require("sf-core/ui/router");
+const Color = require("sf-core/ui/color");
 const MapViewfl = require("../components/MapViewfl");
 var mapViewfl = new MapViewfl();
 
@@ -24,7 +25,8 @@ const WorkOrders = extend(WorkOrdersDesign)(
     page.onLoad = function() {
       pageonLoad && pageonLoad();
       workOL = this.workOrderListview;
-
+      
+      this.headerBar.titleColor = Color.create("#FFFFFF");
       var currentUser = User.currentUser;
       // console.log("current user is " + currentUser.firstname);
       initListview(currentUser.work);

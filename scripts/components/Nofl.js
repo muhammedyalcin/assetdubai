@@ -4,6 +4,7 @@
 const extend = require('js-base/core/extend');
 
 const NoflDesign = require('library/Nofl');
+const Color = require("sf-core/ui/color");
 
 const Nofl = extend(NoflDesign)(
   //constructor

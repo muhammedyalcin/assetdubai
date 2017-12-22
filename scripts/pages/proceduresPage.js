@@ -12,6 +12,8 @@ const User = require("../model/user");
 const Label = require("sf-core/ui/label");
 const TextAlignment = require("sf-core/ui/textalignment");
 const Router = require("sf-core/ui/router");
+const Image = require("sf-core/ui/image");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
 
 const ProceduresPage = extend(ProceduresPageDesign)(
   // Constructor
@@ -72,6 +74,11 @@ var height = 230; //global height
 var globalTop = 0; //global top
 function onLoad(superOnLoad) {
   superOnLoad();
+
+  var backIconItem = new HeaderBarItem();
+  backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  backIconItem.itemColor = Color.create("#D5D4D4");
+  this.headerBar.setLeftItem(backIconItem);
 
   this.initFL = function initFL(data, index, top) {
     console.log("in initFL function");

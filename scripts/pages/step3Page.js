@@ -10,6 +10,9 @@ const TexAlignment = require("sf-core/ui/textalignment");
 const FlexLayout = require("sf-core/ui/flexlayout");
 const Uploadfl = require("../components/Uploadfl");
 const Multimedia = require("sf-core/device/multimedia");
+const Color = require("sf-core/ui/color");
+const Image = require("sf-core/ui/image");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
 
 const Step3Page = extend(Step3PageDesign)(
   // Constructor
@@ -41,12 +44,17 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
 
+  var backIconItem = new HeaderBarItem();
+  backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  backIconItem.itemColor = Color.create("#D5D4D4");
+  this.headerBar.setLeftItem(backIconItem);
+
   page = this;
   var tabIndicator = new Tab();
   var stepPage = this;
-  
+
   console.log("Page is started");
-  
+
   stepPage.tab.summaryButton.onPress = function() {
     tabIndicator.animateRightButton = stepPage;
     //Write chaneable flex here

@@ -11,6 +11,9 @@ const FlexLayout = require("sf-core/ui/flexlayout");
 const Color = require("sf-core/ui/color");
 const nofl = require("components/Yesfl");
 const yesfl = require("components/Nofl");
+const Font = require('sf-core/ui/font');
+const Image = require("sf-core/ui/image");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
 
 const Step2Page = extend(Step2PageDesign)(
   // Constructor
@@ -41,6 +44,11 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  
+  var backIconItem = new HeaderBarItem();
+  backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  backIconItem.itemColor = Color.create("#D5D4D4");
+  this.headerBar.setLeftItem(backIconItem);
 
   var tabIndicator = new Tab();
   var stepPage = this;
@@ -61,6 +69,8 @@ function onLoad(superOnLoad) {
 
   var quesLabel = new Label({
     text: "Acustic Test: Is gas passing?",
+    font: Font.create("Lato", 14, Font.NORMAL),
+    color: Color.create("#4A4A4A"),
     flexGrow: 1,
     textAlignment: TexAlignment.MIDLEFT
   });

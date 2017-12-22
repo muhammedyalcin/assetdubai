@@ -5,6 +5,7 @@ const extend = require('js-base/core/extend');
 
 const DashBoardItemDesign = require('library/DashBoardItem');
 const Color = require("sf-core/ui/color");
+const Font = require('sf-core/ui/font');
 
 const DashBoardItem = extend(DashBoardItemDesign)(
   //constructor
@@ -12,6 +13,8 @@ const DashBoardItem = extend(DashBoardItemDesign)(
     // initalizes super class for this scope
     _super(this, props || DashBoardItemDesign.defaults);
     this.pageName = pageName;
+    // this.dashboardLabel1.font = Font("Lato", 16, Font.NORMAL);
+    // this.dashboardLabel2.font = Font("Lato", 16, Font.NORMAL);
 
     var obj = this;
     var redColor = Color.create("#D0021B");

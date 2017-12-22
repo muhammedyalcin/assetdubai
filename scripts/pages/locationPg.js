@@ -3,6 +3,9 @@
 */
 const extend = require('js-base/core/extend');
 const LocationPgDesign = require('ui/ui_locationPg');
+const Color = require("sf-core/ui/color");
+const Image = require("sf-core/ui/image");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const MapViewfl = require("../components/MapViewfl");
 var mapViewfl = new MapViewfl();
 
@@ -39,6 +42,11 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  
+  var backIconItem = new HeaderBarItem();
+  backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  backIconItem.itemColor = Color.create("#D5D4D4");
+  this.headerBar.setLeftItem(backIconItem);
 }
 
 module && (module.exports = LocationPg);
