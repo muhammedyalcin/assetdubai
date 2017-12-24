@@ -14,6 +14,10 @@ const TextAlignment = require("sf-core/ui/textalignment");
 const Router = require("sf-core/ui/router");
 const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
+const VideoView = require("sf-core/ui/videoview");
+const Tickfl = require("components/Tickfl");
+const HTTP = require("sf-core/net/http");
+var sessionManager = new HTTP();
 
 const ProceduresPage = extend(ProceduresPageDesign)(
   // Constructor
@@ -36,6 +40,9 @@ const ProceduresPage = extend(ProceduresPageDesign)(
 
 function onShow(superOnShow, arr) {
   superOnShow();
+
+  this.headerBar.itemColor = Color.create("#D5D4D4");
+
   if (arr && arr[0] && arr[1]) {
     var procedureData = arr[0].procedure;
     var workData = arr[1];
@@ -75,10 +82,10 @@ var globalTop = 0; //global top
 function onLoad(superOnLoad) {
   superOnLoad();
 
-  var backIconItem = new HeaderBarItem();
-  backIconItem.image = Image.createFromFile("images://backheadericon.png");
-  backIconItem.itemColor = Color.create("#D5D4D4");
-  this.headerBar.setLeftItem(backIconItem);
+  // var backIconItem = new HeaderBarItem();
+  // backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  // backIconItem.itemColor = Color.create("#D5D4D4");
+  // this.headerBar.setLeftItem(backIconItem);
 
   this.initFL = function initFL(data, index, top) {
     console.log("in initFL function");
@@ -101,15 +108,21 @@ function onLoad(superOnLoad) {
       height: 230,
       positionType: FlexLayout.PositionType.ABSOLUTE
     });
-
-    var numberLabel = new Label({
-      text: index + 1,
-      flexGrow: 1,
-      positionType: FlexLayout.PositionType.RELATIVE,
-      textAlignment: TextAlignment.MIDCENTER
-    });
-    checkLine.ballfl.addChild(numberLabel);
-
+//change it according to model data 
+    if (index === 0) {
+      var tickfl = new Tickfl();
+      checkLine.ballfl.addChild(tickfl);
+      checkLine.ballfl.borderColor = Color.GREEN;
+    }
+    else {
+      var numberLabel = new Label({
+        text: index + 1,
+        flexGrow: 1,
+        positionType: FlexLayout.PositionType.RELATIVE,
+        textAlignment: TextAlignment.MIDCENTER
+      });
+      checkLine.ballfl.addChild(numberLabel);
+    }
     // if(image){
     //   var imageUrl = data.imageUrl;
     //   var proImage = Image.createFromFile("images://loading.png");
@@ -128,6 +141,62 @@ function onLoad(superOnLoad) {
       positionType: FlexLayout.PositionType.ABSOLUTE
     });
     procedureRow.descLabel.showScrollBar = true;
+    procedureRow.testLabel.text = data.procedure1;
+    procedureRow.descLabel.text = data.procedure2;
+
+    var videofl = new FlexLayout({
+      id: index,
+      flexGrow: 1,
+      positionType: FlexLayout.PositionType.RELATIVE,
+      flexDirection: FlexLayout.FlexDirection.ROW,
+    });
+
+    var workVideoView = new VideoView({
+      height: 100,
+      width: 100,
+      positionType: FlexLayout.PositionType.RELATIVE,
+      onTouch: function() {
+        workVideoView.play();
+      }
+    });
+    workVideoView.loadURL(data.videoUrl);
+
+    videofl.addChild(workVideoView);
+
+    //placeholder
+    var placeholder = new FlexLayout({
+      flexGrow: 0.1,
+      positionType: FlexLayout.PositionType.RELATIVE,
+      flexDirection: FlexLayout.FlexDirection.ROW,
+    });
+
+    //Image view fl
+    var imagefl = new FlexLayout({
+      id: index,
+      flexGrow: 1,
+      positionType: FlexLayout.PositionType.RELATIVE,
+      flexDirection: FlexLayout.FlexDirection.ROW,
+    });
+    var myImageView = new ImageView();
+    myImageView.width = 100;
+    myImageView.height = 100;
+    myImageView.positionType = FlexLayout.PositionType.RELATIVE;
+
+    var request = sessionManager.requestImage({
+      url: data.imageUrl,
+      onLoad: function(e) {
+        myImageView.image = e.image;
+        console.log("in request onload");
+      },
+      onError: function(e) {
+        alert(e.message);
+      }
+
+    });
+    imagefl.addChild(myImageView);
+    procedureRow.visualContainer.addChild(imagefl);
+    procedureRow.visualContainer.addChild(placeholder);
+    procedureRow.visualContainer.addChild(videofl);
     //procedureRow.descTextArea.nativeObject.setFocusable(false);
     //console.log("comp is "+procedureRow.descTextArea.text);
 

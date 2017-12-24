@@ -1,5 +1,4 @@
-[
-  {
+[{
     "_id": "5a38cb4ab1b429b379895970",
     "firstname": "Bernice",
     "lastname": "Murray",
@@ -8,35 +7,37 @@
     "image": "Null",
     "password": "asd123",
     "username": "smartface2",
-    "work": [
-      {
+    "work": [{
         "workid1": "WO 47922658",
         "workid2": "SDV 21914",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 24352",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+            "procedure": [{
+                "procedure1": "Top up SF6 Gas",
+                "procedure2": "Set-up mass-flow meter and connect to the asset ambiance, start pressure, finish",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Investigate Leak Location",
+                "procedure2": "Complate  visual survey of the asset, using select tlhe leak type.",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Investigate Leak Location",
+                "procedure2": "Complate  visual survey of the asset, using select tlhe leak type.",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
           {
             "worksumid1": "SDV 37142",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -53,8 +54,7 @@
           {
             "worksumid1": "SDV 46353",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -71,8 +71,7 @@
           {
             "worksumid1": "SDV 31101",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -89,8 +88,7 @@
           {
             "worksumid1": "SDV 89495",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -110,12 +108,10 @@
         "workid1": "WO 54846957",
         "workid2": "SDV 46538",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 90265",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -132,8 +128,7 @@
           {
             "worksumid1": "SDV 65170",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -150,8 +145,7 @@
           {
             "worksumid1": "SDV 15442",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -168,8 +162,7 @@
           {
             "worksumid1": "SDV 92156",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -186,8 +179,7 @@
           {
             "worksumid1": "SDV 55475",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -207,12 +199,10 @@
         "workid1": "WO 95325686",
         "workid2": "SDV 60687",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 80308",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -229,8 +219,7 @@
           {
             "worksumid1": "SDV 46512",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -247,8 +236,7 @@
           {
             "worksumid1": "SDV 95402",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -265,8 +253,7 @@
           {
             "worksumid1": "SDV 75055",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -283,8 +270,7 @@
           {
             "worksumid1": "SDV 16191",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -304,12 +290,10 @@
         "workid1": "WO 67449187",
         "workid2": "SDV 56297",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 25831",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -326,8 +310,7 @@
           {
             "worksumid1": "SDV 57892",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -344,8 +327,7 @@
           {
             "worksumid1": "SDV 86368",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -362,8 +344,7 @@
           {
             "worksumid1": "SDV 32103",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -380,8 +361,7 @@
           {
             "worksumid1": "SDV 32289",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -401,12 +381,10 @@
         "workid1": "WO 46503530",
         "workid2": "SDV 29746",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 21071",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -423,8 +401,7 @@
           {
             "worksumid1": "SDV 44902",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -441,8 +418,7 @@
           {
             "worksumid1": "SDV 52768",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -459,8 +435,7 @@
           {
             "worksumid1": "SDV 68561",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -477,8 +452,7 @@
           {
             "worksumid1": "SDV 53314",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -505,17 +479,14 @@
     "image": "Null",
     "password": "asd123",
     "username": "smartface8",
-    "work": [
-      {
+    "work": [{
         "workid1": "WO 84230391",
         "workid2": "SDV 42228",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 51079",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -532,8 +503,7 @@
           {
             "worksumid1": "SDV 80857",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -550,8 +520,7 @@
           {
             "worksumid1": "SDV 61585",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -568,8 +537,7 @@
           {
             "worksumid1": "SDV 61135",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -586,8 +554,7 @@
           {
             "worksumid1": "SDV 80663",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -607,12 +574,10 @@
         "workid1": "WO 32252314",
         "workid2": "SDV 58751",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 79780",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -629,8 +594,7 @@
           {
             "worksumid1": "SDV 46679",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -647,8 +611,7 @@
           {
             "worksumid1": "SDV 21316",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -665,8 +628,7 @@
           {
             "worksumid1": "SDV 17494",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -683,8 +645,7 @@
           {
             "worksumid1": "SDV 98782",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -704,12 +665,10 @@
         "workid1": "WO 30714487",
         "workid2": "SDV 54235",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 41105",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -726,8 +685,7 @@
           {
             "worksumid1": "SDV 38607",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -744,8 +702,7 @@
           {
             "worksumid1": "SDV 66094",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -762,8 +719,7 @@
           {
             "worksumid1": "SDV 56819",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -780,8 +736,7 @@
           {
             "worksumid1": "SDV 53250",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -801,12 +756,10 @@
         "workid1": "WO 21168459",
         "workid2": "SDV 56807",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 76404",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -823,8 +776,7 @@
           {
             "worksumid1": "SDV 46493",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -841,8 +793,7 @@
           {
             "worksumid1": "SDV 59742",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -859,8 +810,7 @@
           {
             "worksumid1": "SDV 56145",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -877,8 +827,7 @@
           {
             "worksumid1": "SDV 90553",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -898,12 +847,10 @@
         "workid1": "WO 38826226",
         "workid2": "SDV 41413",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 68244",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -920,8 +867,7 @@
           {
             "worksumid1": "SDV 36018",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -938,8 +884,7 @@
           {
             "worksumid1": "SDV 11009",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -956,8 +901,7 @@
           {
             "worksumid1": "SDV 65490",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -974,8 +918,7 @@
           {
             "worksumid1": "SDV 48838",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1002,17 +945,14 @@
     "image": "Null",
     "password": "asd123",
     "username": "smartface1",
-    "work": [
-      {
+    "work": [{
         "workid1": "WO 29079697",
         "workid2": "SDV 62016",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 75859",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1029,8 +969,7 @@
           {
             "worksumid1": "SDV 99191",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1047,8 +986,7 @@
           {
             "worksumid1": "SDV 23336",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1065,8 +1003,7 @@
           {
             "worksumid1": "SDV 64247",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1083,8 +1020,7 @@
           {
             "worksumid1": "SDV 11588",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1104,12 +1040,10 @@
         "workid1": "WO 71824367",
         "workid2": "SDV 84845",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 61993",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1126,8 +1060,7 @@
           {
             "worksumid1": "SDV 79440",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1144,8 +1077,7 @@
           {
             "worksumid1": "SDV 29083",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1162,8 +1094,7 @@
           {
             "worksumid1": "SDV 28140",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1180,8 +1111,7 @@
           {
             "worksumid1": "SDV 95653",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1201,12 +1131,10 @@
         "workid1": "WO 83476863",
         "workid2": "SDV 77914",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 10227",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1223,8 +1151,7 @@
           {
             "worksumid1": "SDV 13657",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1241,8 +1168,7 @@
           {
             "worksumid1": "SDV 17668",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1259,8 +1185,7 @@
           {
             "worksumid1": "SDV 32428",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1277,8 +1202,7 @@
           {
             "worksumid1": "SDV 84462",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1298,12 +1222,10 @@
         "workid1": "WO 12449763",
         "workid2": "SDV 30160",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 39304",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1320,8 +1242,7 @@
           {
             "worksumid1": "SDV 49059",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1338,8 +1259,7 @@
           {
             "worksumid1": "SDV 36648",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1356,8 +1276,7 @@
           {
             "worksumid1": "SDV 72925",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1374,8 +1293,7 @@
           {
             "worksumid1": "SDV 45266",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1395,12 +1313,10 @@
         "workid1": "WO 38843849",
         "workid2": "SDV 53627",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 95766",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1417,8 +1333,7 @@
           {
             "worksumid1": "SDV 75860",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1435,8 +1350,7 @@
           {
             "worksumid1": "SDV 15692",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1453,8 +1367,7 @@
           {
             "worksumid1": "SDV 82841",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1471,8 +1384,7 @@
           {
             "worksumid1": "SDV 11443",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1499,17 +1411,14 @@
     "image": "Null",
     "password": "asd123",
     "username": "smartface4",
-    "work": [
-      {
+    "work": [{
         "workid1": "WO 96373940",
         "workid2": "SDV 29592",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 42744",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1526,8 +1435,7 @@
           {
             "worksumid1": "SDV 66037",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1544,8 +1452,7 @@
           {
             "worksumid1": "SDV 11757",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1562,8 +1469,7 @@
           {
             "worksumid1": "SDV 71757",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1580,8 +1486,7 @@
           {
             "worksumid1": "SDV 74308",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1601,12 +1506,10 @@
         "workid1": "WO 56667631",
         "workid2": "SDV 68594",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 21799",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1623,8 +1526,7 @@
           {
             "worksumid1": "SDV 98652",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1641,8 +1543,7 @@
           {
             "worksumid1": "SDV 91933",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1659,8 +1560,7 @@
           {
             "worksumid1": "SDV 59323",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1677,8 +1577,7 @@
           {
             "worksumid1": "SDV 13063",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1698,12 +1597,10 @@
         "workid1": "WO 61082713",
         "workid2": "SDV 72191",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 84430",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1720,8 +1617,7 @@
           {
             "worksumid1": "SDV 43607",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1738,8 +1634,7 @@
           {
             "worksumid1": "SDV 94116",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1756,8 +1651,7 @@
           {
             "worksumid1": "SDV 45301",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1774,8 +1668,7 @@
           {
             "worksumid1": "SDV 90120",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1795,12 +1688,10 @@
         "workid1": "WO 50870404",
         "workid2": "SDV 30831",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 21578",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1817,8 +1708,7 @@
           {
             "worksumid1": "SDV 62718",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1835,8 +1725,7 @@
           {
             "worksumid1": "SDV 50538",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1853,8 +1742,7 @@
           {
             "worksumid1": "SDV 57211",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1871,8 +1759,7 @@
           {
             "worksumid1": "SDV 79634",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1892,12 +1779,10 @@
         "workid1": "WO 57710117",
         "workid2": "SDV 49264",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 55478",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1914,8 +1799,7 @@
           {
             "worksumid1": "SDV 61609",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1932,8 +1816,7 @@
           {
             "worksumid1": "SDV 29987",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1950,8 +1833,7 @@
           {
             "worksumid1": "SDV 88473",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1968,8 +1850,7 @@
           {
             "worksumid1": "SDV 70934",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -1996,17 +1877,14 @@
     "image": "Null",
     "password": "asd123",
     "username": "smartface4",
-    "work": [
-      {
+    "work": [{
         "workid1": "WO 80824075",
         "workid2": "SDV 87828",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 27971",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2023,8 +1901,7 @@
           {
             "worksumid1": "SDV 14924",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2041,8 +1918,7 @@
           {
             "worksumid1": "SDV 32373",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2059,8 +1935,7 @@
           {
             "worksumid1": "SDV 76214",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2077,8 +1952,7 @@
           {
             "worksumid1": "SDV 21752",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2098,12 +1972,10 @@
         "workid1": "WO 53062103",
         "workid2": "SDV 21695",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 22528",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2120,8 +1992,7 @@
           {
             "worksumid1": "SDV 65437",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2138,8 +2009,7 @@
           {
             "worksumid1": "SDV 16346",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2156,8 +2026,7 @@
           {
             "worksumid1": "SDV 80660",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2174,8 +2043,7 @@
           {
             "worksumid1": "SDV 90029",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2195,12 +2063,10 @@
         "workid1": "WO 20237047",
         "workid2": "SDV 29805",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 56372",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2217,8 +2083,7 @@
           {
             "worksumid1": "SDV 88597",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2235,8 +2100,7 @@
           {
             "worksumid1": "SDV 27520",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2253,8 +2117,7 @@
           {
             "worksumid1": "SDV 74986",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2271,8 +2134,7 @@
           {
             "worksumid1": "SDV 83692",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2292,12 +2154,10 @@
         "workid1": "WO 47762475",
         "workid2": "SDV 43113",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 63490",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2314,8 +2174,7 @@
           {
             "worksumid1": "SDV 29688",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2332,8 +2191,7 @@
           {
             "worksumid1": "SDV 63858",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2350,8 +2208,7 @@
           {
             "worksumid1": "SDV 80842",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2368,8 +2225,7 @@
           {
             "worksumid1": "SDV 29978",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2389,12 +2245,10 @@
         "workid1": "WO 69108687",
         "workid2": "SDV 99837",
         "workid3": "Test Passing",
-        "worksummary": [
-          {
+        "worksummary": [{
             "worksumid1": "SDV 94915",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2411,8 +2265,7 @@
           {
             "worksumid1": "SDV 65794",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2429,8 +2282,7 @@
           {
             "worksumid1": "SDV 28372",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2447,8 +2299,7 @@
           {
             "worksumid1": "SDV 91652",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },
@@ -2465,8 +2316,7 @@
           {
             "worksumid1": "SDV 90828",
             "worksumid2": "Test Passing",
-            "procedure": [
-              {
+            "procedure": [{
                 "procedure1": "procedure1 Anything",
                 "procedure2": "procedure2 Anything"
               },

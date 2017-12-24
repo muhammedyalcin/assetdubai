@@ -22,24 +22,30 @@ const Page_ = extend(workOrderProcPgDesign)(
 
         //In general contactContainer doesn't need button.
         this.contactContainer.buttonfl.flexGrow = 0;
+        this.contactContainer.buttonfl.visible = false;
 
         mapViewfl.assignLocation = this;
 
-        var backIconItem = new HeaderBarItem();
-        var backIcon = Image.createFromFile("images://backheadericon.png");
-        var backIconImageViwe =  new ImageView({
-           image :backIcon,
-           height:10,
-           width: 15,
-        });
-        backIconItem.image = backIconImageViwe.image;
-        backIconItem.itemColor = Color.create("#D5D4D4");
-        this.headerBar.setLeftItem(backIconItem);
+        // var backIconItem = new HeaderBarItem();
+        // var backIcon = Image.createFromFile("images://backheadericon.png");
+        // var backIconImageViwe =  new ImageView({
+        //   image :backIcon,
+        //   height:10,
+        //   width: 15,
+        //   onPress: function() {
+        //       Router.goBack();
+        //   }
+        // });
+        // backIconItem.image = backIconImageViwe.image;
+        // backIconItem.itemColor = Color.create("#D5D4D4");
+        // this.headerBar.setLeftItem(backIconItem);
     });
 
 // Page.onShow -> This event is called when a page appears on the screen (everytime).
 function onShow(superOnShow, arr) {
     superOnShow();
+    
+    this.headerBar.itemColor = Color.create("#D5D4D4");
 
     this.startProButton.onPress = function() {
         Router.go("proceduresPage", arr);

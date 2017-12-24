@@ -49,6 +49,7 @@ const Step1Page = extend(Step1PageDesign)(
  */
 function onShow(superOnShow) {
   superOnShow();
+  this.headerBar.itemColor = Color.create("#D5D4D4");
 }
 
 /**

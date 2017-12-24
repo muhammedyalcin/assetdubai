@@ -8,6 +8,8 @@ const Color = require("sf-core/ui/color");
 const Image = require("sf-core/ui/image");
 const Location = require('sf-core/device/location');
 const Timer = require("sf-core/global/timer");
+const MapView = require('sf-core/ui/mapview');
+const location = require("sf-extension-utils").location;
 
 const MapViewfl = extend(MapViewflDesign)(
   //constructor
@@ -30,11 +32,13 @@ const MapViewfl = extend(MapViewflDesign)(
       Location.start();
       Location.onLocationChanged = function(event) {
         console.log("in location changed function");
-        
+
         value.mapViewfl.workMapView.centerLocation = {
           latitude: event.latitude,
           longitude: event.longitude
         }
+        setWorkPlacePins(value,[1],event);
+        // console.log("In centerlocation" +value.mapViewfl.workMapView.centerLocation.longitude );
         console.log("Location latitude: " + event.latitude + "  Longitude: " + event.longitude);
       };
 
@@ -47,7 +51,21 @@ const MapViewfl = extend(MapViewflDesign)(
 
 
     }
-
+//for now just set current location to pin. 
+//otherwise sets json datas
+    function setWorkPlacePins(that, arr,event) {
+      //creates based on json data
+      for (var i in arr) {
+        var workPin = new MapView.Pin({
+          location: {
+            latitude: event.latitude, //set according to json data
+            longitude: event.longitude //set according to json data
+          },
+          title: 'Ataturk Airport' //set according to json data
+        });
+        that.mapViewfl.workMapView.addPin(workPin);
+      }
+    }
 
   }
 

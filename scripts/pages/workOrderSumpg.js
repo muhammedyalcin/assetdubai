@@ -34,6 +34,7 @@ var workData;
 
 function onShow(superOnShow, jsonData) {
   superOnShow();
+  this.headerBar.itemColor = Color.create("#D5D4D4");
   //var currentUser = User.currentUser;
   //console.log("currentUser workSummary is " + currentUser.work[index].worksummary);
   // console.log("Work ID is " + index);

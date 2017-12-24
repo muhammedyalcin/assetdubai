@@ -35,6 +35,7 @@ const Step2Page = extend(Step2PageDesign)(
  */
 function onShow(superOnShow) {
   superOnShow();
+  this.headerBar.itemColor = Color.create("#D5D4D4");
 }
 
 /**
@@ -45,10 +46,10 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   
-  var backIconItem = new HeaderBarItem();
-  backIconItem.image = Image.createFromFile("images://backheadericon.png");
-  backIconItem.itemColor = Color.create("#D5D4D4");
-  this.headerBar.setLeftItem(backIconItem);
+  // var backIconItem = new HeaderBarItem();
+  // backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  // backIconItem.itemColor = Color.create("#D5D4D4");
+  // this.headerBar.setLeftItem(backIconItem);
 
   var tabIndicator = new Tab();
   var stepPage = this;

@@ -6,6 +6,7 @@ const WorkOrdersDesign = require('ui/ui_workOrders');
 const User = require("../model/user");
 const WorkOrderItem = require("../components/WorkRow");
 var workOrder = new WorkOrderItem();
+const ListView = require("sf-core/ui/listview");
 const ListViewItem = require("sf-core/ui/listviewitem");
 const Router = require("sf-core/ui/router");
 const Color = require("sf-core/ui/color");
@@ -25,7 +26,7 @@ const WorkOrders = extend(WorkOrdersDesign)(
     page.onLoad = function() {
       pageonLoad && pageonLoad();
       workOL = this.workOrderListview;
-      
+
       this.headerBar.titleColor = Color.create("#FFFFFF");
       var currentUser = User.currentUser;
       // console.log("current user is " + currentUser.firstname);
@@ -33,8 +34,7 @@ const WorkOrders = extend(WorkOrdersDesign)(
 
       //Assign map image and remove the listview when press
       workOrder.assignImgandRmv = this;
-      //sets location
-      mapViewfl.assignLocation=this;
+
 
 
     }
@@ -76,11 +76,28 @@ const WorkOrders = extend(WorkOrdersDesign)(
         Router.go("workOrderSumpg", jsonData[index]);
       };
 
+      workOL.ios.rightToLeftSwipeEnabled = true;
+
+      workOL.ios.onRowSwiped = function(direction, expansionSettings) {
+        if (direction == ListView.iOS.SwipeDirection.RIGHTTOLEFT) {
+          //Expansion button index. Default value 0
+          expansionSettings.buttonIndex = -1;
+
+          var archiveSwipeItem = ListView.iOS.createSwipeItem("", Color.RED, 30, function(e) {
+          });
+
+          return [archiveSwipeItem];
+        }
+      }
+
       /* dashboardListview.onPullRefresh = function() {
         dashboardListview.itemCount = dashData.length;
         dashboardListview.refreshData();
         dashboardListview.stopRefresh();
       };*/
+
+      workOL.refreshEnabled = false;
+
       workOL.itemCount = jsonData.length;
       workOL.refreshData();
       workOL.stopRefresh();
@@ -97,6 +114,10 @@ const WorkOrders = extend(WorkOrdersDesign)(
  */
 function onShow(superOnShow) {
   superOnShow();
+  this.headerBar.itemColor = Color.create("#D5D4D4");
+
+  //sets location
+  mapViewfl.assignLocation = this;
 }
 
 

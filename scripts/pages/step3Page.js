@@ -34,6 +34,7 @@ const Step3Page = extend(Step3PageDesign)(
  */
 function onShow(superOnShow) {
   superOnShow();
+  this.headerBar.itemColor = Color.create("#D5D4D4");
 }
 
 /**
@@ -44,10 +45,10 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
 
-  var backIconItem = new HeaderBarItem();
-  backIconItem.image = Image.createFromFile("images://backheadericon.png");
-  backIconItem.itemColor = Color.create("#D5D4D4");
-  this.headerBar.setLeftItem(backIconItem);
+  // var backIconItem = new HeaderBarItem();
+  // backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  // backIconItem.itemColor = Color.create("#D5D4D4");
+  // this.headerBar.setLeftItem(backIconItem);
 
   page = this;
   var tabIndicator = new Tab();

@@ -8,6 +8,8 @@ const Color = require("sf-core/ui/color");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const Image = require("sf-core/ui/image");
 const FlexLayout = require("sf-core/ui/");
+const MapViewfl = require("../components/MapViewfl");
+var mapViewfl = new MapViewfl();
 
 
 const WorkRow = extend(WorkRowDesign)(
@@ -28,7 +30,7 @@ const WorkRow = extend(WorkRowDesign)(
       }
     });
 
-   function setLeftItem(value) {
+    function setLeftItem(value) {
 
       //value.headerBar.leftItemEnabled = true;
       var workOrdersItem = new HeaderBarItem({
@@ -37,13 +39,14 @@ const WorkRow = extend(WorkRowDesign)(
         onPress: function() {
           value.workOrderListview.visible = false;
           value.mapViewfl.visible = true;
-          
+          //sets location
+          mapViewfl.assignLocation = value;
           resetLeftItem(value);
         }
       });
       value.headerBar.setItems([workOrdersItem]);
     }
-    
+
     function resetLeftItem(value) {
       //value.headerBar.leftItemEnabled = true
 
@@ -51,9 +54,9 @@ const WorkRow = extend(WorkRowDesign)(
         image: Image.createFromFile("images://listsicon.png"),
         color: Color.WHITE,
         onPress: function() {
-        value.mapViewfl.visible = false;
-        value.workOrderListview.visible = true;
-        setLeftItem(value);
+          value.mapViewfl.visible = false;
+          value.workOrderListview.visible = true;
+          setLeftItem(value);
         }
       });
       value.headerBar.setItems([mapViewItem]);
@@ -61,6 +64,6 @@ const WorkRow = extend(WorkRowDesign)(
   }
 
 );
-this.setLeftItem = function setLeftItem(value){};
+this.setLeftItem = function setLeftItem(value) {};
 
 module && (module.exports = WorkRow);

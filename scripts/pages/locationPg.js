@@ -31,6 +31,8 @@ const LocationPg = extend(LocationPgDesign)(
 function onShow(superOnShow) {
   superOnShow();
   
+  this.headerBar.itemColor = Color.create("#D5D4D4");
+  
   //sets current location
   mapViewfl.assignLocation=this;
 }
@@ -43,10 +45,10 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   
-  var backIconItem = new HeaderBarItem();
-  backIconItem.image = Image.createFromFile("images://backheadericon.png");
-  backIconItem.itemColor = Color.create("#D5D4D4");
-  this.headerBar.setLeftItem(backIconItem);
+  // var backIconItem = new HeaderBarItem();
+  // backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  // backIconItem.itemColor = Color.create("#D5D4D4");
+  // this.headerBar.setLeftItem(backIconItem);
 }
 
 module && (module.exports = LocationPg);
