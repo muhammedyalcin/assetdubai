@@ -4,6 +4,7 @@
 const extend = require('js-base/core/extend');
 const ConfirmPgDesign = require('ui/ui_confirmPg');
 const Router = require("sf-core/ui/router");
+const Color = require("sf-core/ui/color");
 
 const ConfirmPg = extend(ConfirmPgDesign)(
   // Constructor
@@ -25,6 +26,7 @@ const ConfirmPg = extend(ConfirmPgDesign)(
  */
 function onShow(superOnShow) {
   superOnShow();
+  this.headerBar.itemColor = Color.create("#D5D4D4");
 }
 
 /**

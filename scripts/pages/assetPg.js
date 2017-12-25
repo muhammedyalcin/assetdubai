@@ -5,6 +5,7 @@ const extend = require('js-base/core/extend');
 const AssetPgDesign = require('ui/ui_assetPg');
 const ListViewItem = require("sf-core/ui/listviewitem");
 const Router = require("sf-core/ui/router");
+const Color = require("sf-core/ui/color");
 const AssetRow = require("components/AssetRow");
 var assetRow = new AssetRow();
 
@@ -30,7 +31,7 @@ const AssetPg = extend(AssetPgDesign)(
 var assetListview;
 function onShow(superOnShow) {
   superOnShow();
-  
+  this.headerBar.itemColor = Color.create("#D5D4D4");
   var jsonData =assetRow.getAssetTestData;
    this.initlist(jsonData);
 }

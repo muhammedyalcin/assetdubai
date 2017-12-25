@@ -60,10 +60,10 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
 
-  var backIconItem = new HeaderBarItem();
-  backIconItem.image = Image.createFromFile("images://backheadericon.png");
-  backIconItem.itemColor = Color.create("#D5D4D4");
-  this.headerBar.setLeftItem(backIconItem);
+  // var backIconItem = new HeaderBarItem();
+  // backIconItem.image = Image.createFromFile("images://backheadericon.png");
+  // backIconItem.itemColor = Color.create("#D5D4D4");
+  // this.headerBar.setLeftItem(backIconItem);
 
   //set action button
   this.completefl.completeButton.onPress = function() {

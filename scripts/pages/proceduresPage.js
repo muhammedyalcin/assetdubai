@@ -16,6 +16,8 @@ const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const VideoView = require("sf-core/ui/videoview");
 const Tickfl = require("components/Tickfl");
+const Timer = require("sf-core/global/timer");
+const Button = require("sf-core/ui/button");
 const HTTP = require("sf-core/net/http");
 var sessionManager = new HTTP();
 
@@ -24,7 +26,7 @@ const ProceduresPage = extend(ProceduresPageDesign)(
   function(_super) {
     // Initalizes super class for this page scope
     _super(this);
-    // overrides super.onShow method
+    // overrides super. method
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
@@ -40,36 +42,34 @@ const ProceduresPage = extend(ProceduresPageDesign)(
 
 function onShow(superOnShow, arr) {
   superOnShow();
+  var page = this;
 
   this.headerBar.itemColor = Color.create("#D5D4D4");
 
-  if (arr && arr[0] && arr[1]) {
-    var procedureData = arr[0].procedure;
-    var workData = arr[1];
+  // if (arr && arr[0] && arr[1]) {
+  var workData = User.currentWork;
+  // var procedureData = arr[0].procedure;
+  // var workData = arr[1];
 
-    console.log("work data is " + workData.workid1);
-    //Sets the selected workid's
-    this.workid1.text = workData.workid1;
-    this.workid2.text = workData.workid2;
-    this.workid3.text = workData.workid3;
+  console.log("work data is " + workData.workid1);
+  //Sets the selected workid's
+  this.workid1.text = workData.workid1;
+  this.workid2.text = workData.workid2;
+  this.workid3.text = workData.workid3;
+  
+  //set action button
+  this.completefl.completeButton.onPress = function() {
+    Router.go("step1Page");
+  }.bind(this);
 
-    //Sets scrollview 
-    this.procedureScroll.layout.positionType = FlexLayout.PositionType.ABSOLUTE;
-    this.procedureScroll.layout.height = 230 * procedureData.length;
-    this.procedureScroll.layout.left = 0;
-    this.procedureScroll.layout.right = 0;
-    this.procedureScroll.layout.top = 0;
-
-    //set action button
-    this.completefl.completeButton.onPress = function() {
-      Router.go("step1Page");
-    }.bind(this);
-
-    for (var i = 0; procedureData.length > i; i++) {
-      this.initFL(procedureData[i], i, globalTop);
-      globalTop += height;
-    }
-  }
+  console.log("In init list still");
+  // for (var i = 0; procedureData.length > i; i++) {
+  //   this.initFL(procedureData[i], i, globalTop);
+  //   globalTop += height;
+  // }
+  //after completion of for loop, set this 0 
+  globalTop = 20
+  // }
 }
 
 /**
@@ -77,10 +77,32 @@ function onShow(superOnShow, arr) {
  * This event is called once when page is created.
  * @param {function} superOnLoad super onLoad function
  */
+var procedureData;
 var height = 230; //global height
-var globalTop = 0; //global top
+var globalTop = 20; //global top
 function onLoad(superOnLoad) {
   superOnLoad();
+    
+  var page = this;
+  procedureData = User.currentWorkSummary.procedure;
+
+  //Sets scrollview 
+  this.procedureScroll.layout.positionType = FlexLayout.PositionType.ABSOLUTE;
+  this.procedureScroll.layout.height = 230 * procedureData.length;
+  this.procedureScroll.layout.left = 0;
+  this.procedureScroll.layout.right = 0;
+  this.procedureScroll.layout.top = 0;
+  
+  Timer.setTimeout({
+    delay: 800,
+    task: function() {
+      for (var i = 0; procedureData.length > i; i++) {
+        page.initFL(procedureData[i], i, globalTop);
+        globalTop += height;
+      }
+      page.procedureScroll.layout.applyLayout();
+    }
+  });
 
   // var backIconItem = new HeaderBarItem();
   // backIconItem.image = Image.createFromFile("images://backheadericon.png");
@@ -88,13 +110,13 @@ function onLoad(superOnLoad) {
   // this.headerBar.setLeftItem(backIconItem);
 
   this.initFL = function initFL(data, index, top) {
-    console.log("in initFL function");
-    console.log("top value is" + top);
+    console.log("top is " + top);
+
     var profl = new FlexLayout({
       id: index,
       top: top,
       left: 0,
-      right: 0,
+      right: 15,
       height: height,
       positionType: FlexLayout.PositionType.ABSOLUTE,
       flexDirection: FlexLayout.FlexDirection.ROW,
@@ -108,7 +130,7 @@ function onLoad(superOnLoad) {
       height: 230,
       positionType: FlexLayout.PositionType.ABSOLUTE
     });
-//change it according to model data 
+    //change it according to model data 
     if (index === 0) {
       var tickfl = new Tickfl();
       checkLine.ballfl.addChild(tickfl);
@@ -152,16 +174,30 @@ function onLoad(superOnLoad) {
     });
 
     var workVideoView = new VideoView({
+      id: index,
       height: 100,
       width: 100,
       positionType: FlexLayout.PositionType.RELATIVE,
-      onTouch: function() {
+      onReady: function() {
         workVideoView.play();
       }
     });
-    workVideoView.loadURL(data.videoUrl);
+
+    var playButton = new Button({
+      height: 100,
+      width: 100,
+      positionType: FlexLayout.PositionType.ABSOLUTE,
+      backgroundColor: Color.create(0, 0, 0, 255),
+      onPress: function() {
+        console.log("url is " + data.videoUrl);
+        workVideoView.loadURL(data.videoUrl);
+        playButton.visible = false;
+      }
+    });
+    // workVideoView.loadURL(data.videoUrl);
 
     videofl.addChild(workVideoView);
+    videofl.addChild(playButton);
 
     //placeholder
     var placeholder = new FlexLayout({
@@ -186,7 +222,6 @@ function onLoad(superOnLoad) {
       url: data.imageUrl,
       onLoad: function(e) {
         myImageView.image = e.image;
-        console.log("in request onload");
       },
       onError: function(e) {
         alert(e.message);

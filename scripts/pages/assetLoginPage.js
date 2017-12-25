@@ -14,13 +14,13 @@ const AssetLoginPage = extend(AssetLoginPageDesign)(
   function(_super) {
     // Initalizes super class for this page scope
     _super(this);
-       // overrides super.onLoad method
+    // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad);
     // overrides super.onShow method
     this.onShow = onShow.bind(this, this.onShow);
-   
-   
- 
+
+
+
 
   });
 
@@ -31,14 +31,11 @@ const AssetLoginPage = extend(AssetLoginPageDesign)(
  * @param {Object} parameters passed from Router.go function
  */
 
- 
+
 function onShow(superOnShow) {
   superOnShow();
-  const page= this;
-  
-  this.userTextBox.clearButtonEnabled = true;
-  this.passwordTextBox.clearButtonEnabled = true;
-  
+  const page = this;
+
   fingerprint.init({
     userNameTextBox: this.userTextBox,
     passwordTextBox: this.passwordTextBox,
@@ -57,9 +54,9 @@ function onShow(superOnShow) {
         if (err) {
           return;
         }
-        
+
         User.currentUser = userData;
-        console.log("userData is "+User.currentUser);
+        console.log("userData is " + User.currentUser);
         Router.sliderDrawer.setCurrentData();
         fingerprintResult && fingerprintResult.success();
         loginSucceed();
@@ -77,12 +74,15 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   const page = this;
+
+  this.userTextBox.ios.clearButtonEnabled = true;
+  this.passwordTextBox.ios.clearButtonEnabled = true;
   
-  const signinAction = signin.bind(this.loginButton,this);
+  const signinAction = signin.bind(this.loginButton, this);
   page.loginButton.onPress = signinAction;
-  
-  page.dubaiImage.onTouch = function(){
-    page.userTextBox.text ="smartface";
+
+  page.dubaiImage.onTouch = function() {
+    page.userTextBox.text = "smartface";
     page.passwordTextBox.text = "asd123";
   }.bind(this);
 }
@@ -99,7 +99,7 @@ function signin(page) {
 function doLogin(username, pwd, callback) {
   lgn.login(username, pwd, function(err, userdata) {
     if (err) {
-      alert("Invalid login");
+      alert("Invalid Credential");
     }
     callback && callback(err, userdata);
   });

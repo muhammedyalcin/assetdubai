@@ -34,8 +34,8 @@ const MapViewfl = extend(MapViewflDesign)(
         console.log("in location changed function");
 
         value.mapViewfl.workMapView.centerLocation = {
-          latitude: event.latitude,
-          longitude: event.longitude
+          latitude: parseFloat(event.latitude),
+          longitude: parseFloat(event.longitude)
         }
         setWorkPlacePins(value,[1],event);
         // console.log("In centerlocation" +value.mapViewfl.workMapView.centerLocation.longitude );
@@ -43,7 +43,7 @@ const MapViewfl = extend(MapViewflDesign)(
       };
 
       Timer.setTimeout({
-        delay: 30000,
+        delay: 5000,
         task: function() {
           Location.stop()
         }
@@ -58,8 +58,8 @@ const MapViewfl = extend(MapViewflDesign)(
       for (var i in arr) {
         var workPin = new MapView.Pin({
           location: {
-            latitude: event.latitude, //set according to json data
-            longitude: event.longitude //set according to json data
+            latitude: parseFloat(event.latitude), //set according to json data
+            longitude: parseFloat(event.longitude) //set according to json data
           },
           title: 'Ataturk Airport' //set according to json data
         });

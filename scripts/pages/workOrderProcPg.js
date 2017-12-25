@@ -20,12 +20,6 @@ const Page_ = extend(workOrderProcPgDesign)(
         // overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-        //In general contactContainer doesn't need button.
-        this.contactContainer.buttonfl.flexGrow = 0;
-        this.contactContainer.buttonfl.visible = false;
-
-        mapViewfl.assignLocation = this;
-
         // var backIconItem = new HeaderBarItem();
         // var backIcon = Image.createFromFile("images://backheadericon.png");
         // var backIconImageViwe =  new ImageView({
@@ -44,8 +38,25 @@ const Page_ = extend(workOrderProcPgDesign)(
 // Page.onShow -> This event is called when a page appears on the screen (everytime).
 function onShow(superOnShow, arr) {
     superOnShow();
-    
+
     this.headerBar.itemColor = Color.create("#D5D4D4");
+    
+    //assign the location
+    mapViewfl.assignLocation = this;
+
+    //set some defaults values
+    // this.contactContainer.contactfl.label2 = "EQUIPMENT REQUIRED";
+
+    this.contactContainer.addressLabel1.text = "PROCEDURE";
+    this.contactContainer.addressLabel2.text = "Ambience";
+
+    //
+    this.contactContainer.phoneLabel1.text = "Ambience";
+    this.contactContainer.phoneLabel2.text = "PROCEDURE";
+    this.contactContainer.imgfl.visible = false;
+
+    this.contactContainer.contactLabel1.text = "EQUIPMENT REQUIRED";
+
 
     this.startProButton.onPress = function() {
         Router.go("proceduresPage", arr);
@@ -55,9 +66,9 @@ function onShow(superOnShow, arr) {
 // Page.onLoad -> This event is called once when page is created.
 function onLoad(superOnLoad) {
     superOnLoad();
-
-
-
+ //In general contactContainer doesn't need button.
+    this.contactContainer.buttonfl.flexGrow = 0;
+    this.contactContainer.buttonfl.visible = false;
 }
 
 module && (module.exports = Page_);

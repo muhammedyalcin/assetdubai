@@ -1,5 +1,8 @@
 const userdata = {
-    currentUser: null
+    currentUser: null,
+    currentWork: null,
+    currentWorkSummary: null,
+    currentProcedure: null,
 };
 
 module && (module.exports = userdata);
