@@ -8,6 +8,7 @@ const ImageView = require("sf-core/ui/imageview");
 const MapViewfl = require("../components/MapViewfl");
 var mapViewfl = new MapViewfl();
 
+
 const workOrderProcPgDesign = require("ui/ui_workOrderProcPg");
 
 const Page_ = extend(workOrderProcPgDesign)(
@@ -40,6 +41,7 @@ function onShow(superOnShow, arr) {
     superOnShow();
 
     this.headerBar.itemColor = Color.create("#D5D4D4");
+    mapViewfl.assignLocation =this;
 
     //assign the location
     mapViewfl.assignLocation = this;

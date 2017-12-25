@@ -8,6 +8,8 @@ const Lgn = require("../lib/lgn");
 var lgn = new Lgn();
 const fingerprint = require("sf-extension-utils").fingerprint;
 const User = require("../model/user");
+const MapViewfl = require("../components/MapViewfl");
+var mapViewfl = new MapViewfl();
 
 const AssetLoginPage = extend(AssetLoginPageDesign)(
   // Constructor

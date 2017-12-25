@@ -14,6 +14,7 @@ const Timer = require("sf-core/global/timer");
 const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const ImageView = require("sf-core/ui/imageview");
+const MapView = require('sf-core/ui/mapview');
 const MapViewfl = require("../components/MapViewfl");
 var mapViewfl = new MapViewfl();
 
@@ -24,6 +25,7 @@ const WorkOrders = extend(WorkOrdersDesign)(
     _super(this);
     var page = this;
     var pageonLoad = page.onLoad;
+    
     // overrides super.onShow method
     page.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
@@ -40,22 +42,21 @@ const WorkOrders = extend(WorkOrdersDesign)(
       //   }
       // });
       // initListview(currentUser.work);
-
-     HeaderBarItem.setCustomHeaderBarItem(this);
+      HeaderBarItem.setCustomHeaderBarItem(this);
     }
   });
-  
-  HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderBarItem(that){
-     var backIconItem = new HeaderBarItem();
-      var backIcon = Image.createFromFile("images://backheadericon.png");
-      backIconItem.image = backIcon;
-      backIconItem.onPress = function() {
-        console.log("back icon is on press");
-        Router.goBack();
-      }.bind(that);
-      backIconItem.itemColor = Color.create("#D5D4D4");
-      that.headerBar.setLeftItem(backIconItem);
-  }
+
+HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderBarItem(that) {
+  var backIconItem = new HeaderBarItem();
+  var backIcon = Image.createFromFile("images://backheadericon.png");
+  backIconItem.image = backIcon;
+  backIconItem.onPress = function() {
+    console.log("back icon is on press");
+    Router.goBack();
+  }.bind(that);
+  backIconItem.itemColor = Color.create("#D5D4D4");
+  that.headerBar.setLeftItem(backIconItem);
+}
 
 /**
  * @event onShow
@@ -68,6 +69,8 @@ function onShow(superOnShow) {
   this.headerBar.itemColor = Color.create("#D5D4D4");
 
   workOL = this.workOrderListview;
+  console.log("centerLocation in work order page is "+  this.mapViewfl.workMapView.centerLocation.latitude + " &&& " + this.mapViewfl.workMapView.centerLocation.longitude);
+ 
 
   var currentUser = User.currentUser;
   // console.log("current user is " + currentUser.firstname);
@@ -79,8 +82,7 @@ function onShow(superOnShow) {
     }
   });
 
-  // //sets location
-  // mapViewfl.assignLocation = this;
+
 
 
   //Assign map image and remove the listview when press

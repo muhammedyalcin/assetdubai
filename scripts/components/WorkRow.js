@@ -40,7 +40,7 @@ const WorkRow = extend(WorkRowDesign)(
           value.workOrderListview.visible = false;
           value.mapViewfl.visible = true;
           //sets location
-          mapViewfl.assignLocation = value;
+           mapViewfl.assignLocation = value;
           resetLeftItem(value);
         }
       });
