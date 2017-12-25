@@ -22,20 +22,19 @@ stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 
 
 // Define routes and go to initial page of application
-Router.add("page1", require("./pages/page1"));
-Router.add("page2", require("./pages/page2"));
-Router.add("step1Page", require("./pages/step1Page"));
-Router.add("assetLoginPage", require("./pages/assetLoginPage"));
-Router.add("dashboardPg", require("./pages/dashboardPg"));
-Router.add("proceduresPage", require("./pages/proceduresPage"));
-Router.add("step2Page", require("./pages/step2Page"));
-Router.add("step3Page", require("./pages/step3Page"));
-Router.add("workOrders", require("./pages/workOrders"));
-Router.add("workOrderSumpg", require("./pages/workOrderSumpg"));
-Router.add("confirmPg", require("./pages/confirmPg"));
-Router.add("workOrderProcPg", require("./pages/workOrderProcPg"));
-Router.add("locationPg", require("./pages/locationPg"));
-Router.add("assetPg", require("./pages/assetPg"));
+
+Router.add("assetLoginPage", require("./pages/assetLoginPage"),true);
+Router.add("dashboardPg", require("./pages/dashboardPg"),true);
+Router.add("proceduresPage", require("./pages/proceduresPage"),true);
+Router.add("step1Page", require("./pages/step1Page"),true);
+Router.add("step2Page", require("./pages/step2Page"),true);
+Router.add("step3Page", require("./pages/step3Page"),true);
+Router.add("workOrders", require("./pages/workOrders"),true);
+Router.add("workOrderSumpg", require("./pages/workOrderSumpg"),true);
+Router.add("confirmPg", require("./pages/confirmPg"),true);
+Router.add("workOrderProcPg", require("./pages/workOrderProcPg"),true);
+Router.add("locationPg", require("./pages/locationPg"),true);
+Router.add("assetPg", require("./pages/assetPg"),true);
 Router.go("assetLoginPage");
 
 

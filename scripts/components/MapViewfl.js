@@ -19,6 +19,26 @@ const MapViewfl = extend(MapViewflDesign)(
     this.pageName = pageName;
 
     var mapViewfl = this;
+    
+    Location.start();
+      Location.onLocationChanged = function(event) {
+        console.log("in location changed function");
+
+        mapViewfl.workMapView.centerLocation = {
+          latitude: parseFloat(event.latitude),
+          longitude: parseFloat(event.longitude)
+        }
+        setWorkPlacePins(mapViewfl,[1],event);
+        // console.log("In centerlocation" +value.mapViewfl.workMapView.centerLocation.longitude );
+        console.log("Location latitude: " + event.latitude + "  Longitude: " + event.longitude);
+      };
+
+      Timer.setTimeout({
+        delay: 1000,
+        task: function() {
+          Location.stop()
+        }
+      });
 
     Object.defineProperty(mapViewfl, 'assignLocation', {
       set: function(value) {
@@ -43,14 +63,14 @@ const MapViewfl = extend(MapViewflDesign)(
       };
 
       Timer.setTimeout({
-        delay: 5000,
+        delay: 1000,
         task: function() {
           Location.stop()
         }
       });
 
 
-    }
+    // }
 //for now just set current location to pin. 
 //otherwise sets json datas
     function setWorkPlacePins(that, arr,event) {
@@ -63,7 +83,7 @@ const MapViewfl = extend(MapViewflDesign)(
           },
           title: 'Ataturk Airport' //set according to json data
         });
-        that.mapViewfl.workMapView.addPin(workPin);
+        mapViewfl.workMapView.addPin(workPin);
       }
     }
 

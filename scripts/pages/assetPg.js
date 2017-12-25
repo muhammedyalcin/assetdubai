@@ -6,6 +6,7 @@ const AssetPgDesign = require('ui/ui_assetPg');
 const ListViewItem = require("sf-core/ui/listviewitem");
 const Router = require("sf-core/ui/router");
 const Color = require("sf-core/ui/color");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const AssetRow = require("components/AssetRow");
 var assetRow = new AssetRow();
 
@@ -43,6 +44,7 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  HeaderBarItem.setCustomHeaderBarItem(this);
   
   this.initlist = function initListview(jsonData) {
 

@@ -5,6 +5,7 @@ const extend = require('js-base/core/extend');
 const ConfirmPgDesign = require('ui/ui_confirmPg');
 const Router = require("sf-core/ui/router");
 const Color = require("sf-core/ui/color");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
 
 const ConfirmPg = extend(ConfirmPgDesign)(
   // Constructor
@@ -27,6 +28,7 @@ const ConfirmPg = extend(ConfirmPgDesign)(
 function onShow(superOnShow) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
+  
 }
 
 /**
@@ -36,6 +38,8 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  
+  HeaderBarItem.setCustomHeaderBarItem(this);
   
   this.completefl.completeButton.text = "Confirm Status";
   this.completefl.completeButton.onPress = completBtn_onPress.bind(this);

@@ -7,6 +7,7 @@ const ListViewItem = require("sf-core/ui/listviewitem");
 const WorkSummary = require("components/WorkSummary");
 const Color = require("sf-core/ui/color");
 const User = require("../model/user");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const Router = require("sf-core/ui/router");
 const Timer = require("sf-core/global/timer");
 
@@ -38,6 +39,9 @@ var currentWork;
 function onShow(superOnShow, jsonData) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
+  
+  // //sets location
+  // mapViewfl.assignLocation = this;
   //var currentUser = User.currentUser;
   //console.log("currentUser workSummary is " + currentUser.work[index].worksummary);
   // console.log("Work ID is " + index);
@@ -76,6 +80,8 @@ function onShow(superOnShow, jsonData) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  HeaderBarItem.setCustomHeaderBarItem(this);
+  
 }
 
 function initListview(jsonData) {

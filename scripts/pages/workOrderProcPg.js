@@ -40,7 +40,7 @@ function onShow(superOnShow, arr) {
     superOnShow();
 
     this.headerBar.itemColor = Color.create("#D5D4D4");
-    
+
     //assign the location
     mapViewfl.assignLocation = this;
 
@@ -66,7 +66,9 @@ function onShow(superOnShow, arr) {
 // Page.onLoad -> This event is called once when page is created.
 function onLoad(superOnLoad) {
     superOnLoad();
- //In general contactContainer doesn't need button.
+
+    HeaderBarItem.setCustomHeaderBarItem(this);
+    //In general contactContainer doesn't need button.
     this.contactContainer.buttonfl.flexGrow = 0;
     this.contactContainer.buttonfl.visible = false;
 }

@@ -11,6 +11,9 @@ const ListViewItem = require("sf-core/ui/listviewitem");
 const Router = require("sf-core/ui/router");
 const Color = require("sf-core/ui/color");
 const Timer = require("sf-core/global/timer");
+const Image = require("sf-core/ui/image");
+const HeaderBarItem = require("sf-core/ui/headerbaritem");
+const ImageView = require("sf-core/ui/imageview");
 const MapViewfl = require("../components/MapViewfl");
 var mapViewfl = new MapViewfl();
 
@@ -37,8 +40,22 @@ const WorkOrders = extend(WorkOrdersDesign)(
       //   }
       // });
       // initListview(currentUser.work);
+
+     HeaderBarItem.setCustomHeaderBarItem(this);
     }
   });
+  
+  HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderBarItem(that){
+     var backIconItem = new HeaderBarItem();
+      var backIcon = Image.createFromFile("images://backheadericon.png");
+      backIconItem.image = backIcon;
+      backIconItem.onPress = function() {
+        console.log("back icon is on press");
+        Router.goBack();
+      }.bind(that);
+      backIconItem.itemColor = Color.create("#D5D4D4");
+      that.headerBar.setLeftItem(backIconItem);
+  }
 
 /**
  * @event onShow
@@ -49,7 +66,7 @@ const WorkOrders = extend(WorkOrdersDesign)(
 function onShow(superOnShow) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
-  
+
   workOL = this.workOrderListview;
 
   var currentUser = User.currentUser;
@@ -62,16 +79,18 @@ function onShow(superOnShow) {
     }
   });
 
-  //sets location
-  mapViewfl.assignLocation = this;
+  // //sets location
+  // mapViewfl.assignLocation = this;
 
 
   //Assign map image and remove the listview when press
   workOrder.assignImgandRmv = this;
+
 }
 
 
 var workOL;
+
 function initListview(jsonData) {
 
   workOL.rowHeight = 90;

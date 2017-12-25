@@ -45,6 +45,7 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  HeaderBarItem.setCustomHeaderBarItem(this);
   
   // var backIconItem = new HeaderBarItem();
   // backIconItem.image = Image.createFromFile("images://backheadericon.png");

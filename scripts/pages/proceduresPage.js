@@ -56,7 +56,7 @@ function onShow(superOnShow, arr) {
   this.workid1.text = workData.workid1;
   this.workid2.text = workData.workid2;
   this.workid3.text = workData.workid3;
-  
+
   //set action button
   this.completefl.completeButton.onPress = function() {
     Router.go("step1Page");
@@ -82,7 +82,8 @@ var height = 230; //global height
 var globalTop = 20; //global top
 function onLoad(superOnLoad) {
   superOnLoad();
-    
+
+  HeaderBarItem.setCustomHeaderBarItem(this);
   var page = this;
   procedureData = User.currentWorkSummary.procedure;
 
@@ -92,7 +93,7 @@ function onLoad(superOnLoad) {
   this.procedureScroll.layout.left = 0;
   this.procedureScroll.layout.right = 0;
   this.procedureScroll.layout.top = 0;
-  
+
   Timer.setTimeout({
     delay: 800,
     task: function() {
@@ -190,7 +191,11 @@ function onLoad(superOnLoad) {
       backgroundColor: Color.create(0, 0, 0, 255),
       onPress: function() {
         console.log("url is " + data.videoUrl);
-        workVideoView.loadURL(data.videoUrl);
+        try{
+          workVideoView.loadURL("https://www.youtube.com/watch?v=rp2ybrEWIB8");
+        } catch(e) {
+          alert("Error: " + e);
+        }
         playButton.visible = false;
       }
     });

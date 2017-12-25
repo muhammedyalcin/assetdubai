@@ -9,6 +9,7 @@ const Label = require("sf-core/ui/label");
 const TexAlignment = require("sf-core/ui/textalignment");
 const FlexLayout = require("sf-core/ui/flexlayout");
 const Uploadfl = require("../components/Uploadfl");
+const UploadDrawfl = require("../components/UploadDrawfl");
 const Multimedia = require("sf-core/device/multimedia");
 const Color = require("sf-core/ui/color");
 const Image = require("sf-core/ui/image");
@@ -44,7 +45,7 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
-
+  HeaderBarItem.setCustomHeaderBarItem(this);
   // var backIconItem = new HeaderBarItem();
   // backIconItem.image = Image.createFromFile("images://backheadericon.png");
   // backIconItem.itemColor = Color.create("#D5D4D4");
@@ -75,8 +76,10 @@ function onLoad(superOnLoad) {
   });
   this.noteContainer.actionfl.addChild(uploadLabel);
 
-  var uploadfl = new Uploadfl();
-  uploadfl.uploadimg.onTouch = uploadOnPress.bind(this);
+  // var uploadfl = new Uploadfl();
+  // uploadfl.uploadimg.onTouch = uploadOnPress.bind(this);
+  var uploadfl = new UploadDrawfl();
+  uploadfl.onTouch = uploadOnPress.bind(this);
 
   var placeHolder = new FlexLayout({
     flexGrow: 3,
