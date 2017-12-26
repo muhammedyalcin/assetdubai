@@ -39,6 +39,7 @@ var currentWork;
 function onShow(superOnShow, jsonData) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
+
   
   // //sets location
   // mapViewfl.assignLocation = this;
@@ -138,6 +139,7 @@ function initListview(jsonData) {
     dashboardListview.refreshData();
     dashboardListview.stopRefresh();
   };*/
+  workOL.refreshEnabled = false;
   workOL.itemCount = jsonData.length;
   // console.log("length is " + jsonData.length );
   workOL.refreshData();

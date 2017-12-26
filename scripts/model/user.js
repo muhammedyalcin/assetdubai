@@ -3,6 +3,7 @@ const userdata = {
     currentWork: null,
     currentWorkSummary: null,
     currentProcedure: null,
+    currentLocation: null
 };
 
 module && (module.exports = userdata);

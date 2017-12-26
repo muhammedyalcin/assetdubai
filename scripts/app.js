@@ -24,7 +24,7 @@ stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 // Define routes and go to initial page of application
 
 Router.add("assetLoginPage", require("./pages/assetLoginPage"),true);
-Router.add("dashboardPg", require("./pages/dashboardPg"),true);
+Router.add("dashboardPg", require("./pages/dashboardPg"));
 Router.add("proceduresPage", require("./pages/proceduresPage"),true);
 Router.add("step1Page", require("./pages/step1Page"),true);
 Router.add("step2Page", require("./pages/step2Page"),true);
@@ -40,3 +40,4 @@ Router.go("assetLoginPage");
 
     var sliderDrawer = require("./sliderDrawer");
     Router.sliderDrawer = sliderDrawer;
+    Router.sliderDrawer.enabled = false;

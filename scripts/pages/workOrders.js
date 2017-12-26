@@ -15,8 +15,8 @@ const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const ImageView = require("sf-core/ui/imageview");
 const MapView = require('sf-core/ui/mapview');
-const MapViewfl = require("../components/MapViewfl");
-var mapViewfl = new MapViewfl();
+// const MapViewfl = require("../components/MapViewfl");
+// var mapViewfl = new MapViewfl();
 
 const WorkOrders = extend(WorkOrdersDesign)(
   // Constructor
@@ -32,17 +32,16 @@ const WorkOrders = extend(WorkOrdersDesign)(
     page.onLoad = function() {
       pageonLoad && pageonLoad();
       this.headerBar.titleColor = Color.create("#FFFFFF");
-      // var currentUser = User.currentUser;
-      // // console.log("current user is " + currentUser.firstname);
-
-      // Timer.setTimeout({
-      //   delay: 300,
-      //   task: function() {
-      //     initListview(currentUser.work);
-      //   }
-      // });
-      // initListview(currentUser.work);
-      HeaderBarItem.setCustomHeaderBarItem(this);
+      Router.sliderDrawer.setLeftItem(this.headerBar);
+     
+    // var event = User.currentLocation;
+    // console.log("event.latitude " + event.latitude + " event.longitude " + event.longitude);
+    //   this.mapViewfl.workMapView.centerLocation = {
+    //       latitude: parseFloat(event.latitude),
+    //       longitude: parseFloat(event.longitude)
+    //     }
+        
+      // HeaderBarItem.setCustomHeaderBarItem(this);
     }
   });
 
@@ -82,11 +81,8 @@ function onShow(superOnShow) {
     }
   });
 
-
-
-
-  //Assign map image and remove the listview when press
-  workOrder.assignImgandRmv = this;
+  // //Assign map image and remove the listview when press
+   workOrder.assignImgandRmv = this;
 
 }
 
@@ -142,11 +138,6 @@ function initListview(jsonData) {
     }
   }
 
-  /* dashboardListview.onPullRefresh = function() {
-    dashboardListview.itemCount = dashData.length;
-    dashboardListview.refreshData();
-    dashboardListview.stopRefresh();
-  };*/
 
   workOL.refreshEnabled = false;
 

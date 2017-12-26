@@ -22,21 +22,26 @@ const DashBoardItem = extend(DashBoardItemDesign)(
 
     var dashboardData = [{
         title: "All",
+        number: "4",
         backgroundColor: Color.TRANSPARENT
       }, {
         title: "New",
+         number: "3",
         backgroundColor: Color.TRANSPARENT
       },
       {
         title: "Upcoming",
+         number: "1",
         backgroundColor: Color.create(100, 208, 2, 27)
       },
       {
         title: "Pending",
+         number: "0",
         backgroundColor: Color.create(100, 2, 132, 51)
       },
       {
         title: "Completed",
+         number: "4",
         backgroundColor: Color.TRANSPARENT
       }
     ];

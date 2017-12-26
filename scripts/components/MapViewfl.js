@@ -9,6 +9,7 @@ const Image = require("sf-core/ui/image");
 const Location = require('sf-core/device/location');
 const Timer = require("sf-core/global/timer");
 const MapView = require('sf-core/ui/mapview');
+const User = require("../model/user");
 
 const MapViewfl = extend(MapViewflDesign)(
   //constructor
@@ -19,26 +20,31 @@ const MapViewfl = extend(MapViewflDesign)(
 
     var mapViewfl = this;
     //i just make it to be example it gonna change based on json data.  
-    Location.start();
-      Location.onLocationChanged = function(event) {
-        console.log("in location changed function");
+    // Location.start();
+    //   Location.onLocationChanged = function(event) {
+    //     console.log("in location changed function");
+        
+    //   User.currentLocation = {
+    //     latitude: event.latitude,
+    //     longitude: event.longitude
+    //   }
+       
+    //     mapViewfl.workMapView.centerLocation = {
+    //       latitude: parseFloat(event.latitude),
+    //       longitude: parseFloat(event.longitude)
+    //     }
+    //     console.log("centerLocation is " + mapViewfl.workMapView.centerLocation.latitude + " &&  " + mapViewfl.workMapView.centerLocation.longitude );
+    //     setWorkPlacePins(mapViewfl,[1],event);
+    //     // console.log("In centerlocation" +value.mapViewfl.workMapView.centerLocation.longitude );
+    //     console.log("In main , Location latitude: " + event.latitude + "  Longitude: " + event.longitude);
+    //   };
 
-        mapViewfl.workMapView.centerLocation = {
-          latitude: parseFloat(event.latitude),
-          longitude: parseFloat(event.longitude)
-        }
-        console.log("centerLocation is " + mapViewfl.workMapView.centerLocation.latitude + " &&  " + mapViewfl.workMapView.centerLocation.longitude );
-        setWorkPlacePins(mapViewfl,[1],event);
-        // console.log("In centerlocation" +value.mapViewfl.workMapView.centerLocation.longitude );
-        console.log("In main , Location latitude: " + event.latitude + "  Longitude: " + event.longitude);
-      };
-
-      Timer.setTimeout({
-        delay: 2000,
-        task: function() {
-          Location.stop()
-        }
-      });
+    //   Timer.setTimeout({
+    //     delay: 2000,
+    //     task: function() {
+    //       Location.stop()
+    //     }
+    //   });
 
     Object.defineProperty(mapViewfl, 'assignLocation', {
       set: function(value) {

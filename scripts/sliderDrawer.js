@@ -315,17 +315,20 @@ var sliderDrawer = new SliderDrawer({
             ordersLabel.onTouch = function() {
                 console.log("Orders clicke");
                 sliderDrawer.hide();
+                Router.sliderDrawer.enabled = false;
                 Router.go("workOrders");
             };
             settingsLabel.onTouch = function() {
                 console.log("setting is touched");
                 sliderDrawer.hide();
+                Router.sliderDrawer.enabled = false;
                 // Router.go("workOrders");
             }
             logoutLabel.onTouch = function() {
                 console.log("setting is touched");
                 sliderDrawer.hide();
                 User.currentUser = null;
+                Router.sliderDrawer.enabled = false;
                 Router.go("assetLoginPage");
 
                 // Router.go("workOrders");
@@ -333,10 +336,12 @@ var sliderDrawer = new SliderDrawer({
             dashboardLabel.onTouch = function() {
                 console.log("setting is touched");
                 sliderDrawer.hide();
+                Router.sliderDrawer.enabled = false;
                 Router.go("dashboardPg");
             }
             assetLabel.onTouch = function() {
                 sliderDrawer.hide();
+                Router.sliderDrawer.enabled = false;
                 Router.go("assetPg");
             }
 
@@ -355,12 +360,14 @@ sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
         image: Image.createFromFile("images://slidericon.png"),
         color: Color.WHITE,
         onPress: function() {
+            Router.sliderDrawer.enabled = true;
             sliderDrawer.show();
         }
     });
     headerbar.setLeftItem(sliderDrawerItem);
     headerbar.leftItem = sliderDrawerItem;
-    sliderDrawer.enabled = true;
+    console.log("slider drawer enable is " + sliderDrawer.enabled);
+
 };
 
 

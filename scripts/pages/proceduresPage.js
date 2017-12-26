@@ -44,6 +44,14 @@ function onShow(superOnShow, arr) {
   superOnShow();
   var page = this;
 
+  Timer.setTimeout({
+    delay: 1000,
+    task: function() {
+      page.proInfdicator.visible = false;
+      page.procedureScroll.visible = true;
+      page.indicatorfl.visible = false;
+    }
+  });
   this.headerBar.itemColor = Color.create("#D5D4D4");
 
   // if (arr && arr[0] && arr[1]) {
@@ -165,7 +173,7 @@ function onLoad(superOnLoad) {
     });
     procedureRow.descLabel.showScrollBar = true;
     procedureRow.testLabel.text = "Top up SF6 Gas"; //data.procedure1;
-    procedureRow.descLabel.text = "Set-up mass-flow meter and connect to the asset ambiance, start pressure, finish";//data.procedure2;
+    procedureRow.descLabel.text = "Set-up mass-flow meter and connect to the asset ambiance, start pressure, finish"; //data.procedure2;
 
     var videofl = new FlexLayout({
       id: index,
@@ -184,25 +192,44 @@ function onLoad(superOnLoad) {
       }
     });
 
-    var playButton = new Button({
-      height: 100,
-      width: 100,
-      positionType: FlexLayout.PositionType.ABSOLUTE,
-      backgroundColor: Color.create(0, 0, 0, 255),
-      onPress: function() {
-        console.log("url is " + data.videoUrl);
-        try{
-          workVideoView.loadURL("https://www.youtube.com/watch?v=rp2ybrEWIB8");
-        } catch(e) {
+    // var playButton = new Button({
+    //   height: 100,
+    //   width: 100,
+    //   positionType: FlexLayout.PositionType.ABSOLUTE,
+    //   backgroundColor: Color.create(0, 0, 0, 255),
+    //   onPress: function() {
+    //     console.log("url is " + data.videoUrl);
+    //     try {
+    //       workVideoView.loadURL("http://clips.vorwaerts-gmbh.de/VfE_html5.mp4");
+    //     }
+    //     catch (e) {
+    //       alert("Error: " + e);
+    //     }
+    //     playButton.visible = false;
+    //   }
+    // });
+    
+    var videoImageView = new ImageView();
+    videoImageView.width = 100;
+    videoImageView.height = 100;
+    videoImageView.image = Image.create("videoicon.png");
+    videoImageView.backgroundColor= Color.create(0, 0, 0, 255);
+    videoImageView.positionType = FlexLayout.PositionType.RELATIVE;
+    videoImageView.onTouch = function(){
+      console.log("url is " + data.videoUrl);
+        try {
+          workVideoView.loadURL("http://clips.vorwaerts-gmbh.de/VfE_html5.mp4");
+        }
+        catch (e) {
           alert("Error: " + e);
         }
-        playButton.visible = false;
+        videoImageView.visible = false;
       }
-    });
+    
     // workVideoView.loadURL(data.videoUrl);
 
     videofl.addChild(workVideoView);
-    videofl.addChild(playButton);
+    videofl.addChild(videoImageView);
 
     //placeholder
     var placeholder = new FlexLayout({

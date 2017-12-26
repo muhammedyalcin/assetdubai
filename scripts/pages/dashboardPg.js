@@ -10,6 +10,7 @@ const Image = require("sf-core/ui/image");
 const Color = require("sf-core/ui/color");
 const DashBoardItem = require("components/DashBoardItem");
 const ListViewItem = require("sf-core/ui/listviewitem");
+const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 const DashboardPg = extend(DashboardPgDesign)(
   // Constructor
@@ -52,6 +53,8 @@ function initListview(dashData) {
     var dasboardItem = listviewItem.findChildById(15);
     var labelContainer = dasboardItem.findChildById(160);
     var dashboardLabel2 = labelContainer.findChildById(162);
+    var dashboardLabel1 = labelContainer.findChildById(161);
+    dashboardLabel1.text = dashboardData[index].number;
     dashboardLabel2.text = dashboardData[index].title;
     dasboardItem.backgroundColor = dashboardData[index].backgroundColor;
   }
@@ -65,6 +68,7 @@ function initListview(dashData) {
     dashboardListview.refreshData();
     dashboardListview.stopRefresh();
   };*/
+  dashboardListview.refreshEnabled = false;
   dashboardListview.itemCount = dashboardData.length;
   dashboardListview.refreshData();
   dashboardListview.stopRefresh();

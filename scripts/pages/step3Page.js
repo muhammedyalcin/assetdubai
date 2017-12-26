@@ -14,7 +14,8 @@ const Multimedia = require("sf-core/device/multimedia");
 const Color = require("sf-core/ui/color");
 const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
-
+const ImageView = require("sf-core/ui/imageview");
+const UploadImgfl = require("../components/UploadImgfl");
 const Step3Page = extend(Step3PageDesign)(
   // Constructor
   function(_super) {
@@ -51,7 +52,7 @@ function onLoad(superOnLoad) {
   // backIconItem.itemColor = Color.create("#D5D4D4");
   // this.headerBar.setLeftItem(backIconItem);
 
-  page = this;
+  var page = this;
   var tabIndicator = new Tab();
   var stepPage = this;
 
@@ -79,7 +80,27 @@ function onLoad(superOnLoad) {
   // var uploadfl = new Uploadfl();
   // uploadfl.uploadimg.onTouch = uploadOnPress.bind(this);
   var uploadfl = new UploadDrawfl();
-  uploadfl.onTouch = uploadOnPress.bind(this);
+  // var uploadImgfl = new UploadImgfl();
+  
+
+  uploadfl.onTouch = function uploadOnPress() {
+    console.log("Upload is pressed");
+    Multimedia.pickFromGallery({
+      type: Multimedia.Type.IMAGE,
+      onSuccess: onSuccess,
+      page: page
+    });
+
+    function onSuccess(picked) {
+      //Reassign here afterwards
+      console.log("picked image is " + picked.image);
+      // uploadImgfl.uploadImg.image = picked.image;
+      // uploadfl.visible=false;
+      // uploadfl.flexGrow = 0;
+      // uploadImgfl.uploadImgfl.imageFillType = ImageView.FillType.STRETCH;
+      // page.noteContainer.emptyfl.addChild(uploadImgfl);
+    }
+  }.bind(this);
 
   var placeHolder = new FlexLayout({
     flexGrow: 3,
@@ -89,22 +110,6 @@ function onLoad(superOnLoad) {
   this.noteContainer.emptyfl.addChild(uploadfl);
   this.noteContainer.emptyfl.addChild(placeHolder);
 
-}
-
-var page;
-
-function uploadOnPress() {
-  console.log("Upload is pressed");
-  Multimedia.pickFromGallery({
-    type: Multimedia.Type.IMAGE,
-    onSuccess: onSuccess,
-    page: page
-  });
-
-  function onSuccess(picked) {
-    //Reassign here afterwards
-    var image = picked.image;
-  }
 }
 
 function confirmButton_onPress() {

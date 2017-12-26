@@ -90,6 +90,7 @@ function onLoad(superOnLoad) {
     };
     
     //sets manually for now
+    assetListview.refreshEnabled = false;
     assetListview.itemCount = 8;
     assetListview.refreshData();
     assetListview.stopRefresh();

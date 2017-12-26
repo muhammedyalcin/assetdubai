@@ -3,7 +3,7 @@
     "@smartface/styler": "^1.0.0",
     "chai": "^4.1.2",
     "js-base": "1.0.0",
-    "sf-core": "2.0.3",
+    "sf-core": "2.0.6",
     "sf-extension-utils": "^3.2.2"
   }
 }
