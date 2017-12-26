@@ -212,9 +212,9 @@ function onLoad(superOnLoad) {
     var videoImageView = new ImageView();
     videoImageView.width = 100;
     videoImageView.height = 100;
-    videoImageView.image = Image.create("videoicon.png");
+    videoImageView.image = Image.createFromFile("images://videoicon.png");
     videoImageView.backgroundColor= Color.create(0, 0, 0, 255);
-    videoImageView.positionType = FlexLayout.PositionType.RELATIVE;
+    videoImageView.positionType = FlexLayout.PositionType.ABSOLUTE;
     videoImageView.onTouch = function(){
       console.log("url is " + data.videoUrl);
         try {

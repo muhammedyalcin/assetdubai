@@ -360,8 +360,14 @@ sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
         image: Image.createFromFile("images://slidericon.png"),
         color: Color.WHITE,
         onPress: function() {
-            Router.sliderDrawer.enabled = true;
-            sliderDrawer.show();
+            if(sliderDrawer.shown){
+                sliderDrawer.hide();
+                 Router.sliderDrawer.enabled = false;
+            }else{
+                sliderDrawer.show();
+                 Router.sliderDrawer.enabled = true;
+            }
+           
         }
     });
     headerbar.setLeftItem(sliderDrawerItem);
