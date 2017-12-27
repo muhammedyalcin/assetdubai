@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const WorkOrderSumpgDesign = require('ui/ui_workOrderSumpg');
 const ListViewItem = require("sf-core/ui/listviewitem");
@@ -39,6 +40,7 @@ var currentWork;
 function onShow(superOnShow, jsonData) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
+  this.sumLabel.text = lang["workOrderSumpg.workOrderSummary"];
 
   
   // //sets location

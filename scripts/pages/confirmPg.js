@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const ConfirmPgDesign = require('ui/ui_confirmPg');
 const Router = require("sf-core/ui/router");
@@ -28,6 +29,15 @@ const ConfirmPg = extend(ConfirmPgDesign)(
 function onShow(superOnShow) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
+    
+  this.completefl.completeButton.text = lang["confirmPg.button.comfirmStatus"];
+  this.completefl.completeButton.onPress = completBtn_onPress.bind(this);
+  this.headerBar.title = lang["confirmPg.title"];
+  this.noButton.text = lang["confirmPg.noButton"];
+  this.yesButton.text = lang["confirmPg.yesButton"];
+  this.compTitle.text = lang["confirmPg.additionalActions"];
+  this.stepTitleLabe.text = lang["confirmPg.stepCompleted"];
+  this.compLabel.text = lang["confirmPg.workOrderCompletedAt"];
   
 }
 
@@ -40,9 +50,7 @@ function onLoad(superOnLoad) {
   superOnLoad();
   
   HeaderBarItem.setCustomHeaderBarItem(this);
-  
-  this.completefl.completeButton.text = "Confirm Status";
-  this.completefl.completeButton.onPress = completBtn_onPress.bind(this);
+
 }
 
 function completBtn_onPress(){

@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 
 const NoflDesign = require('library/Nofl');
@@ -12,6 +13,7 @@ const Nofl = extend(NoflDesign)(
     // initalizes super class for this scope
     _super(this, props || NoflDesign.defaults);
     this.pageName = pageName;
+    this.noLabel = lang["confirmPg.noButton"];
   }
 
 );

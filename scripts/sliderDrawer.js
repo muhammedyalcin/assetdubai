@@ -1,3 +1,4 @@
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
 const Color = require('sf-core/ui/color');
@@ -145,7 +146,7 @@ var sliderDrawer = new SliderDrawer({
             left: 28,
             right: 0,
             top: 0,
-            text: "Dashboard",
+            text: lang["sliderDrawer.dasboard"],
             font: Font.create("Lato", 16, Font.NORMAL),
             textColor: Color.create("#BDBCBC"),
             textAlignment: TextAlignment.MIDLEFT,
@@ -174,7 +175,7 @@ var sliderDrawer = new SliderDrawer({
             right: 0,
             height: 22,
             top: 0,
-            text: "Orders",
+            text: lang["sliderDrawer.orders"],
             font: Font.create("Lato", 16, Font.NORMAL),
             textColor: Color.create("#BDBCBC"),
             positionType: Flexlayout.PositionType.ABSOLUTE
@@ -203,7 +204,7 @@ var sliderDrawer = new SliderDrawer({
             right: 0,
             height: 22,
             top: 0,
-            text: "Assets",
+            text: lang["sliderDrawer.assets"],
             font: Font.create("Lato", 16, Font.NORMAL),
             textColor: Color.create("#BDBCBC"),
             positionType: Flexlayout.PositionType.ABSOLUTE
@@ -232,7 +233,7 @@ var sliderDrawer = new SliderDrawer({
             right: 0,
             height: 22,
             top: 0,
-            text: "Settings",
+            text: lang["sliderDrawer.settings"],
             font: Font.create("Lato", 16, Font.NORMAL),
             textColor: Color.create("#BDBCBC"),
             positionType: Flexlayout.PositionType.ABSOLUTE
@@ -270,7 +271,7 @@ var sliderDrawer = new SliderDrawer({
             right: 0,
             bottom: 0,
             top: 0,
-            text: "Logout",
+            text: lang["sliderDrawer.logout"],
             font: Font.create("Lato", 16, Font.NORMAL),
             textColor: Color.create("#BDBCBC"),
             positionType: Flexlayout.PositionType.ABSOLUTE
@@ -361,11 +362,11 @@ sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
         color: Color.WHITE,
         onPress: function() {
             if(sliderDrawer.shown){
+                Router.sliderDrawer.enabled = false;
                 sliderDrawer.hide();
-                 Router.sliderDrawer.enabled = false;
             }else{
-                sliderDrawer.show();
                  Router.sliderDrawer.enabled = true;
+                 sliderDrawer.show();
             }
            
         }

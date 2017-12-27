@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const Step1PageDesign = require('ui/ui_step1Page')
 const Tab = require("components/Tab");
@@ -50,6 +51,8 @@ const Step1Page = extend(Step1PageDesign)(
 function onShow(superOnShow) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
+  this.headerBar.title = lang["step1Page.title"]
+  this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
 }
 
 /**

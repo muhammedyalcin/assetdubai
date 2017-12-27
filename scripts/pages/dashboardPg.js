@@ -1,10 +1,10 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const DashboardPgDesign = require('ui/ui_dashboardPg');
 const Router = require("sf-core/ui/router");
-// const sliderDrawer = require("../sliderDrawer");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const Image = require("sf-core/ui/image");
 const Color = require("sf-core/ui/color");
@@ -83,6 +83,7 @@ function initListview(dashData) {
  */
 function onShow(superOnShow) {
   superOnShow();
+  this.headerBar.title = lang["dashboardPg.dasboard.title"];
 }
 
 /**

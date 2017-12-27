@@ -23,7 +23,7 @@ stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 
 // Define routes and go to initial page of application
 
-Router.add("assetLoginPage", require("./pages/assetLoginPage"),true);
+Router.add("assetLoginPage", require("./pages/assetLoginPage"));
 Router.add("dashboardPg", require("./pages/dashboardPg"));
 Router.add("proceduresPage", require("./pages/proceduresPage"),true);
 Router.add("step1Page", require("./pages/step1Page"),true);

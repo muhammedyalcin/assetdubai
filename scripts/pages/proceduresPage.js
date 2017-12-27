@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const ProceduresPageDesign = require('ui/ui_proceduresPage');
 const FlexLayout = require("sf-core/ui/flexlayout");
@@ -43,6 +44,9 @@ const ProceduresPage = extend(ProceduresPageDesign)(
 function onShow(superOnShow, arr) {
   superOnShow();
   var page = this;
+  
+  this.headerBar.title = lang["proceduresPage.title"];
+  this.completefl.completeButton.text = lang["proceduresPage..button.completeSetup"];
 
   Timer.setTimeout({
     delay: 1000,

@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const AssetLoginPageDesign = require('ui/ui_assetLoginPage');
 const Router = require("sf-core/ui/router");
@@ -37,6 +38,9 @@ const AssetLoginPage = extend(AssetLoginPageDesign)(
 function onShow(superOnShow) {
   superOnShow();
   const page = this;
+  this.passwordLbl.text = lang["assetLoginPage.password"];
+  this.userNameLbl.text = lang["assetLoginPage.username"];
+  this.loginButton.text = lang["assetLoginPage.button.signin"];
 
   fingerprint.init({
     userNameTextBox: this.userTextBox,
@@ -50,7 +54,7 @@ function onShow(superOnShow) {
       else password = fingerprintResult.password;
 
       if (!password)
-        return alert("password is required");
+        return alert(lang["assetLoginPage.password.error"]);
 
       doLogin(page.userTextBox.text, password, function(err, userData) {
         if (err) {
@@ -92,7 +96,7 @@ function onLoad(superOnLoad) {
 function signin(page) {
   //console.log(this.password.passwordInput.text);
   if (page.userTextBox.text === "") {
-    alert("you must enter username");
+    alert(lang["assetLoginPage.username.error"]);
     return;
   }
   fingerprint.loginWithFingerprint();
@@ -101,7 +105,7 @@ function signin(page) {
 function doLogin(username, pwd, callback) {
   lgn.login(username, pwd, function(err, userdata) {
     if (err) {
-      alert("Invalid Credential");
+      alert(lang["assetLoginPage.invalidLogin"]);
     }
     callback && callback(err, userdata);
   });

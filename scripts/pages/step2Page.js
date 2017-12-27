@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const Step2PageDesign = require('ui/ui_step2Page');
 const Router = require("sf-core/ui/router");
@@ -36,6 +37,7 @@ const Step2Page = extend(Step2PageDesign)(
 function onShow(superOnShow) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
+  this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
 }
 
 /**
@@ -46,6 +48,7 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
+  this.headerBar.title = lang["step2Page.title"];
   
   // var backIconItem = new HeaderBarItem();
   // backIconItem.image = Image.createFromFile("images://backheadericon.png");

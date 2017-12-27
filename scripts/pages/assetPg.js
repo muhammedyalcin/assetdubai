@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const AssetPgDesign = require('ui/ui_assetPg');
 const ListViewItem = require("sf-core/ui/listviewitem");
@@ -34,6 +35,7 @@ var assetListview;
 function onShow(superOnShow) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
+  this.headerBar.title = lang["assets.title"];
   var jsonData = assetRow.getAssetTestData;
   this.initlist(jsonData);
 }

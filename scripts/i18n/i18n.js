@@ -7,7 +7,6 @@
 	Required for BC
 */
 global.lang = {};
-
 SMF.i18n = {
 	currentLang: null,
 	defaultLang: 'en',

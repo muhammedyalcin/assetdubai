@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 
 const TabDesign = require('library/Tab');
@@ -15,57 +16,60 @@ const Tab = extend(TabDesign)(
     this.pageName = pageName;
 
     var tab = this;
-    /*Object.defineProperty(tab, 'animateRightButton', {
-      get: function() {
-        return tab;
-      },
-      set: function(page) {
-        Animator.animate(page.layout, 200, function() {
-          //page.tab.tabHighlight.flexGrow = 1;
-          page.tab.tabPlaceHolderLeft.flexGrow = 1;
-          page.tab.tabPlaceHolderRight.flexGrow = 0;
-          page.tab.summaryButton.textColor = Color.RED;
-          page.tab.instructionButton.textColor = Color.WHITE;
-        });
-      }
-    });*/
-    
-    Object.defineProperties(tab, {
-      'animateRightButton': {
-        enumerable: true,
-        configurable: true,
+
+      tab.summaryButton.text = lang["stepsPages.tabBar.summary" ];
+      tab.instructionButton.text =lang["stepsPages.tabBar.instruction"];
+      /*Object.defineProperty(tab, 'animateRightButton', {
         get: function() {
-        return tab;
-      },
-      set: function(page) {
-        Animator.animate(page.layout, 200, function() {
-          //page.tab.tabHighlight.flexGrow = 1;
-          page.tab.tabPlaceHolderLeft.flexGrow = 1;
-          page.tab.tabPlaceHolderRight.flexGrow = 0;
-          page.tab.tabPlaceHolderRight.flexBasis = 0;
-          page.tab.summaryButton.textColor = Color.RED;
-          page.tab.instructionButton.textColor = Color.create("#D5D4D4");
-        });
-      }
-      },
-      'animateLeftButton': {
-        enumerable: true,
-        configurable: true,
-        get: function() {
-        return tab;
-      },
-      set: function(page) {
-        Animator.animate(page.layout, 200, function() {
-          //page.tab.tabHighlight.flexGrow = 1;
-          page.tab.tabPlaceHolderLeft.flexGrow = 0;
-          page.tab.tabPlaceHolderRight.flexGrow = 1;
-          page.tab.tabPlaceHolderLeft.flexBasis = 0;
-          page.tab.summaryButton.textColor = Color.create("#D5D4D4");
-          page.tab.instructionButton.textColor = Color.RED;
-        });
-      }
-      }
-    });
+          return tab;
+        },
+        set: function(page) {
+          Animator.animate(page.layout, 200, function() {
+            //page.tab.tabHighlight.flexGrow = 1;
+            page.tab.tabPlaceHolderLeft.flexGrow = 1;
+            page.tab.tabPlaceHolderRight.flexGrow = 0;
+            page.tab.summaryButton.textColor = Color.RED;
+            page.tab.instructionButton.textColor = Color.WHITE;
+          });
+        }
+      });*/
+
+      Object.defineProperties(tab, {
+        'animateRightButton': {
+          enumerable: true,
+          configurable: true,
+          get: function() {
+            return tab;
+          },
+          set: function(page) {
+            Animator.animate(page.layout, 200, function() {
+              //page.tab.tabHighlight.flexGrow = 1;
+              page.tab.tabPlaceHolderLeft.flexGrow = 1;
+              page.tab.tabPlaceHolderRight.flexGrow = 0;
+              page.tab.tabPlaceHolderRight.flexBasis = 0;
+              page.tab.summaryButton.textColor = Color.RED;
+              page.tab.instructionButton.textColor = Color.create("#D5D4D4");
+            });
+          }
+        },
+        'animateLeftButton': {
+          enumerable: true,
+          configurable: true,
+          get: function() {
+            return tab;
+          },
+          set: function(page) {
+            Animator.animate(page.layout, 200, function() {
+              //page.tab.tabHighlight.flexGrow = 1;
+              page.tab.tabPlaceHolderLeft.flexGrow = 0;
+              page.tab.tabPlaceHolderRight.flexGrow = 1;
+              page.tab.tabPlaceHolderLeft.flexBasis = 0;
+              page.tab.summaryButton.textColor = Color.create("#D5D4D4");
+              page.tab.instructionButton.textColor = Color.RED;
+            });
+          }
+        }
+      });
   }
 
 

@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const Step3PageDesign = require('ui/ui_step3Page');
 const Router = require("sf-core/ui/router");
@@ -37,6 +38,9 @@ const Step3Page = extend(Step3PageDesign)(
 function onShow(superOnShow) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
+  this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
+  this.headerBar.title = lang["step3Page.title"];
+  
 }
 
 /**
@@ -71,7 +75,7 @@ function onLoad(superOnLoad) {
   this.completefl.completeButton.onPress = confirmButton_onPress.bind(this);
 
   var uploadLabel = new Label({
-    text: "Upload infrared Camera Images",
+    text: lang["step3Page.uploadLabel"],
     flexGrow: 1,
     textAlignment: TexAlignment.MIDLEFT
   });

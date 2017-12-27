@@ -1,3 +1,4 @@
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
 const Color = require('sf-core/ui/color');
@@ -7,7 +8,6 @@ const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const ImageView = require("sf-core/ui/imageview");
 const MapViewfl = require("../components/MapViewfl");
 var mapViewfl = new MapViewfl();
-
 
 const workOrderProcPgDesign = require("ui/ui_workOrderProcPg");
 
@@ -49,15 +49,18 @@ function onShow(superOnShow, arr) {
     //set some defaults values
     // this.contactContainer.contactfl.label2 = "EQUIPMENT REQUIRED";
 
-    this.contactContainer.addressLabel1.text = "PROCEDURE";
+    this.contactContainer.addressLabel1.text = lang["workOrderProcPg.procedure"];
     this.contactContainer.addressLabel2.text = "Ambience";
 
     //
-    this.contactContainer.phoneLabel1.text = "Ambience";
-    this.contactContainer.phoneLabel2.text = "PROCEDURE";
+    this.contactContainer.phoneLabel2.text = "Ambience";
+    this.contactContainer.phoneLabel1.text = lang["workOrderProcPg.procedure"];
     this.contactContainer.imgfl.visible = false;
 
-    this.contactContainer.contactLabel1.text = "EQUIPMENT REQUIRED";
+    this.contactContainer.contactLabel1.text = lang["workOrderProcPg.equipmentRequired"];
+    
+    this.startProButton.text = lang["workOrderProcPg.button.startProcedure"];
+    this.cancelButton.text = lang["workOrderProcPg.button.cancelWorkOrder"];
 
 
     this.startProButton.onPress = function() {

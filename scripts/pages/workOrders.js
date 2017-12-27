@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 const WorkOrdersDesign = require('ui/ui_workOrders');
 const User = require("../model/user");
@@ -15,6 +16,8 @@ const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const ImageView = require("sf-core/ui/imageview");
 const MapView = require('sf-core/ui/mapview');
+const Items = require("../model/items");
+const AlertView = require('sf-core/ui/alertview');
 // const MapViewfl = require("../components/MapViewfl");
 // var mapViewfl = new MapViewfl();
 
@@ -25,7 +28,7 @@ const WorkOrders = extend(WorkOrdersDesign)(
     _super(this);
     var page = this;
     var pageonLoad = page.onLoad;
-    
+
     // overrides super.onShow method
     page.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
@@ -33,14 +36,14 @@ const WorkOrders = extend(WorkOrdersDesign)(
       pageonLoad && pageonLoad();
       this.headerBar.titleColor = Color.create("#FFFFFF");
       Router.sliderDrawer.setLeftItem(this.headerBar);
-     
-    // var event = User.currentLocation;
-    // console.log("event.latitude " + event.latitude + " event.longitude " + event.longitude);
-    //   this.mapViewfl.workMapView.centerLocation = {
-    //       latitude: parseFloat(event.latitude),
-    //       longitude: parseFloat(event.longitude)
-    //     }
-        
+
+      // var event = User.currentLocation;
+      // console.log("event.latitude " + event.latitude + " event.longitude " + event.longitude);
+      //   this.mapViewfl.workMapView.centerLocation = {
+      //       latitude: parseFloat(event.latitude),
+      //       longitude: parseFloat(event.longitude)
+      //     }
+
       // HeaderBarItem.setCustomHeaderBarItem(this);
     }
   });
@@ -65,11 +68,12 @@ HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderB
  */
 function onShow(superOnShow) {
   superOnShow();
+  this.headerBar.title = lang["workOrders.title"];
   this.headerBar.itemColor = Color.create("#D5D4D4");
 
   workOL = this.workOrderListview;
-  console.log("centerLocation in work order page is "+  this.mapViewfl.workMapView.centerLocation.latitude + " &&& " + this.mapViewfl.workMapView.centerLocation.longitude);
- 
+  console.log("centerLocation in work order page is " + this.mapViewfl.workMapView.centerLocation.latitude + " &&& " + this.mapViewfl.workMapView.centerLocation.longitude);
+
 
   var currentUser = User.currentUser;
   // console.log("current user is " + currentUser.firstname);
@@ -82,12 +86,13 @@ function onShow(superOnShow) {
   });
 
   // //Assign map image and remove the listview when press
-   workOrder.assignImgandRmv = this;
+  workOrder.assignImgandRmv = this;
 
 }
 
 
 var workOL;
+var confirmAlertView;
 
 function initListview(jsonData) {
 
@@ -105,6 +110,8 @@ function initListview(jsonData) {
   };
 
   workOL.onRowBind = function(listviewItem, index) {
+    if (!jsonData[index])
+      return;
 
     var workRow = listviewItem.findChildById(8);
     var detailContainer = workRow.findChildById(9);
@@ -132,8 +139,16 @@ function initListview(jsonData) {
       //Expansion button index. Default value 0
       expansionSettings.buttonIndex = -1;
 
-      var archiveSwipeItem = ListView.iOS.createSwipeItem("", Color.RED, 30, function(e) {});
+      var archiveSwipeItem = ListView.iOS.createSwipeItem("DELETE", Color.RED, 50, function(e) {
+        console.log("swipe item is clicked");
 
+        deleteItem(e.index, jsonData);
+
+        
+        // workOL.itemCount = jsonData.length;
+        // workOL.refreshData();
+        // workOL.stopRefresh();
+      });
       return [archiveSwipeItem];
     }
   }
@@ -144,6 +159,32 @@ function initListview(jsonData) {
   workOL.itemCount = jsonData.length;
   workOL.refreshData();
   workOL.stopRefresh();
+
+
+}
+
+function deleteItem(index, jsonData) {
+
+  var confirmAlertView = new AlertView({
+    title: "Do you want to delete it ?",
+    message: "If you delete it, you won't undo it"
+  });
+  confirmAlertView.addButton({
+    index: AlertView.ButtonType.NEGATIVE,
+    text: "Cancel"
+  });
+  confirmAlertView.addButton({
+    index: AlertView.ButtonType.POSITIVE,
+    text: "Okey",
+    onClick: function() {
+      Items.deleteItem(index);
+      //afterwards refrest the data and set length of data.
+      workOL.itemCount = jsonData.length;
+      workOL.refreshData();
+    }
+  });
+  confirmAlertView.show();
+
 }
 
 module && (module.exports = WorkOrders);
