@@ -45,8 +45,8 @@ SMF.i18n.defineLanguage('en', {
 
 	"workOrderProcPg.button.cancelWorkOrder"        : "Cancel Work Order",
 	"workOrderProcPg.button.startProcedure"         : "Start Procedure",
-	"workOrderProcPg.equipmentRequired"             : "Gereken Ekipman",
-	"workOrderProcPg.procedure"                     : "Islem",
+	"workOrderProcPg.equipmentRequired"             : "EQUIPMENT REQUIRED",
+	"workOrderProcPg.procedure"                     : "PROCEDURE",
 	
 	
 	

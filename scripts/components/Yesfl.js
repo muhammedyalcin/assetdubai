@@ -12,7 +12,7 @@ const Yesfl = extend(YesflDesign)(
     // initalizes super class for this scope
     _super(this, props || YesflDesign.defaults);
     this.pageName = pageName;
-    this.yesLabel = lang["confirmPg.yesButton"];
+    this.yesLabel.text = lang["confirmPg.yesButton"];
   }
 
 );

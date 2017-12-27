@@ -13,7 +13,7 @@ const Nofl = extend(NoflDesign)(
     // initalizes super class for this scope
     _super(this, props || NoflDesign.defaults);
     this.pageName = pageName;
-    this.noLabel = lang["confirmPg.noButton"];
+    this.noLabel.text = lang["confirmPg.noButton"];
   }
 
 );

@@ -1,0 +1,23 @@
+{
+	".textArea": {
+		"paddingLeft": 50
+	},
+	".flexLayout-another": {
+		"backgroundColor": "rgba( 80, 227, 194, 1 )"
+	},
+	".tabBar_root": {
+		"backgroundColor": "rgba( 61, 59, 58, 1 )"
+	},
+	".tabBar": {
+		"backgroundColor": "rgba( 61, 59, 58, 1 )"
+	},
+	".heahderBar-gray": {
+		"backgroundColor": "rgba( 61, 59, 58, 1 )"
+	},
+	".heahderBar-style1": {
+		"backgroundColor": "rgba( 61, 59, 58, 1 )"
+	},
+	".tabBar-style1": {
+		"backgroundColor": "rgba( 61, 59, 58, 1 )"
+	}
+}

@@ -15,10 +15,10 @@ const ImageFillType = require('sf-core/ui/imagefilltype');
 const Application = require('sf-core/application');
 const Font = require('sf-core/ui/font');
 
-var sliderDrawerWidth = 333;
+// var sliderDrawerWidth = 333;
 var nameLabel;
 var sliderDrawer = new SliderDrawer({
-    width: sliderDrawerWidth,
+    width: 200,
     enabled: false,
     onLoad: function() {
         //User FlexLayout

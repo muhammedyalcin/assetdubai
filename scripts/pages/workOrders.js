@@ -131,7 +131,7 @@ function initListview(jsonData) {
     User.currentWork = jsonData[index]
     Router.go("workOrderSumpg", jsonData[index]);
   };
-
+  
   workOL.ios.rightToLeftSwipeEnabled = true;
 
   workOL.ios.onRowSwiped = function(direction, expansionSettings) {
@@ -151,7 +151,11 @@ function initListview(jsonData) {
       });
       return [archiveSwipeItem];
     }
-  }
+  };
+  
+  workOL.onRowLongSelected = function(listViewItem, index){
+    deleteItem(index, jsonData);
+  };
 
 
   workOL.refreshEnabled = false;

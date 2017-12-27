@@ -39,7 +39,6 @@ function onShow(superOnShow) {
   this.headerBar.itemColor = Color.create("#D5D4D4");
   this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
 }
-
 /**
  * @event onLoad
  * This event is called once when page is created.
