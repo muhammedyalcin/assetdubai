@@ -9,6 +9,7 @@ const Lgn = require("../lib/lgn");
 var lgn = new Lgn();
 const fingerprint = require("sf-extension-utils").fingerprint;
 const User = require("../model/user");
+const rau = require("sf-extension-utils").rau;
 const MapViewfl = require("../components/MapViewfl");
 var mapViewfl = new MapViewfl();
 
@@ -41,6 +42,7 @@ function onShow(superOnShow) {
   this.passwordLbl.text = lang["assetLoginPage.password"];
   this.userNameLbl.text = lang["assetLoginPage.username"];
   this.loginButton.text = lang["assetLoginPage.button.signin"];
+  
 
   fingerprint.init({
     userNameTextBox: this.userTextBox,
@@ -70,6 +72,7 @@ function onShow(superOnShow) {
     }
 
   });
+  rau.checkUpdate();
 }
 
 /**

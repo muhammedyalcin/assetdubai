@@ -63,7 +63,7 @@
 						"active": false
 					}
 				},
-				"playerPath": null
+				"playerPath": "/playerios.zip"
 			},
 			"android": {
 				"scripts": "scripts",
@@ -84,7 +84,7 @@
 						"active": false
 					}
 				},
-				"playerPath": null
+				"playerPath": "/playerandroid.zip"
 			},
 			"keys": {
 				"project3DesKey": "cBOiTPtJLAKjToIWb7OUt2FqrTyaIQxJ",

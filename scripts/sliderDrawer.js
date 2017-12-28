@@ -14,6 +14,7 @@ const User = require("./model/user");
 const ImageFillType = require('sf-core/ui/imagefilltype');
 const Application = require('sf-core/application');
 const Font = require('sf-core/ui/font');
+const getCombinedStyle = require("library/styler-builder").getCombinedStyle;
 
 // var sliderDrawerWidth = 333;
 var nameLabel;
@@ -299,7 +300,8 @@ var sliderDrawer = new SliderDrawer({
             sliderDrawer.shown = true;
         };
         sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
-        sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
+        Object.assign(sliderDrawer.layout, getCombinedStyle('.sliderDrawer'));
+        //sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
         sliderDrawer.width = 200;
 
         sliderDrawer.setCurrentData = function setCurrentData() {

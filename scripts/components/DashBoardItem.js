@@ -1,6 +1,7 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
 
 const DashBoardItemDesign = require('library/DashBoardItem');
@@ -21,26 +22,26 @@ const DashBoardItem = extend(DashBoardItemDesign)(
     var greenColor =  Color.create("#028433");
 
     var dashboardData = [{
-        title: "All",
+        title: lang["dashboardPg.dasboard.all"],
         number: "4",
         backgroundColor: Color.TRANSPARENT
       }, {
-        title: "New",
+        title: lang["dashboardPg.dasboard.new"],
          number: "3",
         backgroundColor: Color.TRANSPARENT
       },
       {
-        title: "Upcoming",
+        title: lang["dashboardPg.dasboard.upcoming"],
          number: "1",
         backgroundColor: Color.create(100, 208, 2, 27)
       },
       {
-        title: "Pending",
+        title: lang["dashboardPg.dasboard.pending"],
          number: "0",
         backgroundColor: Color.create(100, 2, 132, 51)
       },
       {
-        title: "Completed",
+        title: lang["dashboardPg.dasboard.completed"],
          number: "4",
         backgroundColor: Color.TRANSPARENT
       }

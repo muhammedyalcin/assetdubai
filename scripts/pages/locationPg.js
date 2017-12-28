@@ -4,10 +4,9 @@
 const extend = require('js-base/core/extend');
 const LocationPgDesign = require('ui/ui_locationPg');
 const Color = require("sf-core/ui/color");
-const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
-const MapViewfl = require("../components/MapViewfl");
-var mapViewfl = new MapViewfl();
+const MapView = require('sf-core/ui/mapview');
+
 
 const LocationPg = extend(LocationPgDesign)(
   // Constructor
@@ -18,7 +17,7 @@ const LocationPg = extend(LocationPgDesign)(
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-    
+
 
   });
 
@@ -30,10 +29,10 @@ const LocationPg = extend(LocationPgDesign)(
  */
 function onShow(superOnShow) {
   superOnShow();
-  
+
   this.headerBar.itemColor = Color.create("#D5D4D4");
-  
-  
+
+
 
 }
 
@@ -45,8 +44,8 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
-    //sets current location
-  mapViewfl.assignLocation=this;
+  //sets current location
+  MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
   // var backIconItem = new HeaderBarItem();
   // backIconItem.image = Image.createFromFile("images://backheadericon.png");
   // backIconItem.itemColor = Color.create("#D5D4D4");

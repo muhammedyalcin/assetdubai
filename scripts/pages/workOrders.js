@@ -18,8 +18,10 @@ const ImageView = require("sf-core/ui/imageview");
 const MapView = require('sf-core/ui/mapview');
 const Items = require("../model/items");
 const AlertView = require('sf-core/ui/alertview');
-// const MapViewfl = require("../components/MapViewfl");
-// var mapViewfl = new MapViewfl();
+const Location = require('sf-core/device/location');
+const MapViewfl = require("../components/MapViewfl");
+const Application = require("sf-core/application");
+var mapViewfl = new MapViewfl();
 
 const WorkOrders = extend(WorkOrdersDesign)(
   // Constructor
@@ -27,33 +29,52 @@ const WorkOrders = extend(WorkOrdersDesign)(
     // Initalizes super class for this page scope
     _super(this);
     var page = this;
-    var pageonLoad = page.onLoad;
-
     // overrides super.onShow method
-    page.onShow = onShow.bind(this, this.onShow.bind(this));
-    // overrides super.onLoad method
-    page.onLoad = function() {
-      pageonLoad && pageonLoad();
-      this.headerBar.titleColor = Color.create("#FFFFFF");
-      Router.sliderDrawer.setLeftItem(this.headerBar);
+    this.onShow = onShow.bind(this, this.onShow.bind(this));
+    this.onLoad = onLoad.bind(this, this.onLoad);
+  });
 
-      // var event = User.currentLocation;
-      // console.log("event.latitude " + event.latitude + " event.longitude " + event.longitude);
-      //   this.mapViewfl.workMapView.centerLocation = {
-      //       latitude: parseFloat(event.latitude),
-      //       longitude: parseFloat(event.longitude)
-      //     }
+// overrides super.onLoad method
+function onLoad(pageonLoad) {
+  pageonLoad && pageonLoad();
+  var page = this;
 
-      // HeaderBarItem.setCustomHeaderBarItem(this);
+  this.headerBar.titleColor = Color.create("#FFFFFF");
+  Router.sliderDrawer.setLeftItem(this.headerBar);
+  MapView.setCurrentLocation(this.mapViewfl.workMapView,30000);
+
+}
+
+MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(mapview, second) {
+  Location.start();
+  console.log("in location start");
+
+  Location.onLocationChanged = function(event) {
+    console.log("in location changed function");
+
+    mapview.centerLocation = {
+      latitude: parseFloat(event.latitude),
+      longitude: parseFloat(event.longitude)
+    }
+    console.log("centerLocation is " + mapview.centerLocation.latitude + " &&  " + mapview.centerLocation.longitude);
+    // console.log("In centerlocation" +value.mapViewfl.workMapView.centerLocation.longitude );
+    console.log("In main , Location latitude: " + event.latitude + "  Longitude: " + event.longitude);
+  };
+
+  Timer.setTimeout({
+    delay: 30000,
+    task: function() {
+      Location.stop()
     }
   });
+
+}
 
 HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderBarItem(that) {
   var backIconItem = new HeaderBarItem();
   var backIcon = Image.createFromFile("images://backheadericon.png");
   backIconItem.image = backIcon;
   backIconItem.onPress = function() {
-    console.log("back icon is on press");
     Router.goBack();
   }.bind(that);
   backIconItem.itemColor = Color.create("#D5D4D4");
@@ -71,9 +92,13 @@ function onShow(superOnShow) {
   this.headerBar.title = lang["workOrders.title"];
   this.headerBar.itemColor = Color.create("#D5D4D4");
 
-  workOL = this.workOrderListview;
-  console.log("centerLocation in work order page is " + this.mapViewfl.workMapView.centerLocation.latitude + " &&& " + this.mapViewfl.workMapView.centerLocation.longitude);
+  var page = this;
 
+  Application.android.requestPermissions(1002, Application.Android.Permissions.ACCESS_COARSE_LOCATION)
+  Application.android.onRequestPermissionsResult = function(e) {
+    console.log(JSON.stringify(e));
+  }
+  workOL = this.workOrderListview;
 
   var currentUser = User.currentUser;
   // console.log("current user is " + currentUser.firstname);
@@ -98,7 +123,6 @@ function initListview(jsonData) {
 
   workOL.rowHeight = 90;
   workOL.onRowCreate = function() {
-    console.log("in row create");
     var listviewItem = new ListViewItem();
     var workOrderItem = Object.assign(new WorkOrderItem(), {
       id: 8,
@@ -131,7 +155,7 @@ function initListview(jsonData) {
     User.currentWork = jsonData[index]
     Router.go("workOrderSumpg", jsonData[index]);
   };
-  
+
   workOL.ios.rightToLeftSwipeEnabled = true;
 
   workOL.ios.onRowSwiped = function(direction, expansionSettings) {
@@ -140,26 +164,19 @@ function initListview(jsonData) {
       expansionSettings.buttonIndex = -1;
 
       var archiveSwipeItem = ListView.iOS.createSwipeItem("DELETE", Color.RED, 50, function(e) {
-        console.log("swipe item is clicked");
 
         deleteItem(e.index, jsonData);
-
-        
-        // workOL.itemCount = jsonData.length;
-        // workOL.refreshData();
-        // workOL.stopRefresh();
       });
       return [archiveSwipeItem];
     }
   };
-  
-  workOL.onRowLongSelected = function(listViewItem, index){
+
+  workOL.android.onRowLongSelected = function(listViewItem, index) {
     deleteItem(index, jsonData);
   };
 
 
   workOL.refreshEnabled = false;
-
   workOL.itemCount = jsonData.length;
   workOL.refreshData();
   workOL.stopRefresh();

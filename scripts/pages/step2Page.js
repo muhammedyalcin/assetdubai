@@ -38,6 +38,7 @@ function onShow(superOnShow) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
   this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
+  this.headerBar.title = lang["step2Page.title"];
 }
 /**
  * @event onLoad
@@ -47,7 +48,7 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
-  this.headerBar.title = lang["step2Page.title"];
+ 
   
   // var backIconItem = new HeaderBarItem();
   // backIconItem.image = Image.createFromFile("images://backheadericon.png");

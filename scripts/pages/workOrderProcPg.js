@@ -6,6 +6,7 @@ const Router = require("sf-core/ui/router");
 const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const ImageView = require("sf-core/ui/imageview");
+const MapView = require('sf-core/ui/mapview');
 const MapViewfl = require("../components/MapViewfl");
 var mapViewfl = new MapViewfl();
 
@@ -41,7 +42,7 @@ function onShow(superOnShow, arr) {
     superOnShow();
 
     this.headerBar.itemColor = Color.create("#D5D4D4");
-    mapViewfl.assignLocation =this;
+    mapViewfl.assignLocation = this;
 
     //assign the location
     mapViewfl.assignLocation = this;
@@ -58,7 +59,7 @@ function onShow(superOnShow, arr) {
     this.contactContainer.imgfl.visible = false;
 
     this.contactContainer.contactLabel1.text = lang["workOrderProcPg.equipmentRequired"];
-    
+
     this.startProButton.text = lang["workOrderProcPg.button.startProcedure"];
     this.cancelButton.text = lang["workOrderProcPg.button.cancelWorkOrder"];
 
@@ -76,6 +77,8 @@ function onLoad(superOnLoad) {
     //In general contactContainer doesn't need button.
     this.contactContainer.buttonfl.flexGrow = 0;
     this.contactContainer.buttonfl.visible = false;
+
+    MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
 }
 
 module && (module.exports = Page_);
