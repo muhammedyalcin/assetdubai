@@ -14,14 +14,11 @@ const Color = require("sf-core/ui/color");
 const Timer = require("sf-core/global/timer");
 const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
-const ImageView = require("sf-core/ui/imageview");
 const MapView = require('sf-core/ui/mapview');
 const Items = require("../model/items");
 const AlertView = require('sf-core/ui/alertview');
 const Location = require('sf-core/device/location');
-const MapViewfl = require("../components/MapViewfl");
 const Application = require("sf-core/application");
-var mapViewfl = new MapViewfl();
 
 const WorkOrders = extend(WorkOrdersDesign)(
   // Constructor
@@ -41,24 +38,18 @@ function onLoad(pageonLoad) {
 
   this.headerBar.titleColor = Color.create("#FFFFFF");
   Router.sliderDrawer.setLeftItem(this.headerBar);
-  MapView.setCurrentLocation(this.mapViewfl.workMapView,30000);
+  MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
 
 }
 
 MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(mapview, second) {
   Location.start();
-  console.log("in location start");
-
   Location.onLocationChanged = function(event) {
-    console.log("in location changed function");
 
     mapview.centerLocation = {
       latitude: parseFloat(event.latitude),
       longitude: parseFloat(event.longitude)
     }
-    console.log("centerLocation is " + mapview.centerLocation.latitude + " &&  " + mapview.centerLocation.longitude);
-    // console.log("In centerlocation" +value.mapViewfl.workMapView.centerLocation.longitude );
-    console.log("In main , Location latitude: " + event.latitude + "  Longitude: " + event.longitude);
   };
 
   Timer.setTimeout({
@@ -101,7 +92,6 @@ function onShow(superOnShow) {
   workOL = this.workOrderListview;
 
   var currentUser = User.currentUser;
-  // console.log("current user is " + currentUser.firstname);
 
   Timer.setTimeout({
     delay: 500,

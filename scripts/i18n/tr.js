@@ -14,6 +14,8 @@ SMF.i18n.defineLanguage('tr', {
 	"networkError": "Bir ağ bağlantı hatası oluştu, lütfen daha sonra tekrar deneyiniz",
 	"applicationError": "Beklenmeyen Uygulama Hatası",
 	"delete": "Sil",
+	"theme" : "Tema",
+	"signout": "Çıkış",
 	
 	"assetLoginPage.username"                : "Kullanıcı Adı",
 	"assetLoginPage.password"                : "Şifre",
@@ -79,5 +81,9 @@ SMF.i18n.defineLanguage('tr', {
 	"locationPg.address"                       : "Adres",
 	"locationPg.directionsTosite"              : "Siteye Yol Tarifi",
 	"locationPg.button.updateAssetLocation"    : "Varlık Adresini Güncelle",
-	"locationPg.button.viewWorkOrdersForAssets": "Varlıklar İçin İs Emrini Göster"
+	"locationPg.button.viewWorkOrdersForAssets": "Varlıklar İçin İs Emrini Göster",
+	
+	"setting.title"                            : "Ayarlar",
+	"setting.confirmAlert.message"             : "Uygulamanın görünümnü değiştirmek istiyor musun? Bu işlem uygulamayı yeni baştan başlatacaktır.",
+	"setting.confirmAlert.title"               : "Onayla"
 });

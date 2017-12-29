@@ -14,6 +14,8 @@ SMF.i18n.defineLanguage('en', {
 	"networkError": "There has been a network error, please try again later",
 	"applicationError": "There has been an unhandled application error, please inform developers",
 	"delete": "Delete",
+	"theme" : "Theme",
+	"signout": "Sign out",
 	
 	"assetLoginPage.username"                : "Username",
 	"assetLoginPage.password"                : "Password",
@@ -81,6 +83,10 @@ SMF.i18n.defineLanguage('en', {
 	"locationPg.address"                       : "Address",
 	"locationPg.directionsTosite"              : "Directions To Site",
 	"locationPg.button.updateAssetLocation"    : "Update Asset Location",
-	"locationPg.button.viewWorkOrdersForAssets": "View Work Order For Assets"
+	"locationPg.button.viewWorkOrdersForAssets": "View Work Order For Assets",
+	
+    "setting.title"                            : "Settings",
+	"setting.confirmAlert.message"             : "Do you really want to change the theme of the application? This will cause the application to restart.",
+	"setting.confirmAlert.title"               : "Confirmation"
 
 });

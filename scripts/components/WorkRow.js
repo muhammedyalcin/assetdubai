@@ -40,8 +40,6 @@ const WorkRow = extend(WorkRowDesign)(
           value.workOrderListview.visible = false;
           value.mapViewfl.visible = true;
           
-          // //sets location
-          // mapViewfl.assignLocation = value;
           resetLeftItem(value);
         }
       });
@@ -49,7 +47,6 @@ const WorkRow = extend(WorkRowDesign)(
     }
 
     function resetLeftItem(value) {
-      //value.headerBar.leftItemEnabled = true
 
       var mapViewItem = new HeaderBarItem({
         image: Image.createFromFile("images://listsicon.png"),

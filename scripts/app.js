@@ -17,8 +17,10 @@ Application.onUnhandledError = function(e) {
 const Router = require("sf-core/ui/router");
 const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
+const Data = require('sf-core/data');
 stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
-stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
+
+stylerBuilder.setActiveTheme(Data.getStringVariable("theme") || settings.config.theme.currentTheme);
 
 
 // Define routes and go to initial page of application
@@ -35,6 +37,7 @@ Router.add("confirmPg", require("./pages/confirmPg"),true);
 Router.add("workOrderProcPg", require("./pages/workOrderProcPg"),true);
 Router.add("locationPg", require("./pages/locationPg"),true);
 Router.add("assetPg", require("./pages/assetPg"),true);
+Router.add("setting", require("./pages/setting"))
 Router.go("assetLoginPage");
 
 

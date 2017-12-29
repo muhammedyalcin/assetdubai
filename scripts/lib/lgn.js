@@ -15,11 +15,12 @@ function lgn(){
         
         for(var i = 0; jsonData.length > i; i++){
             var result = jsonData[i];
-            console.log(result.password);
-            if(result.password == pwd){
+            console.log("pwd is " + pwd);
+            if(result.password === pwd){
+                console.log(result.password);
                 return callback && callback(null, result);
             }
-            if(i == jsonData.length)
+            if(i === jsonData.length)
             alert("Invalid username or password");
                 return callback(result);
         }

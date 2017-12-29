@@ -324,8 +324,8 @@ var sliderDrawer = new SliderDrawer({
             settingsLabel.onTouch = function() {
                 console.log("setting is touched");
                 sliderDrawer.hide();
-                Router.sliderDrawer.enabled = false;
-                // Router.go("workOrders");
+                Router.sliderDrawer.enabled = true;
+                Router.go("setting");
             }
             logoutLabel.onTouch = function() {
                 console.log("setting is touched");

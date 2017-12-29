@@ -1,14 +1,13 @@
 /* 
 		You can modify its contents.
 */
+/*globals lang*/
 const extend = require('js-base/core/extend');
-const LocationPgDesign = require('ui/ui_locationPg');
-const Color = require("sf-core/ui/color");
-const HeaderBarItem = require("sf-core/ui/headerbaritem");
-const MapView = require('sf-core/ui/mapview');
+const SettingDesign = require('ui/ui_setting');
+const Router = require("sf-core/ui/router");
+const User = require("../model/user");
 
-
-const LocationPg = extend(LocationPgDesign)(
+const Setting = extend(SettingDesign)(
   // Constructor
   function(_super) {
     // Initalizes super class for this page scope
@@ -17,7 +16,6 @@ const LocationPg = extend(LocationPgDesign)(
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
 
   });
 
@@ -30,10 +28,16 @@ const LocationPg = extend(LocationPgDesign)(
 function onShow(superOnShow) {
   superOnShow();
 
-  this.headerBar.itemColor = Color.create("#D5D4D4");
+  var page = this;
+  
+  this.headerBar.title = lang["setting.title"];
+  this.signoutLabel.text = lang["signout"];
 
-
-
+  page.signoutLabel.onTouch = function() {
+    User.currentUser = null;
+    Router.sliderDrawer.enabled = false;
+    Router.go("assetLoginPage");
+  }.bind(this);
 }
 
 /**
@@ -43,9 +47,7 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
-  HeaderBarItem.setCustomHeaderBarItem(this);
-  //sets current location
-  MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
+  Router.sliderDrawer.setLeftItem(this.headerBar);
 }
 
-module && (module.exports = LocationPg);
+module && (module.exports = Setting);

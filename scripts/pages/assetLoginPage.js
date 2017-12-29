@@ -10,8 +10,6 @@ var lgn = new Lgn();
 const fingerprint = require("sf-extension-utils").fingerprint;
 const User = require("../model/user");
 const rau = require("sf-extension-utils").rau;
-const MapViewfl = require("../components/MapViewfl");
-var mapViewfl = new MapViewfl();
 
 const AssetLoginPage = extend(AssetLoginPageDesign)(
   // Constructor
@@ -22,9 +20,6 @@ const AssetLoginPage = extend(AssetLoginPageDesign)(
     this.onLoad = onLoad.bind(this, this.onLoad);
     // overrides super.onShow method
     this.onShow = onShow.bind(this, this.onShow);
-
-
-
 
   });
 
@@ -38,20 +33,28 @@ const AssetLoginPage = extend(AssetLoginPageDesign)(
 
 function onShow(superOnShow) {
   superOnShow();
-  const page = this;
+  
+  var page = this;
   this.passwordLbl.text = lang["assetLoginPage.password"];
   this.userNameLbl.text = lang["assetLoginPage.username"];
   this.loginButton.text = lang["assetLoginPage.button.signin"];
   
-
+  
+  this.userTextBox.ios.clearButtonEnabled = true;
+  this.passwordTextBox.ios.clearButtonEnabled = true;
+  
+ 
+  console.log("this.userTextBox " + page.userTextBox.text + " this.passwordTextBox: " + page.passwordTextBox.text);
   fingerprint.init({
     userNameTextBox: this.userTextBox,
     passwordTextBox: this.passwordTextBox,
     autoLogin: true,
     callback: function(err, fingerprintResult) {
-      var password;
+      var password = "";
       if (err) {
+        console.log("password is before "+ page.passwordTextBox.text);
         password = page.passwordTextBox.text;
+        console.log("password is after"+ password);
       }
       else password = fingerprintResult.password;
 
@@ -62,14 +65,13 @@ function onShow(superOnShow) {
         if (err) {
           return;
         }
-
         User.currentUser = userData;
         console.log("userData is " + User.currentUser);
         Router.sliderDrawer.setCurrentData();
         fingerprintResult && fingerprintResult.success();
         loginSucceed();
       });
-    }
+    }.bind(this)
 
   });
   rau.checkUpdate();
@@ -84,9 +86,6 @@ function onLoad(superOnLoad) {
   superOnLoad();
   const page = this;
 
-  this.userTextBox.ios.clearButtonEnabled = true;
-  this.passwordTextBox.ios.clearButtonEnabled = true;
-  
   const signinAction = signin.bind(this.loginButton, this);
   page.loginButton.onPress = signinAction;
 
