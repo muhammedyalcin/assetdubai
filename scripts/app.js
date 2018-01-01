@@ -31,7 +31,7 @@ Router.add("proceduresPage", require("./pages/proceduresPage"),true);
 Router.add("step1Page", require("./pages/step1Page"),true);
 Router.add("step2Page", require("./pages/step2Page"),true);
 Router.add("step3Page", require("./pages/step3Page"),true);
-Router.add("workOrders", require("./pages/workOrders"),true);
+Router.add("workOrders", require("./pages/workOrders"));
 Router.add("workOrderSumpg", require("./pages/workOrderSumpg"),true);
 Router.add("confirmPg", require("./pages/confirmPg"),true);
 Router.add("workOrderProcPg", require("./pages/workOrderProcPg"),true);

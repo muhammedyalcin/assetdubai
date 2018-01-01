@@ -23,7 +23,7 @@ const DashBoardItem = extend(DashBoardItemDesign)(
 
     var dashboardData = [{
         title: lang["dashboardPg.dasboard.all"],
-        number: "4",
+        number: "8",
         backgroundColor: Color.TRANSPARENT
       }, {
         title: lang["dashboardPg.dasboard.new"],
@@ -31,7 +31,7 @@ const DashBoardItem = extend(DashBoardItemDesign)(
         backgroundColor: Color.TRANSPARENT
       },
       {
-        title: lang["dashboardPg.dasboard.upcoming"],
+        title: lang["dashboardPg.dasboard.delayed"],
          number: "1",
         backgroundColor: Color.create(100, 208, 2, 27)
       },

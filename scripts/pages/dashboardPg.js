@@ -56,6 +56,10 @@ function initListview(dashData) {
     var dashboardLabel1 = labelContainer.findChildById(161);
     dashboardLabel1.text = dashboardData[index].number;
     dashboardLabel2.text = dashboardData[index].title;
+    //for now just navihate it to order page.
+    dashboardLabel1.onTouch = onTouchDasItems.bind(page);
+    dashboardLabel2.onTouch = onTouchDasItems.bind(page);
+    
     dasboardItem.backgroundColor = dashboardData[index].backgroundColor;
   }
 
@@ -85,14 +89,19 @@ function onShow(superOnShow) {
   superOnShow();
   this.headerBar.title = lang["dashboardPg.dasboard.title"];
 }
+function onTouchDasItems() {
+  Router.go("workOrders");
+}
 
 /**
  * @event onLoad
  * This event is called once when page is created.
  * @param {function} superOnLoad super onLoad function
  */
+ var page;
 function onLoad(superOnLoad) {
   superOnLoad();
+  page = this;
   var dashboardObj = new DashBoardItem();
   dashboardData = dashboardObj.getDashboardData;
   dashboardListview = this.dashboardListview;

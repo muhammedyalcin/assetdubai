@@ -11,6 +11,7 @@
         "workid1": "WO 47922658",
         "workid2": "SDV 21914",
         "workid3": "Test Passing",
+        "checked": "false",
         "worksummary": [{
             "worksumid1": "SDV 24352",
             "worksumid2": "Test Passing",
@@ -108,6 +109,7 @@
         "workid1": "WO 54846957",
         "workid2": "SDV 46538",
         "workid3": "Test Passing",
+        "checked": "false",
         "worksummary": [{
             "worksumid1": "SDV 90265",
             "worksumid2": "Test Passing",
@@ -199,6 +201,7 @@
         "workid1": "WO 95325686",
         "workid2": "SDV 60687",
         "workid3": "Test Passing",
+        "checked": "false",
         "worksummary": [{
             "worksumid1": "SDV 80308",
             "worksumid2": "Test Passing",
@@ -287,9 +290,10 @@
         ]
       },
       {
-        "workid1": "WO 67449187",
+        "workid1": "Inspection",
         "workid2": "SDV 56297",
         "workid3": "Test Passing",
+        "checked": "true",
         "worksummary": [{
             "worksumid1": "SDV 25831",
             "worksumid2": "Test Passing",
@@ -378,9 +382,10 @@
         ]
       },
       {
-        "workid1": "WO 46503530",
+        "workid1": "Inspection",
         "workid2": "SDV 29746",
         "workid3": "Test Passing",
+        "checked": "true",
         "worksummary": [{
             "worksumid1": "SDV 21071",
             "worksumid2": "Test Passing",

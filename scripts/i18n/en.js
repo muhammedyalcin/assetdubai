@@ -27,7 +27,7 @@ SMF.i18n.defineLanguage('en', {
 	"dashboardPg.dasboard.title"                   : "Dashboard",
 	"dashboardPg.dasboard.all"               : "All",
 	"dashboardPg.dasboard.new"               : "New",
-	"dashboardPg.dasboard.upcoming"          : "Upcoming",
+	"dashboardPg.dasboard.delayed"          : "Delayed",
 	"dashboardPg.dasboard.pending"           : "Pending",
 	"dashboardPg.dasboard.completed"         : "Completed",
 	

@@ -27,7 +27,7 @@ SMF.i18n.defineLanguage('tr', {
 	"dashboardPg.dasboard.title"             : "Gösterge Paneli",
 	"dashboardPg.dasboard.all"               : "Hepsi",
 	"dashboardPg.dasboard.new"               : "Yeni",
-	"dashboardPg.dasboard.upcoming"          : "Yaklaşan",
+	"dashboardPg.dasboard.delayed"          : "Gecikmiş",
 	"dashboardPg.dasboard.pending"           : "Askıda Olan",
 	"dashboardPg.dasboard.completed"         : "Biten",
 	

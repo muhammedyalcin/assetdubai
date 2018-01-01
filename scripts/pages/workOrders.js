@@ -39,7 +39,6 @@ function onLoad(pageonLoad) {
   this.headerBar.titleColor = Color.create("#FFFFFF");
   Router.sliderDrawer.setLeftItem(this.headerBar);
   MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
-
 }
 
 MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(mapview, second) {
@@ -50,17 +49,23 @@ MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(m
       latitude: parseFloat(event.latitude),
       longitude: parseFloat(event.longitude)
     }
+    //this sets the current location to model data (User). This statement is custom it may change according to expection.
+    User.currentLocation = {
+      latitude : parseFloat(event.latitude),
+      longitude : parseFloat(event.longitude)
+    }
   };
-
   Timer.setTimeout({
     delay: 30000,
     task: function() {
       Location.stop()
     }
   });
-
 }
 
+// HeaderBarItem.constructor.prototype.setLocationIcon = function setLocationIcon(that){
+  
+// }
 HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderBarItem(that) {
   var backIconItem = new HeaderBarItem();
   var backIcon = Image.createFromFile("images://backheadericon.png");
@@ -139,6 +144,13 @@ function initListview(jsonData) {
     workId3.text = jsonData[index].workid1;
     workId2.text = jsonData[index].workid2;
     workId1.text = jsonData[index].workid3;
+    
+    if(jsonData[index].checked === "true"){
+      var indicator = detailContainer.findChildById(98);
+      var light  = indicator.findChildById(97);
+      light.backgroundColor = Color.create("#3ADF00");
+    }
+    
   };
 
   workOL.onRowSelected = function(listViewItem, index) {
@@ -153,7 +165,7 @@ function initListview(jsonData) {
       //Expansion button index. Default value 0
       expansionSettings.buttonIndex = -1;
 
-      var archiveSwipeItem = ListView.iOS.createSwipeItem("DELETE", Color.RED, 50, function(e) {
+      var archiveSwipeItem = ListView.iOS.createSwipeItem("Cancel", Color.RED, 50, function(e) {
 
         deleteItem(e.index, jsonData);
       });

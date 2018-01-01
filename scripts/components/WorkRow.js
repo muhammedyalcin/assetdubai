@@ -7,9 +7,6 @@ const WorkRowDesign = require('library/WorkRow');
 const Color = require("sf-core/ui/color");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const Image = require("sf-core/ui/image");
-const FlexLayout = require("sf-core/ui/");
-const MapViewfl = require("../components/MapViewfl");
-var mapViewfl = new MapViewfl();
 
 
 const WorkRow = extend(WorkRowDesign)(
