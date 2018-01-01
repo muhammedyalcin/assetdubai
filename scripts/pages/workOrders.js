@@ -155,7 +155,7 @@ function initListview(jsonData) {
 
   workOL.onRowSelected = function(listViewItem, index) {
     User.currentWork = jsonData[index]
-    Router.go("workOrderSumpg", jsonData[index]);
+    Router.go("workOrderProcPg");
   };
 
   workOL.ios.rightToLeftSwipeEnabled = true;

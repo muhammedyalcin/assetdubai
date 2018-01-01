@@ -41,7 +41,7 @@ const ProceduresPage = extend(ProceduresPageDesign)(
  * @param {Object} parameters passed from Router.go function
  */
 
-function onShow(superOnShow, arr) {
+function onShow(superOnShow) {
   superOnShow();
   var page = this;
   
