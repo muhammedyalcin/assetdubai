@@ -40,7 +40,7 @@ function onShow(superOnShow) {
   this.headerBar.itemColor = Color.create("#D5D4D4");
   this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
   this.headerBar.title = lang["step3Page.title"];
-  
+
 }
 
 /**
@@ -64,12 +64,16 @@ function onLoad(superOnLoad) {
 
   stepPage.tab.summaryButton.onPress = function() {
     tabIndicator.animateRightButton = stepPage;
-    //Write chaneable flex here
+    this.noteContainer.visible = true;
+    this.layout.findChildById(25).visible = false;
   }.bind(this);
 
   stepPage.tab.instructionButton.onPress = function() {
     tabIndicator.animateLeftButton = stepPage;
-    //Write changeable flex here
+    tabIndicator.assignInstructionButton = {
+      that: this,
+      index: 1
+    }
   }.bind(this);
 
   this.completefl.completeButton.onPress = confirmButton_onPress.bind(this);
@@ -85,7 +89,7 @@ function onLoad(superOnLoad) {
   // uploadfl.uploadimg.onTouch = uploadOnPress.bind(this);
   var uploadfl = new UploadDrawfl();
   // var uploadImgfl = new UploadImgfl();
-  
+
 
   uploadfl.onTouch = function uploadOnPress() {
     console.log("Upload is pressed");

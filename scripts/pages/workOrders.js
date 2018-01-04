@@ -51,8 +51,8 @@ MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(m
     }
     //this sets the current location to model data (User). This statement is custom it may change according to expection.
     User.currentLocation = {
-      latitude : parseFloat(event.latitude),
-      longitude : parseFloat(event.longitude)
+      latitude: parseFloat(event.latitude),
+      longitude: parseFloat(event.longitude)
     }
   };
   Timer.setTimeout({
@@ -64,14 +64,19 @@ MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(m
 }
 
 // HeaderBarItem.constructor.prototype.setLocationIcon = function setLocationIcon(that){
-  
+
 // }
-HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderBarItem(that) {
+HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderBarItem(that, pageName) {
   var backIconItem = new HeaderBarItem();
   var backIcon = Image.createFromFile("images://backheadericon.png");
   backIconItem.image = backIcon;
   backIconItem.onPress = function() {
-    Router.goBack();
+    if (pageName) {
+    Router.go(pageName);
+    }
+    else {
+      Router.goBack();
+    }
   }.bind(that);
   backIconItem.itemColor = Color.create("#D5D4D4");
   that.headerBar.setLeftItem(backIconItem);
@@ -144,13 +149,13 @@ function initListview(jsonData) {
     workId3.text = jsonData[index].workid1;
     workId2.text = jsonData[index].workid2;
     workId1.text = jsonData[index].workid3;
-    
-    if(jsonData[index].checked === "true"){
+
+    if (jsonData[index].checked === "true") {
       var indicator = detailContainer.findChildById(98);
-      var light  = indicator.findChildById(97);
+      var light = indicator.findChildById(97);
       light.backgroundColor = Color.create("#3ADF00");
     }
-    
+
   };
 
   workOL.onRowSelected = function(listViewItem, index) {

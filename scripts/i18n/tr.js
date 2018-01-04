@@ -51,22 +51,24 @@ SMF.i18n.defineLanguage('tr', {
 	"workOrderProcPg.equipmentRequired"             : "Gereken Ekipman",
 	"workOrderProcPg.procedure"                     : "İşlem",
 	
-	"proceduresPage.title"                   : "İşlemler",
-	"proceduresPage..button.completeSetup"   : "İşlemi Bittir",
+	"proceduresPage.title"                   : "Adımlar",
+	// "proceduresPage..button.completeSetup"   : "İşlemi Bittir",
+	"proceduresPage.button.cancelWorkOrder"  : "İş Emrini İptal Et",
+	"proceduresPage.button.startProcedure"   : "İşleme Başla",
 	
 	"stepsPages.tabBar.instruction"          : "Talimat",
 	"stepsPages.tabBar.summary"              : "Özet",
 	"stepsPages.tabBar.note"                 : "Not",
 	"stepsPages.button.completeSetup"        : "İşlemi Bittir",
 	
-	"step1Page.title"                        : "1. Adım",
+	"step1Page.title"                        : "1/3 Adım",
 	
-	"step2Page.title"                        : "2. Adım",
+	"step2Page.title"                        : "2/3 Adım",
 	
-	"step3Page.title"                        : "3. Adım",
+	"step3Page.title"                        : "3/3 Adım",
 	"step3Page.uploadLabel"                  : "Kızılötesi Kamera Görüntüleri Yükle",
 	
-	"confirmPg.title"                        : "İş Emrini Bittir",
+	"confirmPg.title"                        : "İşlemi Bittir",
 	"confirmPg.yesButton"                    : "Evet",
 	"confirmPg.noButton"                     : "Hayır",
 	"confirmPg.workOrderCompletedAt"         : "İş Emri Tamamlandı",

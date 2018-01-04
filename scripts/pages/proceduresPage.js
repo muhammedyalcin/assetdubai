@@ -10,6 +10,7 @@ const CheckLine = require("components/CheckLine");
 const ProcedureRow = require("components/ProcedureRow");
 const ImageView = require("sf-core/ui/imageview");
 const User = require("../model/user");
+const Instructions = require("../model/instructions");
 const Label = require("sf-core/ui/label");
 const TextAlignment = require("sf-core/ui/textalignment");
 const Router = require("sf-core/ui/router");
@@ -18,7 +19,6 @@ const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const VideoView = require("sf-core/ui/videoview");
 const Tickfl = require("components/Tickfl");
 const Timer = require("sf-core/global/timer");
-const Button = require("sf-core/ui/button");
 const HTTP = require("sf-core/net/http");
 var sessionManager = new HTTP();
 
@@ -46,7 +46,8 @@ function onShow(superOnShow) {
   var page = this;
   
   this.headerBar.title = lang["proceduresPage.title"];
-  this.completefl.completeButton.text = lang["proceduresPage..button.completeSetup"];
+  this.startButton.text = lang["proceduresPage.button.startProcedure"];
+  this.cancelButton.text = lang["proceduresPage.button.cancelWorkOrder"];
 
   Timer.setTimeout({
     delay: 1000,
@@ -59,18 +60,19 @@ function onShow(superOnShow) {
   this.headerBar.itemColor = Color.create("#D5D4D4");
 
   // if (arr && arr[0] && arr[1]) {
-  var workData = User.currentWork;
+  var currentWorkSum = User.currentWorkSummary;
   // var procedureData = arr[0].procedure;
   // var workData = arr[1];
 
-  console.log("work data is " + workData.workid1);
+  console.log("work data is " + currentWorkSum.worksumid1);
   //Sets the selected workid's
-  this.workid1.text = workData.workid1;
-  this.workid2.text = workData.workid2;
-  this.workid3.text = workData.workid3;
+  this.workid1.text = currentWorkSum.worksumid1;
+  this.workid2.text = currentWorkSum.worksumid2;
+  // this.workid3.text = workData.workid3;
 
   //set action button
-  this.completefl.completeButton.onPress = function() {
+  this.startButton.onPress = function() {
+    this.procedureScroll.layout.removeAll();
     Router.go("step1Page");
   }.bind(this);
 
@@ -113,6 +115,8 @@ function onLoad(superOnLoad) {
         page.initFL(procedureData[i], i, globalTop);
         globalTop += height;
       }
+      //sets the procedureScroll layout to model class that enable to retrieve current instructions
+      // Instructions.procedureFlexLayout = page.procedureScroll.layout;
       page.procedureScroll.layout.applyLayout();
     }
   });
@@ -255,7 +259,7 @@ function onLoad(superOnLoad) {
     myImageView.positionType = FlexLayout.PositionType.RELATIVE;
 
     var request = sessionManager.requestImage({
-      url: "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+      url: "https://5.imimg.com/data5/NE/UF/MY-12480184/prs-station-250x250.png",
       onLoad: function(e) {
         myImageView.image = e.image;
       },
@@ -273,6 +277,7 @@ function onLoad(superOnLoad) {
 
     profl.addChild(checkLine);
     profl.addChild(procedureRow);
+    Instructions.procedureFlexLayout.push(profl);
     this.procedureScroll.layout.addChild(profl);
   }
 }

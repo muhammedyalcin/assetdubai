@@ -70,7 +70,7 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
     superOnLoad();
 
-    HeaderBarItem.setCustomHeaderBarItem(this);
+    HeaderBarItem.setCustomHeaderBarItem(this,"workOrders");
 
     MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
 }

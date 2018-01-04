@@ -54,7 +54,7 @@ function onLoad(superOnLoad) {
 }
 
 function completBtn_onPress(){
-  Router.go("assetPg");
+  Router.go("workOrderProcPg");
 }
 
 module && (module.exports = ConfirmPg);

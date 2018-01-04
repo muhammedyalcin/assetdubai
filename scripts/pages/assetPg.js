@@ -8,6 +8,7 @@ const ListViewItem = require("sf-core/ui/listviewitem");
 const Router = require("sf-core/ui/router");
 const Color = require("sf-core/ui/color");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
+const Asset = require("../model/asset");
 const AssetRow = require("components/AssetRow");
 var assetRow = new AssetRow();
 
@@ -79,6 +80,7 @@ function onLoad(superOnLoad) {
 
     assetListview.onRowSelected = function(listViewItem, index) {
       Router.go("locationPg");
+      Asset.currentAsset = jsonData[index];
       // console.log("work data is in workordersum page " +workData.workid1);
       // var workSummary = jsonData[index];
       // var arr = [workSummary,workData];
@@ -87,7 +89,7 @@ function onLoad(superOnLoad) {
 
     //sets manually for now
     assetListview.refreshEnabled = false;
-    assetListview.itemCount = 8;
+    assetListview.itemCount = 5;
     assetListview.refreshData();
     assetListview.stopRefresh();
   }

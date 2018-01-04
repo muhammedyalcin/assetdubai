@@ -52,22 +52,24 @@ SMF.i18n.defineLanguage('en', {
 	
 	
 	
-	"proceduresPage.title"                   : "Procedures",
+	"proceduresPage.title"                   : "Steps",
 	"proceduresPage..button.completeSetup"   : "Complete Setup",
+    "proceduresPage.button.cancelWorkOrder"  : "Cancel Work Order",
+	"proceduresPage.button.startProcedure"   : "Start Procedure",
 	
 	"stepsPages.tabBar.instruction"          : "Instruction",
 	"stepsPages.tabBar.summary"              : "Summary",
 	"stepsPages.tabBar.note"                 : "Note",
 	"stepsPages.button.completeSetup"        : "Complete Setup",
 	
-	"step1Page.title"                        : "Step 1",
+	"step1Page.title"                        : "Step 1/3",
 	
-	"step2Page.title"                        : "Step 2",
+	"step2Page.title"                        : "Step 2/3",
 	
-	"step3Page.title"                        : "Step 3",
+	"step3Page.title"                        : "Step 3/3",
 	"step3Page.uploadLabel"                  : "Upload Infrared Camera Images",
 	
-	"confirmPg.title"                        : "Complete Work Order",
+	"confirmPg.title"                        : "Complete Procedure",
 	"confirmPg.yesButton"                    : "Yes",
 	"confirmPg.noButton"                     : "No",
 	"confirmPg.workOrderCompletedAt"         : "Work Order Completed at",

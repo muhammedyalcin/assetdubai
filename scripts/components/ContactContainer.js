@@ -16,7 +16,7 @@ const ContactContainer = extend(ContactContainerDesign)(
     this.contactLabel1.text =lang["locationPg.contact"];
     this.phoneLabel1.text = lang["locationPg.phone"];
     this.addressLabel1.text = lang["locationPg.address"];
-    this.directLabel.text = lang["locationPg.directionsTosite"];
+    this.directionsButton.text = lang["locationPg.directionsTosite"];
     this.viewWorkButton.text = lang["locationPg.button.viewWorkOrdersForAssets"];
     this.updateButton.text = lang["locationPg.button.updateAssetLocation"];
   }

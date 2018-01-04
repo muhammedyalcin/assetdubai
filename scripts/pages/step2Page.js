@@ -48,8 +48,8 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
- 
-  
+
+
   // var backIconItem = new HeaderBarItem();
   // backIconItem.image = Image.createFromFile("images://backheadericon.png");
   // backIconItem.itemColor = Color.create("#D5D4D4");
@@ -60,12 +60,16 @@ function onLoad(superOnLoad) {
 
   stepPage.tab.summaryButton.onPress = function() {
     tabIndicator.animateRightButton = stepPage;
-    //Write chaneable flex here
+    this.noteContainer.visible = true;
+    this.layout.findChildById(25).visible = false;
   }.bind(this);
 
   stepPage.tab.instructionButton.onPress = function() {
     tabIndicator.animateLeftButton = stepPage;
-    //Write changeable flex here
+    tabIndicator.assignInstructionButton = {
+      that: this,
+      index: 1
+    }
   }.bind(this);
 
   this.completefl.completeButton.onPress = function() {

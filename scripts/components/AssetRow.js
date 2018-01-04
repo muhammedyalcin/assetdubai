@@ -15,36 +15,24 @@ const AssetRow = extend(AssetRowDesign)(
       var obj = this;
 
     var dashboardData = [{
-      title: "Barcode: 4901248127323",
-      desc: "Condition Monitoring Survey = Enhanced"
+      title: "Barcode: 4901234627323",
+      desc: "Pumping Valve"
       },
       {
-      title: "Barcode: 4901248127323",
-      desc: "Condition Monitoring Survey = Enhanced"
+      title: "Barcode: 4909652827324",
+      desc: "Pumping Valve"
       },
       {
-      title: "Barcode: 4901248127323",
-      desc: "Condition Monitoring Survey = Enhanced"
+      title: "Barcode: 4903452827325",
+      desc: "Pumping Valve"
       },
       {
-      title: "Barcode: 4901248127323",
-      desc: "Condition Monitoring Survey = Enhanced"
+      title: "Barcode: 4905315427326",
+      desc: "Pumping Valve"
       },
       {
-      title: "Barcode: 4901248127323",
-      desc: "Condition Monitoring Survey = Enhanced"
-      },
-      {
-      title: "Barcode: 4901248127323",
-      desc: "Condition Monitoring Survey = Enhanced"
-      },
-      {
-      title: "Barcode: 4901248127323",
-      desc: "Condition Monitoring Survey = Enhanced"
-      },
-      {
-      title: "Barcode: 4901248127323",
-      desc: "Condition Monitoring Survey = Enhanced"
+      title: "Barcode: 4901248127327",
+      desc: "Pumping Valve"
       }
     ];
 
