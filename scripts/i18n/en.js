@@ -65,6 +65,8 @@ SMF.i18n.defineLanguage('en', {
 	"step1Page.title"                        : "Step 1/3",
 	
 	"step2Page.title"                        : "Step 2/3",
+	"step2Page.acusticTest"                  : "Acustic Test: Is gas passing ?",
+	
 	
 	"step3Page.title"                        : "Step 3/3",
 	"step3Page.uploadLabel"                  : "Upload Infrared Camera Images",
@@ -75,6 +77,7 @@ SMF.i18n.defineLanguage('en', {
 	"confirmPg.workOrderCompletedAt"         : "Work Order Completed at",
 	"confirmPg.stepCompleted"                : "Step Completed",
 	"confirmPg.additionalActions"            : "Additional Actions",
+	"confirmPg.quest"                        : "Do you want to create a new work order for valve cleaning ?",
 	"confirmPg.button.comfirmStatus"         : "Confirm Status",
 	
 	"assets.title"                           : "Assets",
@@ -89,6 +92,9 @@ SMF.i18n.defineLanguage('en', {
 	
     "setting.title"                            : "Settings",
 	"setting.confirmAlert.message"             : "Do you really want to change the theme of the application? This will cause the application to restart.",
-	"setting.confirmAlert.title"               : "Confirmation"
+	"setting.confirmAlert.title"               : "Confirmation",
+	
+	"closureTimeComp.closureTime"              : "Closure Time",
+	"closureTimeComp.ref"                      : "Reference Time: 40 seconds",
 
 });

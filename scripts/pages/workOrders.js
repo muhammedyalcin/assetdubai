@@ -38,7 +38,10 @@ function onLoad(pageonLoad) {
 
   this.headerBar.titleColor = Color.create("#FFFFFF");
   Router.sliderDrawer.setLeftItem(this.headerBar);
-  MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
+  if (!User.currentLocation) {
+    console.log("in current condition !!");
+    MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
+  }
 }
 
 MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(mapview, second) {
@@ -72,7 +75,7 @@ HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderB
   backIconItem.image = backIcon;
   backIconItem.onPress = function() {
     if (pageName) {
-    Router.go(pageName);
+      Router.go(pageName);
     }
     else {
       Router.goBack();

@@ -9,34 +9,35 @@ const Animator = require("sf-core/ui/animator");
 const Color = require("sf-core/ui/color");
 const Instructions = require("../model/instructions");
 const FlexLayout = require("sf-core/ui/flexlayout");
+const procedurePage =  require("pages/proceduresPage");
 
 const Tab = extend(TabDesign)(
-//constructor
-function(_super, props, pageName) {
-  // initalizes super class for this scope
-  _super(this, props || TabDesign.defaults);
-  this.pageName = pageName;
+  //constructor
+  function(_super, props, pageName) {
+    // initalizes super class for this scope
+    _super(this, props || TabDesign.defaults);
+    this.pageName = pageName;
 
-  var tab = this;
+    var tab = this;
 
-  tab.summaryButton.text = lang["stepsPages.tabBar.summary"];
-  tab.instructionButton.text = lang["stepsPages.tabBar.instruction"];
-  /*Object.defineProperty(tab, 'animateRightButton', {
-    get: function() {
-      return tab;
-    },
-    set: function(page) {
-      Animator.animate(page.layout, 200, function() {
-        //page.tab.tabHighlight.flexGrow = 1;
-        page.tab.tabPlaceHolderLeft.flexGrow = 1;
-        page.tab.tabPlaceHolderRight.flexGrow = 0;
-        page.tab.summaryButton.textColor = Color.RED;
-        page.tab.instructionButton.textColor = Color.WHITE;
-      });
-    }
-  });*/
-
-  Object.defineProperties(tab, {
+    tab.summaryButton.text = lang["stepsPages.tabBar.summary"];
+    tab.instructionButton.text = lang["stepsPages.tabBar.instruction"];
+    /*Object.defineProperty(tab, 'animateRightButton', {
+      get: function() {
+        return tab;
+      },
+      set: function(page) {
+        Animator.animate(page.layout, 200, function() {
+          //page.tab.tabHighlight.flexGrow = 1;
+          page.tab.tabPlaceHolderLeft.flexGrow = 1;
+          page.tab.tabPlaceHolderRight.flexGrow = 0;
+          page.tab.summaryButton.textColor = Color.RED;
+          page.tab.instructionButton.textColor = Color.WHITE;
+        });
+      }
+    });*/
+  var fixFl;
+    Object.defineProperties(tab, {
       'animateRightButton': {
         enumerable: true,
         configurable: true,
@@ -71,35 +72,28 @@ function(_super, props, pageName) {
           });
         }
       },
-      'assignInstructionButton': {
+      'assignCurrentProFl': {
         enumerable: true,
         configurable: true,
         get: function() {
-          return tab;
+          return fixFl;
         },
         set: function(value) {
-          var that  = value.that;
-          var currentFlexlayout = Instructions.procedureFlexLayout[value.index];
-          if (!currentFlexlayout.getParent()) {
-
-            Object.assign(currentFlexlayout, {
-              id: 25,
-              left: 0,
-              right: 0,
-              top: 60,
-              height: 230,
-              positionType: FlexLayout.PositionType.ABSOLUTE
-            });
-            that.layout.addChild(currentFlexlayout);
-          }
-          else {
-            that.layout.findChildById(25).visible = true;
-          }
-          that.noteContainer.visible = false;
+          var fl = procedurePage.initfl(value.data, value.index, 60,false);
+          fixFl = Object.assign(fl, {
+            id: 25,
+            left: 0,
+            right: 0,
+            top: 80,
+            height: 230,
+            visible: false,
+            backgroundColor: Color.TRANSPARENT,
+            positionType: FlexLayout.PositionType.ABSOLUTE
+          });
         }
       }
-  });
-}
+    });
+  }
 
 
 );

@@ -29,7 +29,7 @@ const ConfirmPg = extend(ConfirmPgDesign)(
 function onShow(superOnShow) {
   superOnShow();
   this.headerBar.itemColor = Color.create("#D5D4D4");
-    
+
   this.completefl.completeButton.text = lang["confirmPg.button.comfirmStatus"];
   this.completefl.completeButton.onPress = completBtn_onPress.bind(this);
   this.headerBar.title = lang["confirmPg.title"];
@@ -38,6 +38,7 @@ function onShow(superOnShow) {
   this.compTitle.text = lang["confirmPg.additionalActions"];
   this.stepTitleLabe.text = lang["confirmPg.stepCompleted"];
   this.compLabel.text = lang["confirmPg.workOrderCompletedAt"];
+  this.compDescTitle.text = lang["confirmPg.quest"];
   
 }
 

@@ -15,6 +15,7 @@ const Multimedia = require("sf-core/device/multimedia");
 const Color = require("sf-core/ui/color");
 const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
+const User = require("../model/user");
 const ImageView = require("sf-core/ui/imageview");
 const UploadImgfl = require("../components/UploadImgfl");
 const Step3Page = extend(Step3PageDesign)(
@@ -70,10 +71,8 @@ function onLoad(superOnLoad) {
 
   stepPage.tab.instructionButton.onPress = function() {
     tabIndicator.animateLeftButton = stepPage;
-    tabIndicator.assignInstructionButton = {
-      that: this,
-      index: 1
-    }
+    this.noteContainer.visible = false;
+     this.layout.findChildById(25).visible = true;
   }.bind(this);
 
   this.completefl.completeButton.onPress = confirmButton_onPress.bind(this);
@@ -117,6 +116,14 @@ function onLoad(superOnLoad) {
 
   this.noteContainer.emptyfl.addChild(uploadfl);
   this.noteContainer.emptyfl.addChild(placeHolder);
+
+  var procedureData = User.currentWorkSummary.procedure;
+  tabIndicator.assignCurrentProFl = {
+    data: procedureData[2],
+    index: 2
+  }
+  var currentProf = tabIndicator.assignCurrentProFl;
+  this.layout.addChild(currentProf);
 
 }
 

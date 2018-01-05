@@ -5,17 +5,21 @@
 const extend = require('js-base/core/extend');
 const Step1PageDesign = require('ui/ui_step1Page')
 const Tab = require("components/Tab");
+var tabIndicator = new Tab();
 const Router = require("sf-core/ui/router");
-const Image = require("sf-core/ui/image");
-const ImageView = require("sf-core/ui/imageview");
+const User = require("../model/user");
+// const Image = require("sf-core/ui/image");
+// const ImageView = require("sf-core/ui/imageview");
 const FlexLayout = require("sf-core/ui/flexlayout");
-const TopPicker = require("components/Pickerfl");
-const EndTimePicker = require("components/EndTimePicker");
-const StartTimePicker = require("components/TimePickerfl");
+// const TopPicker = require("components/Pickerfl");
+// const EndTimePicker = require("components/EndTimePicker");
+// const StartTimePicker = require("components/TimePickerfl");
 const Color = require("sf-core/ui/color");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const Instructions = require("../model/instructions");
-
+const ClosureTime = require("components/ClosureTimefl");
+const procedurePage =  require("pages/proceduresPage");
+const KeyboardType = require('sf-core/ui/keyboardtype');
 
 const Step1Page = extend(Step1PageDesign)(
   // Constructor
@@ -27,26 +31,23 @@ const Step1Page = extend(Step1PageDesign)(
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-    var tabIndicator = new Tab();
     var stepPage = this;
 
     stepPage.tab.summaryButton.onPress = function() {
       tabIndicator.animateRightButton = stepPage;
-      this.noteContainer.visible = true;
-      this.layout.findChildById(25).visible = false;
+      stepPage.noteContainer.visible = true;
+      stepPage.layout.findChildById(25).visible = false;
       //Write chaneable flex here
     }.bind(this);
 
     stepPage.tab.instructionButton.onPress = function() {
       tabIndicator.animateLeftButton = stepPage;
-      tabIndicator.assignInstructionButton = {
-        that: this,
-        index: 1
-      }
+      stepPage.layout.findChildById(25).visible= true;
+      stepPage.noteContainer.visible = false;
     }.bind(this);
     //   var currentFlexlayout = Instructions.procedureFlexLayout[0];
     //   if(!currentFlexlayout.getParent()){
-        
+
     //   Object.assign(currentFlexlayout, {
     //     id: 25,
     //     left: 0,
@@ -62,7 +63,7 @@ const Step1Page = extend(Step1PageDesign)(
     //   this.noteContainer.visible = false;
     //   //Write changeable flex here
     // }.bind(this);
- });
+  });
 
 /**
  * @event onShow
@@ -100,34 +101,78 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
+  
+  //just now set manually
+  // var fl =  procedurePage.initfl(procedureData[0],0,60);
+  // var fixFl = Object.assign(fl, {
+  //   id:25,
+  //   left:0,
+  //   right:0,
+  //   top: 60,
+  //   height : 230,
+  //   visible: false,
+  //   backgroundColor: Color.TRANSPARENT,
+  //   positionType: FlexLayout.PositionType.ABSOLUTE
+  // });
+  // this.layout.addChild(fixFl);
   // var backIconItem = new HeaderBarItem();
   // backIconItem.image = Image.createFromFile("images://backheadericon.png");
   // backIconItem.itemColor = Color.create("#D5D4D4");
   // this.headerBar.setLeftItem(backIconItem);
+
+  // tabIndicator.setFlexlayout = {
+  //   that:this,
+  //   index:0,
+  //   id:25
+  // };
+  // console.log("current before");
+  // this.layout.addChild(tabIndicator.setFlexlayout);
+  // console.log("current after");
 
   //set action button
   this.completefl.completeButton.onPress = function() {
     Router.go("step2Page");
   }.bind(this);
 
-  var placeHolder = new FlexLayout({
-    flexGrow: 1,
-    positionType: FlexLayout.PositionType.RELATIVE
+  var closureTime = Object.assign(new ClosureTime(), {
+    left: 0,
+    right: 0,
+    height: 110,
+    top: 0,
+    positionType: FlexLayout.PositionType.ABSOLUTE
   });
+  closureTime.closureTextbox.keyboardType = KeyboardType.NUMBER;
+  closureTime.closureLabel.text = lang["closureTimeComp.closureTime"];
+  closureTime.refLabel.text = lang["closureTimeComp.ref"];
+  
+  this.noteContainer.emptyfl.addChild(closureTime);
+  this.noteContainer.actionfl.flexGrow = 0;
+  
+  // var placeHolder = new FlexLayout({
+  //   flexGrow: 1,
+  //   positionType: FlexLayout.PositionType.RELATIVE
+  // });
 
-  //sets picker top of the container
-  this.noteContainer.actionfl.addChild(new TopPicker());
+  // //sets picker top of the container
+  // this.noteContainer.actionfl.addChild(new TopPicker());
 
-  //sets start time picker
-  var startTimePicker = new StartTimePicker();
-  this.noteContainer.emptyfl.addChild(startTimePicker);
+  // //sets start time picker
+  // var startTimePicker = new StartTimePicker();
+  // this.noteContainer.emptyfl.addChild(startTimePicker);
 
-  //placeholder
-  this.noteContainer.emptyfl.addChild(placeHolder);
+  // //placeholder
+  // this.noteContainer.emptyfl.addChild(placeHolder);
 
-  //sets end time picker
-  var endTimePicker = new EndTimePicker();
-  this.noteContainer.emptyfl.addChild(endTimePicker);
+  // //sets end time picker
+  // var endTimePicker = new EndTimePicker();
+  // this.noteContainer.emptyfl.addChild(endTimePicker);
+  var procedureData = User.currentWorkSummary.procedure;
+  tabIndicator.assignCurrentProFl = {
+    data:procedureData[0],
+    index: 0
+  }
+  var currentProf = tabIndicator.assignCurrentProFl;
+  this.layout.addChild(currentProf);
 }
 
 module && (module.exports = Step1Page);

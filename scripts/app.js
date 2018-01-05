@@ -27,7 +27,7 @@ stylerBuilder.setActiveTheme(Data.getStringVariable("theme") || settings.config.
 
 Router.add("assetLoginPage", require("./pages/assetLoginPage"));
 Router.add("dashboardPg", require("./pages/dashboardPg"));
-Router.add("proceduresPage", require("./pages/proceduresPage"));
+Router.add("proceduresPage", require("./pages/proceduresPage"),true);
 Router.add("step1Page", require("./pages/step1Page"),true);
 Router.add("step2Page", require("./pages/step2Page"),true);
 Router.add("step3Page", require("./pages/step3Page"),true);

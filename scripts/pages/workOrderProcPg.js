@@ -31,6 +31,10 @@ function onShow(superOnShow) {
     
     var page = this;
     this.headerBar.itemColor = Color.create("#D5D4D4");
+    this.workOrdersSumfl.lablel1.text = lang["workOrderProcPg.equipmentRequired"];
+    
+    this.startProButton.text = lang["workOrderProcPg.button.startProcedure"];
+    this.cancelButton.text = lang["workOrderProcPg.button.cancelWorkOrder"];
 
     //set some defaults values
     // this.contactContainer.contactfl.label2 = "EQUIPMENT REQUIRED";
@@ -50,7 +54,8 @@ function onShow(superOnShow) {
 
     var currentWork = User.currentWork;
     var workSummary = currentWork.worksummary;
-    
+    //sets default one, you can assign according to conditions
+    User.currentWorkSummary = workSummary[0];
     this.startProButton.onPress = function() {
         Router.go("proceduresPage");
     }.bind(this);
@@ -76,10 +81,12 @@ function onLoad(superOnLoad) {
 }
 
 function initListview(jsonData) {
-
+console.log("In init list view");
     var workOL = this.workOrdersSumfl.workOrderSumListView;
+console.log("data   " + jsonData[0].worksumid1);
 
     workOL.onRowCreate = function() {
+        console.log("In on row create");
         var listviewItem = new ListViewItem();
         var workOrderItem = Object.assign(new WorkSummary(), {
             id: 19,
@@ -91,6 +98,7 @@ function initListview(jsonData) {
     };
 
     workOL.onRowBind = function(listviewItem, index) {
+        console.log("In row bind");
         var workSummary = listviewItem.findChildById(19);
         var summaryCnr = workSummary.findChildById(20);
         var summaryFlexLayout = summaryCnr.findChildById(200);
@@ -105,7 +113,7 @@ function initListview(jsonData) {
 
     workOL.onRowSelected = function(listViewItem, index) {
         User.currentWorkSummary = jsonData[index];
-        Router.go("workOrderProcPg");
+        // Router.go("workOrderProcPg");
     };
 
     /* dashboardListview.onPullRefresh = function() {

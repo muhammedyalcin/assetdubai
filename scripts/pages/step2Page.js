@@ -13,7 +13,7 @@ const Color = require("sf-core/ui/color");
 const nofl = require("components/Yesfl");
 const yesfl = require("components/Nofl");
 const Font = require('sf-core/ui/font');
-const Image = require("sf-core/ui/image");
+const User = require("../model/user");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 
 const Step2Page = extend(Step2PageDesign)(
@@ -66,10 +66,8 @@ function onLoad(superOnLoad) {
 
   stepPage.tab.instructionButton.onPress = function() {
     tabIndicator.animateLeftButton = stepPage;
-    tabIndicator.assignInstructionButton = {
-      that: this,
-      index: 1
-    }
+    this.noteContainer.visible = false;
+    this.layout.findChildById(25).visible = true;
   }.bind(this);
 
   this.completefl.completeButton.onPress = function() {
@@ -77,7 +75,7 @@ function onLoad(superOnLoad) {
   }.bind(this);
 
   var quesLabel = new Label({
-    text: "Acustic Test: Is gas passing?",
+    text: lang["step2Page.acusticTest"],
     font: Font.create("Lato", 14, Font.NORMAL),
     color: Color.create("#4A4A4A"),
     flexGrow: 1,
@@ -93,6 +91,27 @@ function onLoad(superOnLoad) {
   this.noteContainer.emptyfl.addChild(new nofl());
   this.noteContainer.emptyfl.addChild(new yesfl());
   this.noteContainer.emptyfl.addChild(placeHolder);
+
+  // var procedureData = User.currentWorkSummary.procedure;
+  // var fl = procedurePage.initfl(procedureData[0], 0, 60);
+  // var fixFl = Object.assign(fl, {
+  //   id: 25,
+  //   left: 0,
+  //   right: 0,
+  //   top: 60,
+  //   height: 230,
+  //   visible: false,
+  //   backgroundColor: Color.TRANSPARENT,
+  //   positionType: FlexLayout.PositionType.ABSOLUTE
+  // });
+  // this.layout.addChild(fixFl);
+  var procedureData = User.currentWorkSummary.procedure;
+  tabIndicator.assignCurrentProFl = {
+    data: procedureData[1],
+    index: 1
+  }
+  var currentProf = tabIndicator.assignCurrentProFl;
+  this.layout.addChild(currentProf);
 }
 
 module && (module.exports = Step2Page);

@@ -52,28 +52,30 @@ SMF.i18n.defineLanguage('tr', {
 	"workOrderProcPg.procedure"                     : "İşlem",
 	
 	"proceduresPage.title"                   : "Adımlar",
-	// "proceduresPage..button.completeSetup"   : "İşlemi Bittir",
+	// "proceduresPage..button.completeSetup"   : "İşlemi Bitir",
 	"proceduresPage.button.cancelWorkOrder"  : "İş Emrini İptal Et",
 	"proceduresPage.button.startProcedure"   : "İşleme Başla",
 	
 	"stepsPages.tabBar.instruction"          : "Talimat",
 	"stepsPages.tabBar.summary"              : "Özet",
 	"stepsPages.tabBar.note"                 : "Not",
-	"stepsPages.button.completeSetup"        : "İşlemi Bittir",
+	"stepsPages.button.completeSetup"        : "İşlemi Bitir",
 	
 	"step1Page.title"                        : "1/3 Adım",
 	
 	"step2Page.title"                        : "2/3 Adım",
+	"step2Page.acusticTest"                  : "Akustik Test: Gaz geçiyor mu ?",
 	
 	"step3Page.title"                        : "3/3 Adım",
 	"step3Page.uploadLabel"                  : "Kızılötesi Kamera Görüntüleri Yükle",
 	
-	"confirmPg.title"                        : "İşlemi Bittir",
+	"confirmPg.title"                        : "İşlemi Bitir",
 	"confirmPg.yesButton"                    : "Evet",
 	"confirmPg.noButton"                     : "Hayır",
 	"confirmPg.workOrderCompletedAt"         : "İş Emri Tamamlandı",
 	"confirmPg.stepCompleted"                : "Tamamlanan Adımlar",
 	"confirmPg.additionalActions"            : "Ek Faliyetler",
+	"confirmPg.quest"                        : "Valf temizliği için yeni bir iş emri oluşturmak istiyor musunuz ?",
 	"confirmPg.button.comfirmStatus"         : "Statüyü Doğrula",
 	
 	"assets.title"                           : "Varlıklar",
@@ -87,5 +89,8 @@ SMF.i18n.defineLanguage('tr', {
 	
 	"setting.title"                            : "Ayarlar",
 	"setting.confirmAlert.message"             : "Uygulamanın görünümnü değiştirmek istiyor musun? Bu işlem uygulamayı yeni baştan başlatacaktır.",
-	"setting.confirmAlert.title"               : "Onayla"
+	"setting.confirmAlert.title"               : "Onayla",
+	
+	"closureTimeComp.closureTime"              : "Bitirme Zamanı",
+	"closureTimeComp.ref"                      : "Referans Zamanı: 40 saniye",
 });
