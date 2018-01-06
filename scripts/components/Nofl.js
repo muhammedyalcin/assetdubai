@@ -13,7 +13,12 @@ const Nofl = extend(NoflDesign)(
     // initalizes super class for this scope
     _super(this, props || NoflDesign.defaults);
     this.pageName = pageName;
+    var page = this;
     this.noLabel.text = lang["confirmPg.noButton"];
+    
+    // this.noLabel.onPress = function(){
+    //   this.radioLabel.backgroundColor = Color.RED
+    // }.bind(this)
   }
 
 );

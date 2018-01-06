@@ -336,8 +336,8 @@ ProceduresPage.constructor.prototype.initfl = function(data, index, top, tickena
     positionType: FlexLayout.PositionType.ABSOLUTE
   });
   procedureRow.descLabel.showScrollBar = true;
-  procedureRow.testLabel.text = "Top up SF6 Gas"; //data.procedure1;
-  procedureRow.descLabel.text = "Set-up mass-flow meter and connect to the asset ambiance, start pressure, finish"; //data.procedure2;
+  procedureRow.testLabel.text = data.procedure1;
+  procedureRow.descLabel.text = data.procedure2;
 
   var videofl = new FlexLayout({
     id: index,

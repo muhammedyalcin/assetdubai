@@ -11,6 +11,7 @@ const Color = require("sf-core/ui/color");
 const DashBoardItem = require("components/DashBoardItem");
 const ListViewItem = require("sf-core/ui/listviewitem");
 const StatusBarStyle = require('sf-core/ui/statusbarstyle');
+const sliderDrawer = require("../sliderDrawer");
 
 const DashboardPg = extend(DashboardPgDesign)(
   // Constructor
@@ -87,9 +88,22 @@ function initListview(dashData) {
  */
 function onShow(superOnShow) {
   superOnShow();
+  var page = this;
   this.headerBar.title = lang["dashboardPg.dasboard.title"];
+  
+  // sliderDrawer.onShow = function(){
+  //   console.log("on showw !!!!");
+  //   dashboardListview.touchEnabled = false;
+  // }.call(this);
+  
+  // sliderDrawer.onHide = function(){
+  //   console.log("on hide !!!!");
+  //   dashboardListview.touchEnabled = true;
+  // }.call(this);
+  
 }
 function onTouchDasItems() {
+  Router.sliderDrawer.hideSlider();
   Router.go("workOrders");
 }
 

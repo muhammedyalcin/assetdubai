@@ -28,6 +28,8 @@ const ConfirmPg = extend(ConfirmPgDesign)(
  */
 function onShow(superOnShow) {
   superOnShow();
+  
+  var page  = this;
   this.headerBar.itemColor = Color.create("#D5D4D4");
 
   this.completefl.completeButton.text = lang["confirmPg.button.comfirmStatus"];
@@ -39,6 +41,20 @@ function onShow(superOnShow) {
   this.stepTitleLabe.text = lang["confirmPg.stepCompleted"];
   this.compLabel.text = lang["confirmPg.workOrderCompletedAt"];
   this.compDescTitle.text = lang["confirmPg.quest"];
+  
+  this.yesfl.radioButton.onPress = function(){
+    if(page.nofl.radioButton.backgroundColor == Color.RED){
+      page.nofl.radioButton.backgroundColor = Color.TRANSPARENT
+    }
+    page.yesfl.radioButton.backgroundColor = Color.RED;
+  }.bind(this);
+  
+  this.nofl.radioButton.onPress = function(){
+    if(page.yesfl.radioButton.backgroundColor == Color.RED){
+      page.yesfl.radioButton.backgroundColor = Color.TRANSPARENT
+    }
+    page.nofl.radioButton.backgroundColor = Color.RED;
+  }.bind(this);
   
 }
 
@@ -55,7 +71,8 @@ function onLoad(superOnLoad) {
 }
 
 function completBtn_onPress(){
-  Router.go("workOrderProcPg");
+  Router.goBack("workOrderProcPg");
+  // Router.go("workOrderProcPg");
 }
 
 module && (module.exports = ConfirmPg);

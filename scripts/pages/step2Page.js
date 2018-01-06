@@ -15,6 +15,8 @@ const yesfl = require("components/Nofl");
 const Font = require('sf-core/ui/font');
 const User = require("../model/user");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
+const Yesnofl = require("components/Yesnofl");
+var yesnofl = new Yesnofl();
 
 const Step2Page = extend(Step2PageDesign)(
   // Constructor
@@ -39,6 +41,12 @@ function onShow(superOnShow) {
   this.headerBar.itemColor = Color.create("#D5D4D4");
   this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
   this.headerBar.title = lang["step2Page.title"];
+
+  var stepPage = this;
+
+
+
+
 }
 /**
  * @event onLoad
@@ -88,9 +96,48 @@ function onLoad(superOnLoad) {
     flexGrow: 1,
     positionType: FlexLayout.PositionType.RELATIVE
   });
-  this.noteContainer.emptyfl.addChild(new nofl());
-  this.noteContainer.emptyfl.addChild(new yesfl());
+
+  // var nofl = new nofl();
+  // var yesfl = new yesfl();
+  // this.noteContainer.emptyfl.addChild(new nofl());
+  // this.noteContainer.emptyfl.addChild(new yesfl());
+  var yesnofl = Object.assign(new Yesnofl(), {
+    flexGrow: 1,
+    positionType: FlexLayout.PositionType.RELATIVE
+  });
+
+  yesnofl.yesButton.onPress = function() {
+    if (yesnofl.noButton.backgroundColor == Color.RED) {
+      yesnofl.noButton.backgroundColor = Color.TRANSPARENT
+    }
+    yesnofl.yesButton.backgroundColor = Color.RED;
+  }.bind(this);
+
+  yesnofl.noButton.onPress = function() {
+    if (yesnofl.yesButton.backgroundColor == Color.RED) {
+      yesnofl.yesButton.backgroundColor = Color.TRANSPARENT
+    }
+    yesnofl.noButton.backgroundColor = Color.RED;
+  }.bind(this);
+  
+  this.noteContainer.emptyfl.addChild(yesnofl);
   this.noteContainer.emptyfl.addChild(placeHolder);
+
+  // yesfl.radioButton.onPress = function() {
+  //   if (nofl.radioButton.backgroundColor === Color.GREEN) {
+  //     nofl.radioButton.backgroundColor = Color.TRANSPARENT
+  //   }
+  //   yesfl.radioButton.backgroundColor = Color.RED;
+  // }.bind(this);
+
+  // nofl.radioButton.onPress = function() {
+  //   if (yesfl.radioButton.backgroundColor === Color.GREEN) {
+  //     yesfl.radioButton.backgroundColor = Color.TRANSPARENT
+  //   }
+  //   yesfl.radioButton.backgroundColor = Color.RED;
+  // }.bind(this);
+
+
 
   // var procedureData = User.currentWorkSummary.procedure;
   // var fl = procedurePage.initfl(procedureData[0], 0, 60);

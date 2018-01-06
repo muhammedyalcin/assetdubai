@@ -19,6 +19,7 @@ const Items = require("../model/items");
 const AlertView = require('sf-core/ui/alertview');
 const Location = require('sf-core/device/location');
 const Application = require("sf-core/application");
+const Animator = require('sf-core/ui/animator');
 
 const WorkOrders = extend(WorkOrdersDesign)(
   // Constructor
@@ -30,17 +31,21 @@ const WorkOrders = extend(WorkOrdersDesign)(
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     this.onLoad = onLoad.bind(this, this.onLoad);
   });
-
+var currentUser;
 // overrides super.onLoad method
 function onLoad(pageonLoad) {
   pageonLoad && pageonLoad();
   var page = this;
 
+  currentUser = User.currentUser;
+  //sets pins on the mapview
+  setRedpins.call(this, currentUser.work);
+
   this.headerBar.titleColor = Color.create("#FFFFFF");
   Router.sliderDrawer.setLeftItem(this.headerBar);
   if (!User.currentLocation) {
     console.log("in current condition !!");
-    MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
+    // MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
   }
 }
 
@@ -48,10 +53,10 @@ MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(m
   Location.start();
   Location.onLocationChanged = function(event) {
 
-    mapview.centerLocation = {
-      latitude: parseFloat(event.latitude),
-      longitude: parseFloat(event.longitude)
-    }
+    // mapview.centerLocation = {
+    //   latitude: parseFloat(event.latitude),
+    //   longitude: parseFloat(event.longitude)
+    // }
     //this sets the current location to model data (User). This statement is custom it may change according to expection.
     User.currentLocation = {
       latitude: parseFloat(event.latitude),
@@ -75,7 +80,16 @@ HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderB
   backIconItem.image = backIcon;
   backIconItem.onPress = function() {
     if (pageName) {
-      Router.go(pageName);
+      // Animator.animate(that.layout, 0, function() {
+      //   that.layout.left = 0;
+      //   that.layout.right = 0;
+      // }).then(100, function() {
+      //   that.layout.left = that.layout.width;
+      // }).complete(function() {
+      //   //.backgroundColor = Color.GREEN;
+      //       Router.goBack(pageName, 0, false);
+      // });
+       Router.goBack(pageName);
     }
     else {
       Router.goBack();
@@ -104,7 +118,6 @@ function onShow(superOnShow) {
   }
   workOL = this.workOrderListview;
 
-  var currentUser = User.currentUser;
 
   Timer.setTimeout({
     delay: 500,
@@ -162,6 +175,7 @@ function initListview(jsonData) {
   };
 
   workOL.onRowSelected = function(listViewItem, index) {
+    Router.sliderDrawer.hideSlider();
     User.currentWork = jsonData[index]
     Router.go("workOrderProcPg");
   };
@@ -169,6 +183,7 @@ function initListview(jsonData) {
   workOL.ios.rightToLeftSwipeEnabled = true;
 
   workOL.ios.onRowSwiped = function(direction, expansionSettings) {
+    Router.sliderDrawer.hideSlider();
     if (direction == ListView.iOS.SwipeDirection.RIGHTTOLEFT) {
       //Expansion button index. Default value 0
       expansionSettings.buttonIndex = -1;
@@ -182,6 +197,7 @@ function initListview(jsonData) {
   };
 
   workOL.android.onRowLongSelected = function(listViewItem, index) {
+    Router.sliderDrawer.hideSlider();
     deleteItem(index, jsonData);
   };
 
@@ -197,16 +213,16 @@ function initListview(jsonData) {
 function deleteItem(index, jsonData) {
 
   var confirmAlertView = new AlertView({
-    title: "Do you want to delete it ?",
-    message: "If you delete it, you won't undo it"
+    title: lang["deleteConfirmation.title"],
+    message: ""
   });
   confirmAlertView.addButton({
     index: AlertView.ButtonType.NEGATIVE,
-    text: "Cancel"
+    text: lang["no"]
   });
   confirmAlertView.addButton({
     index: AlertView.ButtonType.POSITIVE,
-    text: "Okey",
+    text: lang["yes"],
     onClick: function() {
       Items.deleteItem(index);
       //afterwards refrest the data and set length of data.
@@ -215,6 +231,34 @@ function deleteItem(index, jsonData) {
     }
   });
   confirmAlertView.show();
+
+}
+var redpins = [];
+
+function setRedpins(jsonData) {
+  var pinX = 0.0;
+  var pinY = 0.0;
+  var mapView = this.mapViewfl.workMapView;
+
+  for (var i = 0; i < jsonData.length; i++) {
+    var redpin = new MapView.Pin({
+      id: i,
+      color: Color.RED,
+      location: {
+        latitude: mapView.centerLocation.latitude + pinX,
+        longitude: mapView.centerLocation.longitude + pinY
+      },
+      title: jsonData[i],
+      onPress: function() {
+        User.currentWork = redpins[redpin.id];
+        Router.go("workOrderProcPg");
+      }
+    });
+    redpins.push(jsonData[i]);
+    mapView.addPin(redpin);
+    pinY += 0.000523;
+    pinX += 0.0020;
+  }
 
 }
 

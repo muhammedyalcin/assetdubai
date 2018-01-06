@@ -56,10 +56,10 @@ SMF.i18n.defineLanguage('tr', {
 	"proceduresPage.button.cancelWorkOrder"  : "İş Emrini İptal Et",
 	"proceduresPage.button.startProcedure"   : "İşleme Başla",
 	
-	"stepsPages.tabBar.instruction"          : "Talimat",
+	"stepsPages.tabBar.instruction"          : "Talimatlar",
 	"stepsPages.tabBar.summary"              : "Özet",
 	"stepsPages.tabBar.note"                 : "Not",
-	"stepsPages.button.completeSetup"        : "İşlemi Bitir",
+	"stepsPages.button.completeSetup"        : "Adımı Bitir",
 	
 	"step1Page.title"                        : "1/3 Adım",
 	
@@ -93,4 +93,6 @@ SMF.i18n.defineLanguage('tr', {
 	
 	"closureTimeComp.closureTime"              : "Bitirme Zamanı",
 	"closureTimeComp.ref"                      : "Referans Zamanı: 40 saniye",
+	
+	"deleteConfirmation.title"                 : "İş emrini bitirmek istiyor musunuz ?"
 });

@@ -18,7 +18,7 @@ const Color = require("sf-core/ui/color");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const Instructions = require("../model/instructions");
 const ClosureTime = require("components/ClosureTimefl");
-const procedurePage =  require("pages/proceduresPage");
+const procedurePage = require("pages/proceduresPage");
 const KeyboardType = require('sf-core/ui/keyboardtype');
 
 const Step1Page = extend(Step1PageDesign)(
@@ -42,9 +42,11 @@ const Step1Page = extend(Step1PageDesign)(
 
     stepPage.tab.instructionButton.onPress = function() {
       tabIndicator.animateLeftButton = stepPage;
-      stepPage.layout.findChildById(25).visible= true;
+      stepPage.layout.findChildById(25).visible = true;
       stepPage.noteContainer.visible = false;
     }.bind(this);
+
+    
     //   var currentFlexlayout = Instructions.procedureFlexLayout[0];
     //   if(!currentFlexlayout.getParent()){
 
@@ -101,7 +103,7 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
-  
+
   //just now set manually
   // var fl =  procedurePage.initfl(procedureData[0],0,60);
   // var fixFl = Object.assign(fl, {
@@ -144,10 +146,10 @@ function onLoad(superOnLoad) {
   closureTime.closureTextbox.keyboardType = KeyboardType.NUMBER;
   closureTime.closureLabel.text = lang["closureTimeComp.closureTime"];
   closureTime.refLabel.text = lang["closureTimeComp.ref"];
-  
+
   this.noteContainer.emptyfl.addChild(closureTime);
   this.noteContainer.actionfl.flexGrow = 0;
-  
+
   // var placeHolder = new FlexLayout({
   //   flexGrow: 1,
   //   positionType: FlexLayout.PositionType.RELATIVE
@@ -168,7 +170,7 @@ function onLoad(superOnLoad) {
   // this.noteContainer.emptyfl.addChild(endTimePicker);
   var procedureData = User.currentWorkSummary.procedure;
   tabIndicator.assignCurrentProFl = {
-    data:procedureData[0],
+    data: procedureData[0],
     index: 0
   }
   var currentProf = tabIndicator.assignCurrentProFl;

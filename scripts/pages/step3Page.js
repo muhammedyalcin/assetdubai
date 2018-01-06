@@ -18,6 +18,7 @@ const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const User = require("../model/user");
 const ImageView = require("sf-core/ui/imageview");
 const UploadImgfl = require("../components/UploadImgfl");
+const Timer = require("sf-core/global/timer");
 const Step3Page = extend(Step3PageDesign)(
   // Constructor
   function(_super) {
@@ -72,7 +73,7 @@ function onLoad(superOnLoad) {
   stepPage.tab.instructionButton.onPress = function() {
     tabIndicator.animateLeftButton = stepPage;
     this.noteContainer.visible = false;
-     this.layout.findChildById(25).visible = true;
+    this.layout.findChildById(25).visible = true;
   }.bind(this);
 
   this.completefl.completeButton.onPress = confirmButton_onPress.bind(this);
@@ -91,14 +92,23 @@ function onLoad(superOnLoad) {
 
 
   uploadfl.onTouch = function uploadOnPress() {
+    this.indicayorfl.visible = true;
     console.log("Upload is pressed");
-    Multimedia.pickFromGallery({
-      type: Multimedia.Type.IMAGE,
-      onSuccess: onSuccess,
-      page: page
-    });
 
+    Timer.setTimeout({
+      delay: 1000,
+      task: function() {
+        Multimedia.pickFromGallery({
+          type: Multimedia.Type.IMAGE,
+          onSuccess: onSuccess,
+          onCancel: onCancel,
+          onFailure : onFailure,
+          page: page
+        });
+      }
+    });
     function onSuccess(picked) {
+      page.indicayorfl.visible = false;
       //Reassign here afterwards
       console.log("picked image is " + picked.image);
       // uploadImgfl.uploadImg.image = picked.image;
@@ -106,7 +116,14 @@ function onLoad(superOnLoad) {
       // uploadfl.flexGrow = 0;
       // uploadImgfl.uploadImgfl.imageFillType = ImageView.FillType.STRETCH;
       // page.noteContainer.emptyfl.addChild(uploadImgfl);
+    };
+    function onCancel() {
+      page.indicayorfl.visible = false;
+    };
+    function onFailure() {
+      page.indicayorfl.visible = false;
     }
+    
   }.bind(this);
 
   var placeHolder = new FlexLayout({

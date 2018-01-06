@@ -79,6 +79,7 @@ function onLoad(superOnLoad) {
     };
 
     assetListview.onRowSelected = function(listViewItem, index) {
+      Router.sliderDrawer.hideSlider();
       Router.go("locationPg");
       Asset.currentAsset = jsonData[index];
       // console.log("work data is in workordersum page " +workData.workid1);

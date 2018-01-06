@@ -11,6 +11,7 @@ const MapView = require('sf-core/ui/mapview');
 // const Timer = require("sf-core/global/timer");
 // const MapView = require('sf-core/ui/mapview');
 // const User = require("../model/user");
+const Router = require("sf-core/ui/router");
 const User = require("../model/user");
 const MapViewfl = extend(MapViewflDesign)(
   //constructor
@@ -19,6 +20,12 @@ const MapViewfl = extend(MapViewflDesign)(
     _super(this, props || MapViewflDesign.defaults);
     this.pageName = pageName;
     var mapView = this.workMapView;
+
+    var currentUser = User.currentUser;
+    console.log("current user" + currentUser);
+    console.log("current work is  " + currentUser.work[0].workid1);
+    // var redpins = [];
+    // setRedpins(currentUser.work);
 
     // this.userLocationEnabled = true;
     this.currentLocationImf.onTouch = function() {
@@ -49,12 +56,12 @@ const MapViewfl = extend(MapViewflDesign)(
     //     pinX += 0.0005239;
     //   }
     // }
-    var redpins = [];
-    this.redlocationImg.onTouch = function() {
-      if (User.currentLocation) {
-        setRedpins();
-      }
-    }.bind(this);
+
+    // this.redlocationImg.onTouch = function() {
+    //   if (User.currentLocation) {
+    //     setRedpins();
+    //   }
+    // }.bind(this);
 
     // this.yellowlocationImg.onTouch = function() {
     //   if (User.currentLocation) {
@@ -65,27 +72,31 @@ const MapViewfl = extend(MapViewflDesign)(
     //   }
     // }.bind(this);
 
-    function setRedpins() {
-      var pinX = 0.0;
-      var pinY = 0.0;
-      if (redpins.length <= 5) {
-        for (var i = 0; i < 5; i++) {
-          var redpin = new MapView.Pin({
-            id: 5,
-            color: Color.RED,
-            location: {
-              latitude: User.currentLocation.latitude + pinX,
-              longitude: User.currentLocation.longitude + pinY
-            },
-            title: 'SDV 419235' + i
-          });
-          redpins.push(redpin);
-          mapView.addPin(redpin);
-          pinY += 0.000523;
-          pinX += 0.0010;
-        }
-      }
-    }
+    // function setRedpins(jsonData) {
+    //   var pinX = 0.0;
+    //   var pinY = 0.0;
+     
+    //     for (var i = 0; i < jsonData.length; i++) {
+    //       var redpin = new MapView.Pin({
+    //         id: i,
+    //         color: Color.RED,
+    //         location: {
+    //           latitude: mapView.centerLocation.latitude + pinX,
+    //           longitude: mapView.centerLocation.longitude + pinY
+    //         },
+    //         title: jsonData[i],
+    //         onPress: function() {
+    //           User.currentWork = redpins[redpin.id];
+    //           Router.go("workOrderProcPg");
+    //         }
+    //       });
+    //       redpins.push(jsonData[i]);
+    //       mapView.addPin(redpin);
+    //       pinY += 0.000523;
+    //       pinX += 0.0020;
+    //     }
+      
+    // }
 
     //   function setYellowpins() {
     //     var pinX = 0.0;

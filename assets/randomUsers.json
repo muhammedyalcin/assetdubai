@@ -16,20 +16,20 @@
             "worksumid1": "SDV 24352",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "Top up SF6 Gas",
-                "procedure2": "Set-up mass-flow meter and connect to the asset ambiance, start pressure, finish",
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
                 "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
                 "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "Investigate Leak Location",
-                "procedure2": "Complate  visual survey of the asset, using select tlhe leak type.",
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
                 "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
                 "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "Investigate Leak Location",
-                "procedure2": "Complate  visual survey of the asset, using select tlhe leak type.",
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
                 "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
                 "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
@@ -38,51 +38,69 @@
           {
             "worksumid1": "SDV 37142",
             "worksumid2": "Test Passing",
-            "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+              "procedure": [{
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
           {
             "worksumid1": "SDV 46353",
             "worksumid2": "Test Passing",
-            "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+              "procedure": [{
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
           {
             "worksumid1": "SDV 31101",
             "worksumid2": "Test Passing",
-            "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+              "procedure": [{
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -90,16 +108,22 @@
             "worksumid1": "SDV 89495",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           }
@@ -114,16 +138,22 @@
             "worksumid1": "SDV 90265",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -131,16 +161,22 @@
             "worksumid1": "SDV 65170",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -148,16 +184,22 @@
             "worksumid1": "SDV 15442",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -165,16 +207,22 @@
             "worksumid1": "SDV 92156",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -182,16 +230,22 @@
             "worksumid1": "SDV 55475",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           }
@@ -206,16 +260,22 @@
             "worksumid1": "SDV 80308",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -223,16 +283,22 @@
             "worksumid1": "SDV 46512",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -240,16 +306,22 @@
             "worksumid1": "SDV 95402",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -257,16 +329,22 @@
             "worksumid1": "SDV 75055",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -274,16 +352,22 @@
             "worksumid1": "SDV 16191",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           }
@@ -298,16 +382,22 @@
             "worksumid1": "SDV 25831",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -315,16 +405,22 @@
             "worksumid1": "SDV 57892",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -332,16 +428,22 @@
             "worksumid1": "SDV 86368",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -349,16 +451,22 @@
             "worksumid1": "SDV 32103",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -366,16 +474,22 @@
             "worksumid1": "SDV 32289",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           }
@@ -390,16 +504,22 @@
             "worksumid1": "SDV 21071",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -407,16 +527,22 @@
             "worksumid1": "SDV 44902",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -424,16 +550,22 @@
             "worksumid1": "SDV 52768",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -441,16 +573,22 @@
             "worksumid1": "SDV 68561",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           },
@@ -458,16 +596,22 @@
             "worksumid1": "SDV 53314",
             "worksumid2": "Test Passing",
             "procedure": [{
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Test Closure Time",
+                "procedure2": "Measure the time after closing the valve",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://www.youtube.com/watch?v=npZgHj1ggww"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Acoustic Test",
+                "procedure2": "Measure the pressure in valve to check if gas is passing",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               },
               {
-                "procedure1": "procedure1 Anything",
-                "procedure2": "procedure2 Anything"
+                "procedure1": "Infrared Camera",
+                "procedure2": "Check with a thermal camera to determine leak location",
+                "imageUrl": "https://img4bm.b8cdn.com/images/uploads/user_photos/43/12123743_20150604115838.jpg",
+                "videoUrl": "https://youtu.be/3AnAGHurycs"
               }
             ]
           }

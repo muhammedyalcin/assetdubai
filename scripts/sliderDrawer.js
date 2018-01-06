@@ -11,6 +11,7 @@ const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const TextAlignment = require("sf-core/ui/textalignment");
 const Router = require("sf-core/ui/router");
 const User = require("./model/user");
+const SliderModel = require("./model/slider");
 const ImageFillType = require('sf-core/ui/imagefilltype');
 const Application = require('sf-core/application');
 const Font = require('sf-core/ui/font');
@@ -22,6 +23,7 @@ var sliderDrawer = new SliderDrawer({
     width: 200,
     enabled: false,
     onLoad: function() {
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         //User FlexLayout
         var userFlexLayout = new Flexlayout({
             flexGrow: 2,
@@ -143,16 +145,21 @@ var sliderDrawer = new SliderDrawer({
 
 
         var dashboardLabel = new Label({
+            id: 1,
             height: 22,
             left: 28,
             right: 0,
             top: 0,
             text: lang["sliderDrawer.dasboard"],
-            font: Font.create("Lato", 16, Font.NORMAL),
+            font: baseOnSelectedItem(1),
             textColor: Color.create("#BDBCBC"),
             textAlignment: TextAlignment.MIDLEFT,
             positionType: Flexlayout.PositionType.ABSOLUTE
+            // onTouch: function(){
+            //     dashboardLabel.font = Font.create("Lato", 16, Font.BOLD);
+            // }
         });
+        // dashboardLabel.font = Font.create("Lato", 16, Font.BOLD);
 
 
         var dashboardImage = Image.createFromFile("images://dashboardicon.png")
@@ -172,6 +179,7 @@ var sliderDrawer = new SliderDrawer({
             justifyContent: Flexlayout.JustifyContent.FLEX_START
         });
         var ordersLabel = new Label({
+            id: 2,
             left: 28,
             right: 0,
             height: 22,
@@ -179,7 +187,10 @@ var sliderDrawer = new SliderDrawer({
             text: lang["sliderDrawer.orders"],
             font: Font.create("Lato", 16, Font.NORMAL),
             textColor: Color.create("#BDBCBC"),
-            positionType: Flexlayout.PositionType.ABSOLUTE
+            positionType: Flexlayout.PositionType.ABSOLUTE,
+            onTouch: function() {
+                ordersLabel.font = Font.create("Lato", 16, Font.BOLD);
+            }
         });
 
         var ordersImage = Image.createFromFile("images://workordericon.png")
@@ -201,6 +212,7 @@ var sliderDrawer = new SliderDrawer({
             justifyContent: Flexlayout.JustifyContent.FLEX_START
         });
         var assetLabel = new Label({
+            id: 3,
             left: 28,
             right: 0,
             height: 22,
@@ -208,7 +220,10 @@ var sliderDrawer = new SliderDrawer({
             text: lang["sliderDrawer.assets"],
             font: Font.create("Lato", 16, Font.NORMAL),
             textColor: Color.create("#BDBCBC"),
-            positionType: Flexlayout.PositionType.ABSOLUTE
+            positionType: Flexlayout.PositionType.ABSOLUTE,
+            onTouch: function() {
+                assetLabel.font = Font.create("Lato", 16, Font.BOLD);
+            }
         });
 
         var assetImage = Image.createFromFile("images://assetsicon.png")
@@ -230,6 +245,7 @@ var sliderDrawer = new SliderDrawer({
             justifyContent: Flexlayout.JustifyContent.FLEX_START
         });
         var settingsLabel = new Label({
+            id: 4,
             left: 28,
             right: 0,
             height: 22,
@@ -237,7 +253,10 @@ var sliderDrawer = new SliderDrawer({
             text: lang["sliderDrawer.settings"],
             font: Font.create("Lato", 16, Font.NORMAL),
             textColor: Color.create("#BDBCBC"),
-            positionType: Flexlayout.PositionType.ABSOLUTE
+            positionType: Flexlayout.PositionType.ABSOLUTE,
+            onTouch: function() {
+                settingsLabel.font = Font.create("Lato", 16, Font.BOLD);
+            }
         });
 
         var settingsImage = Image.createFromFile("images://settingsicon.png")
@@ -275,7 +294,10 @@ var sliderDrawer = new SliderDrawer({
             text: lang["sliderDrawer.logout"],
             font: Font.create("Lato", 16, Font.NORMAL),
             textColor: Color.create("#BDBCBC"),
-            positionType: Flexlayout.PositionType.ABSOLUTE
+            positionType: Flexlayout.PositionType.ABSOLUTE,
+            onTouch: function() {
+                logoutLabel.font = Font.create("Lato", 16, Font.BOLD);
+            }
         });
 
         var logoutImage = Image.createFromFile("images://logouticon.png")
@@ -317,18 +339,29 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.setActions = function setActions() {
             ordersLabel.onTouch = function() {
                 console.log("Orders clicke");
+                dashboardLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                settingsLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                assetLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                ordersLabel.font = Font.create("Arial", 16, Font.BOLD);
+                SliderModel.selectedItem = ordersLabel;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = false;
                 Router.go("workOrders");
             };
             settingsLabel.onTouch = function() {
                 console.log("setting is touched");
+                dashboardLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                settingsLabel.font = Font.create("Arial", 16, Font.BOLD);
+                assetLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                ordersLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                SliderModel.selectedItem = settingsLabel;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = true;
                 Router.go("setting");
             }
             logoutLabel.onTouch = function() {
                 console.log("setting is touched");
+                SliderModel.selectedItem = logoutLabel;
                 sliderDrawer.hide();
                 User.currentUser = null;
                 Router.sliderDrawer.enabled = false;
@@ -338,11 +371,21 @@ var sliderDrawer = new SliderDrawer({
             }
             dashboardLabel.onTouch = function() {
                 console.log("setting is touched");
+                dashboardLabel.font = Font.create("Arial", 16, Font.BOLD);
+                settingsLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                assetLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                ordersLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                SliderModel.selectedItem = dashboardLabel.id;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = false;
                 Router.go("dashboardPg");
             }
             assetLabel.onTouch = function() {
+                dashboardLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                settingsLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                assetLabel.font = Font.create("Arial", 16, Font.BOLD);
+                ordersLabel.font = Font.create("Lato", 16, Font.NORMAL);
+                SliderModel.selectedItem = assetLabel;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = false;
                 Router.go("assetPg");
@@ -355,6 +398,10 @@ var sliderDrawer = new SliderDrawer({
 });
 sliderDrawer.setCurrentData = function() {};
 
+sliderDrawer.hideSlider = function hideSlider() {
+    sliderDrawer.hide();
+};
+
 sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
 
     headerbar.leftItemSetBy = sliderDrawer;
@@ -363,22 +410,35 @@ sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
         image: Image.createFromFile("images://slidericon.png"),
         color: Color.WHITE,
         onPress: function() {
-            if(sliderDrawer.shown){
+            if (sliderDrawer.shown) {
                 Router.sliderDrawer.enabled = false;
                 sliderDrawer.hide();
-            }else{
-                 Router.sliderDrawer.enabled = true;
-                 sliderDrawer.show();
             }
-           
+            else {
+                Router.sliderDrawer.enabled = true;
+                sliderDrawer.show();
+            }
+
         }
     });
     headerbar.setLeftItem(sliderDrawerItem);
     headerbar.leftItem = sliderDrawerItem;
     console.log("slider drawer enable is " + sliderDrawer.enabled);
-
 };
 
+function baseOnSelectedItem(id) {
+    if (SliderModel.selectedItem) {
+        if (SliderModel.selectedItem === id) {
+            console.log("in first con");
+            return Font.create("Lato", 16, Font.BOLD);
+        }
+        else {
+            console.log("in first con");
+            return Font.create("Lato", 16, Font.NORMAL);
+        }
+    }
+    else return Font.create("Lato", 16, Font.BOLD);
+}
 
 
 module.exports = exports = sliderDrawer;

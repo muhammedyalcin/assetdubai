@@ -57,10 +57,10 @@ SMF.i18n.defineLanguage('en', {
     "proceduresPage.button.cancelWorkOrder"  : "Cancel Work Order",
 	"proceduresPage.button.startProcedure"   : "Start Procedure",
 	
-	"stepsPages.tabBar.instruction"          : "Instruction",
+	"stepsPages.tabBar.instruction"          : "Instructions",
 	"stepsPages.tabBar.summary"              : "Summary",
 	"stepsPages.tabBar.note"                 : "Note",
-	"stepsPages.button.completeSetup"        : "Complete Setup",
+	"stepsPages.button.completeSetup"        : "Complete Steps",
 	
 	"step1Page.title"                        : "Step 1/3",
 	
@@ -96,5 +96,7 @@ SMF.i18n.defineLanguage('en', {
 	
 	"closureTimeComp.closureTime"              : "Closure Time",
 	"closureTimeComp.ref"                      : "Reference Time: 40 seconds",
+	
+	"deleteConfirmation.title"                 : "Do you want to cancel work order?"
 
 });

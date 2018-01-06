@@ -10,6 +10,10 @@ var lgn = new Lgn();
 const fingerprint = require("sf-extension-utils").fingerprint;
 const User = require("../model/user");
 const rau = require("sf-extension-utils").rau;
+const FlexLayout = require("sf-core/ui/flexlayout");
+const ActivityIndicator = require('sf-core/ui/activityindicator');
+const Color = require('sf-core/ui/color');
+const Timer = require("sf-core/global/timer");
 
 const AssetLoginPage = extend(AssetLoginPageDesign)(
   // Constructor
@@ -30,20 +34,22 @@ const AssetLoginPage = extend(AssetLoginPageDesign)(
  * @param {Object} parameters passed from Router.go function
  */
 
+var signinIndicator;
 
 function onShow(superOnShow) {
   superOnShow();
-  
+
   var page = this;
   this.passwordLbl.text = lang["assetLoginPage.password"];
   this.userNameLbl.text = lang["assetLoginPage.username"];
   this.loginButton.text = lang["assetLoginPage.button.signin"];
-  
-  
+
+
   this.userTextBox.ios.clearButtonEnabled = true;
   this.passwordTextBox.ios.clearButtonEnabled = true;
-  
- 
+
+  signinIndicator = this.signinIndicator;
+
   console.log("this.userTextBox " + page.userTextBox.text + " this.passwordTextBox: " + page.passwordTextBox.text);
   fingerprint.init({
     userNameTextBox: this.userTextBox,
@@ -52,9 +58,9 @@ function onShow(superOnShow) {
     callback: function(err, fingerprintResult) {
       var password = "";
       if (err) {
-        console.log("password is before "+ page.passwordTextBox.text);
+        console.log("password is before " + page.passwordTextBox.text);
         password = page.passwordTextBox.text;
-        console.log("password is after"+ password);
+        console.log("password is after" + password);
       }
       else password = fingerprintResult.password;
 
@@ -69,7 +75,14 @@ function onShow(superOnShow) {
         console.log("userData is " + User.currentUser);
         Router.sliderDrawer.setCurrentData();
         fingerprintResult && fingerprintResult.success();
-        loginSucceed();
+        Timer.setTimeout({
+          delay: 1000,
+          task: function() {
+            signinIndicator.visible = false;
+            loginSucceed();
+          }
+        });
+        
       });
     }.bind(this)
 
@@ -93,6 +106,27 @@ function onLoad(superOnLoad) {
     page.userTextBox.text = "smartface";
     page.passwordTextBox.text = "asd123";
   }.bind(this);
+
+  // var loadingLayout = new FlexLayout({
+  //   left:80,
+  //   right:50,
+  //   top:150,
+  //   bottom:150,
+  //   visible: true,
+  //   backgroundColor: Color.WHITE,
+  //   justifyContent: FlexLayout.JustifyContent.CENTER,
+  //   positionType: FlexLayout.PositionType.ABSOLUTE,
+  // });
+
+  //   loadingIndicator = new ActivityIndicator({
+  //   alignSelf: FlexLayout.AlignSelf.CENTER,
+  //   backgroundColor: Color.TRANSPARENT,
+  //   alpha: 1,
+  //   borderColor: Color.create(255, 0, 0, 0),
+  //   visible: true,
+  //   color: Color.create("#836CB3"),
+  // });
+  // loadingLayout.addChild(loadingIndicator);
 }
 
 function signin(page) {
@@ -105,6 +139,7 @@ function signin(page) {
 }
 
 function doLogin(username, pwd, callback) {
+  signinIndicator.visible = true;
   lgn.login(username, pwd, function(err, userdata) {
     if (err) {
       alert(lang["assetLoginPage.invalidLogin"]);
