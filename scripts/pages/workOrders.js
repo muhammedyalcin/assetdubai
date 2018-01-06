@@ -187,9 +187,14 @@ function initListview(jsonData) {
     if (direction == ListView.iOS.SwipeDirection.RIGHTTOLEFT) {
       //Expansion button index. Default value 0
       expansionSettings.buttonIndex = -1;
-
+      
       var archiveSwipeItem = ListView.iOS.createSwipeItem("Cancel", Color.RED, 50, function(e) {
-
+        try {
+            workOL.deleteRow(e.index);
+        }catch(err){
+          console.log(err.message);
+        }
+      
         deleteItem(e.index, jsonData);
       });
       return [archiveSwipeItem];

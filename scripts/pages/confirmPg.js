@@ -17,7 +17,6 @@ const ConfirmPg = extend(ConfirmPgDesign)(
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
   });
 
 /**
