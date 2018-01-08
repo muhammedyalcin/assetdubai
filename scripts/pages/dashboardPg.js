@@ -22,14 +22,6 @@ const DashboardPg = extend(DashboardPgDesign)(
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
-
-    console.log("Dashboard is loaded");
-    //dashboardListview = this.dashboardListview;
-    //sliderDrawer.setFlexlayout;
-    // sliderDrawer.layout.addChild(SliderFlexlayout);
-
-    // Router.sliderDrawer.setCurrentData();
   });
 
 var dashboardData;
@@ -68,11 +60,6 @@ function initListview(dashData) {
     console.log("selected index = " + index);
   };
 
-  /* dashboardListview.onPullRefresh = function() {
-    dashboardListview.itemCount = dashData.length;
-    dashboardListview.refreshData();
-    dashboardListview.stopRefresh();
-  };*/
   dashboardListview.refreshEnabled = false;
   dashboardListview.itemCount = dashboardData.length;
   dashboardListview.refreshData();
@@ -90,17 +77,6 @@ function onShow(superOnShow) {
   superOnShow();
   var page = this;
   this.headerBar.title = lang["dashboardPg.dasboard.title"];
-  
-  // sliderDrawer.onShow = function(){
-  //   console.log("on showw !!!!");
-  //   dashboardListview.touchEnabled = false;
-  // }.call(this);
-  
-  // sliderDrawer.onHide = function(){
-  //   console.log("on hide !!!!");
-  //   dashboardListview.touchEnabled = true;
-  // }.call(this);
-  
 }
 function onTouchDasItems() {
   Router.sliderDrawer.hideSlider();

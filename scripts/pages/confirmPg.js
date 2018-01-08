@@ -71,7 +71,6 @@ function onLoad(superOnLoad) {
 
 function completBtn_onPress(){
   Router.goBack("workOrderProcPg");
-  // Router.go("workOrderProcPg");
 }
 
 module && (module.exports = ConfirmPg);

@@ -107,30 +107,10 @@ function onLoad(superOnLoad) {
     page.passwordTextBox.text = "asd123";
   }.bind(this);
 
-  // var loadingLayout = new FlexLayout({
-  //   left:80,
-  //   right:50,
-  //   top:150,
-  //   bottom:150,
-  //   visible: true,
-  //   backgroundColor: Color.WHITE,
-  //   justifyContent: FlexLayout.JustifyContent.CENTER,
-  //   positionType: FlexLayout.PositionType.ABSOLUTE,
-  // });
-
-  //   loadingIndicator = new ActivityIndicator({
-  //   alignSelf: FlexLayout.AlignSelf.CENTER,
-  //   backgroundColor: Color.TRANSPARENT,
-  //   alpha: 1,
-  //   borderColor: Color.create(255, 0, 0, 0),
-  //   visible: true,
-  //   color: Color.create("#836CB3"),
-  // });
-  // loadingLayout.addChild(loadingIndicator);
 }
 
 function signin(page) {
-  //console.log(this.password.passwordInput.text);
+  
   if (page.userTextBox.text === "") {
     alert(lang["assetLoginPage.username.error"]);
     return;

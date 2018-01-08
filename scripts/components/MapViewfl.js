@@ -24,8 +24,20 @@ const MapViewfl = extend(MapViewflDesign)(
     var currentUser = User.currentUser;
     console.log("current user" + currentUser);
     console.log("current work is  " + currentUser.work[0].workid1);
-    // var redpins = [];
-    // setRedpins(currentUser.work);
+
+    // var redpin = new MapView.Pin({
+    //   location: {
+    //     latitude: 40.7828647,
+    //     longitude: -73.9675491
+    //   },
+    //   title: "asdasd",
+    //   subtitle: '2nd Floor, 530 Lytton Ave, Palo Alto, CA 94301',
+    //   color: Color.RED,
+    //   onPress: function() {
+    //     // Router.go("workOrderProcPg");
+    //   }
+    // });
+    // mapView.addPin(redpin);
 
     // this.userLocationEnabled = true;
     this.currentLocationImf.onTouch = function() {
@@ -75,7 +87,7 @@ const MapViewfl = extend(MapViewflDesign)(
     // function setRedpins(jsonData) {
     //   var pinX = 0.0;
     //   var pinY = 0.0;
-     
+
     //     for (var i = 0; i < jsonData.length; i++) {
     //       var redpin = new MapView.Pin({
     //         id: i,
@@ -95,7 +107,7 @@ const MapViewfl = extend(MapViewflDesign)(
     //       pinY += 0.000523;
     //       pinX += 0.0020;
     //     }
-      
+
     // }
 
     //   function setYellowpins() {

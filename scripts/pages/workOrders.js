@@ -19,7 +19,7 @@ const Items = require("../model/items");
 const AlertView = require('sf-core/ui/alertview');
 const Location = require('sf-core/device/location');
 const Application = require("sf-core/application");
-const Animator = require('sf-core/ui/animator');
+const System = require('sf-core/device/system');
 
 const WorkOrders = extend(WorkOrdersDesign)(
   // Constructor
@@ -34,7 +34,7 @@ const WorkOrders = extend(WorkOrdersDesign)(
 var currentUser;
 // overrides super.onLoad method
 function onLoad(pageonLoad) {
-  pageonLoad && pageonLoad();
+  // pageonLoad && pageonLoad();
   var page = this;
 
   currentUser = User.currentUser;
@@ -47,6 +47,20 @@ function onLoad(pageonLoad) {
     console.log("in current condition !!");
     // MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
   }
+  // console.log("latitude  " + page.mapViewfl.workMapView.centerLocation.latitude + "  longitude  " + page.mapViewfl.workMapView.centerLocation.longitude)
+  // var redpin = new MapView.Pin({
+  //   location: {
+  //     latitude: 40.7828647,
+  //     longitude: -73.9675491
+  //   },
+  //   title: "asdasd",
+  //   subtitle: '2nd Floor, 530 Lytton Ave, Palo Alto, CA 94301',
+  //   color: Color.RED,
+  //   onPress: function() {
+  //     Router.go("workOrderProcPg");
+  //   }
+  // });
+  // page.mapViewfl.workMapView.addPin(redpin);
 }
 
 MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(mapview, second) {
@@ -70,26 +84,14 @@ MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(m
     }
   });
 }
-
-// HeaderBarItem.constructor.prototype.setLocationIcon = function setLocationIcon(that){
-
-// }
 HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderBarItem(that, pageName) {
   var backIconItem = new HeaderBarItem();
   var backIcon = Image.createFromFile("images://backheadericon.png");
   backIconItem.image = backIcon;
   backIconItem.onPress = function() {
     if (pageName) {
-      // Animator.animate(that.layout, 0, function() {
-      //   that.layout.left = 0;
-      //   that.layout.right = 0;
-      // }).then(100, function() {
-      //   that.layout.left = that.layout.width;
-      // }).complete(function() {
-      //   //.backgroundColor = Color.GREEN;
-      //       Router.goBack(pageName, 0, false);
-      // });
-      Router.goBack(pageName);
+      //for now just set the showMap  variable as true in fetuere update use
+      Router.goBack(pageName, true);
     }
     else {
       Router.goBack();
@@ -105,7 +107,7 @@ HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderB
  * @param {function} superOnShow super onShow function
  * @param {Object} parameters passed from Router.go function
  */
-function onShow(superOnShow) {
+function onShow(superOnShow, showMap) {
   superOnShow();
   this.headerBar.title = lang["workOrders.title"];
   this.headerBar.itemColor = Color.create("#D5D4D4");
@@ -128,16 +130,25 @@ function onShow(superOnShow) {
 
   // //Assign map image and remove the listview when press
   workOrder.assignImgandRmv = this;
-
+  //bug occure if mapview is invisible // upto that update this.
+  if (showMap && page.mapViewfl.visible) {
+    page.mapViewfl.visible = showMap;
+    page.workOrderListview.visible  = false;
+  }
+  else {
+    page.mapViewfl.visible = false;
+    page.workOrderListview.visible  = true;
+  }
 }
 
 
 var workOL;
 var confirmAlertView;
+var length;
 
 function initListview(jsonData) {
 
-  var length = jsonData.length;
+  length = jsonData.length;
 
   workOL.rowHeight = 90;
   workOL.onRowCreate = function() {
@@ -194,15 +205,19 @@ function initListview(jsonData) {
       expansionSettings.threshold = 1;
       var archiveSwipeItem = ListView.iOS.createSwipeItem("Cancel", Color.RED, 50, function(e) {
         try {
+
           length -= 1;
           workOL.itemCount = length;
-          workOL.nativeObject.deleteRowIndexAnimation(e.index, 3);
+          if (System.OS === "iOS") {
+            workOL.nativeObject.deleteRowIndexAnimation(e.index, 3);
+          }
+          Items.deleteItem(e.index)
         }
         catch (err) {
           console.log(err.message);
         }
         //deleteItem(e.index, jsonData);
-      });
+      }, false);
       return [archiveSwipeItem];
     }
   };
@@ -211,7 +226,6 @@ function initListview(jsonData) {
     Router.sliderDrawer.hideSlider();
     deleteItem(index, jsonData);
   };
-
 
   workOL.refreshEnabled = false;
   workOL.itemCount = jsonData.length;
@@ -235,6 +249,11 @@ function deleteItem(index, jsonData) {
     index: AlertView.ButtonType.POSITIVE,
     text: lang["yes"],
     onClick: function() {
+      length -= 1;
+      workOL.itemCount = length;
+      if (System.OS === "iOS") {
+        workOL.nativeObject.deleteRowIndexAnimation(index, 3);
+      }
       Items.deleteItem(index);
       //afterwards refrest the data and set length of data.
       workOL.itemCount = jsonData.length;
@@ -259,7 +278,7 @@ function setRedpins(jsonData) {
         latitude: mapView.centerLocation.latitude + pinX,
         longitude: mapView.centerLocation.longitude + pinY
       },
-      title: jsonData[i],
+      title: "" + jsonData[i].workid1,
       onPress: function() {
         User.currentWork = redpins[redpin.id];
         Router.go("workOrderProcPg");

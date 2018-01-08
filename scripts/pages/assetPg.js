@@ -82,10 +82,6 @@ function onLoad(superOnLoad) {
       Router.sliderDrawer.hideSlider();
       Router.go("locationPg");
       Asset.currentAsset = jsonData[index];
-      // console.log("work data is in workordersum page " +workData.workid1);
-      // var workSummary = jsonData[index];
-      // var arr = [workSummary,workData];
-      // Router.go("workOrderProcPg", arr);
     };
 
     //sets manually for now

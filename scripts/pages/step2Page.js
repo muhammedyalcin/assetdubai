@@ -41,12 +41,6 @@ function onShow(superOnShow) {
   this.headerBar.itemColor = Color.create("#D5D4D4");
   this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
   this.headerBar.title = lang["step2Page.title"];
-
-  var stepPage = this;
-
-
-
-
 }
 /**
  * @event onLoad
@@ -56,13 +50,7 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
-
-
-  // var backIconItem = new HeaderBarItem();
-  // backIconItem.image = Image.createFromFile("images://backheadericon.png");
-  // backIconItem.itemColor = Color.create("#D5D4D4");
-  // this.headerBar.setLeftItem(backIconItem);
-
+  
   var tabIndicator = new Tab();
   var stepPage = this;
 
@@ -97,10 +85,6 @@ function onLoad(superOnLoad) {
     positionType: FlexLayout.PositionType.RELATIVE
   });
 
-  // var nofl = new nofl();
-  // var yesfl = new yesfl();
-  // this.noteContainer.emptyfl.addChild(new nofl());
-  // this.noteContainer.emptyfl.addChild(new yesfl());
   var yesnofl = Object.assign(new Yesnofl(), {
     flexGrow: 1,
     positionType: FlexLayout.PositionType.RELATIVE
@@ -123,35 +107,6 @@ function onLoad(superOnLoad) {
   this.noteContainer.emptyfl.addChild(yesnofl);
   this.noteContainer.emptyfl.addChild(placeHolder);
 
-  // yesfl.radioButton.onPress = function() {
-  //   if (nofl.radioButton.backgroundColor === Color.GREEN) {
-  //     nofl.radioButton.backgroundColor = Color.TRANSPARENT
-  //   }
-  //   yesfl.radioButton.backgroundColor = Color.RED;
-  // }.bind(this);
-
-  // nofl.radioButton.onPress = function() {
-  //   if (yesfl.radioButton.backgroundColor === Color.GREEN) {
-  //     yesfl.radioButton.backgroundColor = Color.TRANSPARENT
-  //   }
-  //   yesfl.radioButton.backgroundColor = Color.RED;
-  // }.bind(this);
-
-
-
-  // var procedureData = User.currentWorkSummary.procedure;
-  // var fl = procedurePage.initfl(procedureData[0], 0, 60);
-  // var fixFl = Object.assign(fl, {
-  //   id: 25,
-  //   left: 0,
-  //   right: 0,
-  //   top: 60,
-  //   height: 230,
-  //   visible: false,
-  //   backgroundColor: Color.TRANSPARENT,
-  //   positionType: FlexLayout.PositionType.ABSOLUTE
-  // });
-  // this.layout.addChild(fixFl);
   var procedureData = User.currentWorkSummary.procedure;
   tabIndicator.assignCurrentProFl = {
     data: procedureData[1],
