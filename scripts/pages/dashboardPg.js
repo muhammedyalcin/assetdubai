@@ -82,7 +82,6 @@ function onTouchDasItems() {
   Router.sliderDrawer.hideSlider();
   Router.go("workOrders");
 }
-
 /**
  * @event onLoad
  * This event is called once when page is created.

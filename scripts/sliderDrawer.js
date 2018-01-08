@@ -16,6 +16,7 @@ const ImageFillType = require('sf-core/ui/imagefilltype');
 const Application = require('sf-core/application');
 const Font = require('sf-core/ui/font');
 const getCombinedStyle = require("library/styler-builder").getCombinedStyle;
+const Timer = require("sf-core/global/timer");
 
 // var sliderDrawerWidth = 333;
 var nameLabel;
@@ -346,7 +347,12 @@ var sliderDrawer = new SliderDrawer({
                 SliderModel.selectedItem = ordersLabel;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = false;
-                Router.go("workOrders");
+                Timer.setTimeout({
+                    delay: 300,
+                    task: function() {
+                        Router.go("workOrders");
+                    }
+                });
             };
             settingsLabel.onTouch = function() {
                 console.log("setting is touched");
@@ -357,7 +363,13 @@ var sliderDrawer = new SliderDrawer({
                 SliderModel.selectedItem = settingsLabel;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = true;
-                Router.go("setting");
+                Timer.setTimeout({
+                    delay: 300,
+                    task: function() {
+                        Router.go("setting");
+                    }
+                });
+
             }
             logoutLabel.onTouch = function() {
                 console.log("setting is touched");
@@ -365,8 +377,12 @@ var sliderDrawer = new SliderDrawer({
                 sliderDrawer.hide();
                 User.currentUser = null;
                 Router.sliderDrawer.enabled = false;
-                Router.go("assetLoginPage");
-
+                Timer.setTimeout({
+                    delay: 300,
+                    task: function() {
+                        Router.go("assetLoginPage");
+                    }
+                });
                 // Router.go("workOrders");
             }
             dashboardLabel.onTouch = function() {
@@ -378,7 +394,13 @@ var sliderDrawer = new SliderDrawer({
                 SliderModel.selectedItem = dashboardLabel.id;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = false;
-                Router.go("dashboardPg");
+                Timer.setTimeout({
+                    delay: 300,
+                    task: function() {
+                        Router.go("dashboardPg");
+                    }
+                });
+
             }
             assetLabel.onTouch = function() {
                 dashboardLabel.font = Font.create("Lato", 16, Font.NORMAL);
@@ -388,9 +410,13 @@ var sliderDrawer = new SliderDrawer({
                 SliderModel.selectedItem = assetLabel;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = false;
-                Router.go("assetPg");
+                Timer.setTimeout({
+                    delay: 300,
+                    task: function() {
+                        Router.go("assetPg");
+                    }
+                });
             }
-
         }
         sliderDrawer.setActions();
     }
@@ -403,7 +429,7 @@ sliderDrawer.hideSlider = function hideSlider() {
 };
 
 sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
-
+    
     headerbar.leftItemSetBy = sliderDrawer;
     headerbar.leftItemEnabled = true;
     var sliderDrawerItem = new HeaderBarItem({

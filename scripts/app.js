@@ -13,7 +13,6 @@ Application.onUnhandledError = function(e) {
     });
 };
 
-
 const Router = require("sf-core/ui/router");
 const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
@@ -22,7 +21,6 @@ stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
 
 stylerBuilder.setActiveTheme(Data.getStringVariable("theme") || settings.config.theme.currentTheme);
 
-
 // Define routes and go to initial page of application
 Router.add("assetLoginPage", require("./pages/assetLoginPage"));
 Router.add("dashboardPg", require("./pages/dashboardPg"));
@@ -30,16 +28,27 @@ Router.add("proceduresPage", require("./pages/proceduresPage"));
 Router.add("step1Page", require("./pages/step1Page"));
 Router.add("step2Page", require("./pages/step2Page"));
 Router.add("step3Page", require("./pages/step3Page"));
-Router.add("workOrders", require("./pages/workOrders"),true);
+if (System.OS === "iOS") {
+    Router.add("workOrders", require("./pages/workOrders"), true);
+}
+else Router.add("workOrders", require("./pages/workOrders"));
+
 Router.add("workOrderSumpg", require("./pages/workOrderSumpg"));
-Router.add("confirmPg", require("./pages/confirmPg"),true);
-Router.add("workOrderProcPg", require("./pages/workOrderProcPg"),true);
+
+if (System.OS === "iOS") {
+    Router.add("confirmPg", require("./pages/confirmPg"), true);
+}
+else Router.add("confirmPg", require("./pages/confirmPg"));
+if (System.OS === "iOS") {
+    Router.add("workOrderProcPg", require("./pages/workOrderProcPg"), true);
+}
+else Router.add("workOrderProcPg", require("./pages/workOrderProcPg"));
+
 Router.add("locationPg", require("./pages/locationPg"));
 Router.add("assetPg", require("./pages/assetPg"));
-Router.add("setting", require("./pages/setting"),true)
+Router.add("setting", require("./pages/setting"))
 Router.go("assetLoginPage");
 
-
-    var sliderDrawer = require("./sliderDrawer");
-    Router.sliderDrawer = sliderDrawer;
-    Router.sliderDrawer.enabled = false;
+var sliderDrawer = require("./sliderDrawer");
+Router.sliderDrawer = sliderDrawer;
+Router.sliderDrawer.enabled = false;
