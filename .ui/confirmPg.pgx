@@ -1,0 +1,791 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "39e6-0144-dd1c-4249",
+			"initialized": true,
+			"userProps": {},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "confirmPg",
+				"children": [
+					"65dd-53d3-6555-0fc4",
+					"bc38-e504-89da-9c67",
+					"fbe9-5492-9ec3-153d",
+					"a29f-892d-a25f-5b6c"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "65dd-53d3-6555-0fc4",
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "39e6-0144-dd1c-4249",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "bc38-e504-89da-9c67",
+			"userProps": {
+				"title": "Complete Work Order",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "headerBar",
+				"title": "Complete Work Order",
+				"children": [],
+				"parent": "39e6-0144-dd1c-4249",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "fbe9-5492-9ec3-153d",
+			"userProps": {
+				"usePageVariable": true,
+				"width": null,
+				"height": null,
+				"left": 10,
+				"right": 10,
+				"top": 12.222222222222221,
+				"bottom": 70,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "confirmContainer",
+				"usePageVariable": true,
+				"children": [
+					"2b91-85ed-1018-9208",
+					"0d6b-f2f9-9279-0072",
+					"a547-a6e5-a63f-17ba",
+					"caa4-f853-1081-e266"
+				],
+				"parent": "39e6-0144-dd1c-4249"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "2b91-85ed-1018-9208",
+			"hiddenComponent": false,
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": 0.8
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "timefl",
+				"usePageVariable": true,
+				"children": [
+					"9a20-ddf5-f1f2-2390",
+					"c117-9cfd-2c3a-69d2",
+					"836d-1011-e2d3-d8be"
+				],
+				"parent": "fbe9-5492-9ec3-153d"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "0d6b-f2f9-9279-0072",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 1.5
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "stepcompfl",
+				"usePageVariable": true,
+				"children": [
+					"4be7-6eb2-75d3-6705",
+					"b742-c6a0-d25c-991a",
+					"59dc-ca06-cb3d-bbc9",
+					"e637-569c-89fc-60fd",
+					"2c7f-80ca-5f47-a87b",
+					"9498-ad56-8db2-5d39"
+				],
+				"parent": "fbe9-5492-9ec3-153d"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "a547-a6e5-a63f-17ba",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 2
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "addfl",
+				"usePageVariable": true,
+				"children": [
+					"ce9b-a41d-a8d8-32da",
+					"04fa-6314-41a3-cd7f"
+				],
+				"parent": "fbe9-5492-9ec3-153d"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "caa4-f853-1081-e266",
+			"hiddenComponent": true,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"visible": false,
+				"alpha": 0,
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "comfirmPlaceHolder",
+				"children": [],
+				"parent": "fbe9-5492-9ec3-153d"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "9a20-ddf5-f1f2-2390",
+			"hiddenComponent": false,
+			"userProps": {
+				"usePageVariable": true,
+				"text": "Work Order Completed at",
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"textColor": "rgba( 208, 2, 27, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato",
+					"bold": false
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "compLabel",
+				"text": "Work Order Completed at",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "2b91-85ed-1018-9208"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "c117-9cfd-2c3a-69d2",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "timeContainer",
+				"children": [
+					"9d58-0f36-6f58-d977",
+					"aeda-244b-36e0-403e"
+				],
+				"parent": "2b91-85ed-1018-9208"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "aeda-244b-36e0-403e",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 4
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "datefl",
+				"children": [
+					"a103-1100-805c-68c9"
+				],
+				"parent": "c117-9cfd-2c3a-69d2"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "9d58-0f36-6f58-d977",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "timeValuefl",
+				"children": [
+					"c3c6-b364-d7db-892d"
+				],
+				"parent": "c117-9cfd-2c3a-69d2"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "c3c6-b364-d7db-892d",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"text": "6:30 pm",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"textColor": "rgba( 61, 59, 58, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 14,
+					"family": "Lato"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "timeLabel",
+				"text": "6:30 pm",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "9d58-0f36-6f58-d977"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "a103-1100-805c-68c9",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"text": "14.09.17",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"textColor": "rgba( 61, 59, 58, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato",
+					"size": 14
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "dateLabel",
+				"text": "14.09.17",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "aeda-244b-36e0-403e"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "836d-1011-e2d3-d8be",
+			"userProps": {
+				"width": null,
+				"height": 1,
+				"left": 0,
+				"right": 0,
+				"bottom": 0,
+				"backgroundColor": "rgba( 151, 151, 151, 1 )",
+				"alpha": 0.31,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "line",
+				"children": [],
+				"parent": "2b91-85ed-1018-9208"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "e637-569c-89fc-60fd",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"text": "Infrared Camera",
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"textColor": "rgba( 61, 59, 58, 1 )",
+				"textAlignment": "MIDLEFT",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato",
+					"size": 14
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "stepLabel3",
+				"text": "Infrared Camera",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "0d6b-f2f9-9279-0072"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "59dc-ca06-cb3d-bbc9",
+			"hiddenComponent": false,
+			"userProps": {
+				"usePageVariable": true,
+				"text": "Acoustic Test",
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"textColor": "rgba( 61, 59, 58, 1 )",
+				"textAlignment": "MIDLEFT",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato",
+					"size": 14
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "stepLabel2",
+				"text": "Acoustic Test",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "0d6b-f2f9-9279-0072"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "b742-c6a0-d25c-991a",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"text": "Test Closure Time",
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"textColor": "rgba( 61, 59, 58, 1 )",
+				"textAlignment": "MIDLEFT",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 14
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "stepLabel1",
+				"text": "Test Closure Time",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "0d6b-f2f9-9279-0072"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "4be7-6eb2-75d3-6705",
+			"hiddenComponent": false,
+			"userProps": {
+				"text": "Step Completed",
+				"width": null,
+				"height": null,
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 208, 2, 27, 1 )",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": 1.5
+				},
+				"font": {
+					"bold": false,
+					"family": "Lato"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "stepTitleLabe",
+				"text": "Step Completed",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "0d6b-f2f9-9279-0072"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "ce9b-a41d-a8d8-32da",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 0.7
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "labelfl",
+				"children": [
+					"767b-ca2c-aef4-a71e",
+					"4607-4a08-64aa-1131"
+				],
+				"parent": "a547-a6e5-a63f-17ba"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "04fa-6314-41a3-cd7f",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 0.6,
+					"flexDirection": "ROW",
+					"alignSelf": "AUTO",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"alignContent": "STRETCH"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "buttonfl",
+				"children": [
+					"cb2c-3080-a829-34ea",
+					"0b07-f1bb-c8b2-0ff1",
+					"6e2b-c2ec-02fe-d0e2",
+					"b0fc-c3e7-e6d0-a68e",
+					"dee5-7be4-a50f-fd8e"
+				],
+				"parent": "a547-a6e5-a63f-17ba"
+			}
+		},
+		{
+			"type": "Button",
+			"id": "6e2b-c2ec-02fe-d0e2",
+			"hiddenComponent": true,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"text": "No",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"textColor": "rgba( 61, 59, 58, 1 )",
+				"borderWidth": 1,
+				"borderColor": "rgba( 151, 151, 151, 0.31 )",
+				"marginBottom": 2,
+				"visible": false,
+				"flexProps": {
+					"flexGrow": 0
+				},
+				"font": {
+					"family": "Lato"
+				}
+			},
+			"className": ".button",
+			"props": {
+				"name": "noButton",
+				"text": "No",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "04fa-6314-41a3-cd7f"
+			}
+		},
+		{
+			"type": "Button",
+			"id": "cb2c-3080-a829-34ea",
+			"hiddenComponent": true,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 2, 132, 51, 1 )",
+				"text": "Yes",
+				"borderWidth": 1,
+				"textColor": "rgba( 255, 255, 255, 1 )",
+				"borderColor": "rgba( 151, 151, 151, 0.31 )",
+				"marginBottom": 2,
+				"visible": false,
+				"flexProps": {
+					"flexGrow": 0
+				},
+				"font": {
+					"family": "Lato"
+				}
+			},
+			"className": ".button",
+			"props": {
+				"name": "yesButton",
+				"text": "Yes",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "04fa-6314-41a3-cd7f"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "0b07-f1bb-c8b2-0ff1",
+			"hiddenComponent": true,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"visible": false,
+				"flexProps": {
+					"flexGrow": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "middlePlaceHolder",
+				"children": [],
+				"parent": "04fa-6314-41a3-cd7f"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "767b-ca2c-aef4-a71e",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"width": null,
+				"height": 40,
+				"text": "Additional Actions",
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"multiline": true,
+				"textColor": "rgba( 208, 2, 27, 1 )",
+				"usePageVariable": true,
+				"font": {
+					"family": "Lato"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "compTitle",
+				"text": "Additional Actions",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "ce9b-a41d-a8d8-32da"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "4607-4a08-64aa-1131",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"text": "Do you want to create a new work order for valve cleaning ?",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"multiline": true,
+				"textAlignment": "TOPLEFT",
+				"textColor": "rgba( 61, 59, 58, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 14,
+					"family": "Lato"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "compDescTitle",
+				"text": "Do you want to create a new work order for valve cleaning ?",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "ce9b-a41d-a8d8-32da"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "9498-ad56-8db2-5d39",
+			"userProps": {
+				"width": null,
+				"height": 1,
+				"left": 0,
+				"right": 0,
+				"bottom": 0,
+				"backgroundColor": "rgba( 151, 151, 151, 1 )",
+				"alpha": 0.31
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "line",
+				"children": [],
+				"parent": "0d6b-f2f9-9279-0072"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "a29f-892d-a25f-5b6c",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "completefl",
+				"id": "62a3-2606-2a58-57be"
+			},
+			"userProps": {
+				"width": null,
+				"height": 70,
+				"left": 0,
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "completefl",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "39e6-0144-dd1c-4249"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "b0fc-c3e7-e6d0-a68e",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "yesfl",
+				"id": "2387-6178-95b7-d335"
+			},
+			"userProps": {
+				"width": 80,
+				"height": 50,
+				"left": 80,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"justifyContent": "CENTER",
+					"flexDirection": "ROW",
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"justifyContent": 1,
+					"flexDirection": 2,
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "yesfl",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "04fa-6314-41a3-cd7f"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "dee5-7be4-a50f-fd8e",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "nofl",
+				"id": "d4ad-8e31-4285-95cf"
+			},
+			"userProps": {
+				"width": 80,
+				"height": 50,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"right": 0,
+				"left": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"justifyContent": "CENTER",
+					"flexDirection": "ROW",
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"justifyContent": 1,
+					"flexDirection": 2,
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "nofl",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "04fa-6314-41a3-cd7f"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "2c7f-80ca-5f47-a87b",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 0.7
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "placeHolder",
+				"children": [],
+				"parent": "0d6b-f2f9-9279-0072"
+			}
+		}
+	]
+}

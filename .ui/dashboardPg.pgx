@@ -1,0 +1,132 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "def0-4896-0a3f-3243",
+			"initialized": true,
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )"
+			},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "dashboardPg",
+				"children": [
+					"5a69-43c1-205d-c868",
+					"01e7-cc4b-0e28-5fb5",
+					"7127-7455-414d-8349",
+					"ea7c-2f80-2ef3-f897",
+					"e864-54cd-c269-f829"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "5a69-43c1-205d-c868",
+			"hiddenComponent": false,
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "def0-4896-0a3f-3243",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "01e7-cc4b-0e28-5fb5",
+			"hiddenComponent": false,
+			"userProps": {
+				"title": "Dashboard",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "headerBar",
+				"title": "Dashboard",
+				"children": [],
+				"parent": "def0-4896-0a3f-3243",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "ListView",
+			"id": "e864-54cd-c269-f829",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"itemCount": null,
+				"id": 15,
+				"rowHeight": 60,
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".listView",
+			"props": {
+				"id": 15,
+				"name": "dashboardListview",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "def0-4896-0a3f-3243",
+				"itemCount": null,
+				"rowHeight": 60
+			}
+		},
+		{
+			"type": "ImageView",
+			"id": "7127-7455-414d-8349",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"right": 0,
+				"bottom": 0,
+				"top": 0,
+				"left": 0,
+				"image": "background.png",
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".imageView",
+			"props": {
+				"name": "backGroundImg",
+				"children": [],
+				"parent": "def0-4896-0a3f-3243"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "ea7c-2f80-2ef3-f897",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"left": 0,
+				"top": 0,
+				"right": 0,
+				"bottom": 0,
+				"backgroundColor": "rgba( 25, 21, 21, 1 )",
+				"alpha": 0.8,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "transparentfl",
+				"children": [],
+				"parent": "def0-4896-0a3f-3243"
+			}
+		}
+	]
+}

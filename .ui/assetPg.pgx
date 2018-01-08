@@ -1,0 +1,81 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "4996-c1b6-4c6c-fa0c",
+			"initialized": true,
+			"userProps": {},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "assetPg",
+				"children": [
+					"f960-99f2-5f9f-035b",
+					"d5fe-0da6-8f05-46fc",
+					"957d-d665-3900-fb88"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "f960-99f2-5f9f-035b",
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "4996-c1b6-4c6c-fa0c",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "d5fe-0da6-8f05-46fc",
+			"userProps": {
+				"title": "Assets",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "headerBar",
+				"title": "Assets",
+				"children": [],
+				"parent": "4996-c1b6-4c6c-fa0c",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "ListView",
+			"id": "957d-d665-3900-fb88",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"left": 15,
+				"right": 15,
+				"bottom": 15,
+				"top": 15,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"rowHeight": 70,
+				"itemCount": null,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".listView",
+			"props": {
+				"name": "assetListview",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "4996-c1b6-4c6c-fa0c",
+				"itemCount": null,
+				"rowHeight": 70
+			}
+		}
+	]
+}

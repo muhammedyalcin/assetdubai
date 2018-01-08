@@ -1,0 +1,290 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "92a7-934b-4869-bdc2",
+			"initialized": true,
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"flexProps": {
+					"flexDirection": "COLUMN_REVERSE",
+					"justifyContent": "CENTER",
+					"alignItems": "CENTER",
+					"alignContent": "STRETCH"
+				}
+			},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "proceduresPage",
+				"children": [
+					"a9ba-7546-54f2-1368",
+					"c0c5-731d-2e33-e753",
+					"5825-6915-4168-74e3",
+					"f748-1a15-485c-49dd",
+					"68e4-8e3a-8370-6702",
+					"bfc0-8e27-03a5-6f7b"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "a9ba-7546-54f2-1368",
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "92a7-934b-4869-bdc2",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "c0c5-731d-2e33-e753",
+			"userProps": {
+				"title": "Procedures",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "headerBar",
+				"title": "Procedures",
+				"children": [],
+				"parent": "92a7-934b-4869-bdc2",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "68e4-8e3a-8370-6702",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": 70,
+				"backgroundColor": "rgba( 216, 216, 216, 1 )",
+				"usePageVariable": true,
+				"visible": true,
+				"left": 0,
+				"top": 0,
+				"right": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "workIDfl1",
+				"usePageVariable": true,
+				"children": [
+					"3ede-3755-e230-446c",
+					"a269-3b4f-7acc-9e5e"
+				],
+				"parent": "92a7-934b-4869-bdc2"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "3ede-3755-e230-446c",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"text": "Nothing",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"marginLeft": 30,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"textAlignment": "MIDLEFT",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "workid1",
+				"text": "Nothing",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "68e4-8e3a-8370-6702"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "a269-3b4f-7acc-9e5e",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"text": "Nothing",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"marginLeft": 30,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"textAlignment": "TOPLEFT",
+				"flexProps": {
+					"flexGrow": 0.7
+				},
+				"font": {
+					"family": "Lato",
+					"size": 14
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "workid2",
+				"text": "Nothing",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "68e4-8e3a-8370-6702"
+			}
+		},
+		{
+			"type": "ScrollView",
+			"id": "5825-6915-4168-74e3",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"usePageVariable": true,
+				"visible": false,
+				"top": 80,
+				"bottom": 70,
+				"left": 0,
+				"right": 0,
+				"flexProps": {
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".scrollView",
+			"props": {
+				"name": "procedureScroll",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "92a7-934b-4869-bdc2"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "f748-1a15-485c-49dd",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"bottom": 70,
+				"top": 70,
+				"left": 0,
+				"right": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"flexGrow": 1,
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "indicatorfl",
+				"usePageVariable": true,
+				"children": [
+					"f5e3-c7f8-1a8d-59a1"
+				],
+				"parent": "92a7-934b-4869-bdc2"
+			}
+		},
+		{
+			"type": "ActivityIndicator",
+			"id": "f5e3-c7f8-1a8d-59a1",
+			"userProps": {
+				"usePageVariable": true
+			},
+			"className": ".activityIndicator",
+			"props": {
+				"name": "proInfdicator",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "f748-1a15-485c-49dd"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "bfc0-8e27-03a5-6f7b",
+			"userProps": {
+				"backgroundColor": "rgba( 74, 144, 226, 1 )",
+				"usePageVariable": true,
+				"width": null,
+				"height": 70,
+				"left": 0,
+				"right": 0,
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"flexDirection": "ROW"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "buttonfl",
+				"usePageVariable": true,
+				"children": [
+					"8411-65bb-3bca-4e03",
+					"f5f9-6156-4509-e65b"
+				],
+				"parent": "92a7-934b-4869-bdc2"
+			}
+		},
+		{
+			"type": "Button",
+			"id": "f5f9-6156-4509-e65b",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"text": "Start Procedure",
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 2, 132, 51, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".button",
+			"props": {
+				"name": "startButton",
+				"text": "Start Procedure",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "bfc0-8e27-03a5-6f7b"
+			}
+		},
+		{
+			"type": "Button",
+			"id": "8411-65bb-3bca-4e03",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 208, 2, 27, 1 )",
+				"text": "Cancel Work Order",
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".button",
+			"props": {
+				"name": "cancelButton",
+				"text": "Cancel Work Order",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "bfc0-8e27-03a5-6f7b"
+			}
+		}
+	]
+}

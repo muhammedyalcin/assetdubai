@@ -1,0 +1,254 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "03a1-2dc2-ae7a-6c1e",
+			"initialized": true,
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )"
+			},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "workOrderProcPg",
+				"children": [
+					"d34a-d4ed-6727-e7e2",
+					"b10c-cb63-1459-94f9",
+					"ab6a-b1d8-4ad0-83f7",
+					"ac58-c086-e35d-b3d3",
+					"8b14-77d9-b455-2e1a",
+					"bdb8-b03b-8609-ce6d"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "d34a-d4ed-6727-e7e2",
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "03a1-2dc2-ae7a-6c1e",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "b10c-cb63-1459-94f9",
+			"userProps": {
+				"title": "WO 4539102",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "headerBar",
+				"title": "WO 4539102",
+				"children": [],
+				"parent": "03a1-2dc2-ae7a-6c1e",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "ab6a-b1d8-4ad0-83f7",
+			"userProps": {
+				"width": null,
+				"height": 70,
+				"bottom": 0,
+				"right": 0,
+				"left": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"flexDirection": "ROW",
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "proButton",
+				"usePageVariable": true,
+				"children": [
+					"f423-ad3e-e690-da7e",
+					"fbc1-b77e-0b55-6410",
+					"5883-c323-9e9a-5bbb"
+				],
+				"parent": "03a1-2dc2-ae7a-6c1e"
+			}
+		},
+		{
+			"type": "Button",
+			"id": "5883-c323-9e9a-5bbb",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"text": "Start Procedure",
+				"backgroundColor": "rgba( 2, 132, 51, 1 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato"
+				}
+			},
+			"className": ".button",
+			"props": {
+				"name": "startProButton",
+				"text": "Start Procedure",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "ab6a-b1d8-4ad0-83f7"
+			}
+		},
+		{
+			"type": "Button",
+			"id": "f423-ad3e-e690-da7e",
+			"hiddenComponent": false,
+			"userProps": {
+				"width": null,
+				"height": null,
+				"text": "Cancel Work Order",
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 208, 2, 27, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato"
+				}
+			},
+			"className": ".button",
+			"props": {
+				"name": "cancelButton",
+				"text": "Cancel Work Order",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "ab6a-b1d8-4ad0-83f7"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "fbc1-b77e-0b55-6410",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "placeHolder",
+				"children": [],
+				"parent": "ab6a-b1d8-4ad0-83f7"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "ac58-c086-e35d-b3d3",
+			"hiddenComponent": true,
+			"source": {
+				"page": "__library__",
+				"type": "contactContainer",
+				"id": "fb41-44fc-4982-086e"
+			},
+			"userProps": {
+				"width": null,
+				"height": 300,
+				"bottom": 100,
+				"right": 0,
+				"left": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"usePageVariable": true,
+				"visible": false,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "contactContainer",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "03a1-2dc2-ae7a-6c1e"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "8b14-77d9-b455-2e1a",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "mapViewfl",
+				"id": "36fb-be60-34ab-163f"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"bottom": 400,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "mapViewfl",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "03a1-2dc2-ae7a-6c1e"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "bdb8-b03b-8609-ce6d",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "workOrdersSumfl",
+				"id": "a2f8-4d27-74c3-22fb"
+			},
+			"userProps": {
+				"width": null,
+				"height": 300,
+				"bottom": 95,
+				"backgroundColor": "rgba( 155, 155, 155, 1 )",
+				"left": 15,
+				"right": 15,
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "workOrdersSumfl",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "03a1-2dc2-ae7a-6c1e"
+			}
+		}
+	]
+}

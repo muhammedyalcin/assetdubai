@@ -1,0 +1,203 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "8fd9-d302-fcc8-9c5d",
+			"initialized": true,
+			"userProps": {},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "step3Page",
+				"children": [
+					"23b2-f723-9cbb-291c",
+					"60f9-1328-8308-21d2",
+					"23eb-4ced-acb0-d4b7",
+					"81c0-d56a-db09-9f4c",
+					"da79-e41c-453d-6737",
+					"2da7-3a47-b1a7-5b1b"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "23b2-f723-9cbb-291c",
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "8fd9-d302-fcc8-9c5d",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "60f9-1328-8308-21d2",
+			"userProps": {
+				"title": "Step 3",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "headerBar",
+				"title": "Step 3",
+				"children": [],
+				"parent": "8fd9-d302-fcc8-9c5d",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "23eb-4ced-acb0-d4b7",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "tab",
+				"id": "0276-a54a-2096-81f6"
+			},
+			"userProps": {
+				"width": null,
+				"height": 60,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout .tabBar-style1 .tabBar-style2",
+			"props": {
+				"name": "tab",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "8fd9-d302-fcc8-9c5d"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "81c0-d56a-db09-9f4c",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "noteContainer",
+				"id": "9fcd-e7e9-3587-304b"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"borderColor": "rgba( 255, 255, 255, 0 )",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"left": 20,
+				"right": 20,
+				"top": 70,
+				"bottom": 100,
+				"usePageVariable": true,
+				"flexProps": {
+					"justifyContent": "CENTER",
+					"positionType": "ABSOLUTE",
+					"alignItems": "STRETCH",
+					"alignSelf": "AUTO",
+					"flexGrow": 1
+				},
+				"flex": {
+					"justifyContent": 3,
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "noteContainer",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "8fd9-d302-fcc8-9c5d"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "da79-e41c-453d-6737",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "completefl",
+				"id": "62a3-2606-2a58-57be"
+			},
+			"userProps": {
+				"width": null,
+				"height": 70,
+				"left": 0,
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "completefl",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "8fd9-d302-fcc8-9c5d"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "2da7-3a47-b1a7-5b1b",
+			"userProps": {
+				"width": 150,
+				"height": 100,
+				"left": 110,
+				"top": 200,
+				"borderRadius": 32,
+				"usePageVariable": true,
+				"visible": false,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"alignItems": "CENTER",
+					"alignSelf": "CENTER",
+					"justifyContent": "CENTER"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "indicayorfl",
+				"usePageVariable": true,
+				"children": [
+					"8539-112a-b162-0d2f"
+				],
+				"parent": "8fd9-d302-fcc8-9c5d"
+			}
+		},
+		{
+			"type": "ActivityIndicator",
+			"id": "8539-112a-b162-0d2f",
+			"userProps": {
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "CENTER"
+				}
+			},
+			"className": ".activityIndicator",
+			"props": {
+				"name": "stepindicator",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "2da7-3a47-b1a7-5b1b"
+			}
+		}
+	]
+}

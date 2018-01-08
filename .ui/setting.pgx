@@ -1,0 +1,262 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "5d7d-207f-f58b-d759",
+			"initialized": true,
+			"userProps": {},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "setting",
+				"children": [
+					"906f-c87b-52e0-236b",
+					"0893-3ba8-d77e-9512",
+					"3fc9-dad1-4643-5269"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "906f-c87b-52e0-236b",
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "5d7d-207f-f58b-d759",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "0893-3ba8-d77e-9512",
+			"userProps": {
+				"title": "Settings",
+				"titleColor": "rgba( 255, 255, 255, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "settings",
+				"title": "Settings",
+				"children": [],
+				"parent": "5d7d-207f-f58b-d759",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "3fc9-dad1-4643-5269",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"left": 15,
+				"top": 10,
+				"right": 15,
+				"bottom": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "settingsfl",
+				"children": [
+					"5101-cd54-23d4-39fd",
+					"9d8f-bd56-9079-6b51",
+					"3005-d61d-5795-753a",
+					"9d2f-b69b-ca8f-1105"
+				],
+				"parent": "5d7d-207f-f58b-d759"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "5101-cd54-23d4-39fd",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "themefl",
+				"id": "12b2-f367-08fd-1828"
+			},
+			"userProps": {
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"width": null,
+				"height": 70,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "themefl",
+				"children": [],
+				"parent": "3fc9-dad1-4643-5269"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "9d8f-bd56-9079-6b51",
+			"userProps": {
+				"width": null,
+				"height": 70,
+				"right": 0,
+				"left": 0,
+				"bottom": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "signoutfl",
+				"children": [
+					"2c2a-f941-b8ab-b6af"
+				],
+				"parent": "3fc9-dad1-4643-5269"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "2c2a-f941-b8ab-b6af",
+			"userProps": {
+				"textAlignment": "MIDCENTER",
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"text": "Sign out",
+				"textColor": "rgba( 208, 2, 27, 1 )",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"font": {
+					"family": "Lato"
+				},
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "signoutLabel",
+				"text": "Sign out",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "9d8f-bd56-9079-6b51"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "3005-d61d-5795-753a",
+			"userProps": {
+				"bottom": 70,
+				"left": 0,
+				"right": 0,
+				"width": null,
+				"height": 300,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "aboutfl",
+				"children": [
+					"27d1-ee1a-b442-e07e",
+					"8b70-c95e-8d8f-8051"
+				],
+				"parent": "3fc9-dad1-4643-5269"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "27d1-ee1a-b442-e07e",
+			"userProps": {
+				"usePageVariable": true,
+				"width": null,
+				"height": 50,
+				"text": "New Version Avaliable!",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"font": {
+					"family": "Lato"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "versionLabel",
+				"text": "New Version Avaliable!",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "3005-d61d-5795-753a"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "8b70-c95e-8d8f-8051",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"text": "About",
+				"textAlignment": "TOPLEFT",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "Lato"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "aboutLabel",
+				"text": "About",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "3005-d61d-5795-753a"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "9d2f-b69b-ca8f-1105",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "notificaitonfl",
+				"id": "0083-7623-e45f-cf22"
+			},
+			"userProps": {
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"width": null,
+				"height": 70,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "notificaitonfl",
+				"children": [],
+				"parent": "3fc9-dad1-4643-5269"
+			}
+		}
+	]
+}

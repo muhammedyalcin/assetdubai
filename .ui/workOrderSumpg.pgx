@@ -1,0 +1,137 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "837e-ef33-6032-3f7f",
+			"initialized": true,
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )"
+			},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "workOrderSumpg",
+				"children": [
+					"11c4-38b2-b750-6515",
+					"7758-9949-aae2-9849",
+					"81f2-fc91-2e85-17f7",
+					"64a8-c40e-64cd-2743"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "11c4-38b2-b750-6515",
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "837e-ef33-6032-3f7f",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "7758-9949-aae2-9849",
+			"userProps": {
+				"title": "Work Order Summary",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "headerBar",
+				"title": "Work Order Summary",
+				"children": [],
+				"parent": "837e-ef33-6032-3f7f",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "81f2-fc91-2e85-17f7",
+			"userProps": {
+				"width": null,
+				"height": 50,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"alignItems": "STRETCH"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "sumLabelCon",
+				"children": [
+					"7b60-dd5b-082d-82e9"
+				],
+				"parent": "837e-ef33-6032-3f7f"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "7b60-dd5b-082d-82e9",
+			"userProps": {
+				"text": "WORK ORDER SUMMARY",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"textAlignment": "MIDLEFT",
+				"marginLeft": 15,
+				"width": null,
+				"height": null,
+				"textColor": "rgba( 151, 151, 151, 1 )",
+				"usePageVariable": true,
+				"font": {
+					"bold": true,
+					"family": "Lato"
+				},
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".label",
+			"props": {
+				"name": "sumLabel",
+				"text": "WORK ORDER SUMMARY",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "81f2-fc91-2e85-17f7"
+			}
+		},
+		{
+			"type": "ListView",
+			"id": "64a8-c40e-64cd-2743",
+			"userProps": {
+				"width": null,
+				"height": null,
+				"left": 15,
+				"right": 15,
+				"top": 50,
+				"bottom": 5,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"rowHeight": 70,
+				"itemCount": null,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".listView",
+			"props": {
+				"name": "wordOderSumListview",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "837e-ef33-6032-3f7f",
+				"itemCount": null,
+				"rowHeight": 70
+			}
+		}
+	]
+}

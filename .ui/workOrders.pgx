@@ -1,0 +1,120 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "bf86-a75c-80dc-96fa",
+			"initialized": true,
+			"userProps": {},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "workOrders",
+				"children": [
+					"eb98-a794-58cf-3426",
+					"1b56-ab8b-8157-f26f",
+					"b353-38de-6988-b45f",
+					"6751-99c2-851c-2c97"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "eb98-a794-58cf-3426",
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "bf86-a75c-80dc-96fa",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "1b56-ab8b-8157-f26f",
+			"userProps": {
+				"title": "Work Orders",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "headerBar",
+				"title": "Work Orders",
+				"children": [],
+				"parent": "bf86-a75c-80dc-96fa",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "ListView",
+			"id": "b353-38de-6988-b45f",
+			"hiddenComponent": false,
+			"userProps": {
+				"usePageVariable": true,
+				"width": null,
+				"height": null,
+				"left": 10,
+				"right": 10,
+				"top": 10,
+				"bottom": 10,
+				"itemCount": null,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"rowHeight": 70,
+				"id": 10,
+				"visible": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".listView",
+			"props": {
+				"id": 10,
+				"name": "workOrderListview",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "bf86-a75c-80dc-96fa",
+				"itemCount": null,
+				"rowHeight": 70
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "6751-99c2-851c-2c97",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "mapViewfl",
+				"id": "36fb-be60-34ab-163f"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"bottom": 0,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"visible": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "mapViewfl",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "bf86-a75c-80dc-96fa"
+			}
+		}
+	]
+}

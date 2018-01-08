@@ -1,0 +1,121 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "634f-5a97-13ed-afac",
+			"initialized": true,
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )"
+			},
+			"className": ".page",
+			"version": "6.5.3",
+			"props": {
+				"name": "locationPg",
+				"children": [
+					"3851-5ee8-9124-dbfa",
+					"b377-4d89-f022-f876",
+					"dc01-8ba8-674a-db41",
+					"d85c-0372-0485-b06d"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "3851-5ee8-9124-dbfa",
+			"userProps": {
+				"color": "rgba( 61, 59, 58, 1 )",
+				"style": "LIGHTCONTENT"
+			},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "634f-5a97-13ed-afac",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "b377-4d89-f022-f876",
+			"userProps": {
+				"title": "Location Page",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			},
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"props": {
+				"name": "headerBar",
+				"title": "Location Page",
+				"children": [],
+				"parent": "634f-5a97-13ed-afac",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "dc01-8ba8-674a-db41",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "contactContainer",
+				"id": "fb41-44fc-4982-086e"
+			},
+			"userProps": {
+				"width": null,
+				"height": 400,
+				"bottom": 0,
+				"right": 0,
+				"left": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "contactContainer",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "634f-5a97-13ed-afac"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "d85c-0372-0485-b06d",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "mapViewfl",
+				"id": "36fb-be60-34ab-163f"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"left": 0,
+				"right": 0,
+				"bottom": 400,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "mapViewfl",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "634f-5a97-13ed-afac"
+			}
+		}
+	]
+}
