@@ -89,7 +89,7 @@ HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderB
       //   //.backgroundColor = Color.GREEN;
       //       Router.goBack(pageName, 0, false);
       // });
-       Router.goBack(pageName);
+      Router.goBack(pageName);
     }
     else {
       Router.goBack();
@@ -137,6 +137,8 @@ var confirmAlertView;
 
 function initListview(jsonData) {
 
+  var length = jsonData.length;
+
   workOL.rowHeight = 90;
   workOL.onRowCreate = function() {
     var listviewItem = new ListViewItem();
@@ -183,19 +185,23 @@ function initListview(jsonData) {
   workOL.ios.rightToLeftSwipeEnabled = true;
 
   workOL.ios.onRowSwiped = function(direction, expansionSettings) {
+
     Router.sliderDrawer.hideSlider();
     if (direction == ListView.iOS.SwipeDirection.RIGHTTOLEFT) {
       //Expansion button index. Default value 0
-      expansionSettings.buttonIndex = -1;
-      
+      expansionSettings.buttonIndex = 0;
+      expansionSettings.fillOnTrigger = true;
+      expansionSettings.threshold = 1;
       var archiveSwipeItem = ListView.iOS.createSwipeItem("Cancel", Color.RED, 50, function(e) {
         try {
-            workOL.deleteRow(e.index);
-        }catch(err){
+          length -= 1;
+          workOL.itemCount = length;
+          workOL.nativeObject.deleteRowIndexAnimation(e.index, 3);
+        }
+        catch (err) {
           console.log(err.message);
         }
-      
-        deleteItem(e.index, jsonData);
+        //deleteItem(e.index, jsonData);
       });
       return [archiveSwipeItem];
     }

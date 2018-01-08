@@ -382,7 +382,7 @@ ProceduresPage.constructor.prototype.initfl = function(data, index, top, tickena
   videoImageView.onTouch = function() {
     console.log("url is " + data.videoUrl);
     try {
-      workVideoView.loadURL("https://my.mixtape.moe/zbtglf.mp4");
+      workVideoView.loadURL("https://commonsmartface.blob.core.windows.net/assetmanagement/Applus%20RTD%20NDT%20Ultrasonic%20Testing.mp4");
     }
     catch (e) {
       alert("Error: " + e);
