@@ -86,7 +86,11 @@ function onLoad(superOnLoad) {
   });
 
   var yesnofl = Object.assign(new Yesnofl(), {
+    height: 70,
+    width: 100,
     flexGrow: 1,
+    alignItems: FlexLayout.AlignItems.FLEX_START,
+    justifyContent: FlexLayout.JustifyContent.FLEX_END,
     positionType: FlexLayout.PositionType.RELATIVE
   });
 
