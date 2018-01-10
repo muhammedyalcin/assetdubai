@@ -93,6 +93,7 @@ SMF.i18n.defineLanguage('en', {
     "setting.title"                            : "Settings",
 	"setting.confirmAlert.message"             : "Do you really want to change the theme of the application? This will cause the application to restart.",
 	"setting.confirmAlert.title"               : "Confirmation",
+	"setting.notifications"			           : "Notifications",
 	
 	"closureTimeComp.closureTime"              : "Closure Time",
 	"closureTimeComp.ref"                      : "Reference Time: 40 seconds",

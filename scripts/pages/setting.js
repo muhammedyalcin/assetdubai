@@ -32,6 +32,7 @@ function onShow(superOnShow) {
   
   this.headerBar.title = lang["setting.title"];
   this.signoutLabel.text = lang["signout"];
+  this.notificaitonfl.themeLabel.text = lang["setting.notifications"];
 
   page.signoutLabel.onTouch = function() {
     User.currentUser = null;

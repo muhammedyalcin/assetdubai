@@ -90,6 +90,7 @@ SMF.i18n.defineLanguage('tr', {
 	"setting.title"                            : "Ayarlar",
 	"setting.confirmAlert.message"             : "Uygulamanın görünümnü değiştirmek istiyor musun? Bu işlem uygulamayı yeni baştan başlatacaktır.",
 	"setting.confirmAlert.title"               : "Onayla",
+	"setting.notifications"			           : "Bildirimler",
 	
 	"closureTimeComp.closureTime"              : "Bitirme Zamanı",
 	"closureTimeComp.ref"                      : "Referans Zamanı: 40 saniye",

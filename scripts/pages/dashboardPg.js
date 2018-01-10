@@ -5,13 +5,8 @@
 const extend = require('js-base/core/extend');
 const DashboardPgDesign = require('ui/ui_dashboardPg');
 const Router = require("sf-core/ui/router");
-const HeaderBarItem = require("sf-core/ui/headerbaritem");
-const Image = require("sf-core/ui/image");
-const Color = require("sf-core/ui/color");
 const DashBoardItem = require("components/DashBoardItem");
 const ListViewItem = require("sf-core/ui/listviewitem");
-const StatusBarStyle = require('sf-core/ui/statusbarstyle');
-const sliderDrawer = require("../sliderDrawer");
 
 const DashboardPg = extend(DashboardPgDesign)(
   // Constructor

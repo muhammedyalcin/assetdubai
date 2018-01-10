@@ -24,7 +24,6 @@ var sliderDrawer = new SliderDrawer({
     width: 200,
     enabled: false,
     onLoad: function() {
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         //User FlexLayout
         var userFlexLayout = new Flexlayout({
             flexGrow: 2,
@@ -322,7 +321,12 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.onShow = function sliderDrawer_onShow() {
             sliderDrawer.shown = true;
         };
+        if(Device.language === "ar"){
+            console.log("language is " + Device.language);
+            sliderDrawer.drawerPosition = SliderDrawer.Position.RIGHT;
+        }else{
         sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
+        }
         Object.assign(sliderDrawer.layout, getCombinedStyle('.sliderDrawer'));
         //sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
         sliderDrawer.width = 200;

@@ -428,8 +428,6 @@ ProceduresPage.constructor.prototype.initfl = function(data, index, top, tickena
   procedureRow.visualContainer.addChild(imagefl);
   procedureRow.visualContainer.addChild(placeholder);
   procedureRow.visualContainer.addChild(videofl);
-  //procedureRow.descTextArea.nativeObject.setFocusable(false);
-  //console.log("comp is "+procedureRow.descTextArea.text);
 
   profl.addChild(checkLine);
   profl.addChild(procedureRow);

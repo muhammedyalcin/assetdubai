@@ -37,9 +37,8 @@ function onShow(superOnShow) {
   this.headerBar.title = currentAsset.title;
   this.contactContainer.directionsButton.onPress = directionsButton_onPress.bind(this);
   this.contactContainer.imgView.onTouch = function(){
-     Application.call("tel:+1 555-5555",{});
+     Application.call("tel:+1-555-5555",{});
   }.bind(this);
- 
 }
 
 function directionsButton_onPress() {

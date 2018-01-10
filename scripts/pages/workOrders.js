@@ -47,20 +47,6 @@ function onLoad(pageonLoad) {
     console.log("in current condition !!");
     // MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
   }
-  // console.log("latitude  " + page.mapViewfl.workMapView.centerLocation.latitude + "  longitude  " + page.mapViewfl.workMapView.centerLocation.longitude)
-  // var redpin = new MapView.Pin({
-  //   location: {
-  //     latitude: 40.7828647,
-  //     longitude: -73.9675491
-  //   },
-  //   title: "asdasd",
-  //   subtitle: '2nd Floor, 530 Lytton Ave, Palo Alto, CA 94301',
-  //   color: Color.RED,
-  //   onPress: function() {
-  //     Router.go("workOrderProcPg");
-  //   }
-  // });
-  // page.mapViewfl.workMapView.addPin(redpin);
 }
 
 MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(mapview, second) {
@@ -217,7 +203,7 @@ function initListview(jsonData) {
           console.log(err.message);
         }
         //deleteItem(e.index, jsonData);
-      }, false);
+      });
       return [archiveSwipeItem];
     }
   };

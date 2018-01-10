@@ -11,6 +11,9 @@ const Yesnofl = extend(YesnoflDesign)(
     // initalizes super class for this scope
     _super(this, props || YesnoflDesign.defaults);
     this.pageName = pageName;
+    
+    this.yesLabel.text = lang["confirmPg.yesButton"];
+    this.noLabel.text = lang["confirmPg.noButton"];
   }
 
 );
