@@ -10,6 +10,7 @@ const Asset = require("../model/asset");
 const Application = require("sf-core/application");
 const User = require("../model/user");
 const System = require("sf-core/device/system");
+const FlexLayout = require("sf-core/ui/flexlayout");
 
 const LocationPg = extend(LocationPgDesign)(
   // Constructor
@@ -36,30 +37,30 @@ function onShow(superOnShow) {
   this.headerBar.itemColor = Color.create("#D5D4D4");
   this.headerBar.title = currentAsset.title;
   this.contactContainer.directionsButton.onPress = directionsButton_onPress.bind(this);
-  this.contactContainer.imgView.onTouch = function(){
-     Application.call("tel:+1-555-5555",{});
+  this.contactContainer.imgView.onTouch = function() {
+    Application.call("tel:+1-555-5555", {});
   }.bind(this);
 }
 
 function directionsButton_onPress() {
-  
+
   var currentLocation = User.currentLocation;
-  if(currentLocation){
-  if (System.OS === "Android") {
-    Application.call("https://www.google.com/maps/dir/", {
-      "api": "1",
-      "travelmode": "walking",
-      "dir_action": "navigate",
-      "destination":currentLocation.latitude + "," + currentLocation.latitude,
-    });
+  if (currentLocation) {
+    if (System.OS === "Android") {
+      Application.call("https://www.google.com/maps/dir/", {
+        "api": "1",
+        "travelmode": "walking",
+        "dir_action": "navigate",
+        "destination": currentLocation.latitude + "," + currentLocation.latitude,
+      });
+    }
+    else {
+      Application.call("http://maps.apple.com/", {
+        "daddr": currentLocation.latitude + "," + currentLocation.latitude,
+        "dirflg": "w"
+      });
+    }
   }
-  else {
-    Application.call("http://maps.apple.com/", {
-      "daddr": currentLocation.latitude +"," + currentLocation.latitude,
-      "dirflg": "w"
-    });
-  }
-}
 }
 
 /**

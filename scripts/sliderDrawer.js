@@ -140,6 +140,7 @@ var sliderDrawer = new SliderDrawer({
             positionType: Flexlayout.PositionType.RELATIVE,
             flexDirection: Flexlayout.FlexDirection.ROW,
             justifyContent: Flexlayout.JustifyContent.FLEX_START,
+            direction: setDirection('ar')
             //justifyContent: Flexlayout.JustifyContent.SPACE_BETWEEN
         });
 
@@ -176,7 +177,8 @@ var sliderDrawer = new SliderDrawer({
             flexGrow: 1,
             positionType: Flexlayout.PositionType.RELATIVE,
             flexDirection: Flexlayout.FlexDirection.ROW,
-            justifyContent: Flexlayout.JustifyContent.FLEX_START
+            justifyContent: Flexlayout.JustifyContent.FLEX_START,
+            direction: setDirection('ar')
         });
         var ordersLabel = new Label({
             id: 2,
@@ -209,7 +211,8 @@ var sliderDrawer = new SliderDrawer({
             flexGrow: 1,
             positionType: Flexlayout.PositionType.RELATIVE,
             flexDirection: Flexlayout.FlexDirection.ROW,
-            justifyContent: Flexlayout.JustifyContent.FLEX_START
+            justifyContent: Flexlayout.JustifyContent.FLEX_START,
+            direction: setDirection('ar')
         });
         var assetLabel = new Label({
             id: 3,
@@ -242,8 +245,11 @@ var sliderDrawer = new SliderDrawer({
             flexGrow: 1,
             positionType: Flexlayout.PositionType.RELATIVE,
             flexDirection: Flexlayout.FlexDirection.ROW,
-            justifyContent: Flexlayout.JustifyContent.FLEX_START
+            justifyContent: Flexlayout.JustifyContent.FLEX_START,
+            direction: setDirection('ar')
         });
+        //settingsfl.direction = setDirection('ar');
+        
         var settingsLabel = new Label({
             id: 4,
             left: 28,
@@ -283,7 +289,8 @@ var sliderDrawer = new SliderDrawer({
             bottom: 30,
             positionType: Flexlayout.PositionType.ABSOLUTE,
             flexDirection: Flexlayout.FlexDirection.ROW,
-            justifyContent: Flexlayout.JustifyContent.FLEX_START
+            justifyContent: Flexlayout.JustifyContent.FLEX_START,
+            direction: setDirection('ar')
         });
 
         var logoutLabel = new Label({
@@ -321,11 +328,12 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.onShow = function sliderDrawer_onShow() {
             sliderDrawer.shown = true;
         };
-        if(Device.language === "ar"){
+        if (Device.language === "ar") {
             console.log("language is " + Device.language);
             sliderDrawer.drawerPosition = SliderDrawer.Position.RIGHT;
-        }else{
-        sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
+        }
+        else {
+            sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
         }
         Object.assign(sliderDrawer.layout, getCombinedStyle('.sliderDrawer'));
         //sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
@@ -433,7 +441,7 @@ sliderDrawer.hideSlider = function hideSlider() {
 };
 
 sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
-    
+
     headerbar.leftItemSetBy = sliderDrawer;
     headerbar.leftItemEnabled = true;
     var sliderDrawerItem = new HeaderBarItem({
@@ -454,6 +462,12 @@ sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
     headerbar.setLeftItem(sliderDrawerItem);
     headerbar.leftItem = sliderDrawerItem;
     console.log("slider drawer enable is " + sliderDrawer.enabled);
+};
+
+function setDirection(lngCode){
+    if(Device.language === lngCode){
+        return Flexlayout.Direction.RTL
+    }else return Flexlayout.Direction.LTR
 };
 
 function baseOnSelectedItem(id) {

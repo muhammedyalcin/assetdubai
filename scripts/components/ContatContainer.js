@@ -2,6 +2,7 @@
 		You can modify its contents.
 */
 const extend = require('js-base/core/extend');
+const Flexlayout = require("sf-core/ui/flexlayout");
 
 const ContatContainerDesign = require('library/ContatContainer');
 
