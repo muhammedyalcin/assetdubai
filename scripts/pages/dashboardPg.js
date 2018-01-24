@@ -91,7 +91,6 @@ function onLoad(superOnLoad) {
   dashboardListview = this.dashboardListview;
   initListview(dashboardData);
   Router.sliderDrawer.setLeftItem(this.headerBar);
-
 }
 
 module && (module.exports = DashboardPg);

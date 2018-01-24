@@ -23,27 +23,27 @@ SMF.i18n = {
 	},
 	switchLanguage: function(languageCode) {
 		if (typeof this.languageKV[languageCode] === 'undefined') {
-			console.log("in undefined  first conditions");
 			if (typeof this.languageKV[this.defaultLang] === 'undefined') {
-				console.log("in undefined  second conditions");
 				var languageCodes = Object.keys(this.languageKV);
 				if (languageCodes.length === 0) {
 					return;
 				}
 				// In case default options did not work, pick the first one.
 				this.switchLanguage(languageCodes[0]);
-			} else {
-				console.log("in undefined  last conditions");
+			}
+			else {
 				this.switchLanguage(this.defaultLang);
-			} 
+			}
 		}
-		console.log("languageCode   =====  " + languageCode);
-		this.currentLang = languageCode;
-		global.lang = this.languageKV[languageCode];
+		else {
+			this.currentLang = languageCode;
+			global.lang = this.languageKV[languageCode];
+		}
+
 	}
 };
 
 require('i18n/en.js');
 require('i18n/tr.js');
- require('i18n/ar.js');
+require('i18n/ar.js');
 SMF.i18n.switchLanguage(Device.language);

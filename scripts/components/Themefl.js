@@ -57,7 +57,7 @@ function changeTheme(style) {
     type: AlertView.Android.ButtonType.POSITIVE,
     onClick: function() {
       Data.setStringVariable("theme", style);
-      Application.restart();
+      // Application.restart();
     }
   });
   confirmationAlert.addButton({

@@ -362,7 +362,7 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("workOrders");
+                        Router.go("workOrders","",false);
                     }
                 });
             };
@@ -378,7 +378,7 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("setting");
+                        Router.go("setting","",false);
                     }
                 });
 
@@ -392,7 +392,7 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("assetLoginPage");
+                        Router.go("assetLoginPage","",false);
                     }
                 });
                 // Router.go("workOrders");
@@ -409,7 +409,7 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("dashboardPg");
+                        Router.go("dashboardPg","",false);
                     }
                 });
 
@@ -425,7 +425,7 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("assetPg");
+                        Router.go("assetPg","",false);
                     }
                 });
             }

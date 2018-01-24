@@ -16,7 +16,6 @@ const Color = require('sf-core/ui/color');
 const Timer = require("sf-core/global/timer");
 
 const AssetLoginPage = extend(AssetLoginPageDesign)(
-  // Constructor
   function(_super) {
     // Initalizes super class for this page scope
     _super(this);
@@ -50,7 +49,6 @@ function onShow(superOnShow) {
 
   signinIndicator = this.signinIndicator;
 
-  console.log("this.userTextBox " + page.userTextBox.text + " this.passwordTextBox: " + page.passwordTextBox.text);
   fingerprint.init({
     userNameTextBox: this.userTextBox,
     passwordTextBox: this.passwordTextBox,
@@ -58,9 +56,7 @@ function onShow(superOnShow) {
     callback: function(err, fingerprintResult) {
       var password = "";
       if (err) {
-        console.log("password is before " + page.passwordTextBox.text);
         password = page.passwordTextBox.text;
-        console.log("password is after" + password);
       }
       else password = fingerprintResult.password;
 

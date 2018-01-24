@@ -24,7 +24,6 @@ function lgn(){
             alert("Invalid username or password");
                 return callback(result);
         }
-        
     };
 }
 
