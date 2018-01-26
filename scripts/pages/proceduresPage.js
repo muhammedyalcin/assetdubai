@@ -10,7 +10,6 @@ const CheckLine = require("components/CheckLine");
 const ProcedureRow = require("components/ProcedureRow");
 const ImageView = require("sf-core/ui/imageview");
 const User = require("../model/user");
-const Instructions = require("../model/instructions");
 const Label = require("sf-core/ui/label");
 const TextAlignment = require("sf-core/ui/textalignment");
 const Router = require("sf-core/ui/router");
@@ -20,6 +19,7 @@ const VideoView = require("sf-core/ui/videoview");
 const Tickfl = require("components/Tickfl");
 const Timer = require("sf-core/global/timer");
 const HTTP = require("sf-core/net/http");
+const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 var sessionManager = new HTTP();
 
 const ProceduresPage = extend(ProceduresPageDesign)(
@@ -77,13 +77,7 @@ function onShow(superOnShow) {
   }.bind(this);
 
   console.log("In init list still");
-  // for (var i = 0; procedureData.length > i; i++) {
-  //   this.initFL(procedureData[i], i, globalTop);
-  //   globalTop += height;
-  // }
-  //after completion of for loop, set this 0 
   globalTop = 20
-  // }
 }
 
 /**
@@ -112,7 +106,7 @@ function onLoad(superOnLoad) {
     delay: 800,
     task: function() {
       for (var i = 0; procedureData.length > i; i++) {
-        page.initFL(procedureData[i], i, globalTop,true);
+        page.initFL(procedureData[i], i, globalTop, true);
         globalTop += height;
       }
       //sets the procedureScroll layout to model class that enable to retrieve current instructions
@@ -127,214 +121,72 @@ function onLoad(superOnLoad) {
   // this.headerBar.setLeftItem(backIconItem);
 
   this.initFL = function initFL(data, index, top) {
-    console.log("top is " + top);
-
-    // var profl = new FlexLayout({
-    //   id: index,
-    //   top: top,
-    //   left: 0,
-    //   right: 15,
-    //   height: height,
-    //   positionType: FlexLayout.PositionType.ABSOLUTE,
-    //   flexDirection: FlexLayout.FlexDirection.ROW,
-    //   backgroundColor: Color.WHITE
-    // });
-    // var checkLine = Object.assign(new CheckLine(), {
-    //   id: index,
-    //   top: 0,
-    //   left: 0,
-    //   width: 70,
-    //   height: 230,
-    //   positionType: FlexLayout.PositionType.ABSOLUTE
-    // });
-    // //change it according to model data 
-    // if (index === 0) {
-    //   var tickfl = new Tickfl();
-    //   checkLine.ballfl.addChild(tickfl);
-    //   checkLine.ballfl.borderColor = Color.GREEN;
-    // }
-    // else {
-    //   var numberLabel = new Label({
-    //     text: index + 1,
-    //     flexGrow: 1,
-    //     positionType: FlexLayout.PositionType.RELATIVE,
-    //     textAlignment: TextAlignment.MIDCENTER
-    //   });
-    //   checkLine.ballfl.addChild(numberLabel);
-    // }
-    // // if(image){
-    // //   var imageUrl = data.imageUrl;
-    // //   var proImage = Image.createFromFile("images://loading.png");
-    // //   var proImageView = new ImageView({
-
-    // //   });
-    // // }
-    // //checkLine.ballfl.addChild();
-
-    // var procedureRow = Object.assign(new ProcedureRow(), {
-    //   id: index,
-    //   top: 0,
-    //   left: 70,
-    //   right: 0,
-    //   height: 230,
-    //   positionType: FlexLayout.PositionType.ABSOLUTE
-    // });
-    // procedureRow.descLabel.showScrollBar = true;
-    // procedureRow.testLabel.text = "Top up SF6 Gas"; //data.procedure1;
-    // procedureRow.descLabel.text = "Set-up mass-flow meter and connect to the asset ambiance, start pressure, finish"; //data.procedure2;
-
-    // var videofl = new FlexLayout({
-    //   id: index,
-    //   flexGrow: 1,
-    //   positionType: FlexLayout.PositionType.RELATIVE,
-    //   flexDirection: FlexLayout.FlexDirection.ROW,
-    // });
-
-    // var workVideoView = new VideoView({
-    //   id: index,
-    //   height: 100,
-    //   width: 100,
-    //   positionType: FlexLayout.PositionType.RELATIVE,
-    //   onReady: function() {
-    //     workVideoView.play();
-    //   }
-    // });
-
-    // // var playButton = new Button({
-    // //   height: 100,
-    // //   width: 100,
-    // //   positionType: FlexLayout.PositionType.ABSOLUTE,
-    // //   backgroundColor: Color.create(0, 0, 0, 255),
-    // //   onPress: function() {
-    // //     console.log("url is " + data.videoUrl);
-    // //     try {
-    // //       workVideoView.loadURL("http://clips.vorwaerts-gmbh.de/VfE_html5.mp4");
-    // //     }
-    // //     catch (e) {
-    // //       alert("Error: " + e);
-    // //     }
-    // //     playButton.visible = false;
-    // //   }
-    // // });
-
-    // var videoImageView = new ImageView();
-    // videoImageView.width = 100;
-    // videoImageView.height = 100;
-    // videoImageView.image = Image.createFromFile("images://videoicon.png");
-    // videoImageView.backgroundColor= Color.create(0, 0, 0, 255);
-    // videoImageView.positionType = FlexLayout.PositionType.ABSOLUTE;
-    // videoImageView.onTouch = function(){
-    //   console.log("url is " + data.videoUrl);
-    //     try {
-    //       workVideoView.loadURL("http://clips.vorwaerts-gmbh.de/VfE_html5.mp4");
-    //     }
-    //     catch (e) {
-    //       alert("Error: " + e);
-    //     }
-    //     videoImageView.visible = false;
-    //   }
-
-    // // workVideoView.loadURL(data.videoUrl);
-
-    // videofl.addChild(workVideoView);
-    // videofl.addChild(videoImageView);
-
-    // //placeholder
-    // var placeholder = new FlexLayout({
-    //   flexGrow: 0.1,
-    //   positionType: FlexLayout.PositionType.RELATIVE,
-    //   flexDirection: FlexLayout.FlexDirection.ROW,
-    // });
-
-    // //Image view fl
-    // var imagefl = new FlexLayout({
-    //   id: index,
-    //   flexGrow: 1,
-    //   positionType: FlexLayout.PositionType.RELATIVE,
-    //   flexDirection: FlexLayout.FlexDirection.ROW,
-    // });
-    // var myImageView = new ImageView();
-    // myImageView.width = 100;
-    // myImageView.height = 100;
-    // myImageView.positionType = FlexLayout.PositionType.RELATIVE;
-
-    // var request = sessionManager.requestImage({
-    //   url: "https://5.imimg.com/data5/NE/UF/MY-12480184/prs-station-250x250.png",
-    //   onLoad: function(e) {
-    //     myImageView.image = e.image;
-    //   },
-    //   onError: function(e) {
-    //     alert(e.message);
-    //   }
-
-    // });
-    // imagefl.addChild(myImageView);
-    // procedureRow.visualContainer.addChild(imagefl);
-    // procedureRow.visualContainer.addChild(placeholder);
-    // procedureRow.visualContainer.addChild(videofl);
-    // //procedureRow.descTextArea.nativeObject.setFocusable(false);
-    // //console.log("comp is "+procedureRow.descTextArea.text);
-
-    // profl.addChild(checkLine);
-    // profl.addChild(procedureRow);
-    // Instructions.procedureFlexLayout.push(profl);
-    var profl = ProceduresPage.initfl(data,index,top);
-    this.procedureScroll.layout.addChild(profl);
+    var profl = new FlexLayout();
+    this.procedureScroll.layout.addChild(profl, "profl", "", function(style) {
+      style.id = index;
+      style.top = top;
+      style.left = 0;
+      style.right = 15;
+      style.height = height;
+      style.flexProps = {
+        positionType: "ABSOLUTE",
+        //flexDirection: "COLUMN_REVERSE"
+      };
+      style.backgroundColor = "#FFFFFF";
+      return style;
+    });
+    ProceduresPage.initfl(profl, data, index);
   }
 }
 
-ProceduresPage.constructor.prototype.initfl = function(data, index, top, tickenable) {
+ProceduresPage.constructor.prototype.initfl = function(profl, data, index, tickenable) {
 
-  var profl = new FlexLayout({
-    id: index,
-    top: top,
-    left: 0,
-    right: 15,
-    height: height,
-    positionType: FlexLayout.PositionType.ABSOLUTE,
-    flexDirection: FlexLayout.FlexDirection.ROW,
-    backgroundColor: Color.WHITE
-  });
-  var checkLine = Object.assign(new CheckLine(), {
-    id: index,
-    top: 0,
-    left: 0,
-    width: 70,
-    height: 230,
-    positionType: FlexLayout.PositionType.ABSOLUTE
+  var checkLine = new CheckLine();
+
+  profl.addChild(checkLine, "checkLine", ".flexLayout", function(style) {
+    style.id = index;
+    style.top = 0;
+    style.left = 0;
+    style.right = null;
+    style.bottom = null;
+    style.width = 70;
+    style.height = 230;
+    style.flexProps = {
+      positionType: "ABSOLUTE",
+      alignItems: "CENTER"
+    }
+    return style;
   });
   //change it according to model data 
-  if (index === 0 && tickenable) {
+  if (index === 0 || tickenable) {
     var tickfl = new Tickfl();
-    checkLine.ballfl.addChild(tickfl);
+    checkLine.ballfl.addChild(tickfl, "tickfl");
     checkLine.ballfl.borderColor = Color.GREEN;
   }
   else {
-    var numberLabel = new Label({
-      text: index + 1,
-      flexGrow: 1,
-      positionType: FlexLayout.PositionType.RELATIVE,
-      textAlignment: TextAlignment.MIDCENTER
+    checkLine.ballfl.addChild(new Label(), "numberLabel", "", style => {
+      style.text = index + 1;
+      style.flexGrow = 1;
+      style.positionType = "RELATIVE";
+      style.textAlignment = "MIDCENTER";
+      return style;
     });
-    checkLine.ballfl.addChild(numberLabel);
   }
-  // if(image){
-  //   var imageUrl = data.imageUrl;
-  //   var proImage = Image.createFromFile("images://loading.png");
-  //   var proImageView = new ImageView({
+  var procedureRow = new ProcedureRow();
 
-  //   });
-  // }
-  //checkLine.ballfl.addChild();
-
-  var procedureRow = Object.assign(new ProcedureRow(), {
-    id: index,
-    top: 0,
-    left: 70,
-    right: 0,
-    height: 230,
-    positionType: FlexLayout.PositionType.ABSOLUTE
+  profl.addChild(procedureRow, "procedureRow", "", function(style) {
+    style.id = index;
+    style.top = 0;
+    style.left = 70;
+    style.right = 0;
+    style.height = 230;
+    style.flexProps = {
+      positionType: "ABSOLUTE",
+      flexDirection: "COLUMN_REVERSE"
+    };
+    return style;
   });
+
   procedureRow.descLabel.showScrollBar = true;
   procedureRow.testLabel.text = data.procedure1;
   procedureRow.descLabel.text = data.procedure2;
@@ -345,35 +197,33 @@ ProceduresPage.constructor.prototype.initfl = function(data, index, top, tickena
     positionType: FlexLayout.PositionType.RELATIVE,
     flexDirection: FlexLayout.FlexDirection.ROW,
   });
-
-  var workVideoView = new VideoView({
-    id: index,
-    height: 100,
-    width: 100,
-    positionType: FlexLayout.PositionType.RELATIVE,
-    onReady: function() {
-      workVideoView.play();
+  procedureRow.visualContainer.addChild(videofl, "videofl", "", function(style) {
+    style.id = index;
+    style.flexGrow = 1;
+    style.positionType = "RELATIVE";
+    style.flexProps = {
+      flexDirection: "ROW"
     }
   });
 
-  // var playButton = new Button({
-  //   height: 100,
-  //   width: 100,
-  //   positionType: FlexLayout.PositionType.ABSOLUTE,
-  //   backgroundColor: Color.create(0, 0, 0, 255),
-  //   onPress: function() {
-  //     console.log("url is " + data.videoUrl);
-  //     try {
-  //       workVideoView.loadURL("http://clips.vorwaerts-gmbh.de/VfE_html5.mp4");
-  //     }
-  //     catch (e) {
-  //       alert("Error: " + e);
-  //     }
-  //     playButton.visible = false;
-  //   }
-  // });
+  var workVideoView = new VideoView();
+
+  videofl.addChild(workVideoView, "workVideoView", "", function(style) {
+    style.id = index;
+    style.height = 100;
+    style.width = 100;
+    style.positionType = FlexLayout.PositionType.RELATIVE;
+
+    return style;
+  });
+
+  workVideoView.onReady = function() {
+    workVideoView.play();
+  }
 
   var videoImageView = new ImageView();
+  videofl.addChild(videoImageView, "videoImageView");
+
   videoImageView.width = 100;
   videoImageView.height = 100;
   videoImageView.image = Image.createFromFile("images://videoicon.png");
@@ -390,25 +240,11 @@ ProceduresPage.constructor.prototype.initfl = function(data, index, top, tickena
     videoImageView.visible = false;
   }
 
-  // workVideoView.loadURL(data.videoUrl);
-
-  videofl.addChild(workVideoView);
-  videofl.addChild(videoImageView);
-
   //placeholder
-  var placeholder = new FlexLayout({
-    flexGrow: 0.1,
-    positionType: FlexLayout.PositionType.RELATIVE,
-    flexDirection: FlexLayout.FlexDirection.ROW,
-  });
+  var placeholder = new FlexLayout();
 
   //Image view fl
-  var imagefl = new FlexLayout({
-    id: index,
-    flexGrow: 1,
-    positionType: FlexLayout.PositionType.RELATIVE,
-    flexDirection: FlexLayout.FlexDirection.ROW,
-  });
+  var imagefl = new FlexLayout();
   var myImageView = new ImageView();
   myImageView.width = 100;
   myImageView.height = 100;
@@ -424,13 +260,27 @@ ProceduresPage.constructor.prototype.initfl = function(data, index, top, tickena
     }
 
   });
-  imagefl.addChild(myImageView);
-  procedureRow.visualContainer.addChild(imagefl);
-  procedureRow.visualContainer.addChild(placeholder);
-  procedureRow.visualContainer.addChild(videofl);
+  procedureRow.visualContainer.addChild(imagefl, "imagefl", "", function(style) {
+    style.id = index;
+    style.flexGrow = 1;
+    style.width = null;
+    style.flexProps = {
+      positionType: "RELATIVE",
+      flexDirection: "ROW"
+    };
+    return style;
+  });
+  imagefl.addChild(myImageView, "myImageView");
+  procedureRow.visualContainer.addChild(placeholder, "placeholder", "", function(style) {
+    style.flexGrow = 0.1;
+    style.flexProps = {
+      positionType: "RELATIVE",
+      flexDirection: "ROW"
+    };
 
-  profl.addChild(checkLine);
-  profl.addChild(procedureRow);
+    return style;
+  });
+
 
   return profl;
 }

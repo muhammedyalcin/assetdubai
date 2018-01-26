@@ -6,19 +6,18 @@ const extend = require('js-base/core/extend');
 const Step3PageDesign = require('ui/ui_step3Page');
 const Router = require("sf-core/ui/router");
 const Tab = require("components/Tab");
+var tabIndicator = new Tab();
 const Label = require("sf-core/ui/label");
 const TexAlignment = require("sf-core/ui/textalignment");
 const FlexLayout = require("sf-core/ui/flexlayout");
-const Uploadfl = require("../components/Uploadfl");
 const UploadDrawfl = require("../components/UploadDrawfl");
 const Multimedia = require("sf-core/device/multimedia");
 const Color = require("sf-core/ui/color");
-const Image = require("sf-core/ui/image");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const User = require("../model/user");
-const ImageView = require("sf-core/ui/imageview");
-const UploadImgfl = require("../components/UploadImgfl");
 const Timer = require("sf-core/global/timer");
+const Scrollfl = require("../components/Scrollfl");
+const UploadedImagefl = require("../components/UploadedImagefl");
 const Step3Page = extend(Step3PageDesign)(
   // Constructor
   function(_super) {
@@ -43,6 +42,20 @@ function onShow(superOnShow) {
   this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
   this.headerBar.title = lang["step3Page.title"];
 
+
+  var instructionFlex = tabIndicator.assignCurrentProFl;
+  var stepPage = this;
+  stepPage.tab.summaryButton.onPress = function() {
+    tabIndicator.animateRightButton = stepPage;
+    this.noteContainer.visible = true;
+    instructionFlex.visible = false;
+  }.bind(this);
+
+  stepPage.tab.instructionButton.onPress = function() {
+    tabIndicator.animateLeftButton = stepPage;
+    this.noteContainer.visible = false;
+    instructionFlex.visible = true;
+  }.bind(this);
 }
 
 /**
@@ -53,28 +66,7 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
-  // var backIconItem = new HeaderBarItem();
-  // backIconItem.image = Image.createFromFile("images://backheadericon.png");
-  // backIconItem.itemColor = Color.create("#D5D4D4");
-  // this.headerBar.setLeftItem(backIconItem);
-
   var page = this;
-  var tabIndicator = new Tab();
-  var stepPage = this;
-
-  console.log("Page is started");
-
-  stepPage.tab.summaryButton.onPress = function() {
-    tabIndicator.animateRightButton = stepPage;
-    this.noteContainer.visible = true;
-    this.layout.findChildById(25).visible = false;
-  }.bind(this);
-
-  stepPage.tab.instructionButton.onPress = function() {
-    tabIndicator.animateLeftButton = stepPage;
-    this.noteContainer.visible = false;
-    this.layout.findChildById(25).visible = true;
-  }.bind(this);
 
   this.completefl.completeButton.onPress = confirmButton_onPress.bind(this);
 
@@ -85,16 +77,12 @@ function onLoad(superOnLoad) {
   });
   this.noteContainer.actionfl.addChild(uploadLabel);
 
-  // var uploadfl = new Uploadfl();
-  // uploadfl.uploadimg.onTouch = uploadOnPress.bind(this);
   var uploadfl = new UploadDrawfl();
-  // var uploadImgfl = new UploadImgfl();
+  this.noteContainer.emptyfl.addChild(uploadfl, "uploadflStep3Page");
 
-
+  var leftMargin = 0;
   uploadfl.onTouch = function uploadOnPress() {
     this.indicayorfl.visible = true;
-    console.log("Upload is pressed");
-
     Timer.setTimeout({
       delay: 1000,
       task: function() {
@@ -102,50 +90,89 @@ function onLoad(superOnLoad) {
           type: Multimedia.Type.IMAGE,
           onSuccess: onSuccess,
           onCancel: onCancel,
-          onFailure : onFailure,
+          onFailure: onFailure,
           page: page
         });
       }
     });
+
     function onSuccess(picked) {
       page.indicayorfl.visible = false;
       //Reassign here afterwards
       console.log("picked image is " + picked.image);
-      // uploadImgfl.uploadImg.image = picked.image;
-      // uploadfl.visible=false;
-      // uploadfl.flexGrow = 0;
-      // uploadImgfl.uploadImgfl.imageFillType = ImageView.FillType.STRETCH;
-      // page.noteContainer.emptyfl.addChild(uploadImgfl);
+      addUploadedImage.call(page, picked.image, leftMargin);
+      leftMargin += 80;
     };
+
     function onCancel() {
       page.indicayorfl.visible = false;
     };
+
     function onFailure() {
       page.indicayorfl.visible = false;
     }
-    
+
   }.bind(this);
 
-  var placeHolder = new FlexLayout({
-    flexGrow: 3,
-    positionType: FlexLayout.PositionType.RELATIVE
+  var placeHolder = new FlexLayout();
+  this.noteContainer.emptyfl.addChild(placeHolder, "placeHolderStep3Page", "", function(style) {
+    style.flexGrow = 0.3;
+    style.flexProps = {
+      positionType: "RELATIVE"
+    };
+    return style;
   });
 
-  this.noteContainer.emptyfl.addChild(uploadfl);
-  this.noteContainer.emptyfl.addChild(placeHolder);
+  var scrollfl = new Scrollfl();
+  scrollfl.uploadScroll.layout.width = 300;
+  scrollfl.uploadScroll.layout.height = 80;
+  this.noteContainer.emptyfl["scrollfl"] = scrollfl;
+  this.noteContainer.emptyfl.addChild(scrollfl, "sliderScrollflStepPage3", "", function(style) {
+    style.flexGrow = 1;
+    style.flexProps = {
+      positionType: "RELATIVE"
+    };
+    return style;
+  });
 
   var procedureData = User.currentWorkSummary.procedure;
+  var profl = new FlexLayout();
+  this.layout.addChild(profl, "proflStepPage3", "", function(style) {
+    style.id = 25;
+    style.top = 70;
+    style.left = 0;
+    style.right = 0;
+    style.height = 230;
+    style.visible = false;
+    style.flexProps = {
+      positionType: "ABSOLUTE",
+    };
+    return style;
+  });
   tabIndicator.assignCurrentProFl = {
     data: procedureData[2],
-    index: 2
+    index: 2,
+    flex: profl
   }
-  var currentProf = tabIndicator.assignCurrentProFl;
-  this.layout.addChild(currentProf);
-
 }
 
 function confirmButton_onPress() {
   Router.go("confirmPg");
+}
+
+function addUploadedImage(image, leftMargin) {
+  var uploadedImagefl = new UploadedImagefl();
+  uploadedImagefl.uploadedImageview.image = image;
+  this.noteContainer.emptyfl.scrollfl.uploadScroll.layout.addChild(uploadedImagefl, "uploadedImageflStepPage3", "", function(style) {
+    style.left = leftMargin;
+    style.top = 0;
+    style.bottom = 0;
+    style.width = 80;
+    style.flexProps = {
+      positionType: "ABSOLUTE",
+    };
+    return style;
+  });
 }
 
 module && (module.exports = Step3Page);

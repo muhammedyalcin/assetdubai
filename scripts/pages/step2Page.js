@@ -6,17 +6,14 @@ const extend = require('js-base/core/extend');
 const Step2PageDesign = require('ui/ui_step2Page');
 const Router = require("sf-core/ui/router");
 const Tab = require("components/Tab");
+var tabIndicator = new Tab();
 const Label = require("sf-core/ui/label");
-const TexAlignment = require("sf-core/ui/textalignment");
 const FlexLayout = require("sf-core/ui/flexlayout");
 const Color = require("sf-core/ui/color");
-const nofl = require("components/Yesfl");
-const yesfl = require("components/Nofl");
 const Font = require('sf-core/ui/font');
 const User = require("../model/user");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const Yesnofl = require("components/Yesnofl");
-var yesnofl = new Yesnofl();
 
 const Step2Page = extend(Step2PageDesign)(
   // Constructor
@@ -41,6 +38,22 @@ function onShow(superOnShow) {
   this.headerBar.itemColor = Color.create("#D5D4D4");
   this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
   this.headerBar.title = lang["step2Page.title"];
+
+  var stepPage = this;
+
+  var instructionFlex = tabIndicator.assignCurrentProFl;
+
+  stepPage.tab.summaryButton.onPress = function() {
+    tabIndicator.animateRightButton = stepPage;
+    this.noteContainer.visible = true;
+    instructionFlex.visible = false;
+  }.bind(this);
+
+  stepPage.tab.instructionButton.onPress = function() {
+    tabIndicator.animateLeftButton = stepPage;
+    this.noteContainer.visible = false;
+    instructionFlex.visible = true;
+  }.bind(this);
 }
 /**
  * @event onLoad
@@ -50,48 +63,47 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
-  
-  var tabIndicator = new Tab();
-  var stepPage = this;
-
-  stepPage.tab.summaryButton.onPress = function() {
-    tabIndicator.animateRightButton = stepPage;
-    this.noteContainer.visible = true;
-    this.layout.findChildById(25).visible = false;
-  }.bind(this);
-
-  stepPage.tab.instructionButton.onPress = function() {
-    tabIndicator.animateLeftButton = stepPage;
-    this.noteContainer.visible = false;
-    this.layout.findChildById(25).visible = true;
-  }.bind(this);
 
   this.completefl.completeButton.onPress = function() {
     Router.go("step3Page");
   }.bind(this);
 
-  var quesLabel = new Label({
-    text: lang["step2Page.acusticTest"],
-    font: Font.create("Lato", 14, Font.NORMAL),
-    color: Color.create("#4A4A4A"),
-    flexGrow: 1,
-    textAlignment: TexAlignment.MIDLEFT
+  var quesLabel = new Label();
+
+  this.noteContainer.actionfl.addChild(quesLabel, "quesLabelStepPage2", "", function(userProps) {
+    userProps.text = lang["step2Page.acusticTest"];
+    userProps.color = "#4A4A4A";
+    userProps.flexGrow = 1;
+    userProps.textAlignment = "MIDLEFT";
+
+    return userProps;
+  });
+  quesLabel.font = Font.create("Lato", 14, Font.NORMAL);
+
+  var yesnofl = new Yesnofl();
+  this.noteContainer.emptyfl.addChild(yesnofl, "yesnofl", "", function(userProps) {
+    userProps.height = 70;
+    userProps.width = 100;
+    userProps.flexGrow = 1;
+    userProps.flexProps = {
+      alignItems: "FLEX_START",
+      justifyContent: "FLEX_END",
+      positionType: "RELATIVE",
+      flexDirection: "ROW",
+      alignSelf: "FLEX_START"
+    };
+    return userProps;
   });
 
-  this.noteContainer.actionfl.addChild(quesLabel);
 
   var placeHolder = new FlexLayout({
     flexGrow: 1,
     positionType: FlexLayout.PositionType.RELATIVE
   });
-
-  var yesnofl = Object.assign(new Yesnofl(), {
-    height: 70,
-    width: 100,
-    flexGrow: 1,
-    alignItems: FlexLayout.AlignItems.FLEX_START,
-    justifyContent: FlexLayout.JustifyContent.FLEX_END,
-    positionType: FlexLayout.PositionType.RELATIVE
+  this.noteContainer.emptyfl.addChild(placeHolder, "placeHolderStep2", "", function(userProps) {
+    userProps.flexGrow = 1;
+    userProps.positionType = FlexLayout.PositionType.RELATIVE;
+    return userProps;
   });
 
   yesnofl.yesButton.onPress = function() {
@@ -107,17 +119,26 @@ function onLoad(superOnLoad) {
     }
     yesnofl.noButton.backgroundColor = Color.RED;
   }.bind(this);
-  
-  this.noteContainer.emptyfl.addChild(yesnofl);
-  this.noteContainer.emptyfl.addChild(placeHolder);
 
   var procedureData = User.currentWorkSummary.procedure;
+  var profl = new FlexLayout();
+  this.layout.addChild(profl, "proflStepPage2", "", function(style) {
+    style.id = 25;
+    style.top = 70;
+    style.left = 0;
+    style.right = 0;
+    style.height = 230;
+    style.visible = false;
+    style.flexProps = {
+      positionType: "ABSOLUTE",
+    };
+    return style;
+  });
   tabIndicator.assignCurrentProFl = {
     data: procedureData[1],
-    index: 1
+    index: 1,
+    flex: profl
   }
-  var currentProf = tabIndicator.assignCurrentProFl;
-  this.layout.addChild(currentProf);
 }
 
 module && (module.exports = Step2Page);

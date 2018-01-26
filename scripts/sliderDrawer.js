@@ -13,10 +13,10 @@ const Router = require("sf-core/ui/router");
 const User = require("./model/user");
 const SliderModel = require("./model/slider");
 const ImageFillType = require('sf-core/ui/imagefilltype');
-const Application = require('sf-core/application');
 const Font = require('sf-core/ui/font');
-const getCombinedStyle = require("library/styler-builder").getCombinedStyle;
+const pushClassNames = require("@smartface/contx/lib/styling/action/pushClassNames");
 const Timer = require("sf-core/global/timer");
+const componentContextPatch = require("@smartface/contx/lib/smartface/componentContextPatch");
 
 // var sliderDrawerWidth = 333;
 var nameLabel;
@@ -49,14 +49,6 @@ var sliderDrawer = new SliderDrawer({
         });
         var userImage = Image.createFromFile("images://customers_1.png")
         var userImageView = new ImageView({
-            //image: userImage,
-            // borderRadius: 20,
-            // //borderColor: Color.create(255, 255, 255, 255),
-            // //borderWidth: 1,
-            // left: 0,
-            // width: 96,
-            // height: 96,
-            // imageFillType: ImageFillType.STRETCH
             backgroundColor: Color.create(0, 255, 255, 255),
             alpha: 1,
             borderRadius: 35,
@@ -162,7 +154,6 @@ var sliderDrawer = new SliderDrawer({
         });
         // dashboardLabel.font = Font.create("Lato", 16, Font.BOLD);
 
-
         var dashboardImage = Image.createFromFile("images://dashboardicon.png")
         var dashboradImageView = new ImageView({
             image: dashboardImage,
@@ -249,7 +240,7 @@ var sliderDrawer = new SliderDrawer({
             direction: setDirection('ar')
         });
         //settingsfl.direction = setDirection('ar');
-        
+
         var settingsLabel = new Label({
             id: 4,
             left: 28,
@@ -321,7 +312,6 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.layout.addChild(actionFlexLayout);
         sliderDrawer.layout.addChild(logoutFlexLayout);
 
-
         sliderDrawer.onHide = function sliderDrawer_onHide() {
             sliderDrawer.shown = false;
         };
@@ -335,15 +325,14 @@ var sliderDrawer = new SliderDrawer({
         else {
             sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
         }
-        Object.assign(sliderDrawer.layout, getCombinedStyle('.sliderDrawer'));
-        //sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
+        //Object.assign(sliderDrawer.layout, getCombinedStyle('.sliderDrawer'));
+        sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
         sliderDrawer.width = 200;
 
         sliderDrawer.setCurrentData = function setCurrentData() {
             var currentUser = User.currentUser;
             if (currentUser) {
                 nameLabel.text = currentUser.firstname;
-                //userImageView.image = currentUser.image;
             }
             else console.log("currentUser is null");
         }
@@ -351,7 +340,6 @@ var sliderDrawer = new SliderDrawer({
 
         sliderDrawer.setActions = function setActions() {
             ordersLabel.onTouch = function() {
-                console.log("Orders clicke");
                 dashboardLabel.font = Font.create("Lato", 16, Font.NORMAL);
                 settingsLabel.font = Font.create("Lato", 16, Font.NORMAL);
                 assetLabel.font = Font.create("Lato", 16, Font.NORMAL);
@@ -362,12 +350,13 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("workOrders","",false);
+                        if (Router.getCurrent() !== "workOrders") {
+                            Router.go("workOrders", "", false);
+                        }
                     }
                 });
             };
             settingsLabel.onTouch = function() {
-                console.log("setting is touched");
                 dashboardLabel.font = Font.create("Lato", 16, Font.NORMAL);
                 settingsLabel.font = Font.create("Arial", 16, Font.BOLD);
                 assetLabel.font = Font.create("Lato", 16, Font.NORMAL);
@@ -378,13 +367,14 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("setting","",false);
+                        if (Router.getCurrent() !== "setting") {
+                            Router.go("setting", "", false);
+                        }
                     }
                 });
 
             }
             logoutLabel.onTouch = function() {
-                console.log("setting is touched");
                 SliderModel.selectedItem = logoutLabel;
                 sliderDrawer.hide();
                 User.currentUser = null;
@@ -392,13 +382,14 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("assetLoginPage","",false);
+                        if (Router.getCurrent() !== "assetLoginPage") {
+                            Router.go("assetLoginPage", "", false);
+                        }
                     }
                 });
                 // Router.go("workOrders");
             }
             dashboardLabel.onTouch = function() {
-                console.log("setting is touched");
                 dashboardLabel.font = Font.create("Arial", 16, Font.BOLD);
                 settingsLabel.font = Font.create("Lato", 16, Font.NORMAL);
                 assetLabel.font = Font.create("Lato", 16, Font.NORMAL);
@@ -409,7 +400,9 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("dashboardPg","",false);
+                        if (Router.getCurrent() !== "dashboardPg") {
+                            Router.go("dashboardPg", "", false);
+                        }
                     }
                 });
 
@@ -425,7 +418,9 @@ var sliderDrawer = new SliderDrawer({
                 Timer.setTimeout({
                     delay: 300,
                     task: function() {
-                        Router.go("assetPg","",false);
+                        if (Router.getCurrent() !== "assetPg") {
+                            Router.go("assetPg", "", false);
+                        }
                     }
                 });
             }
@@ -434,6 +429,7 @@ var sliderDrawer = new SliderDrawer({
     }
 
 });
+
 sliderDrawer.setCurrentData = function() {};
 
 sliderDrawer.hideSlider = function hideSlider() {
@@ -441,7 +437,6 @@ sliderDrawer.hideSlider = function hideSlider() {
 };
 
 sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
-
     headerbar.leftItemSetBy = sliderDrawer;
     headerbar.leftItemEnabled = true;
     var sliderDrawerItem = new HeaderBarItem({
@@ -461,23 +456,21 @@ sliderDrawer.setLeftItem = function setLeftItem(headerbar) {
     });
     headerbar.setLeftItem(sliderDrawerItem);
     headerbar.leftItem = sliderDrawerItem;
-    console.log("slider drawer enable is " + sliderDrawer.enabled);
 };
 
-function setDirection(lngCode){
-    if(Device.language === lngCode){
+function setDirection(lngCode) {
+    if (Device.language === lngCode) {
         return Flexlayout.Direction.RTL
-    }else return Flexlayout.Direction.LTR
+    }
+    else return Flexlayout.Direction.LTR
 };
 
 function baseOnSelectedItem(id) {
     if (SliderModel.selectedItem) {
         if (SliderModel.selectedItem === id) {
-            console.log("in first con");
             return Font.create("Lato", 16, Font.BOLD);
         }
         else {
-            console.log("in first con");
             return Font.create("Lato", 16, Font.NORMAL);
         }
     }

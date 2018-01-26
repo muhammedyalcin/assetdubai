@@ -5,7 +5,7 @@
 		"font": {},
 		"flexProps": {},
 		"android": {
-			"color": "rgba(255,255,255,1)"
+			"color": "#3D3B3A"
 		},
 		"ios": {
 			"style": "DEFAULT"

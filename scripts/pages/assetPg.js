@@ -11,6 +11,7 @@ const HeaderBarItem = require("sf-core/ui/headerbaritem");
 const Asset = require("../model/asset");
 const AssetRow = require("components/AssetRow");
 var assetRow = new AssetRow();
+const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 const AssetPg = extend(AssetPgDesign)(
   // Constructor
@@ -48,24 +49,27 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
-  
+
   HeaderBarItem.setCustomHeaderBarItem(this);
-  
+
   Router.sliderDrawer.setLeftItem(this.headerBar);
 
+  var indexListItem = 0;
   this.initlist = function initListview(jsonData) {
 
     assetListview.onRowCreate = function() {
       var listviewItem = new ListViewItem();
-      var assetRowItem = Object.assign(new AssetRow(), {
-        id: 29,
-        flexGrow: 1
-      });
-      listviewItem.addChild(assetRowItem);
+
+      var assetRowItem = new AssetRow();
+      assetListview.dispatch(addChild(`item${++indexListItem}`, assetRowItem, "", function(userProps) {
+        userProps.id = 29;
+        userProps.flexGrow = 1;
+        return userProps;
+      }));
+      listviewItem.addChild(assetRowItem, "assetRowItem");
 
       return listviewItem;
     };
-
     assetListview.onRowBind = function(listviewItem, index) {
       var assetRow = listviewItem.findChildById(29);
       var assetContainer = assetRow.findChildById(300);

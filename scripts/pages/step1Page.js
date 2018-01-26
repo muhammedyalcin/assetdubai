@@ -8,17 +8,10 @@ const Tab = require("components/Tab");
 var tabIndicator = new Tab();
 const Router = require("sf-core/ui/router");
 const User = require("../model/user");
-// const Image = require("sf-core/ui/image");
-// const ImageView = require("sf-core/ui/imageview");
 const FlexLayout = require("sf-core/ui/flexlayout");
-// const TopPicker = require("components/Pickerfl");
-// const EndTimePicker = require("components/EndTimePicker");
-// const StartTimePicker = require("components/TimePickerfl");
 const Color = require("sf-core/ui/color");
 const HeaderBarItem = require("sf-core/ui/headerbaritem");
-const Instructions = require("../model/instructions");
 const ClosureTime = require("components/ClosureTimefl");
-const procedurePage = require("pages/proceduresPage");
 const KeyboardType = require('sf-core/ui/keyboardtype');
 
 const Step1Page = extend(Step1PageDesign)(
@@ -30,43 +23,7 @@ const Step1Page = extend(Step1PageDesign)(
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
-    var stepPage = this;
-
-    stepPage.tab.summaryButton.onPress = function() {
-      tabIndicator.animateRightButton = stepPage;
-      stepPage.noteContainer.visible = true;
-      stepPage.layout.findChildById(25).visible = false;
-      //Write chaneable flex here
-    }.bind(this);
-
-    stepPage.tab.instructionButton.onPress = function() {
-      tabIndicator.animateLeftButton = stepPage;
-      stepPage.layout.findChildById(25).visible = true;
-      stepPage.noteContainer.visible = false;
-    }.bind(this);
-
-    
-    //   var currentFlexlayout = Instructions.procedureFlexLayout[0];
-    //   if(!currentFlexlayout.getParent()){
-
-    //   Object.assign(currentFlexlayout, {
-    //     id: 25,
-    //     left: 0,
-    //     right: 0,
-    //     top: 60,
-    //     height: 230,
-    //     positionType: FlexLayout.PositionType.ABSOLUTE
-    //   });
-    //   this.layout.addChild(currentFlexlayout);
-    //   } else {
-    //     this.layout.findChildById(25).visible = true;
-    //   }
-    //   this.noteContainer.visible = false;
-    //   //Write changeable flex here
-    // }.bind(this);
   });
-
 /**
  * @event onShow
  * This event is called when a page appears on the screen (everytime).
@@ -79,22 +36,23 @@ function onShow(superOnShow) {
   this.headerBar.title = lang["step1Page.title"];
   this.completefl.completeButton.text = lang["stepsPages.button.completeSetup"];
 
-  // this.tab.instructionButton.onPress = function instruction_onPress() {
-  //   var currentFlexlayout = Instructions.procedureFlexLayout[0];
-  //   Object.assign(currentFlexlayout, {
-  //     left: 0,
-  //     right: 0,
-  //     top: 60,
-  //     height: 230,
-  //     positionType: FlexLayout.PositionType.ABSOLUTE
-  //   });
-  //   this.layout.addChild(currentFlexlayout);
-  //   this.noteContainer.visible = false;
-  // }.bind(this);
+  var stepPage = this;
+  
+  //get setted flexlayout 
+  var currentProf = tabIndicator.assignCurrentProFl;
+
+  stepPage.tab.summaryButton.onPress = function() {
+    tabIndicator.animateRightButton = stepPage;
+    stepPage.noteContainer.visible = true;
+    currentProf.visible = false;
+  }.bind(this);
+
+  stepPage.tab.instructionButton.onPress = function() {
+    tabIndicator.animateLeftButton = stepPage;
+    stepPage.noteContainer.visible = false;
+    currentProf.visible = true;
+  }.bind(this);
 }
-
-
-
 /**
  * @event onLoad
  * This event is called once when page is created.
@@ -104,77 +62,44 @@ function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
 
-  //just now set manually
-  // var fl =  procedurePage.initfl(procedureData[0],0,60);
-  // var fixFl = Object.assign(fl, {
-  //   id:25,
-  //   left:0,
-  //   right:0,
-  //   top: 60,
-  //   height : 230,
-  //   visible: false,
-  //   backgroundColor: Color.TRANSPARENT,
-  //   positionType: FlexLayout.PositionType.ABSOLUTE
-  // });
-  // this.layout.addChild(fixFl);
-  // var backIconItem = new HeaderBarItem();
-  // backIconItem.image = Image.createFromFile("images://backheadericon.png");
-  // backIconItem.itemColor = Color.create("#D5D4D4");
-  // this.headerBar.setLeftItem(backIconItem);
-
-  // tabIndicator.setFlexlayout = {
-  //   that:this,
-  //   index:0,
-  //   id:25
-  // };
-  // console.log("current before");
-  // this.layout.addChild(tabIndicator.setFlexlayout);
-  // console.log("current after");
-
   //set action button
   this.completefl.completeButton.onPress = function() {
     Router.go("step2Page");
   }.bind(this);
 
-  var closureTime = Object.assign(new ClosureTime(), {
-    left: 0,
-    right: 0,
-    height: 110,
-    top: 0,
-    positionType: FlexLayout.PositionType.ABSOLUTE
+  var closureTime = new ClosureTime();
+  this.noteContainer.emptyfl.addChild(closureTime, "closureTime", "", function(userProps) {
+    userProps.left = 0;
+    userProps.right = 0;
+    userProps.height = 110;
+    userProps.top = 0;
+    userProps.positionType = "ABSOLUTE"
+    return userProps;
   });
   closureTime.closureTextbox.keyboardType = KeyboardType.NUMBER;
   closureTime.closureLabel.text = lang["closureTimeComp.closureTime"];
   closureTime.refLabel.text = lang["closureTimeComp.ref"];
-
-  this.noteContainer.emptyfl.addChild(closureTime);
   this.noteContainer.actionfl.flexGrow = 0;
 
-  // var placeHolder = new FlexLayout({
-  //   flexGrow: 1,
-  //   positionType: FlexLayout.PositionType.RELATIVE
-  // });
-
-  // //sets picker top of the container
-  // this.noteContainer.actionfl.addChild(new TopPicker());
-
-  // //sets start time picker
-  // var startTimePicker = new StartTimePicker();
-  // this.noteContainer.emptyfl.addChild(startTimePicker);
-
-  // //placeholder
-  // this.noteContainer.emptyfl.addChild(placeHolder);
-
-  // //sets end time picker
-  // var endTimePicker = new EndTimePicker();
-  // this.noteContainer.emptyfl.addChild(endTimePicker);
   var procedureData = User.currentWorkSummary.procedure;
+  var profl = new FlexLayout();
+  this.layout.addChild(profl, "proflStepPage1", "", function(style) {
+    style.id = 25;
+    style.top = 70;
+    style.left = 0;
+    style.right = 0;
+    style.height = 230;
+    style.visible = false;
+    style.flexProps = {
+      positionType: "ABSOLUTE",
+    };
+    return style;
+  });
   tabIndicator.assignCurrentProFl = {
     data: procedureData[0],
-    index: 0
+    index: 0,
+    flex: profl
   }
-  var currentProf = tabIndicator.assignCurrentProFl;
-  this.layout.addChild(currentProf);
 }
 
 module && (module.exports = Step1Page);

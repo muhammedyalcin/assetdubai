@@ -79,17 +79,8 @@ const Tab = extend(TabDesign)(
           return fixFl;
         },
         set: function(value) {
-          var fl = procedurePage.initfl(value.data, value.index, 60,false);
-          fixFl = Object.assign(fl, {
-            id: 25,
-            left: 0,
-            right: 0,
-            top: 80,
-            height: 230,
-            visible: false,
-            backgroundColor: Color.TRANSPARENT,
-            positionType: FlexLayout.PositionType.ABSOLUTE
-          });
+          var fl = procedurePage.initfl(value.flex,value.data, value.index, 60,false);
+          fixFl = fl;
         }
       }
     });

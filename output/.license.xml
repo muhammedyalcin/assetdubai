@@ -1,0 +1,39 @@
+<ApplicationPackageLicenses>
+    <ApplicationPackageLicense>
+        <CompanyName>Smartface User</CompanyName>
+        <LicenseName>Asset Management</LicenseName>
+        <SASVersion>v5.0.0</SASVersion>
+        <CreateDate>05.00.2018 09:02:10</CreateDate>
+        <ExpireDate>03.00.2028 09:02:10</ExpireDate>
+        <LicenseType>Professional</LicenseType>
+        <PackageType>iOS</PackageType>
+        <PackageName>io.smartface.assetmanagement</PackageName>
+        <PackageFeatures>
+            <PackageFeature>
+                <FeatureName>Feature</FeatureName>
+                <FeatureValue>Feature</FeatureValue>
+            </PackageFeature>
+        </PackageFeatures>
+        <TripleDESKey>KrQhtJNuYy2SCnTRsai7JUVrt0cQ4BD4KNkTuVQGd9k5otO/+IohgEo/lEdvoXChrq+R82L2yiE8juznhjGvIxXU1aGoWK5NlxJkf94rxKINhfM95gYuytW5uFKnpi3lCn9ETWlgeqThJz3KEeKV36GS7tJwACCv2b8yZQJTgC8=</TripleDESKey>
+        <SignData></SignData>
+    </ApplicationPackageLicense>
+    <ApplicationPackageLicense>
+        <CompanyName>Smartface User</CompanyName>
+        <LicenseName>Asset Management</LicenseName>
+        <SASVersion>v5.0.0</SASVersion>
+        <CreateDate>05.00.2018 09:02:10</CreateDate>
+        <ExpireDate>03.00.2028 09:02:10</ExpireDate>
+        <LicenseType>Professional</LicenseType>
+        <PackageType>Android</PackageType>
+        <PackageName>io.smartface.assetmanagement</PackageName>
+        <PackageFeatures>
+            <PackageFeature>
+                <FeatureName>Feature</FeatureName>
+                <FeatureValue>Feature</FeatureValue>
+            </PackageFeature>
+        </PackageFeatures>
+        <TripleDESKey>KrQhtJNuYy2SCnTRsai7JUVrt0cQ4BD4KNkTuVQGd9k5otO/+IohgEo/lEdvoXChrq+R82L2yiE8juznhjGvIxXU1aGoWK5NlxJkf94rxKINhfM95gYuytW5uFKnpi3lCn9ETWlgeqThJz3KEeKV36GS7tJwACCv2b8yZQJTgC8=</TripleDESKey>
+        <SignData></SignData>
+    </ApplicationPackageLicense>
+    <TripleDESKeyValue>cBOiTPtJLAKjToIWb7OUt2FqrTyaIQxJ</TripleDESKeyValue>
+</ApplicationPackageLicenses>

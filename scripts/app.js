@@ -1,10 +1,14 @@
 require("./theme");
 
+require("./theme");
+
 /* globals lang */
 require("i18n/i18n.js"); // Generates global lang object
 
 const Application = require("sf-core/application");
 const System = require("sf-core/device/system");
+const pushClassNames = require("@smartface/contx/lib/styling/action/pushClassNames");
+const componentContextPatch = require("@smartface/contx/lib/smartface/componentContextPatch");
 
 // Set uncaught exception handler, all exceptions that are not caught will
 // trigger onUnhandledError callback.

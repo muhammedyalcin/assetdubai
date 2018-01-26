@@ -20,43 +20,48 @@ const AlertView = require('sf-core/ui/alertview');
 const Location = require('sf-core/device/location');
 const Application = require("sf-core/application");
 const System = require('sf-core/device/system');
+const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
+var workOL;
 const WorkOrders = extend(WorkOrdersDesign)(
   // Constructor
   function(_super) {
     // Initalizes super class for this page scope
     _super(this);
-    var page = this;
     // overrides super.onShow method
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     this.onLoad = onLoad.bind(this, this.onLoad);
   });
+
 var currentUser;
 // overrides super.onLoad method
 function onLoad(pageonLoad) {
-  // pageonLoad && pageonLoad();
-  var page = this;
+  pageonLoad && pageonLoad();
 
   currentUser = User.currentUser;
   //sets pins on the mapview
   setRedpins.call(this, currentUser.work);
 
   this.headerBar.titleColor = Color.create("#FFFFFF");
-  Router.sliderDrawer.setLeftItem(this.headerBar);
+  //Router.sliderDrawer.setLeftItem(this.headerBar);
+  HeaderBarItem.setCustomHeaderBarItem(this);
   if (!User.currentLocation) {
-    console.log("in current condition !!");
     // MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
   }
+
+  workOL = this.workOrderListview;
+
+  Timer.setTimeout({
+    delay: 500,
+    task: function() {
+      initListview.call(workOL, currentUser.work);
+    }
+  });
 }
 
 MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(mapview, second) {
   Location.start();
   Location.onLocationChanged = function(event) {
-
-    // mapview.centerLocation = {
-    //   latitude: parseFloat(event.latitude),
-    //   longitude: parseFloat(event.longitude)
-    // }
     //this sets the current location to model data (User). This statement is custom it may change according to expection.
     User.currentLocation = {
       latitude: parseFloat(event.latitude),
@@ -76,7 +81,6 @@ HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderB
   backIconItem.image = backIcon;
   backIconItem.onPress = function() {
     if (pageName) {
-      //for now just set the showMap  variable as true in fetuere update use
       Router.goBack(pageName, true);
     }
     else {
@@ -86,7 +90,6 @@ HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderB
   backIconItem.itemColor = Color.create("#D5D4D4");
   that.headerBar.setLeftItem(backIconItem);
 }
-
 /**
  * @event onShow
  * This event is called when a page appears on the screen (everytime).
@@ -94,7 +97,8 @@ HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderB
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(superOnShow, showMap) {
-  superOnShow();
+  superOnShow && superOnShow();
+
   this.headerBar.title = lang["workOrders.title"];
   this.headerBar.itemColor = Color.create("#D5D4D4");
 
@@ -104,47 +108,39 @@ function onShow(superOnShow, showMap) {
   Application.android.onRequestPermissionsResult = function(e) {
     console.log(JSON.stringify(e));
   }
-  workOL = this.workOrderListview;
-
-
-  Timer.setTimeout({
-    delay: 500,
-    task: function() {
-      initListview(currentUser.work);
-    }
-  });
-
   // //Assign map image and remove the listview when press
   workOrder.assignImgandRmv = this;
   //bug occure if mapview is invisible // upto that update this.
   if (showMap && page.mapViewfl.visible) {
     page.mapViewfl.visible = showMap;
-    page.workOrderListview.visible  = false;
+    page.workOrderListview.visible = false;
   }
   else {
     page.mapViewfl.visible = false;
-    page.workOrderListview.visible  = true;
+    page.workOrderListview.visible = true;
   }
 }
 
 
-var workOL;
-var confirmAlertView;
 var length;
 
 function initListview(jsonData) {
+  var workOL = this;
 
   length = jsonData.length;
-
   workOL.rowHeight = 90;
+  var indexListItem = 0;
   workOL.onRowCreate = function() {
     var listviewItem = new ListViewItem();
-    var workOrderItem = Object.assign(new WorkOrderItem(), {
-      id: 8,
-      flexGrow: 1
-    });
-    listviewItem.addChild(workOrderItem);
+    var workOrderItem = new WorkOrderItem();
 
+    workOL.dispatch(addChild(`item${++indexListItem}`, workOrderItem));
+
+    listviewItem.addChild(workOrderItem, "workOrderItem", "", function(userProps) {
+      userProps.flexGrow = 1;
+      userProps.id = 8;
+      return userProps;
+    });
     return listviewItem;
   };
 
@@ -191,7 +187,6 @@ function initListview(jsonData) {
       expansionSettings.threshold = 1;
       var archiveSwipeItem = ListView.iOS.createSwipeItem("Cancel", Color.RED, 50, function(e) {
         try {
-
           length -= 1;
           workOL.itemCount = length;
           if (System.OS === "iOS") {
@@ -217,7 +212,6 @@ function initListview(jsonData) {
   workOL.itemCount = jsonData.length;
   workOL.refreshData();
   workOL.stopRefresh();
-
 
 }
 

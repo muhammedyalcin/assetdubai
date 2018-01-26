@@ -1,6 +1,11 @@
 {
   ".statusBar": {
-    "color": "#00A1F1",
+    "android": {
+      "color": "#D0021B"
+    },
+    "ios": {
+      "style": "DEFAULT"
+    },
     "visible": true,
     "font": {},
     "flexProps": {}

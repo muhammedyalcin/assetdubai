@@ -6,16 +6,18 @@ const extend = require('js-base/core/extend');
 const SettingDesign = require('ui/ui_setting');
 const Router = require("sf-core/ui/router");
 const User = require("../model/user");
+const AlertView = require("sf-core/ui/alertview");
+const Data = require("sf-core/data");
 
 const Setting = extend(SettingDesign)(
   // Constructor
   function(_super) {
     // Initalizes super class for this page scope
     _super(this);
-    // overrides super.onShow method
-    this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    // overrides super.onShow method
+    this.onShow = onShow.bind(this, this.onShow.bind(this));
 
   });
 
@@ -28,8 +30,8 @@ const Setting = extend(SettingDesign)(
 function onShow(superOnShow) {
   superOnShow();
 
-  var page = this;
-  
+  const page = this;
+
   this.headerBar.title = lang["setting.title"];
   this.signoutLabel.text = lang["signout"];
   this.notificaitonfl.themeLabel.text = lang["setting.notifications"];
@@ -39,6 +41,23 @@ function onShow(superOnShow) {
     Router.sliderDrawer.enabled = false;
     Router.go("assetLoginPage");
   }.bind(this);
+
+  // if (Data.getStringVariable("theme") == "Style1") {
+  //   page.themefl.style1fl.borderWidth = 1;
+  //   page.themefl.style2fl.borderWidth = 0;
+  // }
+  // else {
+  //   page.themefl.style1fl.borderWidth = 0;
+  //   page.themefl.style2fl.borderWidth = 1;
+  // }
+
+  this.themefl.style1Color.onTouch = function() {
+    changeTheme.call(page, "Style1");
+  };
+
+  this.themefl.style2Color.onTouch = function() {
+    changeTheme.call(page, "Style2");
+  };
 }
 
 /**
@@ -47,8 +66,61 @@ function onShow(superOnShow) {
  * @param {function} superOnLoad super onLoad function
  */
 function onLoad(superOnLoad) {
-  superOnLoad();
+  superOnLoad && superOnLoad();
   Router.sliderDrawer.setLeftItem(this.headerBar);
+
+  initCurrentTheme.call(this);
+}
+
+function changeTheme(style) {
+
+  if (Data.getStringVariable("theme") === style) {
+    return;
+  }
+
+  var confirmationAlert = new AlertView({
+    title: lang["setting.confirmAlert.title"],
+    message: lang["setting.confirmAlert.message"]
+  });
+  confirmationAlert.addButton({
+    text: lang["yes"],
+    type: AlertView.Android.ButtonType.POSITIVE,
+    onClick: () => {
+      this.themeContext({
+        type: "changeTheme",
+        theme: style
+      });
+      this.dispatch({
+        type: "invalidate"
+      });
+      Data.setStringVariable("theme", style);
+
+      initCurrentTheme.call(this);
+    }
+  });
+  confirmationAlert.addButton({
+    text: lang["no"],
+    type: AlertView.Android.ButtonType.NEGATIVE
+  });
+  confirmationAlert.show();
+
+}
+
+function initCurrentTheme() {
+  console.log("theme is "+ Data.getStringVariable("theme"));
+
+  this.themefl.style2fl.dispatch({
+    type: "updateUserStyle",
+    userStyle: {
+      borderWidth: Data.getStringVariable("theme") == "Style2" ? 1 : 0
+    }
+  });
+  this.themefl.style1fl.dispatch({
+    type: "updateUserStyle",
+    userStyle: {
+      borderWidth: Data.getStringVariable("theme") == "Style1" ? 1 : 0
+    }
+  });
 }
 
 module && (module.exports = Setting);
