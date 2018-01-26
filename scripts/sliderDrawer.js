@@ -315,6 +315,7 @@ var sliderDrawer = new SliderDrawer({
         sliderDrawer.onHide = function sliderDrawer_onHide() {
             sliderDrawer.shown = false;
         };
+
         sliderDrawer.onShow = function sliderDrawer_onShow() {
             sliderDrawer.shown = true;
         };
@@ -325,7 +326,6 @@ var sliderDrawer = new SliderDrawer({
         else {
             sliderDrawer.drawerPosition = SliderDrawer.Position.LEFT;
         }
-        //Object.assign(sliderDrawer.layout, getCombinedStyle('.sliderDrawer'));
         sliderDrawer.layout.backgroundColor = Color.create("#3E3C3B");
         sliderDrawer.width = 200;
 
@@ -338,12 +338,27 @@ var sliderDrawer = new SliderDrawer({
         }
         sliderDrawer.setCurrentData();
 
+        var sliderLabels = [
+            { key: "dashboardPg", value: dashboardLabel },
+            { key: "workOrders", value: ordersLabel },
+            { key: "assetPg", value: assetLabel },
+            { key: "setting", value: settingsLabel }
+        ];
+        sliderDrawer.setBoldAccToPage = function setBoldAccToPage(labelMap) {
+            labelMap.forEach(function(eachLabelMap) {
+                if (Router.getCurrent() === eachLabelMap.key) {
+                    console.log(" if label is " + eachLabelMap.key + "===  page name is " + Router.getCurrent())
+                    eachLabelMap.value.font = Font.create("Arial", 16, Font.BOLD);
+                }
+                else {
+                    console.log(" if label is " + eachLabelMap.key + "===  page name is " + Router.getCurrent())
+                    eachLabelMap.value.font = Font.create("Lato", 16, Font.NORMAL);
+                }
+            });
+        };
+
         sliderDrawer.setActions = function setActions() {
             ordersLabel.onTouch = function() {
-                dashboardLabel.font = Font.create("Lato", 16, Font.NORMAL);
-                settingsLabel.font = Font.create("Lato", 16, Font.NORMAL);
-                assetLabel.font = Font.create("Lato", 16, Font.NORMAL);
-                ordersLabel.font = Font.create("Arial", 16, Font.BOLD);
                 SliderModel.selectedItem = ordersLabel;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = false;
@@ -352,15 +367,12 @@ var sliderDrawer = new SliderDrawer({
                     task: function() {
                         if (Router.getCurrent() !== "workOrders") {
                             Router.go("workOrders", "", false);
+                            sliderDrawer.setBoldAccToPage(sliderLabels);
                         }
                     }
                 });
             };
             settingsLabel.onTouch = function() {
-                dashboardLabel.font = Font.create("Lato", 16, Font.NORMAL);
-                settingsLabel.font = Font.create("Arial", 16, Font.BOLD);
-                assetLabel.font = Font.create("Lato", 16, Font.NORMAL);
-                ordersLabel.font = Font.create("Lato", 16, Font.NORMAL);
                 SliderModel.selectedItem = settingsLabel;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = true;
@@ -369,6 +381,7 @@ var sliderDrawer = new SliderDrawer({
                     task: function() {
                         if (Router.getCurrent() !== "setting") {
                             Router.go("setting", "", false);
+                            sliderDrawer.setBoldAccToPage(sliderLabels);
                         }
                     }
                 });
@@ -387,13 +400,8 @@ var sliderDrawer = new SliderDrawer({
                         }
                     }
                 });
-                // Router.go("workOrders");
             }
             dashboardLabel.onTouch = function() {
-                dashboardLabel.font = Font.create("Arial", 16, Font.BOLD);
-                settingsLabel.font = Font.create("Lato", 16, Font.NORMAL);
-                assetLabel.font = Font.create("Lato", 16, Font.NORMAL);
-                ordersLabel.font = Font.create("Lato", 16, Font.NORMAL);
                 SliderModel.selectedItem = dashboardLabel.id;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = false;
@@ -402,16 +410,13 @@ var sliderDrawer = new SliderDrawer({
                     task: function() {
                         if (Router.getCurrent() !== "dashboardPg") {
                             Router.go("dashboardPg", "", false);
+                            sliderDrawer.setBoldAccToPage(sliderLabels);
                         }
                     }
                 });
 
             }
             assetLabel.onTouch = function() {
-                dashboardLabel.font = Font.create("Lato", 16, Font.NORMAL);
-                settingsLabel.font = Font.create("Lato", 16, Font.NORMAL);
-                assetLabel.font = Font.create("Arial", 16, Font.BOLD);
-                ordersLabel.font = Font.create("Lato", 16, Font.NORMAL);
                 SliderModel.selectedItem = assetLabel;
                 sliderDrawer.hide();
                 Router.sliderDrawer.enabled = false;
@@ -420,6 +425,7 @@ var sliderDrawer = new SliderDrawer({
                     task: function() {
                         if (Router.getCurrent() !== "assetPg") {
                             Router.go("assetPg", "", false);
+                            sliderDrawer.setBoldAccToPage(sliderLabels);
                         }
                     }
                 });

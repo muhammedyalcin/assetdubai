@@ -9,6 +9,7 @@ const ListViewItem = require("sf-core/ui/listviewitem");
 const User = require("../model/user");
 const WorkSummary = require("components/WorkSummary");
 const Timer = require("sf-core/global/timer");
+const Image = require("sf-core/ui/image");
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 const workOrderProcPgDesign = require("ui/ui_workOrderProcPg");
@@ -58,19 +59,25 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
     superOnLoad();
 
-    HeaderBarItem.setCustomHeaderBarItem(this, "workOrders");
+    var backIconItem = new HeaderBarItem();
+    var backIcon = Image.createFromFile("images://backheadericon.png");
+    backIconItem.image = backIcon;
+    backIconItem.onPress = function() {
+        var workOL = this.workOrdersSumfl.workOrderSumListView;
+        workOL.itemCount = 0;
+        workOL.refreshData();
+        Router.goBack("workOrders");
+    }.bind(this);
+    backIconItem.itemColor = Color.create("#D5D4D4");
+    this.headerBar.setLeftItem(backIconItem);
 
     MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);
 }
 
 function initListview(jsonData) {
-    console.log("In init list view");
     var workOL = this.workOrdersSumfl.workOrderSumListView;
-    console.log("data   " + jsonData[0].worksumid1);
-
     var indexListItem = 0;
     workOL.onRowCreate = function() {
-        console.log("In on row create");
         var listviewItem = new ListViewItem();
         var workOrderItem = Object.assign(new WorkSummary(), {
             id: 19,
@@ -85,7 +92,6 @@ function initListview(jsonData) {
     };
 
     workOL.onRowBind = function(listviewItem, index) {
-        console.log("In row bind");
         var workSummary = listviewItem.findChildById(19);
         var summaryCnr = workSummary.findChildById(20);
         var summaryFlexLayout = summaryCnr.findChildById(200);
@@ -100,7 +106,6 @@ function initListview(jsonData) {
 
     workOL.onRowSelected = function(listViewItem, index) {
         User.currentWorkSummary = jsonData[index];
-        // Router.go("workOrderProcPg");
     };
 
     workOL.refreshEnabled = false;

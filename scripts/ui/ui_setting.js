@@ -56,9 +56,9 @@ const $Setting_ = Page($Setting);
 function $Settingsfl(_super, pageInstance) {
   _super(this);
   addChild.call(this, "themefl", $Settingsfl$$Themefl_, pageInstance);
-  addChild.call(this, "signoutfl", $Settingsfl$$Signoutfl_, pageInstance);
-  addChild.call(this, "aboutfl", $Settingsfl$$Aboutfl_, pageInstance);
   addChild.call(this, "notificaitonfl", $Settingsfl$$Notificaitonfl_, pageInstance);
+  addChild.call(this, "aboutfl", $Settingsfl$$Aboutfl_, pageInstance);
+  addChild.call(this, "signoutfl", $Settingsfl$$Signoutfl_, pageInstance);
   pageInstance.settingsfl = this;
 }
 $Settingsfl.$$styleContext = {
@@ -98,50 +98,25 @@ $Settingsfl$$Themefl.$$styleContext = {
 };
 const $Settingsfl$$Themefl_ = Themefl($Settingsfl$$Themefl);
 
-function $Settingsfl$$Signoutfl(_super, pageInstance) {
+function $Settingsfl$$Notificaitonfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "signoutLabel", $Settingsfl$$Signoutfl$$SignoutLabel_, pageInstance);
-  pageInstance.signoutfl = this;
+  pageInstance.notificaitonfl = this;
 }
-$Settingsfl$$Signoutfl.$$styleContext = {
+$Settingsfl$$Notificaitonfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     width: null,
     height: 70,
-    right: 0,
     left: 0,
-    bottom: 0,
+    right: 0,
+    top: 0,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     flexProps: {
-      positionType: "ABSOLUTE"
+      positionType: "RELATIVE"
     }
   }
 };
-const $Settingsfl$$Signoutfl_ = FlexLayout($Settingsfl$$Signoutfl);
-
-function $Settingsfl$$Signoutfl$$SignoutLabel(_super, pageInstance) {
-  _super(this, {
-    text: "Sign out"
-  });
-  pageInstance.signoutLabel = this;
-}
-$Settingsfl$$Signoutfl$$SignoutLabel.$$styleContext = {
-  classNames: ".label",
-  userProps: {
-    textAlignment: "MIDCENTER",
-    width: null,
-    height: null,
-    textColor: "rgba( 208, 2, 27, 1 )",
-    backgroundColor: "rgba( 255, 255, 255, 0 )",
-    font: {
-      family: "Lato"
-    },
-    flexProps: {
-      flexGrow: 1
-    }
-  }
-};
-const $Settingsfl$$Signoutfl$$SignoutLabel_ = Label($Settingsfl$$Signoutfl$$SignoutLabel);
+const $Settingsfl$$Notificaitonfl_ = Notificaitonfl($Settingsfl$$Notificaitonfl);
 
 function $Settingsfl$$Aboutfl(_super, pageInstance) {
   _super(this);
@@ -152,14 +127,13 @@ function $Settingsfl$$Aboutfl(_super, pageInstance) {
 $Settingsfl$$Aboutfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    bottom: 70,
-    left: 0,
-    right: 0,
     width: null,
-    height: 300,
+    height: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
+    marginBottom: 70,
     flexProps: {
-      positionType: "ABSOLUTE"
+      positionType: "RELATIVE",
+      flexGrow: 1
     }
   }
 };
@@ -207,25 +181,50 @@ $Settingsfl$$Aboutfl$$AboutLabel.$$styleContext = {
 };
 const $Settingsfl$$Aboutfl$$AboutLabel_ = Label($Settingsfl$$Aboutfl$$AboutLabel);
 
-function $Settingsfl$$Notificaitonfl(_super, pageInstance) {
+function $Settingsfl$$Signoutfl(_super, pageInstance) {
   _super(this);
-  pageInstance.notificaitonfl = this;
+  addChild.call(this, "signoutLabel", $Settingsfl$$Signoutfl$$SignoutLabel_, pageInstance);
+  pageInstance.signoutfl = this;
 }
-$Settingsfl$$Notificaitonfl.$$styleContext = {
+$Settingsfl$$Signoutfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     width: null,
     height: 70,
-    left: 0,
     right: 0,
-    top: 0,
+    left: 0,
+    bottom: 0,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     flexProps: {
-      positionType: "RELATIVE"
+      positionType: "ABSOLUTE"
     }
   }
 };
-const $Settingsfl$$Notificaitonfl_ = Notificaitonfl($Settingsfl$$Notificaitonfl);
+const $Settingsfl$$Signoutfl_ = FlexLayout($Settingsfl$$Signoutfl);
+
+function $Settingsfl$$Signoutfl$$SignoutLabel(_super, pageInstance) {
+  _super(this, {
+    text: "Sign out"
+  });
+  pageInstance.signoutLabel = this;
+}
+$Settingsfl$$Signoutfl$$SignoutLabel.$$styleContext = {
+  classNames: ".label",
+  userProps: {
+    textAlignment: "MIDCENTER",
+    width: null,
+    height: null,
+    textColor: "rgba( 208, 2, 27, 1 )",
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    font: {
+      family: "Lato"
+    },
+    flexProps: {
+      flexGrow: 1
+    }
+  }
+};
+const $Settingsfl$$Signoutfl$$SignoutLabel_ = Label($Settingsfl$$Signoutfl$$SignoutLabel);
 
 /**
  * @event onShow

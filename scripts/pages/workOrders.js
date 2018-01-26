@@ -76,19 +76,19 @@ MapView.constructor.prototype.setCurrentLocation = function setCurrentLocation(m
   });
 }
 HeaderBarItem.constructor.prototype.setCustomHeaderBarItem = function setHeaderBarItem(that, pageName) {
-  var backIconItem = new HeaderBarItem();
-  var backIcon = Image.createFromFile("images://backheadericon.png");
-  backIconItem.image = backIcon;
-  backIconItem.onPress = function() {
-    if (pageName) {
-      Router.goBack(pageName, true);
-    }
-    else {
-      Router.goBack();
-    }
-  }.bind(that);
-  backIconItem.itemColor = Color.create("#D5D4D4");
-  that.headerBar.setLeftItem(backIconItem);
+    var backIconItem = new HeaderBarItem();
+    var backIcon = Image.createFromFile("images://backheadericon.png");
+    backIconItem.image = backIcon;
+    backIconItem.onPress = function() {
+      if (pageName) {
+        Router.goBack(pageName);
+      }
+      else {
+        Router.goBack();
+      }
+    }.bind(that);
+    backIconItem.itemColor = Color.create("#D5D4D4");
+    that.headerBar.setLeftItem(backIconItem);
 }
 /**
  * @event onShow
