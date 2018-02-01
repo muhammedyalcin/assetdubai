@@ -8,7 +8,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 1 )"
 			},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "locationPg",
 				"children": [
@@ -24,10 +24,7 @@
 		{
 			"type": "StatusBar",
 			"id": "3851-5ee8-9124-dbfa",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -45,8 +42,8 @@
 			},
 			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"props": {
-				"name": "headerBar",
 				"title": "Location Page",
+				"name": "headerBar",
 				"children": [],
 				"parent": "634f-5a97-13ed-afac",
 				"isRemovable": false
@@ -71,15 +68,12 @@
 				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "contactContainer",
 				"usePageVariable": true,
+				"name": "contactContainer",
 				"children": [],
 				"parent": "634f-5a97-13ed-afac"
 			}
@@ -104,15 +98,12 @@
 				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "mapViewfl",
 				"usePageVariable": true,
+				"name": "mapViewfl",
 				"children": [],
 				"parent": "634f-5a97-13ed-afac"
 			}

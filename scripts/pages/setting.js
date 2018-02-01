@@ -8,6 +8,8 @@ const Router = require("sf-core/ui/router");
 const User = require("../model/user");
 const AlertView = require("sf-core/ui/alertview");
 const Data = require("sf-core/data");
+const Application = require("sf-core/application");
+const rau = require("sf-extension-utils").rau;
 
 const Setting = extend(SettingDesign)(
   // Constructor
@@ -58,6 +60,8 @@ function onShow(superOnShow) {
   this.themefl.style2Color.onTouch = function() {
     changeTheme.call(page, "Style2");
   };
+
+  initNewVersionButton.call(this);
 }
 
 /**
@@ -107,8 +111,6 @@ function changeTheme(style) {
 }
 
 function initCurrentTheme() {
-  console.log("theme is "+ Data.getStringVariable("theme"));
-
   this.themefl.style2fl.dispatch({
     type: "updateUserStyle",
     userStyle: {
@@ -121,6 +123,20 @@ function initCurrentTheme() {
       borderWidth: Data.getStringVariable("theme") == "Style1" ? 1 : 0
     }
   });
+}
+
+function initNewVersionButton() {
+  Application.checkUpdate(function(err, succ) {
+    if (!err) {
+      this.versionLabel.visible = true;
+      this.versionLabel.onTouchEnded = function() {
+        rau.checkUpdate();
+      };
+    }
+    else {
+      this.versionLabel.visible = false;
+    }
+  }.bind(this));
 }
 
 module && (module.exports = Setting);

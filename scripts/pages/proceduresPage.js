@@ -63,8 +63,6 @@ function onShow(superOnShow) {
   var currentWorkSum = User.currentWorkSummary;
   // var procedureData = arr[0].procedure;
   // var workData = arr[1];
-
-  console.log("work data is " + currentWorkSum.worksumid1);
   //Sets the selected workid's
   this.workid1.text = currentWorkSum.worksumid1;
   this.workid2.text = currentWorkSum.worksumid2;
@@ -74,6 +72,10 @@ function onShow(superOnShow) {
   this.startButton.onPress = function() {
     this.procedureScroll.layout.applyLayout();
     Router.go("step1Page");
+  }.bind(this);
+  
+  this.cancelButton.onPress = function() {
+    Router.goBack();
   }.bind(this);
 
   console.log("In init list still");

@@ -14,7 +14,7 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "proceduresPage",
 				"children": [
@@ -32,10 +32,7 @@
 		{
 			"type": "StatusBar",
 			"id": "a9ba-7546-54f2-1368",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -53,8 +50,8 @@
 			},
 			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"props": {
-				"name": "headerBar",
 				"title": "Procedures",
+				"name": "headerBar",
 				"children": [],
 				"parent": "92a7-934b-4869-bdc2",
 				"isRemovable": false
@@ -79,8 +76,8 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "workIDfl1",
 				"usePageVariable": true,
+				"name": "workIDfl1",
 				"children": [
 					"3ede-3755-e230-446c",
 					"a269-3b4f-7acc-9e5e"
@@ -100,18 +97,18 @@
 				"marginLeft": 30,
 				"textColor": "rgba( 74, 74, 74, 1 )",
 				"textAlignment": "MIDLEFT",
-				"flexProps": {
-					"flexGrow": 1
-				},
 				"font": {
 					"family": "Lato"
+				},
+				"flexProps": {
+					"flexGrow": 1
 				}
 			},
 			"className": ".label",
 			"props": {
-				"name": "workid1",
 				"text": "Nothing",
 				"usePageVariable": true,
+				"name": "workid1",
 				"children": [],
 				"parent": "68e4-8e3a-8370-6702"
 			}
@@ -128,19 +125,19 @@
 				"marginLeft": 30,
 				"textColor": "rgba( 74, 74, 74, 1 )",
 				"textAlignment": "TOPLEFT",
-				"flexProps": {
-					"flexGrow": 0.7
-				},
 				"font": {
 					"family": "Lato",
 					"size": 14
+				},
+				"flexProps": {
+					"flexGrow": 0.7
 				}
 			},
 			"className": ".label",
 			"props": {
-				"name": "workid2",
-				"text": "Nothing",
 				"usePageVariable": true,
+				"text": "Nothing",
+				"name": "workid2",
 				"children": [],
 				"parent": "68e4-8e3a-8370-6702"
 			}
@@ -166,8 +163,8 @@
 			},
 			"className": ".scrollView",
 			"props": {
-				"name": "procedureScroll",
 				"usePageVariable": true,
+				"name": "procedureScroll",
 				"children": [],
 				"parent": "92a7-934b-4869-bdc2"
 			}
@@ -193,8 +190,8 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "indicatorfl",
 				"usePageVariable": true,
+				"name": "indicatorfl",
 				"children": [
 					"f5e3-c7f8-1a8d-59a1"
 				],
@@ -209,8 +206,8 @@
 			},
 			"className": ".activityIndicator",
 			"props": {
-				"name": "proInfdicator",
 				"usePageVariable": true,
+				"name": "proInfdicator",
 				"children": [],
 				"parent": "f748-1a15-485c-49dd"
 			}
@@ -233,8 +230,8 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "buttonfl",
 				"usePageVariable": true,
+				"name": "buttonfl",
 				"children": [
 					"8411-65bb-3bca-4e03",
 					"f5f9-6156-4509-e65b"
@@ -257,9 +254,9 @@
 			},
 			"className": ".button",
 			"props": {
-				"name": "startButton",
 				"text": "Start Procedure",
 				"usePageVariable": true,
+				"name": "startButton",
 				"children": [],
 				"parent": "bfc0-8e27-03a5-6f7b"
 			}
@@ -279,9 +276,9 @@
 			},
 			"className": ".button",
 			"props": {
-				"name": "cancelButton",
-				"text": "Cancel Work Order",
 				"usePageVariable": true,
+				"text": "Cancel Work Order",
+				"name": "cancelButton",
 				"children": [],
 				"parent": "bfc0-8e27-03a5-6f7b"
 			}

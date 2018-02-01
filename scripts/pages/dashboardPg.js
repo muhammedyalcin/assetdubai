@@ -28,6 +28,7 @@ const DashboardPg = extend(DashboardPgDesign)(
 function onShow(superOnShow) {
   superOnShow();
   this.headerBar.title = lang["dashboardPg.dasboard.title"];
+  Router.sliderDrawer.setBoldAccToPage();
 }
 
 function onTouchDasItems() {

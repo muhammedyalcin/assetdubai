@@ -151,6 +151,7 @@ $Settingsfl$$Aboutfl$$VersionLabel.$$styleContext = {
     width: null,
     height: 50,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
+    visible: false,
     font: {
       family: "Lato"
     }

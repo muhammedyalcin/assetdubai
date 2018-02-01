@@ -6,7 +6,7 @@
 			"initialized": true,
 			"userProps": {},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "assetPg",
 				"children": [
@@ -21,10 +21,7 @@
 		{
 			"type": "StatusBar",
 			"id": "f960-99f2-5f9f-035b",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -42,8 +39,8 @@
 			},
 			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"props": {
-				"name": "headerBar",
 				"title": "Assets",
+				"name": "headerBar",
 				"children": [],
 				"parent": "4996-c1b6-4c6c-fa0c",
 				"isRemovable": false
@@ -69,12 +66,12 @@
 			},
 			"className": ".listView",
 			"props": {
-				"name": "assetListview",
 				"usePageVariable": true,
-				"children": [],
-				"parent": "4996-c1b6-4c6c-fa0c",
+				"rowHeight": 70,
 				"itemCount": null,
-				"rowHeight": 70
+				"name": "assetListview",
+				"children": [],
+				"parent": "4996-c1b6-4c6c-fa0c"
 			}
 		}
 	]

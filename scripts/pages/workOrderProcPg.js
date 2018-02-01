@@ -43,6 +43,10 @@ function onShow(superOnShow) {
     this.startProButton.onPress = function() {
         Router.go("proceduresPage");
     }.bind(this);
+    
+    this.cancelButton.onPress = function() {
+        Router.goBack();
+    }.bind(this);
 
     if (workSummary)
         Timer.setTimeout({

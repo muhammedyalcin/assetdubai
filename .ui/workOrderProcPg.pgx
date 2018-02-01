@@ -8,7 +8,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 1 )"
 			},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "workOrderProcPg",
 				"children": [
@@ -26,10 +26,7 @@
 		{
 			"type": "StatusBar",
 			"id": "d34a-d4ed-6727-e7e2",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -92,11 +89,11 @@
 				"text": "Start Procedure",
 				"backgroundColor": "rgba( 2, 132, 51, 1 )",
 				"usePageVariable": true,
-				"flexProps": {
-					"flexGrow": 1
-				},
 				"font": {
 					"family": "Lato"
+				},
+				"flexProps": {
+					"flexGrow": 1
 				}
 			},
 			"className": ".button",
@@ -118,11 +115,11 @@
 				"text": "Cancel Work Order",
 				"usePageVariable": true,
 				"backgroundColor": "rgba( 208, 2, 27, 1 )",
-				"flexProps": {
-					"flexGrow": 1
-				},
 				"font": {
 					"family": "Lato"
+				},
+				"flexProps": {
+					"flexGrow": 1
 				}
 			},
 			"className": ".button",
@@ -172,9 +169,6 @@
 				"visible": false,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
@@ -205,9 +199,6 @@
 				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
@@ -229,17 +220,14 @@
 			},
 			"userProps": {
 				"width": null,
-				"height": 300,
-				"bottom": 95,
+				"height": 320,
+				"bottom": 75,
 				"backgroundColor": "rgba( 155, 155, 155, 1 )",
 				"left": 15,
 				"right": 15,
 				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",

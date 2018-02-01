@@ -19,6 +19,7 @@ const Timer = require("sf-core/global/timer");
 const componentContextPatch = require("@smartface/contx/lib/smartface/componentContextPatch");
 
 // var sliderDrawerWidth = 333;
+var sliderLabels;
 var nameLabel;
 var sliderDrawer = new SliderDrawer({
     width: 200,
@@ -338,24 +339,24 @@ var sliderDrawer = new SliderDrawer({
         }
         sliderDrawer.setCurrentData();
 
-        var sliderLabels = [
+        sliderLabels = [
             { key: "dashboardPg", value: dashboardLabel },
             { key: "workOrders", value: ordersLabel },
             { key: "assetPg", value: assetLabel },
             { key: "setting", value: settingsLabel }
         ];
-        sliderDrawer.setBoldAccToPage = function setBoldAccToPage(labelMap) {
-            labelMap.forEach(function(eachLabelMap) {
-                if (Router.getCurrent() === eachLabelMap.key) {
-                    console.log(" if label is " + eachLabelMap.key + "===  page name is " + Router.getCurrent())
-                    eachLabelMap.value.font = Font.create("Arial", 16, Font.BOLD);
-                }
-                else {
-                    console.log(" if label is " + eachLabelMap.key + "===  page name is " + Router.getCurrent())
-                    eachLabelMap.value.font = Font.create("Lato", 16, Font.NORMAL);
-                }
-            });
-        };
+        // sliderDrawer.setBoldAccToPage = function setBoldAccToPage(labelMap) {
+        //     labelMap.forEach(function(eachLabelMap) {
+        //         if (Router.getCurrent() === eachLabelMap.key) {
+        //             console.log(" if label is " + eachLabelMap.key + "===  page name is " + Router.getCurrent())
+        //             eachLabelMap.value.font = Font.create("Arial", 16, Font.BOLD);
+        //         }
+        //         else {
+        //             console.log(" if label is " + eachLabelMap.key + "===  page name is " + Router.getCurrent())
+        //             eachLabelMap.value.font = Font.create("Lato", 16, Font.NORMAL);
+        //         }
+        //     });
+        // };
 
         sliderDrawer.setActions = function setActions() {
             ordersLabel.onTouch = function() {
@@ -435,6 +436,21 @@ var sliderDrawer = new SliderDrawer({
     }
 
 });
+
+sliderDrawer.setBoldAccToPage = function setBoldAccToPage() {
+    if (sliderLabels) {
+        sliderLabels.forEach(function(eachLabelMap) {
+            if (Router.getCurrent() === eachLabelMap.key) {
+                console.log(" if label is " + eachLabelMap.key + "===  page name is " + Router.getCurrent())
+                eachLabelMap.value.font = Font.create("Arial", 16, Font.BOLD);
+            }
+            else {
+                console.log(" if label is " + eachLabelMap.key + "===  page name is " + Router.getCurrent())
+                eachLabelMap.value.font = Font.create("Lato", 16, Font.NORMAL);
+            }
+        });
+    }
+};
 
 sliderDrawer.setCurrentData = function() {};
 

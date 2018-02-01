@@ -12,8 +12,7 @@ const MapViewfl = extend(MapViewflDesign)(
     this.pageName = pageName;
 
     var currentUser = User.currentUser;
-    console.log("current user" + currentUser);
-    console.log("current work is  " + currentUser.work[0].workid1);
+    this.workMapView.zoomLevel = 12;
 
     this.currentLocationImf.onTouch = function() {
       if (User.currentLocation) {

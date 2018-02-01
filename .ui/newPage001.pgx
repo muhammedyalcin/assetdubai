@@ -1,0 +1,80 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "a6ac-0fb8-beda-2f25",
+			"initialized": true,
+			"userProps": {},
+			"className": ".page",
+			"version": "6.6.0",
+			"props": {
+				"name": "newPage001",
+				"children": [
+					"7b73-c8d4-5738-d171",
+					"6a7f-01de-2375-4241",
+					"d63b-c664-6a6c-171b"
+				],
+				"parent": null,
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "7b73-c8d4-5738-d171",
+			"userProps": {},
+			"className": ".statusBar",
+			"props": {
+				"name": "statusBar",
+				"children": [],
+				"parent": "a6ac-0fb8-beda-2f25",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "6a7f-01de-2375-4241",
+			"userProps": {
+				"title": "newPage001"
+			},
+			"className": ".headerBar",
+			"props": {
+				"name": "headerBar",
+				"title": "newPage001",
+				"children": [],
+				"parent": "a6ac-0fb8-beda-2f25",
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "d63b-c664-6a6c-171b",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "checkLine",
+				"id": "fc0f-b212-c4d4-c41a"
+			},
+			"userProps": {
+				"width": 70,
+				"height": 230,
+				"left": 0,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"alignItems": "CENTER",
+					"positionType": "RELATIVE"
+				},
+				"flex": {
+					"alignItems": 2,
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"name": "checkLine",
+				"children": [],
+				"parent": "a6ac-0fb8-beda-2f25"
+			}
+		}
+	]
+}

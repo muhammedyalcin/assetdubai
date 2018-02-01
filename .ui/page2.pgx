@@ -16,7 +16,7 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "page2",
 				"children": [
@@ -36,9 +36,7 @@
 		{
 			"type": "StatusBar",
 			"id": "a829471c",
-			"userProps": {
-				"visible": true
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -244,9 +242,6 @@
 				"backgroundColor": "rgba( 74, 74, 74, 0.99 )",
 				"flexProps": {
 					"positionType": "RELATIVE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",

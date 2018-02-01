@@ -6,7 +6,7 @@
 			"initialized": true,
 			"userProps": {},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "step2Page",
 				"children": [
@@ -23,10 +23,7 @@
 		{
 			"type": "StatusBar",
 			"id": "73fd-7409-55c3-a91e",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -44,8 +41,8 @@
 			},
 			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"props": {
-				"name": "headerBar",
 				"title": "Step 2",
+				"name": "headerBar",
 				"children": [],
 				"parent": "ad75-d968-a8d5-7560",
 				"isRemovable": false
@@ -69,15 +66,12 @@
 				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "RELATIVE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout .tabBar-style2 .tabBar-style1",
 			"props": {
-				"name": "tab",
 				"usePageVariable": true,
+				"name": "tab",
 				"children": [],
 				"parent": "ad75-d968-a8d5-7560"
 			}
@@ -107,16 +101,12 @@
 					"alignItems": "STRETCH",
 					"alignSelf": "AUTO",
 					"flexGrow": 1
-				},
-				"flex": {
-					"justifyContent": 3,
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "noteContainer",
 				"usePageVariable": true,
+				"name": "noteContainer",
 				"children": [],
 				"parent": "ad75-d968-a8d5-7560"
 			}
@@ -140,15 +130,12 @@
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "ABSOLUTE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "completefl",
 				"usePageVariable": true,
+				"name": "completefl",
 				"children": [],
 				"parent": "ad75-d968-a8d5-7560"
 			}

@@ -5,7 +5,7 @@
 			"id": "f8f3-36c1-0a62-bb05",
 			"initialized": true,
 			"userProps": {
-				"backgroundColor": "rgba( 238, 238, 238, 1 )",
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"paddingLeft": 20,
 				"paddingRight": 20,
 				"paddingBottom": null,
@@ -13,14 +13,10 @@
 					"justifyContent": "SPACE_AROUND",
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH"
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".page",
-			"version": "6.4.5-rc.1",
+			"version": "6.6.0",
 			"props": {
 				"name": "assetLoginPage",
 				"children": [
@@ -40,13 +36,13 @@
 			"type": "StatusBar",
 			"id": "371c-e7fd-3d7f-ac11",
 			"userProps": {
-				"layout": {},
 				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {},
-				"color": "rgba( 255, 255, 255, 0.6 )",
-				"style": "DEFAULT"
+				"android": {
+					"color": "rgba( 255, 255, 255, 1 )"
+				},
+				"ios": {
+					"style": "DEFAULT"
+				}
 			},
 			"className": ".statusBar",
 			"props": {
@@ -61,12 +57,7 @@
 			"id": "ddd5-d3bb-a83b-936c",
 			"userProps": {
 				"title": "Login",
-				"visible": false,
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"visible": false
 			},
 			"className": ".headerBar",
 			"props": {
@@ -90,7 +81,7 @@
 				"flexProps": {
 					"alignItems": "CENTER",
 					"justifyContent": "SPACE_BETWEEN",
-					"flexGrow": 5,
+					"flexGrow": 4.5,
 					"alignSelf": "AUTO"
 				}
 			},
@@ -190,12 +181,8 @@
 				"height": 1,
 				"width": null,
 				"borderColor": "rgba( 226, 226, 226, 1 )",
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {},
-				"usePageVariable": true
+				"usePageVariable": true,
+				"flexProps": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -295,11 +282,7 @@
 				"height": 1,
 				"width": null,
 				"borderColor": "rgba( 226, 226, 226, 1 )",
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"flexProps": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -320,16 +303,13 @@
 				"text": "Forgot Password",
 				"textColor": "rgba( 153, 153, 153, 1 )",
 				"textAlignment": "TOPLEFT",
-				"layout": {},
-				"flex": {},
-				"defaults": {},
 				"visible": false,
-				"flexProps": {
-					"alignSelf": "FLEX_END"
-				},
 				"font": {
 					"size": 14,
 					"family": "Nunito"
+				},
+				"flexProps": {
+					"alignSelf": "FLEX_END"
 				}
 			},
 			"className": ".label",
@@ -397,13 +377,13 @@
 				"text": "Asset",
 				"textColor": "rgba( 248, 7, 7, 1 )",
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"flexProps": {
-					"flexGrow": 2
-				},
 				"font": {
 					"family": "Lato",
 					"bold": true,
 					"size": 30
+				},
+				"flexProps": {
+					"flexGrow": 2
 				}
 			},
 			"className": ".label",
@@ -424,12 +404,12 @@
 				"text": "Management",
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"textAlignment": "TOPLEFT",
-				"flexProps": {
-					"flexGrow": 4
-				},
 				"font": {
 					"size": 30,
 					"family": "Lato"
+				},
+				"flexProps": {
+					"flexGrow": 4
 				}
 			},
 			"className": ".label",
@@ -446,9 +426,9 @@
 			"userProps": {
 				"width": 187.50836407696758,
 				"height": 146.31076388888889,
-				"flexProps": {},
 				"usePageVariable": true,
-				"borderWidth": null
+				"borderWidth": null,
+				"flexProps": {}
 			},
 			"className": ".imageView",
 			"props": {
@@ -462,10 +442,10 @@
 			"type": "FlexLayout",
 			"id": "53f1-62ee-9b04-681f",
 			"userProps": {
-				"flexProps": {},
 				"width": 355.55555555555554,
 				"height": 70,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )"
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -514,12 +494,12 @@
 				"top": 0,
 				"right": 0,
 				"bottom": 0,
-				"flexProps": {
-					"positionType": "ABSOLUTE"
-				},
 				"font": {
 					"family": "Lato",
 					"bold": true
+				},
+				"flexProps": {
+					"positionType": "ABSOLUTE"
 				}
 			},
 			"className": ".button",

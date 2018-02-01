@@ -4,9 +4,11 @@
 			"type": "Page",
 			"id": "bf86-a75c-80dc-96fa",
 			"initialized": true,
-			"userProps": {},
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )"
+			},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "workOrders",
 				"children": [
@@ -22,10 +24,7 @@
 		{
 			"type": "StatusBar",
 			"id": "eb98-a794-58cf-3426",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -103,13 +102,11 @@
 				"visible": true,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
+				"id": null,
 				"name": "mapViewfl",
 				"usePageVariable": true,
 				"children": [],

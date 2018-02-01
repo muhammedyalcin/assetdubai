@@ -6,7 +6,7 @@
 			"initialized": true,
 			"userProps": {},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "step3Page",
 				"children": [
@@ -24,10 +24,7 @@
 		{
 			"type": "StatusBar",
 			"id": "23b2-f723-9cbb-291c",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -45,8 +42,8 @@
 			},
 			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"props": {
-				"name": "headerBar",
 				"title": "Step 3",
+				"name": "headerBar",
 				"children": [],
 				"parent": "8fd9-d302-fcc8-9c5d",
 				"isRemovable": false
@@ -70,15 +67,12 @@
 				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "RELATIVE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout .tabBar-style1 .tabBar-style2",
 			"props": {
-				"name": "tab",
 				"usePageVariable": true,
+				"name": "tab",
 				"children": [],
 				"parent": "8fd9-d302-fcc8-9c5d"
 			}
@@ -108,16 +102,12 @@
 					"alignItems": "STRETCH",
 					"alignSelf": "AUTO",
 					"flexGrow": 1
-				},
-				"flex": {
-					"justifyContent": 3,
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "noteContainer",
 				"usePageVariable": true,
+				"name": "noteContainer",
 				"children": [],
 				"parent": "8fd9-d302-fcc8-9c5d"
 			}
@@ -141,15 +131,12 @@
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "ABSOLUTE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "completefl",
 				"usePageVariable": true,
+				"name": "completefl",
 				"children": [],
 				"parent": "8fd9-d302-fcc8-9c5d"
 			}
@@ -174,8 +161,8 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "indicayorfl",
 				"usePageVariable": true,
+				"name": "indicayorfl",
 				"children": [
 					"8539-112a-b162-0d2f"
 				],
@@ -193,8 +180,8 @@
 			},
 			"className": ".activityIndicator",
 			"props": {
-				"name": "stepindicator",
 				"usePageVariable": true,
+				"name": "stepindicator",
 				"children": [],
 				"parent": "2da7-3a47-b1a7-5b1b"
 			}

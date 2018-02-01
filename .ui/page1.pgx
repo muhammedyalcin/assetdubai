@@ -20,9 +20,8 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
-				"orientation": "PORTRAIT",
 				"name": "page1",
 				"children": [
 					"42b807d1",
@@ -31,15 +30,14 @@
 					"980522a9",
 					"d0fa9c62"
 				],
-				"parent": null
+				"parent": null,
+				"orientation": "PORTRAIT"
 			}
 		},
 		{
 			"type": "StatusBar",
 			"id": "42b807d1",
-			"userProps": {
-				"visible": true
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -57,8 +55,8 @@
 			},
 			"className": ".headerBar",
 			"props": {
-				"title": "page1",
 				"name": "headerBar",
+				"title": "page1",
 				"children": [],
 				"parent": "e891b86d"
 			}
@@ -101,9 +99,9 @@
 			},
 			"className": ".label",
 			"props": {
+				"name": "lbl",
 				"text": null,
 				"usePageVariable": true,
-				"name": "lbl",
 				"children": [],
 				"parent": "e891b86d"
 			}
@@ -177,8 +175,8 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"usePageVariable": true,
 				"name": "flexlayout",
+				"usePageVariable": true,
 				"children": [
 					"48653d59",
 					"4608e562"
@@ -210,9 +208,9 @@
 			},
 			"className": ".button",
 			"props": {
+				"name": "btn",
 				"text": "Click me!",
 				"usePageVariable": true,
-				"name": "btn",
 				"children": [],
 				"parent": "d0fa9c62"
 			}
@@ -243,9 +241,9 @@
 			},
 			"className": ".button",
 			"props": {
+				"name": "btnNext",
 				"text": "Next Page",
 				"usePageVariable": true,
-				"name": "btnNext",
 				"children": [],
 				"parent": "d0fa9c62"
 			}

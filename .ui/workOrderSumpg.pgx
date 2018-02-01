@@ -8,7 +8,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 1 )"
 			},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "workOrderSumpg",
 				"children": [
@@ -24,10 +24,7 @@
 		{
 			"type": "StatusBar",
 			"id": "11c4-38b2-b750-6515",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -45,8 +42,8 @@
 			},
 			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"props": {
-				"name": "headerBar",
 				"title": "Work Order Summary",
+				"name": "headerBar",
 				"children": [],
 				"parent": "837e-ef33-6032-3f7f",
 				"isRemovable": false
@@ -98,9 +95,9 @@
 			},
 			"className": ".label",
 			"props": {
-				"name": "sumLabel",
 				"text": "WORK ORDER SUMMARY",
 				"usePageVariable": true,
+				"name": "sumLabel",
 				"children": [],
 				"parent": "81f2-fc91-2e85-17f7"
 			}
@@ -125,12 +122,12 @@
 			},
 			"className": ".listView",
 			"props": {
-				"name": "wordOderSumListview",
 				"usePageVariable": true,
-				"children": [],
-				"parent": "837e-ef33-6032-3f7f",
+				"rowHeight": 70,
 				"itemCount": null,
-				"rowHeight": 70
+				"name": "wordOderSumListview",
+				"children": [],
+				"parent": "837e-ef33-6032-3f7f"
 			}
 		}
 	]

@@ -8,7 +8,7 @@
 				"backgroundColor": "rgba( 255, 255, 255, 0 )"
 			},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "dashboardPg",
 				"children": [
@@ -16,7 +16,7 @@
 					"01e7-cc4b-0e28-5fb5",
 					"7127-7455-414d-8349",
 					"ea7c-2f80-2ef3-f897",
-					"e864-54cd-c269-f829"
+					"55a4-2e3a-1ede-35d2"
 				],
 				"parent": null,
 				"orientation": "PORTRAIT"
@@ -26,10 +26,7 @@
 			"type": "StatusBar",
 			"id": "5a69-43c1-205d-c868",
 			"hiddenComponent": false,
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -53,33 +50,6 @@
 				"children": [],
 				"parent": "def0-4896-0a3f-3243",
 				"isRemovable": false
-			}
-		},
-		{
-			"type": "ListView",
-			"id": "e864-54cd-c269-f829",
-			"hiddenComponent": false,
-			"userProps": {
-				"width": null,
-				"height": null,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"usePageVariable": true,
-				"itemCount": null,
-				"id": 15,
-				"rowHeight": 60,
-				"flexProps": {
-					"flexGrow": 1
-				}
-			},
-			"className": ".listView",
-			"props": {
-				"id": 15,
-				"name": "dashboardListview",
-				"usePageVariable": true,
-				"children": [],
-				"parent": "def0-4896-0a3f-3243",
-				"itemCount": null,
-				"rowHeight": 60
 			}
 		},
 		{
@@ -126,6 +96,30 @@
 				"name": "transparentfl",
 				"children": [],
 				"parent": "def0-4896-0a3f-3243"
+			}
+		},
+		{
+			"type": "ListView",
+			"id": "55a4-2e3a-1ede-35d2",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"width": null,
+				"height": null,
+				"itemCount": null,
+				"rowHeight": 60,
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".listView",
+			"props": {
+				"name": "dashboardListview",
+				"usePageVariable": true,
+				"children": [],
+				"parent": "def0-4896-0a3f-3243",
+				"itemCount": null,
+				"rowHeight": 60
 			}
 		}
 	]

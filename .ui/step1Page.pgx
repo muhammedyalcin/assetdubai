@@ -6,7 +6,7 @@
 			"initialized": true,
 			"userProps": {},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "step1Page",
 				"children": [
@@ -24,10 +24,7 @@
 		{
 			"type": "StatusBar",
 			"id": "b262-036e-af5d-752f",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -45,8 +42,8 @@
 			},
 			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"props": {
-				"name": "headerBar",
 				"title": "Step 1",
+				"name": "headerBar",
 				"children": [],
 				"parent": "8c37-13c3-56f5-1087",
 				"isRemovable": false
@@ -70,15 +67,12 @@
 				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "RELATIVE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout .tabBar-style1 .tabBar-style2",
 			"props": {
-				"name": "tab",
 				"usePageVariable": true,
+				"name": "tab",
 				"children": [],
 				"parent": "8c37-13c3-56f5-1087"
 			}
@@ -108,16 +102,12 @@
 					"alignItems": "STRETCH",
 					"alignSelf": "AUTO",
 					"flexGrow": 1
-				},
-				"flex": {
-					"justifyContent": 3,
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "noteContainer",
 				"usePageVariable": true,
+				"name": "noteContainer",
 				"children": [],
 				"parent": "8c37-13c3-56f5-1087"
 			}
@@ -141,15 +131,12 @@
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "ABSOLUTE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "completefl",
 				"usePageVariable": true,
+				"name": "completefl",
 				"children": [],
 				"parent": "8c37-13c3-56f5-1087"
 			}
@@ -173,15 +160,12 @@
 				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "RELATIVE"
-				},
-				"flex": {
-					"positionType": 0
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "currentProcedureRowfl",
 				"usePageVariable": true,
+				"name": "currentProcedureRowfl",
 				"children": [],
 				"parent": "8c37-13c3-56f5-1087"
 			}

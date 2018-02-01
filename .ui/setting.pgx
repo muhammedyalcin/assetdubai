@@ -6,7 +6,7 @@
 			"initialized": true,
 			"userProps": {},
 			"className": ".page",
-			"version": "6.5.3",
+			"version": "6.6.0",
 			"props": {
 				"name": "setting",
 				"children": [
@@ -21,10 +21,7 @@
 		{
 			"type": "StatusBar",
 			"id": "906f-c87b-52e0-236b",
-			"userProps": {
-				"color": "rgba( 61, 59, 58, 1 )",
-				"style": "LIGHTCONTENT"
-			},
+			"userProps": {},
 			"className": ".statusBar",
 			"props": {
 				"name": "statusBar",
@@ -60,6 +57,7 @@
 				"right": 15,
 				"bottom": 0,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
 				}
@@ -67,11 +65,12 @@
 			"className": ".flexLayout",
 			"props": {
 				"name": "settingsfl",
+				"usePageVariable": true,
 				"children": [
 					"5101-cd54-23d4-39fd",
-					"9d8f-bd56-9079-6b51",
+					"9d2f-b69b-ca8f-1105",
 					"3005-d61d-5795-753a",
-					"9d2f-b69b-ca8f-1105"
+					"9d8f-bd56-9079-6b51"
 				],
 				"parent": "5d7d-207f-f58b-d759"
 			}
@@ -86,22 +85,21 @@
 				"id": "12b2-f367-08fd-1828"
 			},
 			"userProps": {
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
 				"width": null,
 				"height": 70,
 				"left": 0,
 				"right": 0,
 				"top": 0,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"flex": {
-					"positionType": 0
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "RELATIVE"
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
 				"name": "themefl",
+				"usePageVariable": true,
 				"children": [],
 				"parent": "3fc9-dad1-4643-5269"
 			}
@@ -116,6 +114,7 @@
 				"left": 0,
 				"bottom": 0,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
 				}
@@ -123,6 +122,7 @@
 			"className": ".flexLayout",
 			"props": {
 				"name": "signoutfl",
+				"usePageVariable": true,
 				"children": [
 					"2c2a-f941-b8ab-b6af"
 				],
@@ -160,19 +160,20 @@
 			"type": "FlexLayout",
 			"id": "3005-d61d-5795-753a",
 			"userProps": {
-				"bottom": 70,
-				"left": 0,
-				"right": 0,
 				"width": null,
-				"height": 300,
+				"height": null,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true,
+				"marginBottom": 70,
 				"flexProps": {
-					"positionType": "ABSOLUTE"
+					"positionType": "RELATIVE",
+					"flexGrow": 1
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
 				"name": "aboutfl",
+				"usePageVariable": true,
 				"children": [
 					"27d1-ee1a-b442-e07e",
 					"8b70-c95e-8d8f-8051"
@@ -189,6 +190,7 @@
 				"height": 50,
 				"text": "New Version Avaliable!",
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"visible": false,
 				"font": {
 					"family": "Lato"
 				}
@@ -212,11 +214,11 @@
 				"text": "About",
 				"textAlignment": "TOPLEFT",
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"flexProps": {
-					"flexGrow": 1
-				},
 				"font": {
 					"family": "Lato"
+				},
+				"flexProps": {
+					"flexGrow": 1
 				}
 			},
 			"className": ".label",
@@ -238,22 +240,21 @@
 				"id": "0083-7623-e45f-cf22"
 			},
 			"userProps": {
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
 				"width": null,
 				"height": 70,
 				"left": 0,
 				"right": 0,
 				"top": 0,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"flex": {
-					"positionType": 0
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "RELATIVE"
 				}
 			},
 			"className": ".flexLayout",
 			"props": {
 				"name": "notificaitonfl",
+				"usePageVariable": true,
 				"children": [],
 				"parent": "3fc9-dad1-4643-5269"
 			}
