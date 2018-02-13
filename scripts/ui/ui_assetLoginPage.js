@@ -46,14 +46,14 @@ $AssetLoginPage.$$styleContext = {
   classNames: ".page",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 1 )",
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: null,
     flexProps: {
       justifyContent: "SPACE_AROUND",
       alignContent: "STRETCH",
       alignItems: "STRETCH"
-    }
+    },
+    paddingBottom: null,
+    paddingLeft: 20,
+    paddingRight: 20
   },
   statusBar: {
     classNames: ".statusBar",
@@ -84,17 +84,17 @@ function $LoginPageHeader(_super, pageInstance) {
 $LoginPageHeader.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
-    right: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    maxHeight: null,
     flexProps: {
       alignItems: "CENTER",
       justifyContent: "SPACE_BETWEEN",
       flexGrow: 4.5,
       alignSelf: "AUTO"
-    }
+    },
+    height: null,
+    maxHeight: null,
+    right: null,
+    width: null
   }
 };
 const $LoginPageHeader_ = FlexLayout($LoginPageHeader);
@@ -107,15 +107,15 @@ function $LoginPageHeader$$Imagefl(_super, pageInstance) {
 $LoginPageHeader$$Imagefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     flexProps: {
       alignSelf: "STRETCH",
       flexGrow: 2,
       justifyContent: "CENTER",
       alignItems: "CENTER"
-    }
+    },
+    height: null,
+    width: null
   }
 };
 const $LoginPageHeader$$Imagefl_ = FlexLayout($LoginPageHeader$$Imagefl);
@@ -127,9 +127,9 @@ function $LoginPageHeader$$Imagefl$$DubaiImage(_super, pageInstance) {
 $LoginPageHeader$$Imagefl$$DubaiImage.$$styleContext = {
   classNames: ".imageView",
   userProps: {
-    width: 187.50836407696758,
+    borderWidth: null,
     height: 146.31076388888889,
-    borderWidth: null
+    width: 187.50836407696758
   }
 };
 const $LoginPageHeader$$Imagefl$$DubaiImage_ = ImageView($LoginPageHeader$$Imagefl$$DubaiImage);
@@ -142,14 +142,14 @@ function $LoginPageHeader$$Assetfl(_super, pageInstance) {
 $LoginPageHeader$$Assetfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     flexProps: {
       alignSelf: "STRETCH",
       flexGrow: 1,
       justifyContent: "FLEX_START"
-    }
+    },
+    height: null,
+    width: null
   }
 };
 const $LoginPageHeader$$Assetfl_ = FlexLayout($LoginPageHeader$$Assetfl);
@@ -162,18 +162,18 @@ function $LoginPageHeader$$Assetfl$$AstLabel1(_super, pageInstance) {
 $LoginPageHeader$$Assetfl$$AstLabel1.$$styleContext = {
   classNames: ".label",
   userProps: {
-    width: null,
-    height: null,
-    textColor: "rgba( 248, 7, 7, 1 )",
     backgroundColor: "rgba( 255, 255, 255, 0 )",
+    flexProps: {
+      flexGrow: 2
+    },
     font: {
       family: "Lato",
       bold: true,
       size: 30
     },
-    flexProps: {
-      flexGrow: 2
-    }
+    height: null,
+    textColor: "rgba( 248, 7, 7, 1 )",
+    width: null
   }
 };
 const $LoginPageHeader$$Assetfl$$AstLabel1_ = Label($LoginPageHeader$$Assetfl$$AstLabel1);
@@ -186,18 +186,18 @@ function $LoginPageHeader$$Assetfl$$AstLabel2(_super, pageInstance) {
 $LoginPageHeader$$Assetfl$$AstLabel2.$$styleContext = {
   classNames: ".label",
   userProps: {
-    width: null,
-    height: null,
-    textColor: "rgba( 74, 74, 74, 0.8 )",
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    textAlignment: "TOPLEFT",
+    flexProps: {
+      flexGrow: 4
+    },
     font: {
       size: 30,
       family: "Lato"
     },
-    flexProps: {
-      flexGrow: 4
-    }
+    height: null,
+    textAlignment: "TOPLEFT",
+    textColor: "rgba( 74, 74, 74, 0.8 )",
+    width: null
   }
 };
 const $LoginPageHeader$$Assetfl$$AstLabel2_ = Label($LoginPageHeader$$Assetfl$$AstLabel2);
@@ -213,12 +213,12 @@ $UserName.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    width: null,
-    height: 30,
-    maxHeight: null,
     flexProps: {
       flexGrow: 1
-    }
+    },
+    height: 30,
+    maxHeight: null,
+    width: null
   }
 };
 const $UserName_ = FlexLayout($UserName);
@@ -232,17 +232,17 @@ function $UserName$$UserNameLbl(_super, pageInstance) {
 $UserName$$UserNameLbl.$$styleContext = {
   classNames: ".label",
   userProps: {
-    height: 21,
-    width: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    textAlignment: "MIDLEFT",
-    textColor: "rgba( 160, 160, 160, 1 )",
     font: {
       size: 16,
       family: "Nunito",
       bold: false,
       italic: false
-    }
+    },
+    height: 21,
+    textAlignment: "MIDLEFT",
+    textColor: "rgba( 160, 160, 160, 1 )",
+    width: null
   }
 };
 const $UserName$$UserNameLbl_ = Label($UserName$$UserNameLbl);
@@ -256,14 +256,14 @@ function $UserName$$UserTextBox(_super, pageInstance) {
 $UserName$$UserTextBox.$$styleContext = {
   classNames: ".textBox",
   userProps: {
-    width: null,
-    height: 40,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     borderColor: "rgba( 197, 197, 197, 1 )",
-    textColor: "rgba( 63, 63, 63, 1 )",
     font: {
       family: "Nunito"
-    }
+    },
+    height: 40,
+    textColor: "rgba( 63, 63, 63, 1 )",
+    width: null
   }
 };
 const $UserName$$UserTextBox_ = TextBox($UserName$$UserTextBox);
@@ -275,11 +275,11 @@ function $UserName$$UserNameLine(_super, pageInstance) {
 $UserName$$UserNameLine.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    borderWidth: 0,
     backgroundColor: "rgba( 226, 226, 226, 1 )",
+    borderColor: "rgba( 226, 226, 226, 1 )",
+    borderWidth: 0,
     height: 1,
-    width: null,
-    borderColor: "rgba( 226, 226, 226, 1 )"
+    width: null
   }
 };
 const $UserName$$UserNameLine_ = FlexLayout($UserName$$UserNameLine);
@@ -296,14 +296,14 @@ $Password.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    width: null,
-    height: null,
     bottom: null,
-    top: null,
-    maxHeight: null,
     flexProps: {
       flexGrow: 2
-    }
+    },
+    height: null,
+    maxHeight: null,
+    top: null,
+    width: null
   }
 };
 const $Password_ = FlexLayout($Password);
@@ -317,38 +317,38 @@ function $Password$$PasswordLbl(_super, pageInstance) {
 $Password$$PasswordLbl.$$styleContext = {
   classNames: ".label",
   userProps: {
-    height: 21,
-    width: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    textAlignment: "MIDLEFT",
-    textColor: "rgba( 160, 160, 160, 1 )",
     font: {
       size: 16,
       family: "Nunito"
-    }
+    },
+    height: 21,
+    textAlignment: "MIDLEFT",
+    textColor: "rgba( 160, 160, 160, 1 )",
+    width: null
   }
 };
 const $Password$$PasswordLbl_ = Label($Password$$PasswordLbl);
 
 function $Password$$PasswordTextBox(_super, pageInstance) {
   _super(this, {
-    text: "",
-    isPassword: true
+    isPassword: true,
+    text: ""
   });
   pageInstance.passwordTextBox = this;
 }
 $Password$$PasswordTextBox.$$styleContext = {
   classNames: ".textBox",
   userProps: {
-    width: null,
-    height: 40,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     borderColor: "rgba( 197, 197, 197, 1 )",
-    textColor: "rgba( 63, 63, 63, 1 )",
-    top: null,
     font: {
       family: "Nunito"
-    }
+    },
+    height: 40,
+    textColor: "rgba( 63, 63, 63, 1 )",
+    top: null,
+    width: null
   }
 };
 const $Password$$PasswordTextBox_ = TextBox($Password$$PasswordTextBox);
@@ -359,11 +359,11 @@ function $Password$$PasswordLine(_super, pageInstance) {
 $Password$$PasswordLine.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    borderWidth: 0,
     backgroundColor: "rgba( 226, 226, 226, 1 )",
+    borderColor: "rgba( 226, 226, 226, 1 )",
+    borderWidth: 0,
     height: 1,
-    width: null,
-    borderColor: "rgba( 226, 226, 226, 1 )"
+    width: null
   }
 };
 const $Password$$PasswordLine_ = FlexLayout($Password$$PasswordLine);
@@ -376,20 +376,20 @@ function $Password$$ForgotYourPasswordLbl(_super, pageInstance) {
 $Password$$ForgotYourPasswordLbl.$$styleContext = {
   classNames: ".label",
   userProps: {
-    top: -30,
-    width: 120,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    height: 30,
-    textColor: "rgba( 153, 153, 153, 1 )",
-    textAlignment: "TOPLEFT",
-    visible: false,
+    flexProps: {
+      alignSelf: "FLEX_END"
+    },
     font: {
       size: 14,
       family: "Nunito"
     },
-    flexProps: {
-      alignSelf: "FLEX_END"
-    }
+    height: 30,
+    textAlignment: "TOPLEFT",
+    textColor: "rgba( 153, 153, 153, 1 )",
+    top: -30,
+    visible: false,
+    width: 120
   }
 };
 const $Password$$ForgotYourPasswordLbl_ = Label($Password$$ForgotYourPasswordLbl);
@@ -403,15 +403,15 @@ function $Signinbuttonfl(_super, pageInstance) {
 $Signinbuttonfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 208, 2, 27, 1 )",
     flexProps: {
       flexGrow: 1,
       flexDirection: "ROW_REVERSE",
       justifyContent: "FLEX_END",
       alignItems: "CENTER"
-    }
+    },
+    height: null,
+    width: null
   }
 };
 const $Signinbuttonfl_ = FlexLayout($Signinbuttonfl);
@@ -425,20 +425,20 @@ function $Signinbuttonfl$$LoginButton(_super, pageInstance) {
 $Signinbuttonfl$$LoginButton.$$styleContext = {
   classNames: ".button",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    left: 0,
-    top: 0,
-    right: 0,
     bottom: 0,
+    flexProps: {
+      positionType: "ABSOLUTE"
+    },
     font: {
       family: "Lato",
       bold: true
     },
-    flexProps: {
-      positionType: "ABSOLUTE"
-    }
+    height: null,
+    left: 0,
+    right: 0,
+    top: 0,
+    width: null
   }
 };
 const $Signinbuttonfl$$LoginButton_ = Button($Signinbuttonfl$$LoginButton);
@@ -451,11 +451,11 @@ $Signinbuttonfl$$SigninIndicator.$$styleContext = {
   classNames: ".activityIndicator",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    marginLeft: 20,
-    visible: false,
     flexProps: {
       positionType: "RELATIVE"
-    }
+    },
+    marginLeft: 20,
+    visible: false
   }
 };
 const $Signinbuttonfl$$SigninIndicator_ = ActivityIndicator($Signinbuttonfl$$SigninIndicator);
@@ -466,9 +466,9 @@ function $Footer(_super, pageInstance) {
 $Footer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: 355.55555555555554,
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
     height: 70,
-    backgroundColor: "rgba( 255, 255, 255, 0 )"
+    width: 355.55555555555554
   }
 };
 const $Footer_ = FlexLayout($Footer);

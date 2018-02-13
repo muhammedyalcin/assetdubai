@@ -62,16 +62,17 @@ function $BackGroundImg(_super, pageInstance) {
 $BackGroundImg.$$styleContext = {
   classNames: ".imageView",
   userProps: {
-    width: null,
-    height: null,
-    right: 0,
     bottom: 0,
-    top: 0,
-    left: 0,
-    image: "background.png",
     flexProps: {
       positionType: "ABSOLUTE"
-    }
+    },
+    height: null,
+    image: "background.png",
+    imageFillType: "STRETCH",
+    left: 0,
+    right: 0,
+    top: 0,
+    width: null
   }
 };
 const $BackGroundImg_ = ImageView($BackGroundImg);
@@ -82,17 +83,17 @@ function $Transparentfl(_super, pageInstance) {
 $Transparentfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
-    left: 0,
-    top: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: "rgba( 25, 21, 21, 1 )",
     alpha: 0.8,
+    backgroundColor: "rgba( 25, 21, 21, 1 )",
+    bottom: 0,
     flexProps: {
       positionType: "ABSOLUTE"
-    }
+    },
+    height: null,
+    left: 0,
+    right: 0,
+    top: 0,
+    width: null
   }
 };
 const $Transparentfl_ = FlexLayout($Transparentfl);
@@ -111,11 +112,11 @@ $DashboardListview.$$styleContext = {
   classNames: ".listView",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    width: null,
-    height: null,
     flexProps: {
       flexGrow: 1
-    }
+    },
+    height: null,
+    width: null
   }
 };
 const $DashboardListview_ = ListView($DashboardListview);

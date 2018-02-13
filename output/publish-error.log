@@ -1,0 +1,6 @@
+Fri, 09 Feb 2018 12:06:58 GMT  - ERROR  
+Testing Distribution Error
+  └─── : For iOS, only IPA file can be sent to testing distribution.
+ help ?: You should publish with cloud build.
+
+

@@ -62,16 +62,16 @@ function $SumLabelCon(_super, pageInstance) {
 $SumLabelCon.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: 50,
-    left: 0,
-    right: 0,
-    top: 0,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     flexProps: {
       alignSelf: "AUTO",
       alignItems: "STRETCH"
-    }
+    },
+    height: 50,
+    left: 0,
+    right: 0,
+    top: 0,
+    width: null
   }
 };
 const $SumLabelCon_ = FlexLayout($SumLabelCon);
@@ -86,26 +86,26 @@ $SumLabelCon$$SumLabel.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    textAlignment: "MIDLEFT",
-    marginLeft: 15,
-    width: null,
-    height: null,
-    textColor: "rgba( 151, 151, 151, 1 )",
+    flexProps: {
+      flexGrow: 1
+    },
     font: {
       bold: true,
       family: "Lato"
     },
-    flexProps: {
-      flexGrow: 1
-    }
+    height: null,
+    marginLeft: 15,
+    textAlignment: "MIDLEFT",
+    textColor: "rgba( 151, 151, 151, 1 )",
+    width: null
   }
 };
 const $SumLabelCon$$SumLabel_ = Label($SumLabelCon$$SumLabel);
 
 function $WordOderSumListview(_super, pageInstance) {
   _super(this, {
-    rowHeight: 70,
-    itemCount: NaN
+    itemCount: NaN,
+    rowHeight: 70
   });
   this.onRowCreate = function() {
     return new ListViewItem();
@@ -115,16 +115,16 @@ function $WordOderSumListview(_super, pageInstance) {
 $WordOderSumListview.$$styleContext = {
   classNames: ".listView",
   userProps: {
-    width: null,
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    bottom: 5,
+    flexProps: {
+      positionType: "ABSOLUTE"
+    },
     height: null,
     left: 15,
     right: 15,
     top: 50,
-    bottom: 5,
-    backgroundColor: "rgba( 255, 255, 255, 0 )",
-    flexProps: {
-      positionType: "ABSOLUTE"
-    }
+    width: null
   }
 };
 const $WordOderSumListview_ = ListView($WordOderSumListview);

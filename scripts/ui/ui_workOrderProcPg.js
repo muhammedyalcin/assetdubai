@@ -69,16 +69,16 @@ function $ProButton(_super, pageInstance) {
 $ProButton.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: 70,
-    bottom: 0,
-    right: 0,
-    left: 0,
     backgroundColor: "rgba( 255, 255, 255, 1 )",
+    bottom: 0,
     flexProps: {
       flexDirection: "ROW",
       positionType: "ABSOLUTE"
-    }
+    },
+    height: 70,
+    left: 0,
+    right: 0,
+    width: null
   }
 };
 const $ProButton_ = FlexLayout($ProButton);
@@ -92,15 +92,15 @@ function $ProButton$$CancelButton(_super, pageInstance) {
 $ProButton$$CancelButton.$$styleContext = {
   classNames: ".button",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 208, 2, 27, 1 )",
+    flexProps: {
+      flexGrow: 1
+    },
     font: {
       family: "Lato"
     },
-    flexProps: {
-      flexGrow: 1
-    }
+    height: null,
+    width: null
   }
 };
 const $ProButton$$CancelButton_ = Button($ProButton$$CancelButton);
@@ -111,12 +111,12 @@ function $ProButton$$PlaceHolder(_super, pageInstance) {
 $ProButton$$PlaceHolder.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     flexProps: {
       flexGrow: 0
-    }
+    },
+    height: null,
+    width: null
   }
 };
 const $ProButton$$PlaceHolder_ = FlexLayout($ProButton$$PlaceHolder);
@@ -130,15 +130,15 @@ function $ProButton$$StartProButton(_super, pageInstance) {
 $ProButton$$StartProButton.$$styleContext = {
   classNames: ".button",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 2, 132, 51, 1 )",
+    flexProps: {
+      flexGrow: 1
+    },
     font: {
       family: "Lato"
     },
-    flexProps: {
-      flexGrow: 1
-    }
+    height: null,
+    width: null
   }
 };
 const $ProButton$$StartProButton_ = Button($ProButton$$StartProButton);
@@ -150,16 +150,16 @@ function $ContactContainer(_super, pageInstance) {
 $ContactContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: 300,
-    bottom: 100,
-    right: 0,
-    left: 0,
     backgroundColor: "rgba( 255, 255, 255, 1 )",
-    visible: false,
+    bottom: 100,
     flexProps: {
       positionType: "ABSOLUTE"
-    }
+    },
+    height: 300,
+    left: 0,
+    right: 0,
+    visible: false,
+    width: null
   }
 };
 const $ContactContainer_ = ContactContainer($ContactContainer);
@@ -171,16 +171,16 @@ function $MapViewfl(_super, pageInstance) {
 $MapViewfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    bottom: 400,
+    flexProps: {
+      positionType: "ABSOLUTE"
+    },
     height: null,
     left: 0,
     right: 0,
-    bottom: 400,
     top: 0,
-    backgroundColor: "rgba( 255, 255, 255, 0 )",
-    flexProps: {
-      positionType: "ABSOLUTE"
-    }
+    width: null
   }
 };
 const $MapViewfl_ = MapViewfl($MapViewfl);
@@ -192,15 +192,15 @@ function $WorkOrdersSumfl(_super, pageInstance) {
 $WorkOrdersSumfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: 320,
-    bottom: 75,
     backgroundColor: "rgba( 155, 155, 155, 1 )",
-    left: 15,
-    right: 15,
+    bottom: 75,
     flexProps: {
       positionType: "ABSOLUTE"
-    }
+    },
+    height: 320,
+    left: 15,
+    right: 15,
+    width: null
   }
 };
 const $WorkOrdersSumfl_ = WorkOrdersSumfl($WorkOrdersSumfl);

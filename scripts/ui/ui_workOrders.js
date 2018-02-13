@@ -57,9 +57,9 @@ const $WorkOrders_ = Page($WorkOrders);
 
 function $WorkOrderListview(_super, pageInstance) {
   _super(this, {
+    id: 10,
     itemCount: NaN,
-    rowHeight: 70,
-    id: 10
+    rowHeight: 70
   });
   this.onRowCreate = function() {
     return new ListViewItem();
@@ -69,17 +69,17 @@ function $WorkOrderListview(_super, pageInstance) {
 $WorkOrderListview.$$styleContext = {
   classNames: ".listView",
   userProps: {
-    width: null,
+    backgroundColor: "rgba( 255, 255, 255, 1 )",
+    bottom: 10,
+    flexProps: {
+      positionType: "ABSOLUTE"
+    },
     height: null,
     left: 10,
     right: 10,
     top: 10,
-    bottom: 10,
-    backgroundColor: "rgba( 255, 255, 255, 1 )",
     visible: true,
-    flexProps: {
-      positionType: "ABSOLUTE"
-    }
+    width: null
   }
 };
 const $WorkOrderListview_ = ListView($WorkOrderListview);
@@ -91,17 +91,17 @@ function $MapViewfl(_super, pageInstance) {
 $MapViewfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    bottom: 0,
+    flexProps: {
+      positionType: "ABSOLUTE"
+    },
     height: null,
     left: 0,
     right: 0,
-    bottom: 0,
     top: 0,
-    backgroundColor: "rgba( 255, 255, 255, 0 )",
     visible: true,
-    flexProps: {
-      positionType: "ABSOLUTE"
-    }
+    width: null
   }
 };
 const $MapViewfl_ = MapViewfl($MapViewfl);

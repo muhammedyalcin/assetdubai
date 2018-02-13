@@ -52,8 +52,8 @@ const $AssetPg_ = Page($AssetPg);
 
 function $AssetListview(_super, pageInstance) {
   _super(this, {
-    rowHeight: 70,
-    itemCount: NaN
+    itemCount: NaN,
+    rowHeight: 70
   });
   this.onRowCreate = function() {
     return new ListViewItem();
@@ -63,16 +63,16 @@ function $AssetListview(_super, pageInstance) {
 $AssetListview.$$styleContext = {
   classNames: ".listView",
   userProps: {
-    width: null,
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    bottom: 15,
+    flexProps: {
+      positionType: "ABSOLUTE"
+    },
     height: null,
     left: 15,
     right: 15,
-    bottom: 15,
     top: 15,
-    backgroundColor: "rgba( 255, 255, 255, 0 )",
-    flexProps: {
-      positionType: "ABSOLUTE"
-    }
+    width: null
   }
 };
 const $AssetListview_ = ListView($AssetListview);

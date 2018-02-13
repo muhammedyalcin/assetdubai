@@ -95,7 +95,6 @@ function initListview(dashData) {
   dashboardListview.itemCount = dashboardData.length;
   dashboardListview.refreshData();
   dashboardListview.stopRefresh();
-  console.log("satir96")
 }
 
 module && (module.exports = DashboardPg);

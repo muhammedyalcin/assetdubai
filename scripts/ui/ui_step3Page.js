@@ -64,14 +64,14 @@ function $Tab(_super, pageInstance) {
 $Tab.$$styleContext = {
   classNames: ".flexLayout .tabBar-style1 .tabBar-style2",
   userProps: {
-    width: null,
+    flexProps: {
+      positionType: "RELATIVE"
+    },
     height: 60,
     left: 0,
     right: 0,
     top: 0,
-    flexProps: {
-      positionType: "RELATIVE"
-    }
+    width: null
   }
 };
 const $Tab_ = Tab($Tab);
@@ -83,13 +83,8 @@ function $NoteContainer(_super, pageInstance) {
 $NoteContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
-    borderColor: "rgba( 255, 255, 255, 0 )",
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    left: 20,
-    right: 20,
-    top: 70,
+    borderColor: "rgba( 255, 255, 255, 0 )",
     bottom: 100,
     flexProps: {
       justifyContent: "CENTER",
@@ -97,7 +92,12 @@ $NoteContainer.$$styleContext = {
       alignItems: "STRETCH",
       alignSelf: "AUTO",
       flexGrow: 1
-    }
+    },
+    height: null,
+    left: 20,
+    right: 20,
+    top: 70,
+    width: null
   }
 };
 const $NoteContainer_ = NoteContainer($NoteContainer);
@@ -109,15 +109,15 @@ function $Completefl(_super, pageInstance) {
 $Completefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: 70,
-    left: 0,
-    right: 0,
     bottom: 0,
     flexProps: {
       alignSelf: "AUTO",
       positionType: "ABSOLUTE"
-    }
+    },
+    height: 70,
+    left: 0,
+    right: 0,
+    width: null
   }
 };
 const $Completefl_ = Completefl($Completefl);
@@ -130,18 +130,18 @@ function $Indicayorfl(_super, pageInstance) {
 $Indicayorfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: 150,
-    height: 100,
-    left: 110,
-    top: 200,
     borderRadius: 32,
-    visible: false,
     flexProps: {
       positionType: "ABSOLUTE",
       alignItems: "CENTER",
       alignSelf: "CENTER",
       justifyContent: "CENTER"
-    }
+    },
+    height: 100,
+    left: 110,
+    top: 200,
+    visible: false,
+    width: 150
   }
 };
 const $Indicayorfl_ = FlexLayout($Indicayorfl);

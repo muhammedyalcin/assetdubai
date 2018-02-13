@@ -15,6 +15,7 @@
 	<!-- Required for GPS Usage. -->
 	 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> 
 	 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> 
+	 <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 	<!-- Required for vibrate function. -->
 	<!-- <uses-permission android:name="android.permission.VIBRATE" /> -->
 	<!-- Required for contact list functions. -->

@@ -71,18 +71,18 @@ function $ProcedureScroll(_super, pageInstance) {
 $ProcedureScroll.$$styleContext = {
   classNames: ".scrollView",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 255, 255, 255, 1 )",
-    visible: false,
-    top: 80,
     bottom: 70,
-    left: 0,
-    right: 0,
     flexProps: {
       flexDirection: "COLUMN",
       positionType: "ABSOLUTE"
-    }
+    },
+    height: null,
+    left: 0,
+    right: 0,
+    top: 80,
+    visible: false,
+    width: null
   }
 };
 const $ProcedureScroll_ = ScrollView($ProcedureScroll);
@@ -95,19 +95,19 @@ function $Indicatorfl(_super, pageInstance) {
 $Indicatorfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
-    bottom: 70,
-    top: 70,
-    left: 0,
-    right: 0,
     backgroundColor: "rgba( 255, 255, 255, 1 )",
+    bottom: 70,
     flexProps: {
       positionType: "ABSOLUTE",
       flexGrow: 1,
       alignItems: "CENTER",
       justifyContent: "CENTER"
-    }
+    },
+    height: null,
+    left: 0,
+    right: 0,
+    top: 70,
+    width: null
   }
 };
 const $Indicatorfl_ = FlexLayout($Indicatorfl);
@@ -131,16 +131,16 @@ function $WorkIDfl1(_super, pageInstance) {
 $WorkIDfl1.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: 70,
     backgroundColor: "rgba( 216, 216, 216, 1 )",
-    visible: true,
-    left: 0,
-    top: 0,
-    right: 0,
     flexProps: {
       positionType: "ABSOLUTE"
-    }
+    },
+    height: 70,
+    left: 0,
+    right: 0,
+    top: 0,
+    visible: true,
+    width: null
   }
 };
 const $WorkIDfl1_ = FlexLayout($WorkIDfl1);
@@ -154,18 +154,18 @@ function $WorkIDfl1$$Workid1(_super, pageInstance) {
 $WorkIDfl1$$Workid1.$$styleContext = {
   classNames: ".label",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    marginLeft: 30,
-    textColor: "rgba( 74, 74, 74, 1 )",
-    textAlignment: "MIDLEFT",
+    flexProps: {
+      flexGrow: 1
+    },
     font: {
       family: "Lato"
     },
-    flexProps: {
-      flexGrow: 1
-    }
+    height: null,
+    marginLeft: 30,
+    textAlignment: "MIDLEFT",
+    textColor: "rgba( 74, 74, 74, 1 )",
+    width: null
   }
 };
 const $WorkIDfl1$$Workid1_ = Label($WorkIDfl1$$Workid1);
@@ -179,19 +179,19 @@ function $WorkIDfl1$$Workid2(_super, pageInstance) {
 $WorkIDfl1$$Workid2.$$styleContext = {
   classNames: ".label",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    marginLeft: 30,
-    textColor: "rgba( 74, 74, 74, 1 )",
-    textAlignment: "TOPLEFT",
+    flexProps: {
+      flexGrow: 0.7
+    },
     font: {
       family: "Lato",
       size: 14
     },
-    flexProps: {
-      flexGrow: 0.7
-    }
+    height: null,
+    marginLeft: 30,
+    textAlignment: "TOPLEFT",
+    textColor: "rgba( 74, 74, 74, 1 )",
+    width: null
   }
 };
 const $WorkIDfl1$$Workid2_ = Label($WorkIDfl1$$Workid2);
@@ -206,15 +206,15 @@ $Buttonfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 74, 144, 226, 1 )",
-    width: null,
-    height: 70,
-    left: 0,
-    right: 0,
     bottom: 0,
     flexProps: {
       positionType: "ABSOLUTE",
       flexDirection: "ROW"
-    }
+    },
+    height: 70,
+    left: 0,
+    right: 0,
+    width: null
   }
 };
 const $Buttonfl_ = FlexLayout($Buttonfl);
@@ -228,12 +228,12 @@ function $Buttonfl$$CancelButton(_super, pageInstance) {
 $Buttonfl$$CancelButton.$$styleContext = {
   classNames: ".button",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 208, 2, 27, 1 )",
     flexProps: {
       flexGrow: 1
-    }
+    },
+    height: null,
+    width: null
   }
 };
 const $Buttonfl$$CancelButton_ = Button($Buttonfl$$CancelButton);
@@ -247,12 +247,12 @@ function $Buttonfl$$StartButton(_super, pageInstance) {
 $Buttonfl$$StartButton.$$styleContext = {
   classNames: ".button",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 2, 132, 51, 1 )",
     flexProps: {
       flexGrow: 1
-    }
+    },
+    height: null,
+    width: null
   }
 };
 const $Buttonfl$$StartButton_ = Button($Buttonfl$$StartButton);

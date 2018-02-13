@@ -61,15 +61,15 @@ function $ContactContainer(_super, pageInstance) {
 $ContactContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: 400,
-    bottom: 0,
-    right: 0,
-    left: 0,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
+    bottom: 0,
     flexProps: {
       positionType: "ABSOLUTE"
-    }
+    },
+    height: 400,
+    left: 0,
+    right: 0,
+    width: null
   }
 };
 const $ContactContainer_ = ContactContainer($ContactContainer);
@@ -81,16 +81,16 @@ function $MapViewfl(_super, pageInstance) {
 $MapViewfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    bottom: 400,
+    flexProps: {
+      positionType: "ABSOLUTE"
+    },
     height: null,
     left: 0,
     right: 0,
-    bottom: 400,
     top: 0,
-    backgroundColor: "rgba( 255, 255, 255, 0 )",
-    flexProps: {
-      positionType: "ABSOLUTE"
-    }
+    width: null
   }
 };
 const $MapViewfl_ = MapViewfl($MapViewfl);

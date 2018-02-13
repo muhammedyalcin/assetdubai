@@ -64,16 +64,16 @@ function $Settingsfl(_super, pageInstance) {
 $Settingsfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
-    left: 15,
-    top: 10,
-    right: 15,
-    bottom: 0,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
+    bottom: 0,
     flexProps: {
       positionType: "ABSOLUTE"
-    }
+    },
+    height: null,
+    left: 15,
+    right: 15,
+    top: 10,
+    width: null
   }
 };
 const $Settingsfl_ = FlexLayout($Settingsfl);
@@ -85,15 +85,15 @@ function $Settingsfl$$Themefl(_super, pageInstance) {
 $Settingsfl$$Themefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    flexProps: {
+      positionType: "RELATIVE"
+    },
     height: 70,
     left: 0,
     right: 0,
     top: 0,
-    backgroundColor: "rgba( 255, 255, 255, 0 )",
-    flexProps: {
-      positionType: "RELATIVE"
-    }
+    width: null
   }
 };
 const $Settingsfl$$Themefl_ = Themefl($Settingsfl$$Themefl);
@@ -105,15 +105,15 @@ function $Settingsfl$$Notificaitonfl(_super, pageInstance) {
 $Settingsfl$$Notificaitonfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    flexProps: {
+      positionType: "RELATIVE"
+    },
     height: 70,
     left: 0,
     right: 0,
     top: 0,
-    backgroundColor: "rgba( 255, 255, 255, 0 )",
-    flexProps: {
-      positionType: "RELATIVE"
-    }
+    width: null
   }
 };
 const $Settingsfl$$Notificaitonfl_ = Notificaitonfl($Settingsfl$$Notificaitonfl);
@@ -127,14 +127,14 @@ function $Settingsfl$$Aboutfl(_super, pageInstance) {
 $Settingsfl$$Aboutfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: null,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    marginBottom: 70,
     flexProps: {
       positionType: "RELATIVE",
       flexGrow: 1
-    }
+    },
+    height: null,
+    marginBottom: 70,
+    width: null
   }
 };
 const $Settingsfl$$Aboutfl_ = FlexLayout($Settingsfl$$Aboutfl);
@@ -148,13 +148,13 @@ function $Settingsfl$$Aboutfl$$VersionLabel(_super, pageInstance) {
 $Settingsfl$$Aboutfl$$VersionLabel.$$styleContext = {
   classNames: ".label",
   userProps: {
-    width: null,
-    height: 50,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
-    visible: false,
     font: {
       family: "Lato"
-    }
+    },
+    height: 50,
+    visible: false,
+    width: null
   }
 };
 const $Settingsfl$$Aboutfl$$VersionLabel_ = Label($Settingsfl$$Aboutfl$$VersionLabel);
@@ -168,16 +168,16 @@ function $Settingsfl$$Aboutfl$$AboutLabel(_super, pageInstance) {
 $Settingsfl$$Aboutfl$$AboutLabel.$$styleContext = {
   classNames: ".label",
   userProps: {
-    width: null,
-    height: null,
-    textAlignment: "TOPLEFT",
     backgroundColor: "rgba( 255, 255, 255, 0 )",
+    flexProps: {
+      flexGrow: 1
+    },
     font: {
       family: "Lato"
     },
-    flexProps: {
-      flexGrow: 1
-    }
+    height: null,
+    textAlignment: "TOPLEFT",
+    width: null
   }
 };
 const $Settingsfl$$Aboutfl$$AboutLabel_ = Label($Settingsfl$$Aboutfl$$AboutLabel);
@@ -190,15 +190,15 @@ function $Settingsfl$$Signoutfl(_super, pageInstance) {
 $Settingsfl$$Signoutfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: null,
-    height: 70,
-    right: 0,
-    left: 0,
-    bottom: 0,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
+    bottom: 0,
     flexProps: {
       positionType: "ABSOLUTE"
-    }
+    },
+    height: 70,
+    left: 0,
+    right: 0,
+    width: null
   }
 };
 const $Settingsfl$$Signoutfl_ = FlexLayout($Settingsfl$$Signoutfl);
@@ -212,17 +212,17 @@ function $Settingsfl$$Signoutfl$$SignoutLabel(_super, pageInstance) {
 $Settingsfl$$Signoutfl$$SignoutLabel.$$styleContext = {
   classNames: ".label",
   userProps: {
-    textAlignment: "MIDCENTER",
-    width: null,
-    height: null,
-    textColor: "rgba( 208, 2, 27, 1 )",
     backgroundColor: "rgba( 255, 255, 255, 0 )",
+    flexProps: {
+      flexGrow: 1
+    },
     font: {
       family: "Lato"
     },
-    flexProps: {
-      flexGrow: 1
-    }
+    height: null,
+    textAlignment: "MIDCENTER",
+    textColor: "rgba( 208, 2, 27, 1 )",
+    width: null
   }
 };
 const $Settingsfl$$Signoutfl$$SignoutLabel_ = Label($Settingsfl$$Signoutfl$$SignoutLabel);
