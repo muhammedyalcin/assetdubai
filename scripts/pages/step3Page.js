@@ -76,7 +76,8 @@ function onLoad(superOnLoad) {
     textAlignment: TexAlignment.MIDLEFT
   });
   this.noteContainer.actionfl.addChild(uploadLabel);
-
+  
+  this.noteContainer.emptyfl.alignItems = FlexLayout.AlignItems.CENTER;
   var uploadfl = new UploadDrawfl();
   this.noteContainer.emptyfl.addChild(uploadfl, "uploadflStep3Page");
 

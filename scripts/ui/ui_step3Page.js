@@ -43,7 +43,11 @@ function $Step3Page(_super, props) {
 }
 $Step3Page.$$styleContext = {
   classNames: ".page",
-  userProps: {},
+  userProps: {
+    flexProps: {
+      justifyContent: "CENTER"
+    }
+  },
   statusBar: {
     classNames: ".statusBar",
     userProps: {}
@@ -65,7 +69,8 @@ $Tab.$$styleContext = {
   classNames: ".flexLayout .tabBar-style1 .tabBar-style2",
   userProps: {
     flexProps: {
-      positionType: "RELATIVE"
+      positionType: "ABSOLUTE",
+      alignSelf: "AUTO"
     },
     height: 60,
     left: 0,
@@ -132,14 +137,12 @@ $Indicayorfl.$$styleContext = {
   userProps: {
     borderRadius: 32,
     flexProps: {
-      positionType: "ABSOLUTE",
+      positionType: "RELATIVE",
       alignItems: "CENTER",
       alignSelf: "CENTER",
       justifyContent: "CENTER"
     },
     height: 100,
-    left: 110,
-    top: 200,
     visible: false,
     width: 150
   }
