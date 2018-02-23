@@ -35,10 +35,7 @@ function $AssetLoginPage(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "loginPageHeader", $LoginPageHeader_, this);
-  addChild.call(this, "userName", $UserName_, this);
-  addChild.call(this, "password", $Password_, this);
-  addChild.call(this, "signinbuttonfl", $Signinbuttonfl_, this);
+  addChild.call(this, "loginfl", $Loginfl_, this);
   addChild.call(this, "footer", $Footer_, this);
   pageContextPatch(this, "assetLoginPage");
 }
@@ -50,10 +47,7 @@ $AssetLoginPage.$$styleContext = {
       justifyContent: "SPACE_AROUND",
       alignContent: "STRETCH",
       alignItems: "STRETCH"
-    },
-    paddingBottom: null,
-    paddingLeft: 20,
-    paddingRight: 20
+    }
   },
   statusBar: {
     classNames: ".statusBar",
@@ -75,13 +69,35 @@ $AssetLoginPage.$$styleContext = {
 };
 const $AssetLoginPage_ = Page($AssetLoginPage);
 
-function $LoginPageHeader(_super, pageInstance) {
+function $Loginfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "imagefl", $LoginPageHeader$$Imagefl_, pageInstance);
-  addChild.call(this, "assetfl", $LoginPageHeader$$Assetfl_, pageInstance);
+  addChild.call(this, "loginPageHeader", $Loginfl$$LoginPageHeader_, pageInstance);
+  addChild.call(this, "userName", $Loginfl$$UserName_, pageInstance);
+  addChild.call(this, "password", $Loginfl$$Password_, pageInstance);
+  addChild.call(this, "signinbuttonfl", $Loginfl$$Signinbuttonfl_, pageInstance);
+}
+$Loginfl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1,
+      alignContent: "CENTER"
+    },
+    height: null,
+    marginLeft: 20,
+    marginRight: 20,
+    width: null
+  }
+};
+const $Loginfl_ = FlexLayout($Loginfl);
+
+function $Loginfl$$LoginPageHeader(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "imagefl", $Loginfl$$LoginPageHeader$$Imagefl_, pageInstance);
+  addChild.call(this, "assetfl", $Loginfl$$LoginPageHeader$$Assetfl_, pageInstance);
   pageInstance.loginPageHeader = this;
 }
-$LoginPageHeader.$$styleContext = {
+$Loginfl$$LoginPageHeader.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -92,19 +108,21 @@ $LoginPageHeader.$$styleContext = {
       alignSelf: "AUTO"
     },
     height: null,
+    left: 0,
     maxHeight: null,
     right: null,
+    top: 0,
     width: null
   }
 };
-const $LoginPageHeader_ = FlexLayout($LoginPageHeader);
+const $Loginfl$$LoginPageHeader_ = FlexLayout($Loginfl$$LoginPageHeader);
 
-function $LoginPageHeader$$Imagefl(_super, pageInstance) {
+function $Loginfl$$LoginPageHeader$$Imagefl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "dubaiImage", $LoginPageHeader$$Imagefl$$DubaiImage_, pageInstance);
+  addChild.call(this, "dubaiImage", $Loginfl$$LoginPageHeader$$Imagefl$$DubaiImage_, pageInstance);
   pageInstance.imagefl = this;
 }
-$LoginPageHeader$$Imagefl.$$styleContext = {
+$Loginfl$$LoginPageHeader$$Imagefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -118,13 +136,13 @@ $LoginPageHeader$$Imagefl.$$styleContext = {
     width: null
   }
 };
-const $LoginPageHeader$$Imagefl_ = FlexLayout($LoginPageHeader$$Imagefl);
+const $Loginfl$$LoginPageHeader$$Imagefl_ = FlexLayout($Loginfl$$LoginPageHeader$$Imagefl);
 
-function $LoginPageHeader$$Imagefl$$DubaiImage(_super, pageInstance) {
+function $Loginfl$$LoginPageHeader$$Imagefl$$DubaiImage(_super, pageInstance) {
   _super(this);
   pageInstance.dubaiImage = this;
 }
-$LoginPageHeader$$Imagefl$$DubaiImage.$$styleContext = {
+$Loginfl$$LoginPageHeader$$Imagefl$$DubaiImage.$$styleContext = {
   classNames: ".imageView",
   userProps: {
     borderWidth: null,
@@ -132,14 +150,14 @@ $LoginPageHeader$$Imagefl$$DubaiImage.$$styleContext = {
     width: 187.50836407696758
   }
 };
-const $LoginPageHeader$$Imagefl$$DubaiImage_ = ImageView($LoginPageHeader$$Imagefl$$DubaiImage);
+const $Loginfl$$LoginPageHeader$$Imagefl$$DubaiImage_ = ImageView($Loginfl$$LoginPageHeader$$Imagefl$$DubaiImage);
 
-function $LoginPageHeader$$Assetfl(_super, pageInstance) {
+function $Loginfl$$LoginPageHeader$$Assetfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "astLabel1", $LoginPageHeader$$Assetfl$$AstLabel1_, pageInstance);
-  addChild.call(this, "astLabel2", $LoginPageHeader$$Assetfl$$AstLabel2_, pageInstance);
+  addChild.call(this, "astLabel1", $Loginfl$$LoginPageHeader$$Assetfl$$AstLabel1_, pageInstance);
+  addChild.call(this, "astLabel2", $Loginfl$$LoginPageHeader$$Assetfl$$AstLabel2_, pageInstance);
 }
-$LoginPageHeader$$Assetfl.$$styleContext = {
+$Loginfl$$LoginPageHeader$$Assetfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -152,14 +170,14 @@ $LoginPageHeader$$Assetfl.$$styleContext = {
     width: null
   }
 };
-const $LoginPageHeader$$Assetfl_ = FlexLayout($LoginPageHeader$$Assetfl);
+const $Loginfl$$LoginPageHeader$$Assetfl_ = FlexLayout($Loginfl$$LoginPageHeader$$Assetfl);
 
-function $LoginPageHeader$$Assetfl$$AstLabel1(_super, pageInstance) {
+function $Loginfl$$LoginPageHeader$$Assetfl$$AstLabel1(_super, pageInstance) {
   _super(this, {
     text: "Asset"
   });
 }
-$LoginPageHeader$$Assetfl$$AstLabel1.$$styleContext = {
+$Loginfl$$LoginPageHeader$$Assetfl$$AstLabel1.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -176,14 +194,14 @@ $LoginPageHeader$$Assetfl$$AstLabel1.$$styleContext = {
     width: null
   }
 };
-const $LoginPageHeader$$Assetfl$$AstLabel1_ = Label($LoginPageHeader$$Assetfl$$AstLabel1);
+const $Loginfl$$LoginPageHeader$$Assetfl$$AstLabel1_ = Label($Loginfl$$LoginPageHeader$$Assetfl$$AstLabel1);
 
-function $LoginPageHeader$$Assetfl$$AstLabel2(_super, pageInstance) {
+function $Loginfl$$LoginPageHeader$$Assetfl$$AstLabel2(_super, pageInstance) {
   _super(this, {
     text: "Management"
   });
 }
-$LoginPageHeader$$Assetfl$$AstLabel2.$$styleContext = {
+$Loginfl$$LoginPageHeader$$Assetfl$$AstLabel2.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -200,16 +218,16 @@ $LoginPageHeader$$Assetfl$$AstLabel2.$$styleContext = {
     width: null
   }
 };
-const $LoginPageHeader$$Assetfl$$AstLabel2_ = Label($LoginPageHeader$$Assetfl$$AstLabel2);
+const $Loginfl$$LoginPageHeader$$Assetfl$$AstLabel2_ = Label($Loginfl$$LoginPageHeader$$Assetfl$$AstLabel2);
 
-function $UserName(_super, pageInstance) {
+function $Loginfl$$UserName(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "userNameLbl", $UserName$$UserNameLbl_, pageInstance);
-  addChild.call(this, "userTextBox", $UserName$$UserTextBox_, pageInstance);
-  addChild.call(this, "userNameLine", $UserName$$UserNameLine_, pageInstance);
+  addChild.call(this, "userNameLbl", $Loginfl$$UserName$$UserNameLbl_, pageInstance);
+  addChild.call(this, "userTextBox", $Loginfl$$UserName$$UserTextBox_, pageInstance);
+  addChild.call(this, "userNameLine", $Loginfl$$UserName$$UserNameLine_, pageInstance);
   pageInstance.userName = this;
 }
-$UserName.$$styleContext = {
+$Loginfl$$UserName.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -217,19 +235,21 @@ $UserName.$$styleContext = {
       flexGrow: 1
     },
     height: 30,
+    left: 0,
     maxHeight: null,
+    top: 0,
     width: null
   }
 };
-const $UserName_ = FlexLayout($UserName);
+const $Loginfl$$UserName_ = FlexLayout($Loginfl$$UserName);
 
-function $UserName$$UserNameLbl(_super, pageInstance) {
+function $Loginfl$$UserName$$UserNameLbl(_super, pageInstance) {
   _super(this, {
     text: "USERNAME"
   });
   pageInstance.userNameLbl = this;
 }
-$UserName$$UserNameLbl.$$styleContext = {
+$Loginfl$$UserName$$UserNameLbl.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -245,15 +265,15 @@ $UserName$$UserNameLbl.$$styleContext = {
     width: null
   }
 };
-const $UserName$$UserNameLbl_ = Label($UserName$$UserNameLbl);
+const $Loginfl$$UserName$$UserNameLbl_ = Label($Loginfl$$UserName$$UserNameLbl);
 
-function $UserName$$UserTextBox(_super, pageInstance) {
+function $Loginfl$$UserName$$UserTextBox(_super, pageInstance) {
   _super(this, {
     text: ""
   });
   pageInstance.userTextBox = this;
 }
-$UserName$$UserTextBox.$$styleContext = {
+$Loginfl$$UserName$$UserTextBox.$$styleContext = {
   classNames: ".textBox",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -266,13 +286,13 @@ $UserName$$UserTextBox.$$styleContext = {
     width: null
   }
 };
-const $UserName$$UserTextBox_ = TextBox($UserName$$UserTextBox);
+const $Loginfl$$UserName$$UserTextBox_ = TextBox($Loginfl$$UserName$$UserTextBox);
 
-function $UserName$$UserNameLine(_super, pageInstance) {
+function $Loginfl$$UserName$$UserNameLine(_super, pageInstance) {
   _super(this);
   pageInstance.userNameLine = this;
 }
-$UserName$$UserNameLine.$$styleContext = {
+$Loginfl$$UserName$$UserNameLine.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 226, 226, 226, 1 )",
@@ -282,17 +302,17 @@ $UserName$$UserNameLine.$$styleContext = {
     width: null
   }
 };
-const $UserName$$UserNameLine_ = FlexLayout($UserName$$UserNameLine);
+const $Loginfl$$UserName$$UserNameLine_ = FlexLayout($Loginfl$$UserName$$UserNameLine);
 
-function $Password(_super, pageInstance) {
+function $Loginfl$$Password(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "passwordLbl", $Password$$PasswordLbl_, pageInstance);
-  addChild.call(this, "passwordTextBox", $Password$$PasswordTextBox_, pageInstance);
-  addChild.call(this, "passwordLine", $Password$$PasswordLine_, pageInstance);
-  addChild.call(this, "forgotYourPasswordLbl", $Password$$ForgotYourPasswordLbl_, pageInstance);
+  addChild.call(this, "passwordLbl", $Loginfl$$Password$$PasswordLbl_, pageInstance);
+  addChild.call(this, "passwordTextBox", $Loginfl$$Password$$PasswordTextBox_, pageInstance);
+  addChild.call(this, "passwordLine", $Loginfl$$Password$$PasswordLine_, pageInstance);
+  addChild.call(this, "forgotYourPasswordLbl", $Loginfl$$Password$$ForgotYourPasswordLbl_, pageInstance);
   pageInstance.password = this;
 }
-$Password.$$styleContext = {
+$Loginfl$$Password.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -301,20 +321,21 @@ $Password.$$styleContext = {
       flexGrow: 2
     },
     height: null,
+    left: 0,
     maxHeight: null,
-    top: null,
+    top: 0,
     width: null
   }
 };
-const $Password_ = FlexLayout($Password);
+const $Loginfl$$Password_ = FlexLayout($Loginfl$$Password);
 
-function $Password$$PasswordLbl(_super, pageInstance) {
+function $Loginfl$$Password$$PasswordLbl(_super, pageInstance) {
   _super(this, {
     text: "PASSWORD"
   });
   pageInstance.passwordLbl = this;
 }
-$Password$$PasswordLbl.$$styleContext = {
+$Loginfl$$Password$$PasswordLbl.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -328,16 +349,16 @@ $Password$$PasswordLbl.$$styleContext = {
     width: null
   }
 };
-const $Password$$PasswordLbl_ = Label($Password$$PasswordLbl);
+const $Loginfl$$Password$$PasswordLbl_ = Label($Loginfl$$Password$$PasswordLbl);
 
-function $Password$$PasswordTextBox(_super, pageInstance) {
+function $Loginfl$$Password$$PasswordTextBox(_super, pageInstance) {
   _super(this, {
     isPassword: true,
     text: ""
   });
   pageInstance.passwordTextBox = this;
 }
-$Password$$PasswordTextBox.$$styleContext = {
+$Loginfl$$Password$$PasswordTextBox.$$styleContext = {
   classNames: ".textBox",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -351,12 +372,12 @@ $Password$$PasswordTextBox.$$styleContext = {
     width: null
   }
 };
-const $Password$$PasswordTextBox_ = TextBox($Password$$PasswordTextBox);
+const $Loginfl$$Password$$PasswordTextBox_ = TextBox($Loginfl$$Password$$PasswordTextBox);
 
-function $Password$$PasswordLine(_super, pageInstance) {
+function $Loginfl$$Password$$PasswordLine(_super, pageInstance) {
   _super(this);
 }
-$Password$$PasswordLine.$$styleContext = {
+$Loginfl$$Password$$PasswordLine.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 226, 226, 226, 1 )",
@@ -366,14 +387,14 @@ $Password$$PasswordLine.$$styleContext = {
     width: null
   }
 };
-const $Password$$PasswordLine_ = FlexLayout($Password$$PasswordLine);
+const $Loginfl$$Password$$PasswordLine_ = FlexLayout($Loginfl$$Password$$PasswordLine);
 
-function $Password$$ForgotYourPasswordLbl(_super, pageInstance) {
+function $Loginfl$$Password$$ForgotYourPasswordLbl(_super, pageInstance) {
   _super(this, {
     text: "Forgot Password"
   });
 }
-$Password$$ForgotYourPasswordLbl.$$styleContext = {
+$Loginfl$$Password$$ForgotYourPasswordLbl.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -392,15 +413,15 @@ $Password$$ForgotYourPasswordLbl.$$styleContext = {
     width: 120
   }
 };
-const $Password$$ForgotYourPasswordLbl_ = Label($Password$$ForgotYourPasswordLbl);
+const $Loginfl$$Password$$ForgotYourPasswordLbl_ = Label($Loginfl$$Password$$ForgotYourPasswordLbl);
 
-function $Signinbuttonfl(_super, pageInstance) {
+function $Loginfl$$Signinbuttonfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "loginButton", $Signinbuttonfl$$LoginButton_, pageInstance);
-  addChild.call(this, "signinIndicator", $Signinbuttonfl$$SigninIndicator_, pageInstance);
+  addChild.call(this, "loginButton", $Loginfl$$Signinbuttonfl$$LoginButton_, pageInstance);
+  addChild.call(this, "signinIndicator", $Loginfl$$Signinbuttonfl$$SigninIndicator_, pageInstance);
   pageInstance.signinbuttonfl = this;
 }
-$Signinbuttonfl.$$styleContext = {
+$Loginfl$$Signinbuttonfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 208, 2, 27, 1 )",
@@ -411,18 +432,20 @@ $Signinbuttonfl.$$styleContext = {
       alignItems: "CENTER"
     },
     height: null,
+    left: 0,
+    top: 0,
     width: null
   }
 };
-const $Signinbuttonfl_ = FlexLayout($Signinbuttonfl);
+const $Loginfl$$Signinbuttonfl_ = FlexLayout($Loginfl$$Signinbuttonfl);
 
-function $Signinbuttonfl$$LoginButton(_super, pageInstance) {
+function $Loginfl$$Signinbuttonfl$$LoginButton(_super, pageInstance) {
   _super(this, {
     text: "Sign In"
   });
   pageInstance.loginButton = this;
 }
-$Signinbuttonfl$$LoginButton.$$styleContext = {
+$Loginfl$$Signinbuttonfl$$LoginButton.$$styleContext = {
   classNames: ".button",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -441,13 +464,13 @@ $Signinbuttonfl$$LoginButton.$$styleContext = {
     width: null
   }
 };
-const $Signinbuttonfl$$LoginButton_ = Button($Signinbuttonfl$$LoginButton);
+const $Loginfl$$Signinbuttonfl$$LoginButton_ = Button($Loginfl$$Signinbuttonfl$$LoginButton);
 
-function $Signinbuttonfl$$SigninIndicator(_super, pageInstance) {
+function $Loginfl$$Signinbuttonfl$$SigninIndicator(_super, pageInstance) {
   _super(this);
   pageInstance.signinIndicator = this;
 }
-$Signinbuttonfl$$SigninIndicator.$$styleContext = {
+$Loginfl$$Signinbuttonfl$$SigninIndicator.$$styleContext = {
   classNames: ".activityIndicator",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -458,7 +481,7 @@ $Signinbuttonfl$$SigninIndicator.$$styleContext = {
     visible: false
   }
 };
-const $Signinbuttonfl$$SigninIndicator_ = ActivityIndicator($Signinbuttonfl$$SigninIndicator);
+const $Loginfl$$Signinbuttonfl$$SigninIndicator_ = ActivityIndicator($Loginfl$$Signinbuttonfl$$SigninIndicator);
 
 function $Footer(_super, pageInstance) {
   _super(this);

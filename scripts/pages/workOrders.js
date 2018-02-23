@@ -37,7 +37,8 @@ var currentUser;
 // overrides super.onLoad method
 function onLoad(pageonLoad) {
   pageonLoad && pageonLoad();
-
+  
+  this.ios.safeAreaLayoutMode = true;
   currentUser = User.currentUser;
   //sets pins on the mapview
   setRedpins.call(this, currentUser.work);

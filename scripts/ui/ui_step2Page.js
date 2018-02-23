@@ -11,6 +11,7 @@ const extend = require('js-base/core/extend');
 const PageBase = require('sf-core/ui/page');
 const Page = extend(PageBase);
 const pageContextPatch = require('@smartface/contx/lib/smartface/pageContextPatch');
+const FlexLayout = extend(require('sf-core/ui/flexlayout'));
 
 const Tab = extend(require("../components/Tab"));
 const NoteContainer = extend(require("../components/NoteContainer"));
@@ -33,9 +34,7 @@ function $Step2Page(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "tab", $Tab_, this);
-  addChild.call(this, "noteContainer", $NoteContainer_, this);
-  addChild.call(this, "completefl", $Completefl_, this);
+  addChild.call(this, "step2fl", $Step2fl_, this);
   pageContextPatch(this, "step2Page");
 }
 $Step2Page.$$styleContext = {
@@ -54,11 +53,29 @@ $Step2Page.$$styleContext = {
 };
 const $Step2Page_ = Page($Step2Page);
 
-function $Tab(_super, pageInstance) {
+function $Step2fl(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "tab", $Step2fl$$Tab_, pageInstance);
+  addChild.call(this, "noteContainer", $Step2fl$$NoteContainer_, pageInstance);
+  addChild.call(this, "completefl", $Step2fl$$Completefl_, pageInstance);
+}
+$Step2fl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1
+    },
+    height: null,
+    width: null
+  }
+};
+const $Step2fl_ = FlexLayout($Step2fl);
+
+function $Step2fl$$Tab(_super, pageInstance) {
   _super(this);
   pageInstance.tab = this;
 }
-$Tab.$$styleContext = {
+$Step2fl$$Tab.$$styleContext = {
   classNames: ".flexLayout .tabBar-style2 .tabBar-style1",
   userProps: {
     flexProps: {
@@ -71,13 +88,13 @@ $Tab.$$styleContext = {
     width: null
   }
 };
-const $Tab_ = Tab($Tab);
+const $Step2fl$$Tab_ = Tab($Step2fl$$Tab);
 
-function $NoteContainer(_super, pageInstance) {
+function $Step2fl$$NoteContainer(_super, pageInstance) {
   _super(this);
   pageInstance.noteContainer = this;
 }
-$NoteContainer.$$styleContext = {
+$Step2fl$$NoteContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -97,13 +114,13 @@ $NoteContainer.$$styleContext = {
     width: null
   }
 };
-const $NoteContainer_ = NoteContainer($NoteContainer);
+const $Step2fl$$NoteContainer_ = NoteContainer($Step2fl$$NoteContainer);
 
-function $Completefl(_super, pageInstance) {
+function $Step2fl$$Completefl(_super, pageInstance) {
   _super(this);
   pageInstance.completefl = this;
 }
-$Completefl.$$styleContext = {
+$Step2fl$$Completefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     bottom: 0,
@@ -117,7 +134,7 @@ $Completefl.$$styleContext = {
     width: null
   }
 };
-const $Completefl_ = Completefl($Completefl);
+const $Step2fl$$Completefl_ = Completefl($Step2fl$$Completefl);
 
 /**
  * @event onShow

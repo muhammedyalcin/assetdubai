@@ -1,116 +1,135 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "bf86-a75c-80dc-96fa",
 			"initialized": true,
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )"
-			},
-			"className": ".page",
-			"version": "6.6.0",
 			"props": {
-				"name": "workOrders",
 				"children": [
 					"eb98-a794-58cf-3426",
 					"1b56-ab8b-8157-f26f",
-					"b353-38de-6988-b45f",
-					"6751-99c2-851c-2c97"
+					"5cc6-ea1e-dbab-0976"
 				],
-				"parent": null,
-				"orientation": "PORTRAIT"
-			}
+				"name": "workOrders",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )"
+			},
+			"version": "6.6.1"
 		},
 		{
-			"type": "StatusBar",
-			"id": "eb98-a794-58cf-3426",
-			"userProps": {},
 			"className": ".statusBar",
+			"id": "eb98-a794-58cf-3426",
 			"props": {
-				"name": "statusBar",
 				"children": [],
-				"parent": "bf86-a75c-80dc-96fa",
-				"isRemovable": false
-			}
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "bf86-a75c-80dc-96fa"
+			},
+			"type": "StatusBar",
+			"userProps": {}
 		},
 		{
-			"type": "HeaderBar",
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"id": "1b56-ab8b-8157-f26f",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "bf86-a75c-80dc-96fa",
+				"title": "Work Orders"
+			},
+			"type": "HeaderBar",
 			"userProps": {
 				"title": "Work Orders",
 				"titleColor": "rgba( 216, 215, 215, 1 )"
-			},
-			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
-			"props": {
-				"name": "headerBar",
-				"title": "Work Orders",
-				"children": [],
-				"parent": "bf86-a75c-80dc-96fa",
-				"isRemovable": false
 			}
 		},
 		{
-			"type": "ListView",
-			"id": "b353-38de-6988-b45f",
-			"hiddenComponent": false,
+			"className": ".flexLayout",
+			"id": "5cc6-ea1e-dbab-0976",
+			"props": {
+				"children": [
+					"789b-4a89-16e6-d492",
+					"1f07-e410-bc97-cd4b"
+				],
+				"name": "workOrderfl",
+				"parent": "bf86-a75c-80dc-96fa"
+			},
+			"type": "FlexLayout",
 			"userProps": {
-				"usePageVariable": true,
-				"width": null,
+				"flexProps": {
+					"flexGrow": 1
+				},
 				"height": null,
-				"left": 10,
-				"right": 10,
-				"top": 10,
-				"bottom": 10,
-				"itemCount": null,
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"rowHeight": 70,
+				"width": null
+			}
+		},
+		{
+			"className": ".listView",
+			"hiddenComponent": false,
+			"id": "789b-4a89-16e6-d492",
+			"props": {
+				"children": [],
 				"id": 10,
-				"visible": true,
+				"itemCount": null,
+				"name": "workOrderListview",
+				"parent": "5cc6-ea1e-dbab-0976",
+				"rowHeight": 70,
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"bottom": 10,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
-				}
-			},
-			"className": ".listView",
-			"props": {
+				},
+				"height": null,
 				"id": 10,
-				"name": "workOrderListview",
-				"usePageVariable": true,
-				"children": [],
-				"parent": "bf86-a75c-80dc-96fa",
 				"itemCount": null,
-				"rowHeight": 70
+				"left": 10,
+				"right": 10,
+				"rowHeight": 70,
+				"top": 10,
+				"usePageVariable": true,
+				"visible": true,
+				"width": null
 			}
 		},
 		{
-			"type": "FlexLayout",
-			"id": "6751-99c2-851c-2c97",
+			"className": ".flexLayout",
 			"hiddenComponent": false,
+			"id": "1f07-e410-bc97-cd4b",
+			"props": {
+				"children": [],
+				"id": null,
+				"name": "mapViewfl",
+				"parent": "5cc6-ea1e-dbab-0976",
+				"usePageVariable": true
+			},
 			"source": {
 				"page": "__library__",
 				"type": "mapViewfl",
 				"id": "36fb-be60-34ab-163f"
 			},
+			"type": "FlexLayout",
 			"userProps": {
-				"width": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
 				"height": null,
 				"left": 0,
 				"right": 0,
-				"bottom": 0,
 				"top": 0,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"usePageVariable": true,
 				"visible": true,
-				"flexProps": {
-					"positionType": "ABSOLUTE"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"id": null,
-				"name": "mapViewfl",
-				"usePageVariable": true,
-				"children": [],
-				"parent": "bf86-a75c-80dc-96fa"
+				"width": null
 			}
 		}
 	]

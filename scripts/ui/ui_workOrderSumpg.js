@@ -35,6 +35,7 @@ function $WorkOrderSumpg(_super, props) {
   this.children["headerBar"] = this.headerBar;
   addChild.call(this, "sumLabelCon", $SumLabelCon_, this);
   addChild.call(this, "wordOderSumListview", $WordOderSumListview_, this);
+  addChild.call(this, "flexLayout1", $FlexLayout1_, this);
   pageContextPatch(this, "workOrderSumpg");
 }
 $WorkOrderSumpg.$$styleContext = {
@@ -128,6 +129,91 @@ $WordOderSumListview.$$styleContext = {
   }
 };
 const $WordOderSumListview_ = ListView($WordOderSumListview);
+
+function $FlexLayout1(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "sumLabelCon", $FlexLayout1$$SumLabelCon_, pageInstance);
+  addChild.call(this, "wordOderSumListview", $FlexLayout1$$WordOderSumListview_, pageInstance);
+}
+$FlexLayout1.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {}
+};
+const $FlexLayout1_ = FlexLayout($FlexLayout1);
+
+function $FlexLayout1$$SumLabelCon(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "sumLabel", $FlexLayout1$$SumLabelCon$$SumLabel_, pageInstance);
+}
+$FlexLayout1$$SumLabelCon.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    flexProps: {
+      alignSelf: "AUTO",
+      alignItems: "STRETCH"
+    },
+    height: 50,
+    left: 0,
+    right: 0,
+    top: 0,
+    width: null
+  }
+};
+const $FlexLayout1$$SumLabelCon_ = FlexLayout($FlexLayout1$$SumLabelCon);
+
+function $FlexLayout1$$SumLabelCon$$SumLabel(_super, pageInstance) {
+  _super(this, {
+    text: "WORK ORDER SUMMARY"
+  });
+  pageInstance.sumLabel = this;
+}
+$FlexLayout1$$SumLabelCon$$SumLabel.$$styleContext = {
+  classNames: ".label",
+  userProps: {
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    flexProps: {
+      flexGrow: 1
+    },
+    font: {
+      bold: true,
+      family: "Lato"
+    },
+    height: null,
+    marginLeft: 15,
+    textAlignment: "MIDLEFT",
+    textColor: "rgba( 151, 151, 151, 1 )",
+    width: null
+  }
+};
+const $FlexLayout1$$SumLabelCon$$SumLabel_ = Label($FlexLayout1$$SumLabelCon$$SumLabel);
+
+function $FlexLayout1$$WordOderSumListview(_super, pageInstance) {
+  _super(this, {
+    itemCount: NaN,
+    rowHeight: 70
+  });
+  this.onRowCreate = function() {
+    return new ListViewItem();
+  };
+  pageInstance.wordOderSumListview = this;
+}
+$FlexLayout1$$WordOderSumListview.$$styleContext = {
+  classNames: ".listView",
+  userProps: {
+    backgroundColor: "rgba( 255, 255, 255, 0 )",
+    bottom: 5,
+    flexProps: {
+      positionType: "ABSOLUTE"
+    },
+    height: null,
+    left: 15,
+    right: 15,
+    top: 50,
+    width: null
+  }
+};
+const $FlexLayout1$$WordOderSumListview_ = ListView($FlexLayout1$$WordOderSumListview);
 
 /**
  * @event onShow

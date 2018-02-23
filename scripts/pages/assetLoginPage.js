@@ -94,6 +94,8 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
   superOnLoad();
   const page = this;
+  
+  page.ios.safeAreaLayoutMode = true;
 
   const signinAction = signin.bind(this.loginButton, this);
   page.loginButton.onPress = signinAction;

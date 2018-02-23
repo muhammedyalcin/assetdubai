@@ -47,6 +47,9 @@ var dashboardListview;
 function onLoad(superOnLoad) {
   superOnLoad();
   page = this;
+  
+  page.ios.safeAreaLayoutMode = true;
+  
   var dashboardObj = new DashBoardItem();
   dashboardData = dashboardObj.getDashboardData;
   dashboardListview = this.dashboardListview;

@@ -23,6 +23,12 @@ const Page_ = extend(workOrderProcPgDesign)(
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+
+        this.onSafeAreaPaddingChange = function(e) {
+            console.log("padding object is : " + JSON.stringify(e));
+            // page.layout.paddingLeft = e.bottom;
+
+        };
     });
 
 // Page.onShow -> This event is called when a page appears on the screen (everytime).
@@ -43,7 +49,7 @@ function onShow(superOnShow) {
     this.startProButton.onPress = function() {
         Router.go("proceduresPage");
     }.bind(this);
-    
+
     this.cancelButton.onPress = function() {
         Router.goBack();
     }.bind(this);
@@ -62,6 +68,8 @@ function onShow(superOnShow) {
 // Page.onLoad -> This event is called once when page is created.
 function onLoad(superOnLoad) {
     superOnLoad();
+
+    this.ios.safeAreaLayoutMode = true;
 
     var backIconItem = new HeaderBarItem();
     var backIcon = Image.createFromFile("images://backheadericon.png");

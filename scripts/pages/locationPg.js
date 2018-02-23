@@ -70,6 +70,9 @@ function directionsButton_onPress() {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  
+  this.ios.safeAreaLayoutMode = true;
+  
   HeaderBarItem.setCustomHeaderBarItem(this);
   //sets current location
   MapView.setCurrentLocation(this.mapViewfl.workMapView, 30000);

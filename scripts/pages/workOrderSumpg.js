@@ -21,6 +21,8 @@ const WorkOrderSumpg = extend(WorkOrderSumpgDesign)(
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+
+    
     workOL = this.wordOderSumListview;
 
     this.headerBar.titleColor = Color.create("#FFFFFF");
@@ -42,7 +44,7 @@ function onShow(superOnShow, jsonData) {
   this.headerBar.itemColor = Color.create("#D5D4D4");
   this.sumLabel.text = lang["workOrderSumpg.workOrderSummary"];
 
-  
+
   // //sets location
   // mapViewfl.assignLocation = this;
   //var currentUser = User.currentUser;
@@ -57,7 +59,7 @@ function onShow(superOnShow, jsonData) {
   // currentWork = User.currentWork;
   // var workSummary = currentWork.worksummary;
   // workData = currentWork;
-  
+
   this.headerBar.title = currentWork.workid1;
 
 
@@ -84,7 +86,8 @@ function onShow(superOnShow, jsonData) {
 function onLoad(superOnLoad) {
   superOnLoad();
   HeaderBarItem.setCustomHeaderBarItem(this);
-  
+
+  this.ios.safeAreaLayoutMode = true;
 }
 
 // function initListview(jsonData) {

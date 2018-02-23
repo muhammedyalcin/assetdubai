@@ -35,10 +35,7 @@ function $Step3Page(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "tab", $Tab_, this);
-  addChild.call(this, "noteContainer", $NoteContainer_, this);
-  addChild.call(this, "completefl", $Completefl_, this);
-  addChild.call(this, "indicayorfl", $Indicayorfl_, this);
+  addChild.call(this, "step3fl", $Step3fl_, this);
   pageContextPatch(this, "step3Page");
 }
 $Step3Page.$$styleContext = {
@@ -61,11 +58,30 @@ $Step3Page.$$styleContext = {
 };
 const $Step3Page_ = Page($Step3Page);
 
-function $Tab(_super, pageInstance) {
+function $Step3fl(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "tab", $Step3fl$$Tab_, pageInstance);
+  addChild.call(this, "noteContainer", $Step3fl$$NoteContainer_, pageInstance);
+  addChild.call(this, "completefl", $Step3fl$$Completefl_, pageInstance);
+  addChild.call(this, "indicayorfl", $Step3fl$$Indicayorfl_, pageInstance);
+}
+$Step3fl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1
+    },
+    height: null,
+    width: null
+  }
+};
+const $Step3fl_ = FlexLayout($Step3fl);
+
+function $Step3fl$$Tab(_super, pageInstance) {
   _super(this);
   pageInstance.tab = this;
 }
-$Tab.$$styleContext = {
+$Step3fl$$Tab.$$styleContext = {
   classNames: ".flexLayout .tabBar-style1 .tabBar-style2",
   userProps: {
     flexProps: {
@@ -79,13 +95,13 @@ $Tab.$$styleContext = {
     width: null
   }
 };
-const $Tab_ = Tab($Tab);
+const $Step3fl$$Tab_ = Tab($Step3fl$$Tab);
 
-function $NoteContainer(_super, pageInstance) {
+function $Step3fl$$NoteContainer(_super, pageInstance) {
   _super(this);
   pageInstance.noteContainer = this;
 }
-$NoteContainer.$$styleContext = {
+$Step3fl$$NoteContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -105,13 +121,13 @@ $NoteContainer.$$styleContext = {
     width: null
   }
 };
-const $NoteContainer_ = NoteContainer($NoteContainer);
+const $Step3fl$$NoteContainer_ = NoteContainer($Step3fl$$NoteContainer);
 
-function $Completefl(_super, pageInstance) {
+function $Step3fl$$Completefl(_super, pageInstance) {
   _super(this);
   pageInstance.completefl = this;
 }
-$Completefl.$$styleContext = {
+$Step3fl$$Completefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     bottom: 0,
@@ -125,14 +141,14 @@ $Completefl.$$styleContext = {
     width: null
   }
 };
-const $Completefl_ = Completefl($Completefl);
+const $Step3fl$$Completefl_ = Completefl($Step3fl$$Completefl);
 
-function $Indicayorfl(_super, pageInstance) {
+function $Step3fl$$Indicayorfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "stepindicator", $Indicayorfl$$Stepindicator_, pageInstance);
+  addChild.call(this, "stepindicator", $Step3fl$$Indicayorfl$$Stepindicator_, pageInstance);
   pageInstance.indicayorfl = this;
 }
-$Indicayorfl.$$styleContext = {
+$Step3fl$$Indicayorfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     borderRadius: 32,
@@ -147,13 +163,13 @@ $Indicayorfl.$$styleContext = {
     width: 150
   }
 };
-const $Indicayorfl_ = FlexLayout($Indicayorfl);
+const $Step3fl$$Indicayorfl_ = FlexLayout($Step3fl$$Indicayorfl);
 
-function $Indicayorfl$$Stepindicator(_super, pageInstance) {
+function $Step3fl$$Indicayorfl$$Stepindicator(_super, pageInstance) {
   _super(this);
   pageInstance.stepindicator = this;
 }
-$Indicayorfl$$Stepindicator.$$styleContext = {
+$Step3fl$$Indicayorfl$$Stepindicator.$$styleContext = {
   classNames: ".activityIndicator",
   userProps: {
     flexProps: {
@@ -161,7 +177,7 @@ $Indicayorfl$$Stepindicator.$$styleContext = {
     }
   }
 };
-const $Indicayorfl$$Stepindicator_ = ActivityIndicator($Indicayorfl$$Stepindicator);
+const $Step3fl$$Indicayorfl$$Stepindicator_ = ActivityIndicator($Step3fl$$Indicayorfl$$Stepindicator);
 
 /**
  * @event onShow

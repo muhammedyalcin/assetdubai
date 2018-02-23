@@ -92,9 +92,12 @@ var height = 230; //global height
 var globalTop = 20; //global top
 function onLoad(superOnLoad) {
   superOnLoad();
+  
+  var page = this;
+  page.ios.safeAreaLayoutMode = true;
 
   HeaderBarItem.setCustomHeaderBarItem(this);
-  var page = this;
+  
   procedureData = User.currentWorkSummary.procedure;
 
   //Sets scrollview 

@@ -60,6 +60,8 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad();
+  
+  this.ios.safeAreaLayoutMode = true;
   HeaderBarItem.setCustomHeaderBarItem(this);
 
   //set action button
