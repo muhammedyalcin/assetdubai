@@ -8,8 +8,6 @@
 				"children": [
 					"11c4-38b2-b750-6515",
 					"7758-9949-aae2-9849",
-					"81f2-fc91-2e85-17f7",
-					"64a8-c40e-64cd-2743",
 					"ad5c-b04c-b3d3-ccc9"
 				],
 				"name": "workOrderSumpg",
@@ -52,98 +50,23 @@
 		},
 		{
 			"className": ".flexLayout",
-			"id": "81f2-fc91-2e85-17f7",
-			"props": {
-				"children": [
-					"7b60-dd5b-082d-82e9"
-				],
-				"name": "sumLabelCon",
-				"parent": "837e-ef33-6032-3f7f"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"alignItems": "STRETCH"
-				},
-				"height": 50,
-				"left": 0,
-				"right": 0,
-				"top": 0,
-				"width": null
-			}
-		},
-		{
-			"className": ".label",
-			"id": "7b60-dd5b-082d-82e9",
-			"props": {
-				"children": [],
-				"name": "sumLabel",
-				"parent": "81f2-fc91-2e85-17f7",
-				"text": "WORK ORDER SUMMARY",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"font": {
-					"bold": true,
-					"family": "Lato"
-				},
-				"height": null,
-				"marginLeft": 15,
-				"text": "WORK ORDER SUMMARY",
-				"textAlignment": "MIDLEFT",
-				"textColor": "rgba( 151, 151, 151, 1 )",
-				"usePageVariable": true,
-				"width": null
-			}
-		},
-		{
-			"className": ".listView",
-			"id": "64a8-c40e-64cd-2743",
-			"props": {
-				"children": [],
-				"itemCount": null,
-				"name": "wordOderSumListview",
-				"parent": "837e-ef33-6032-3f7f",
-				"rowHeight": 70,
-				"usePageVariable": true
-			},
-			"type": "ListView",
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"bottom": 5,
-				"flexProps": {
-					"positionType": "ABSOLUTE"
-				},
-				"height": null,
-				"itemCount": null,
-				"left": 15,
-				"right": 15,
-				"rowHeight": 70,
-				"top": 50,
-				"usePageVariable": true,
-				"width": null
-			}
-		},
-		{
-			"className": ".flexLayout",
 			"id": "ad5c-b04c-b3d3-ccc9",
 			"props": {
 				"children": [
 					"cd8c-a8ca-fe24-d2e7",
 					"f71c-7324-5acd-3827"
 				],
-				"name": "flexLayout1",
+				"name": "workOrderfl",
 				"parent": "837e-ef33-6032-3f7f"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
 		},
 		{
 			"className": ".flexLayout",
