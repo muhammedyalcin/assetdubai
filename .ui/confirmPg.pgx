@@ -20,7 +20,7 @@
 					"flexDirection": "COLUMN_REVERSE"
 				}
 			},
-			"version": "6.6.1"
+			"version": "6.6.2"
 		},
 		{
 			"className": ".statusBar",

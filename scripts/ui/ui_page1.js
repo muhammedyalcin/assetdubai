@@ -43,17 +43,17 @@ $Page1.$$styleContext = {
   classNames: ".page",
   userProps: {
     backgroundColor: "#EEEEEE",
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: null,
-    paddingBottom: 10,
     flexProps: {
       flexDirection: "COLUMN",
       alignItems: "CENTER",
       direction: "INHERIT",
       flexWrap: "NOWRAP",
       justifyContent: "SPACE_AROUND"
-    }
+    },
+    paddingBottom: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: null
   },
   statusBar: {
     classNames: ".statusBar",
@@ -75,28 +75,28 @@ function $Img(_super, pageInstance) {
 $Img.$$styleContext = {
   classNames: ".imageView",
   userProps: {
-    left: null,
-    top: null,
-    right: 0,
-    bottom: 0,
-    height: 60.3,
-    image: "smartface.png",
-    imageFillType: "ASPECTFIT",
-    borderColor: "rgba( 255, 255, 255, 1 )",
-    borderWidth: 0,
-    borderRadius: 0,
-    visible: true,
     alpha: 1,
-    width: null,
-    marginLeft: null,
-    marginRight: null,
-    maxHeight: 60,
-    marginTop: 10,
+    borderColor: "rgba( 255, 255, 255, 1 )",
+    borderRadius: 0,
+    borderWidth: 0,
+    bottom: 0,
     flexProps: {
       positionType: "RELATIVE",
       alignSelf: "STRETCH",
       flexGrow: 4
-    }
+    },
+    height: 60.3,
+    image: "smartface.png",
+    imageFillType: "ASPECTFIT",
+    left: null,
+    marginLeft: null,
+    marginRight: null,
+    marginTop: 10,
+    maxHeight: 60,
+    right: 0,
+    top: null,
+    visible: true,
+    width: null
   }
 };
 const $Img_ = ImageView($Img);
@@ -110,33 +110,33 @@ function $Lbl(_super, pageInstance) {
 $Lbl.$$styleContext = {
   classNames: ".label",
   userProps: {
-    left: null,
-    top: null,
-    right: null,
-    bottom: null,
-    height: 90,
+    alpha: 1,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     borderColor: "rgba( 255, 255, 255, 1 )",
     borderRadius: 0,
     borderWidth: 0,
-    visible: true,
-    textAlignment: "MIDCENTER",
-    alpha: 1,
-    width: null,
-    marginLeft: null,
-    marginRight: null,
-    multiline: true,
-    marginTop: null,
-    maxHeight: 90,
-    font: {
-      size: 16,
-      family: "Default"
-    },
+    bottom: null,
     flexProps: {
       positionType: "RELATIVE",
       alignSelf: "STRETCH",
       flexGrow: 2
-    }
+    },
+    font: {
+      size: 16,
+      family: "Default"
+    },
+    height: 90,
+    left: null,
+    marginLeft: null,
+    marginRight: null,
+    marginTop: null,
+    maxHeight: 90,
+    multiline: true,
+    right: null,
+    textAlignment: "MIDCENTER",
+    top: null,
+    visible: true,
+    width: null
   }
 };
 const $Lbl_ = Label($Lbl);
@@ -150,19 +150,11 @@ function $Flexlayout(_super, pageInstance) {
 $Flexlayout.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    right: null,
-    bottom: null,
-    height: 130,
+    alpha: 1,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     borderColor: "rgba(0,0,0,1)",
     borderWidth: 0,
-    visible: true,
-    alpha: 1,
-    width: null,
-    left: null,
-    marginLeft: null,
-    marginRight: null,
-    maxHeight: 130,
+    bottom: null,
     flexProps: {
       alignContent: "STRETCH",
       alignItems: "STRETCH",
@@ -172,7 +164,15 @@ $Flexlayout.$$styleContext = {
       positionType: "RELATIVE",
       alignSelf: "STRETCH",
       flexGrow: 3
-    }
+    },
+    height: 130,
+    left: null,
+    marginLeft: null,
+    marginRight: null,
+    maxHeight: 130,
+    right: null,
+    visible: true,
+    width: null
   }
 };
 const $Flexlayout_ = FlexLayout($Flexlayout);
@@ -186,21 +186,21 @@ function $Flexlayout$$Btn(_super, pageInstance) {
 $Flexlayout$$Btn.$$styleContext = {
   classNames: ".button",
   userProps: {
-    height: 60,
+    alpha: 1,
     backgroundColor: "rgba( 0, 161, 241, 1 )",
     borderColor: "rgba( 255, 255, 255, 1 )",
-    visible: true,
-    alpha: 1,
-    width: null,
+    flexProps: {
+      positionType: "RELATIVE",
+      alignSelf: "STRETCH"
+    },
     font: {
       color: "rgba( 255, 255, 255, 1 )",
       family: "Default",
       size: 16
     },
-    flexProps: {
-      positionType: "RELATIVE",
-      alignSelf: "STRETCH"
-    }
+    height: 60,
+    visible: true,
+    width: null
   }
 };
 const $Flexlayout$$Btn_ = Button($Flexlayout$$Btn);
@@ -214,22 +214,22 @@ function $Flexlayout$$BtnNext(_super, pageInstance) {
 $Flexlayout$$BtnNext.$$styleContext = {
   classNames: ".button",
   userProps: {
-    top: 10,
-    height: 60,
+    alpha: 1,
     backgroundColor: "rgba( 0, 161, 241, 1 )",
     borderColor: "rgba( 255, 255, 255, 1 )",
-    visible: true,
-    alpha: 1,
-    width: null,
+    flexProps: {
+      positionType: "RELATIVE",
+      alignSelf: "STRETCH"
+    },
     font: {
       color: "rgba( 255, 255, 255, 1 )",
       family: "Default",
       size: 16
     },
-    flexProps: {
-      positionType: "RELATIVE",
-      alignSelf: "STRETCH"
-    }
+    height: 60,
+    top: 10,
+    visible: true,
+    width: null
   }
 };
 const $Flexlayout$$BtnNext_ = Button($Flexlayout$$BtnNext);

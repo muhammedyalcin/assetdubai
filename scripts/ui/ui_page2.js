@@ -77,25 +77,25 @@ function $Img(_super, pageInstance) {
 $Img.$$styleContext = {
   classNames: ".imageView",
   userProps: {
-    left: null,
-    top: null,
-    right: 0,
-    bottom: 0,
-    height: 60,
-    image: "smartface.png",
-    imageFillType: "ASPECTFIT",
-    visible: true,
     alpha: 1,
-    width: null,
     borderWidth: null,
-    marginLeft: 10,
-    marginRight: 10,
-    maxHeight: 60,
+    bottom: 0,
     flexProps: {
       positionType: "RELATIVE",
       alignSelf: "STRETCH",
       flexGrow: 4
-    }
+    },
+    height: 60,
+    image: "smartface.png",
+    imageFillType: "ASPECTFIT",
+    left: null,
+    marginLeft: 10,
+    marginRight: 10,
+    maxHeight: 60,
+    right: 0,
+    top: null,
+    visible: true,
+    width: null
   }
 };
 const $Img_ = ImageView($Img);
@@ -109,31 +109,31 @@ function $Lbl(_super, pageInstance) {
 $Lbl.$$styleContext = {
   classNames: ".label",
   userProps: {
-    left: null,
-    top: null,
-    right: 0,
-    bottom: 0,
-    height: 90,
+    alpha: 1,
+    backgroundColor: "rgba( 0, 0, 0, 0 )",
     borderColor: "rgba( 255, 255, 255, 1 )",
     borderRadius: 0,
     borderWidth: 0,
-    backgroundColor: "rgba( 0, 0, 0, 0 )",
-    visible: true,
-    textAlignment: "MIDCENTER",
-    alpha: 1,
-    width: null,
-    marginLeft: 10,
-    marginRight: 10,
-    maxHeight: 90,
-    font: {
-      family: "Default",
-      size: 16
-    },
+    bottom: 0,
     flexProps: {
       positionType: "RELATIVE",
       alignSelf: "STRETCH",
       flexGrow: 2
-    }
+    },
+    font: {
+      family: "Default",
+      size: 16
+    },
+    height: 90,
+    left: null,
+    marginLeft: 10,
+    marginRight: 10,
+    maxHeight: 90,
+    right: 0,
+    textAlignment: "MIDCENTER",
+    top: null,
+    visible: true,
+    width: null
   }
 };
 const $Lbl_ = Label($Lbl);
@@ -147,23 +147,23 @@ function $Btn(_super, pageInstance) {
 $Btn.$$styleContext = {
   classNames: ".button",
   userProps: {
-    height: 60,
-    backgroundColor: "rgba( 0, 161, 241, 1 )",
-    visible: true,
     alpha: 1,
-    width: null,
-    marginLeft: 10,
-    marginRight: 10,
-    maxHeight: 60,
+    backgroundColor: "rgba( 0, 161, 241, 1 )",
+    flexProps: {
+      positionType: "RELATIVE",
+      alignSelf: "STRETCH"
+    },
     font: {
       color: "rgba( 255, 255, 255, 1 )",
       size: 16,
       family: "Default"
     },
-    flexProps: {
-      positionType: "RELATIVE",
-      alignSelf: "STRETCH"
-    }
+    height: 60,
+    marginLeft: 10,
+    marginRight: 10,
+    maxHeight: 60,
+    visible: true,
+    width: null
   }
 };
 const $Btn_ = Button($Btn);
@@ -174,14 +174,14 @@ function $WorkRow(_super, pageInstance) {
 $WorkRow.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    left: 0,
-    top: 0,
-    width: 376,
-    height: 86,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     flexProps: {
       positionType: "RELATIVE"
-    }
+    },
+    height: 86,
+    left: 0,
+    top: 0,
+    width: 376
   }
 };
 const $WorkRow_ = WorkRow($WorkRow);
@@ -192,15 +192,15 @@ function $WordSummary(_super, pageInstance) {
 $WordSummary.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: 371.72307194890203,
-    height: 80.00000103099926,
-    left: 0,
-    top: 0,
-    right: 0,
     backgroundColor: "rgba( 255, 255, 255, 0 )",
     flexProps: {
       positionType: "RELATIVE"
-    }
+    },
+    height: 80.00000103099926,
+    left: 0,
+    right: 0,
+    top: 0,
+    width: 371.72307194890203
   }
 };
 const $WordSummary_ = WorkSummary($WordSummary);
@@ -211,15 +211,15 @@ function $Tab(_super, pageInstance) {
 $Tab.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    width: 350.48052813555745,
+    backgroundColor: "rgba( 74, 74, 74, 0.99 )",
+    flexProps: {
+      positionType: "RELATIVE"
+    },
     height: 54.054054054054056,
     left: 0,
     right: 0,
     top: 0,
-    backgroundColor: "rgba( 74, 74, 74, 0.99 )",
-    flexProps: {
-      positionType: "RELATIVE"
-    }
+    width: 350.48052813555745
   }
 };
 const $Tab_ = Tab($Tab);
