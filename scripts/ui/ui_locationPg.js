@@ -33,7 +33,7 @@ function $LocationPg(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "locationPg", $LocationPg_, this);
+  addChild.call(this, "locationPgfl", $LocationPgfl_, this);
   pageContextPatch(this, "locationPg");
 }
 $LocationPg.$$styleContext = {
@@ -54,12 +54,12 @@ $LocationPg.$$styleContext = {
 };
 const $LocationPg_ = Page($LocationPg);
 
-function $LocationPg(_super, pageInstance) {
+function $LocationPgfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "contactContainer", $LocationPg$$ContactContainer_, pageInstance);
-  addChild.call(this, "mapViewfl", $LocationPg$$MapViewfl_, pageInstance);
+  addChild.call(this, "contactContainer", $LocationPgfl$$ContactContainer_, pageInstance);
+  addChild.call(this, "mapViewfl", $LocationPgfl$$MapViewfl_, pageInstance);
 }
-$LocationPg.$$styleContext = {
+$LocationPgfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     flexProps: {
@@ -69,13 +69,13 @@ $LocationPg.$$styleContext = {
     width: null
   }
 };
-const $LocationPg_ = FlexLayout($LocationPg);
+const $LocationPgfl_ = FlexLayout($LocationPgfl);
 
-function $LocationPg$$ContactContainer(_super, pageInstance) {
+function $LocationPgfl$$ContactContainer(_super, pageInstance) {
   _super(this);
   pageInstance.contactContainer = this;
 }
-$LocationPg$$ContactContainer.$$styleContext = {
+$LocationPgfl$$ContactContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -89,13 +89,13 @@ $LocationPg$$ContactContainer.$$styleContext = {
     width: null
   }
 };
-const $LocationPg$$ContactContainer_ = ContactContainer($LocationPg$$ContactContainer);
+const $LocationPgfl$$ContactContainer_ = ContactContainer($LocationPgfl$$ContactContainer);
 
-function $LocationPg$$MapViewfl(_super, pageInstance) {
+function $LocationPgfl$$MapViewfl(_super, pageInstance) {
   _super(this);
   pageInstance.mapViewfl = this;
 }
-$LocationPg$$MapViewfl.$$styleContext = {
+$LocationPgfl$$MapViewfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -110,7 +110,7 @@ $LocationPg$$MapViewfl.$$styleContext = {
     width: null
   }
 };
-const $LocationPg$$MapViewfl_ = MapViewfl($LocationPg$$MapViewfl);
+const $LocationPgfl$$MapViewfl_ = MapViewfl($LocationPgfl$$MapViewfl);
 
 /**
  * @event onShow

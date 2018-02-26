@@ -49,14 +49,14 @@ $ConfirmPg.$$styleContext = {
   statusBar: {
     classNames: ".statusBar",
     userProps: {
-      visible: false
+      visible: true
     }
   },
   headerBar: {
     classNames: ".headerBar .heahderBar-style1 .headerBar-style2",
     userProps: {
       titleColor: "rgba( 216, 215, 215, 1 )",
-      visible: false
+      visible: true
     }
   }
 };

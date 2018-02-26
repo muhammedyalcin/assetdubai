@@ -1,0 +1,525 @@
+{
+	"components": [
+		{
+			"className": ".page",
+			"id": "8cf2-624f-48f8-b5ab",
+			"initialized": true,
+			"props": {
+				"children": [
+					"0cd8-da13-d722-a503",
+					"dce4-f853-0c23-2092",
+					"40c4-0521-8d0b-16a9",
+					"56d3-ad16-a017-1ad1",
+					"04fd-dab0-d60a-4c6d",
+					"44a1-7d22-a2a6-7080",
+					"fb6a-0e8e-27d2-4cdd",
+					"ac44-037e-6b35-a714"
+				],
+				"name": "loginPageFB",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"backgroundColor": "rgba( 238, 238, 238, 1 )",
+				"defaults": {},
+				"flex": {},
+				"flexProps": {
+					"justifyContent": "SPACE_AROUND",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH"
+				},
+				"font": {},
+				"layout": {},
+				"paddingBottom": null,
+				"paddingLeft": 20,
+				"paddingRight": 20
+			},
+			"version": "6.6.1"
+		},
+		{
+			"className": ".statusBar",
+			"id": "0cd8-da13-d722-a503",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "8cf2-624f-48f8-b5ab"
+			},
+			"type": "StatusBar",
+			"userProps": {
+				"defaults": {},
+				"flex": {},
+				"flexProps": {},
+				"font": {},
+				"layout": {}
+			}
+		},
+		{
+			"className": ".headerBar",
+			"id": "dce4-f853-0c23-2092",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "8cf2-624f-48f8-b5ab",
+				"title": "Login"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"defaults": {},
+				"flex": {},
+				"flexProps": {},
+				"font": {},
+				"layout": {},
+				"title": "Login",
+				"visible": false
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "40c4-0521-8d0b-16a9",
+			"props": {
+				"children": [
+					"17e9-da0c-46af-8826",
+					"99dc-f384-bb18-3780"
+				],
+				"name": "loginPageHeader",
+				"parent": "8cf2-624f-48f8-b5ab"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"flexGrow": 3.5
+				},
+				"height": null,
+				"right": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "99dc-f384-bb18-3780",
+			"props": {
+				"children": [],
+				"name": "headerIcon",
+				"parent": "40c4-0521-8d0b-16a9",
+				"text": "Get Started!"
+			},
+			"type": "Label",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"defaults": {},
+				"flex": {},
+				"flexProps": {
+					"alignSelf": "STRETCH"
+				},
+				"font": {
+					"size": 50,
+					"family": "Nunito",
+					"bold": false,
+					"italic": false,
+					"style": "Regular"
+				},
+				"height": 70,
+				"layout": {},
+				"text": "Get Started!",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 47, 47, 56, 1 )",
+				"width": null
+			}
+		},
+		{
+			"className": ".imageView",
+			"id": "17e9-da0c-46af-8826",
+			"props": {
+				"children": [],
+				"name": "headerText",
+				"parent": "40c4-0521-8d0b-16a9"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"height": 90,
+				"image": "user_profile.png",
+				"imageFillType": "ASPECTFIT",
+				"width": 132
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "56d3-ad16-a017-1ad1",
+			"props": {
+				"children": [
+					"06d8-325d-40dc-509d",
+					"31c0-d9bd-f11a-d34c",
+					"8c40-07ef-9be3-4b2f"
+				],
+				"name": "userName",
+				"parent": "8cf2-624f-48f8-b5ab"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 1.1
+				},
+				"height": null,
+				"maxHeight": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "06d8-325d-40dc-509d",
+			"props": {
+				"children": [],
+				"name": "userNameLbl",
+				"parent": "56d3-ad16-a017-1ad1",
+				"text": "USERNAME"
+			},
+			"type": "Label",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"font": {
+					"size": 16,
+					"family": "Nunito",
+					"bold": false,
+					"italic": false,
+					"style": "Regular"
+				},
+				"height": 21,
+				"text": "USERNAME",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 160, 160, 160, 1 )",
+				"width": null
+			}
+		},
+		{
+			"className": ".textBox",
+			"id": "31c0-d9bd-f11a-d34c",
+			"props": {
+				"children": [],
+				"name": "userNameInput",
+				"parent": "56d3-ad16-a017-1ad1",
+				"text": "annamiracle@template.com"
+			},
+			"type": "TextBox",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba( 197, 197, 197, 1 )",
+				"font": {
+					"family": "Nunito",
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"style": "Regular"
+				},
+				"height": 40,
+				"text": "annamiracle@template.com",
+				"textColor": "rgba( 63, 63, 63, 1 )",
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "8c40-07ef-9be3-4b2f",
+			"props": {
+				"children": [],
+				"name": "userNameLine",
+				"parent": "56d3-ad16-a017-1ad1"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 226, 226, 226, 1 )",
+				"borderColor": "rgba( 226, 226, 226, 1 )",
+				"borderWidth": 0,
+				"defaults": {},
+				"flex": {},
+				"flexProps": {},
+				"font": {},
+				"height": 1,
+				"layout": {},
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "04fd-dab0-d60a-4c6d",
+			"props": {
+				"children": [
+					"8df3-4660-d5be-765a",
+					"9e41-065d-ba28-095e",
+					"2e4d-ccba-29d3-e057",
+					"20de-bc46-59fc-a663"
+				],
+				"name": "password",
+				"parent": "8cf2-624f-48f8-b5ab"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": null,
+				"flexProps": {
+					"flexGrow": 1.1,
+					"bottom": 30
+				},
+				"height": null,
+				"top": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "8df3-4660-d5be-765a",
+			"props": {
+				"children": [],
+				"name": "passwordLbl",
+				"parent": "04fd-dab0-d60a-4c6d",
+				"text": "PASSWORD"
+			},
+			"type": "Label",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"font": {
+					"size": 16,
+					"family": "Nunito",
+					"bold": false,
+					"italic": false,
+					"style": "Regular"
+				},
+				"height": 21,
+				"text": "PASSWORD",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 160, 160, 160, 1 )",
+				"width": null
+			}
+		},
+		{
+			"className": ".textBox",
+			"id": "9e41-065d-ba28-095e",
+			"props": {
+				"children": [],
+				"isPassword": true,
+				"name": "passwordInput",
+				"parent": "04fd-dab0-d60a-4c6d",
+				"text": "12345"
+			},
+			"type": "TextBox",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba( 197, 197, 197, 1 )",
+				"font": {
+					"family": "Nunito",
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"style": "Regular"
+				},
+				"height": 40,
+				"isPassword": true,
+				"text": "12345",
+				"textColor": "rgba( 63, 63, 63, 1 )",
+				"top": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "2e4d-ccba-29d3-e057",
+			"props": {
+				"children": [],
+				"name": "passwordLine",
+				"parent": "04fd-dab0-d60a-4c6d"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 226, 226, 226, 1 )",
+				"borderColor": "rgba( 226, 226, 226, 1 )",
+				"borderWidth": 0,
+				"defaults": {},
+				"flex": {},
+				"flexProps": {},
+				"font": {},
+				"height": 1,
+				"layout": {},
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "ac44-037e-6b35-a714",
+			"props": {
+				"children": [
+					"ba46-6451-f35f-a7b9",
+					"2c0f-5092-bd96-50ee"
+				],
+				"name": "loginPageFooter",
+				"parent": "8cf2-624f-48f8-b5ab"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexDirection": "ROW",
+					"alignItems": "FLEX_START",
+					"justifyContent": "CENTER",
+					"flexGrow": 2
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "ba46-6451-f35f-a7b9",
+			"props": {
+				"children": [],
+				"name": "footerText",
+				"parent": "ac44-037e-6b35-a714",
+				"text": "DON’T HAVE AN ACCOUNT?"
+			},
+			"type": "Label",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"defaults": {},
+				"flex": {},
+				"flexProps": {},
+				"font": {
+					"size": 12,
+					"family": "Nunito",
+					"bold": false,
+					"italic": false,
+					"style": "Regular"
+				},
+				"height": 20,
+				"layout": {},
+				"marginTop": 10,
+				"text": "DON’T HAVE AN ACCOUNT?",
+				"textColor": "rgba( 133, 133, 133, 1 )",
+				"width": 173
+			}
+		},
+		{
+			"className": ".label",
+			"id": "2c0f-5092-bd96-50ee",
+			"props": {
+				"children": [],
+				"name": "footerSignupLbl",
+				"parent": "ac44-037e-6b35-a714",
+				"text": "SIGN UP"
+			},
+			"type": "Label",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"defaults": {},
+				"flex": {},
+				"flexProps": {},
+				"font": {
+					"size": 12,
+					"family": "Nunito",
+					"bold": true,
+					"italic": false,
+					"style": "Bold"
+				},
+				"height": 20,
+				"layout": {},
+				"marginTop": 10,
+				"text": "SIGN UP",
+				"textColor": "rgba( 31, 31, 31, 1 )",
+				"width": 57
+			}
+		},
+		{
+			"className": ".label",
+			"hiddenComponent": false,
+			"id": "20de-bc46-59fc-a663",
+			"props": {
+				"children": [],
+				"name": "forgotYourPasswordLbl",
+				"parent": "04fd-dab0-d60a-4c6d",
+				"text": "Forgot Password"
+			},
+			"type": "Label",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"defaults": {},
+				"flex": {},
+				"flexProps": {
+					"alignSelf": "FLEX_END"
+				},
+				"font": {
+					"size": 14,
+					"family": "Nunito",
+					"bold": false,
+					"italic": false,
+					"style": "Regular"
+				},
+				"height": 30,
+				"layout": {},
+				"text": "Forgot Password",
+				"textAlignment": "TOPLEFT",
+				"textColor": "rgba( 153, 153, 153, 1 )",
+				"top": -30,
+				"width": 120
+			}
+		},
+		{
+			"className": ".button",
+			"id": "44a1-7d22-a2a6-7080",
+			"props": {
+				"children": [],
+				"name": "loginbutton",
+				"parent": "8cf2-624f-48f8-b5ab",
+				"text": "Login"
+			},
+			"type": "Button",
+			"userProps": {
+				"backgroundColor": "rgba( 54, 134, 255, 1 )",
+				"flexProps": {
+					"flexGrow": 0.8
+				},
+				"font": {
+					"family": "Nunito",
+					"bold": true,
+					"size": 16,
+					"italic": false,
+					"style": "Bold"
+				},
+				"height": null,
+				"marginBottom": 5,
+				"text": "Login",
+				"width": null
+			}
+		},
+		{
+			"className": ".button",
+			"id": "fb6a-0e8e-27d2-4cdd",
+			"props": {
+				"children": [],
+				"name": "fbLoginbutton",
+				"parent": "8cf2-624f-48f8-b5ab",
+				"text": "Login with Facebook"
+			},
+			"type": "Button",
+			"userProps": {
+				"backgroundColor": "rgba( 54, 134, 255, 1 )",
+				"flexProps": {
+					"flexGrow": 0.8
+				},
+				"font": {
+					"family": "Nunito",
+					"bold": true,
+					"size": 16,
+					"italic": false,
+					"style": "Bold"
+				},
+				"height": null,
+				"text": "Login with Facebook",
+				"width": null
+			}
+		}
+	]
+}
