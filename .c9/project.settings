@@ -57,5 +57,10 @@
         "@app": false,
         "@preview": false,
         "@useOwnerSettings": false
+    },
+    "smartface": {
+        "debugger": {
+            "@enabled": false
+        }
     }
 }

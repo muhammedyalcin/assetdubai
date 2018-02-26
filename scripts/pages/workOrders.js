@@ -23,6 +23,7 @@ const System = require('sf-core/device/system');
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 var workOL;
+var self;
 const WorkOrders = extend(WorkOrdersDesign)(
   // Constructor
   function(_super) {
@@ -31,6 +32,7 @@ const WorkOrders = extend(WorkOrdersDesign)(
     // overrides super.onShow method
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     this.onLoad = onLoad.bind(this, this.onLoad);
+    self = this;
   });
 
 var currentUser;
@@ -194,6 +196,7 @@ function initListview(jsonData) {
             workOL.nativeObject.deleteRowIndexAnimation(e.index, 3);
           }
           Items.deleteItem(e.index)
+          deletePin(e.index);
         }
         catch (err) {
           console.log(err.message);
@@ -216,6 +219,17 @@ function initListview(jsonData) {
 
 }
 
+function deletePin(pin){
+  var visiblePins = self.mapViewfl.workMapView.getVisiblePins();
+  for (var i = 0; i < visiblePins.length; i++) {
+    if(JSON.stringify(redpins[pin].location) == JSON.stringify(visiblePins[i].location)){
+      self.mapViewfl.workMapView.removePin(visiblePins[i]);
+      redpins.splice(pin, 1);
+      break;
+    }
+  }
+}
+
 function deleteItem(index, jsonData) {
 
   var confirmAlertView = new AlertView({
@@ -236,6 +250,7 @@ function deleteItem(index, jsonData) {
         workOL.nativeObject.deleteRowIndexAnimation(index, 3);
       }
       Items.deleteItem(index);
+      deletePin(index);
       //afterwards refrest the data and set length of data.
       workOL.itemCount = jsonData.length;
       workOL.refreshData();
@@ -265,6 +280,7 @@ function setRedpins(jsonData) {
         Router.go("workOrderProcPg");
       }
     });
+    jsonData[i].location = redpin.location;
     redpins.push(jsonData[i]);
     mapView.addPin(redpin);
     pinY += 0.000523;

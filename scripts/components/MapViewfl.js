@@ -12,7 +12,16 @@ const MapViewfl = extend(MapViewflDesign)(
     this.pageName = pageName;
 
     var currentUser = User.currentUser;
+    this.workMapView.maxZoomLevel = 15;
+    this.workMapView.minZoomLevel = 12;
     this.workMapView.zoomLevel = 12;
+    this.workMapView.onCameraMoveStarted = function(){
+      console.log("onCameraMoveStarted");
+    };
+    
+    this.workMapView.onCameraMoveEnded = function(){
+      console.log("onCameraMoveEnded");
+    };
 
     this.currentLocationImf.onTouch = function() {
       if (User.currentLocation) {
