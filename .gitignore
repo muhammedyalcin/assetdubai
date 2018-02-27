@@ -19,3 +19,5 @@ scripts/node_modules/*
 scripts/ui
 output/players/
 .templates
+androidplayer.zip
+iosplayer.zip
