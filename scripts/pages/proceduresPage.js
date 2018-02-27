@@ -95,7 +95,7 @@ function onLoad(superOnLoad) {
   
   var page = this;
   page.ios.safeAreaLayoutMode = true;
-
+  this.layout.backgroundColor = Color.create(61,59,58);
   HeaderBarItem.setCustomHeaderBarItem(this);
   
   procedureData = User.currentWorkSummary.procedure;

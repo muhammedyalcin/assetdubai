@@ -41,6 +41,7 @@ function onLoad(pageonLoad) {
   pageonLoad && pageonLoad();
   
   this.ios.safeAreaLayoutMode = true;
+  this.layout.backgroundColor = Color.create(61,59,58);
   currentUser = User.currentUser;
   //sets pins on the mapview
   setRedpins.call(this, currentUser.work);

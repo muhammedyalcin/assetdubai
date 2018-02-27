@@ -44,7 +44,7 @@ $ProceduresPage.$$styleContext = {
     flexProps: {
       flexDirection: "COLUMN_REVERSE",
       justifyContent: "CENTER",
-      alignItems: "CENTER",
+      alignItems: "STRETCH",
       alignContent: "STRETCH"
     }
   },
@@ -71,15 +71,12 @@ function $Procedurefl(_super, pageInstance) {
 $Procedurefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
-    bottom: 0,
     flexProps: {
-      positionType: "ABSOLUTE",
-      flexDirection: "COLUMN_REVERSE"
+      positionType: "RELATIVE",
+      flexDirection: "COLUMN_REVERSE",
+      flexGrow: 1
     },
     height: null,
-    left: 0,
-    right: 0,
-    top: 0,
     width: null
   }
 };

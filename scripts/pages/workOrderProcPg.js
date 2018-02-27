@@ -70,7 +70,8 @@ function onLoad(superOnLoad) {
     superOnLoad();
 
     this.ios.safeAreaLayoutMode = true;
-
+    this.layout.backgroundColor = Color.create(61,59,58);
+    
     var backIconItem = new HeaderBarItem();
     var backIcon = Image.createFromFile("images://backheadericon.png");
     backIconItem.image = backIcon;

@@ -66,7 +66,7 @@ function onLoad(superOnLoad) {
   superOnLoad();
   
   this.ios.safeAreaLayoutMode = true;
-  
+  this.layout.backgroundColor = Color.create(61,59,58);
   HeaderBarItem.setCustomHeaderBarItem(this);
 
 }
