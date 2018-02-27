@@ -34,15 +34,18 @@ const Page_ = extend(workOrderProcPgDesign)(
 // Page.onShow -> This event is called when a page appears on the screen (everytime).
 function onShow(superOnShow) {
     superOnShow();
-
+    
+    var currentWork = User.currentWork;
+    
     var page = this;
+    this.headerBar.title = currentWork.workid1;
+    
     this.headerBar.itemColor = Color.create("#D5D4D4");
     this.workOrdersSumfl.lablel1.text = lang["workOrderProcPg.equipmentRequired"];
 
     this.startProButton.text = lang["workOrderProcPg.button.startProcedure"];
     this.cancelButton.text = lang["workOrderProcPg.button.cancelWorkOrder"];
 
-    var currentWork = User.currentWork;
     var workSummary = currentWork.worksummary;
     //sets default one, you can assign according to conditions
     User.currentWorkSummary = workSummary[0];

@@ -44,7 +44,10 @@ function onLoad(pageonLoad) {
   this.layout.backgroundColor = Color.create(61,59,58);
   currentUser = User.currentUser;
   //sets pins on the mapview
-  setRedpins.call(this, currentUser.work);
+  this.mapViewfl.workMapView.onCreate = function(){
+    setRedpins.call(self, currentUser.work);
+  };
+  
 
   this.headerBar.titleColor = Color.create("#FFFFFF");
   //Router.sliderDrawer.setLeftItem(this.headerBar);
@@ -175,7 +178,7 @@ function initListview(jsonData) {
 
   workOL.onRowSelected = function(listViewItem, index) {
     Router.sliderDrawer.hideSlider();
-    User.currentWork = jsonData[index]
+    User.currentWork = jsonData[index];
     Router.go("workOrderProcPg");
   };
 
@@ -275,14 +278,15 @@ function setRedpins(jsonData) {
         latitude: mapView.centerLocation.latitude + pinX,
         longitude: mapView.centerLocation.longitude + pinY
       },
-      title: "" + jsonData[i].workid1,
-      onPress: function() {
-        User.currentWork = redpins[redpin.id];
-        Router.go("workOrderProcPg");
-      }
+      title: "" + jsonData[i].workid1
     });
     jsonData[i].location = redpin.location;
     redpins.push(jsonData[i]);
+    redpin.onPress = function(data,index) {
+        User.currentWork = data;
+        Router.go("workOrderProcPg");
+    }.bind(this,jsonData[i],i);
+    
     mapView.addPin(redpin);
     pinY += 0.000523;
     pinX += 0.0020;
