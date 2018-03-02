@@ -11,6 +11,7 @@ const extend = require('js-base/core/extend');
 const PageBase = require('sf-core/ui/page');
 const Page = extend(PageBase);
 const pageContextPatch = require('@smartface/contx/lib/smartface/pageContextPatch');
+const FlexLayout = extend(require('sf-core/ui/flexlayout'));
 const ListView = extend(require('sf-core/ui/listview'));
 const ListViewItem = extend(require('sf-core/ui/listviewitem'));
 
@@ -33,8 +34,7 @@ function $WorkOrders(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "workOrderListview", $WorkOrderListview_, this);
-  addChild.call(this, "mapViewfl", $MapViewfl_, this);
+  addChild.call(this, "workOrderfl", $WorkOrderfl_, this);
   pageContextPatch(this, "workOrders");
 }
 $WorkOrders.$$styleContext = {
@@ -55,7 +55,24 @@ $WorkOrders.$$styleContext = {
 };
 const $WorkOrders_ = Page($WorkOrders);
 
-function $WorkOrderListview(_super, pageInstance) {
+function $WorkOrderfl(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "workOrderListview", $WorkOrderfl$$WorkOrderListview_, pageInstance);
+  addChild.call(this, "mapViewfl", $WorkOrderfl$$MapViewfl_, pageInstance);
+}
+$WorkOrderfl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1
+    },
+    height: null,
+    width: null
+  }
+};
+const $WorkOrderfl_ = FlexLayout($WorkOrderfl);
+
+function $WorkOrderfl$$WorkOrderListview(_super, pageInstance) {
   _super(this, {
     id: 10,
     itemCount: NaN,
@@ -66,7 +83,7 @@ function $WorkOrderListview(_super, pageInstance) {
   };
   pageInstance.workOrderListview = this;
 }
-$WorkOrderListview.$$styleContext = {
+$WorkOrderfl$$WorkOrderListview.$$styleContext = {
   classNames: ".listView",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 1 )",
@@ -82,13 +99,13 @@ $WorkOrderListview.$$styleContext = {
     width: null
   }
 };
-const $WorkOrderListview_ = ListView($WorkOrderListview);
+const $WorkOrderfl$$WorkOrderListview_ = ListView($WorkOrderfl$$WorkOrderListview);
 
-function $MapViewfl(_super, pageInstance) {
+function $WorkOrderfl$$MapViewfl(_super, pageInstance) {
   _super(this);
   pageInstance.mapViewfl = this;
 }
-$MapViewfl.$$styleContext = {
+$WorkOrderfl$$MapViewfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -104,7 +121,7 @@ $MapViewfl.$$styleContext = {
     width: null
   }
 };
-const $MapViewfl_ = MapViewfl($MapViewfl);
+const $WorkOrderfl$$MapViewfl_ = MapViewfl($WorkOrderfl$$MapViewfl);
 
 /**
  * @event onShow

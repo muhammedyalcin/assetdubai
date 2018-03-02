@@ -36,35 +36,59 @@ function $ConfirmPg(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "confirmContainer", $ConfirmContainer_, this);
-  addChild.call(this, "completefl", $Completefl_, this);
+  addChild.call(this, "confirmfl", $Confirmfl_, this);
   pageContextPatch(this, "confirmPg");
 }
 $ConfirmPg.$$styleContext = {
   classNames: ".page",
-  userProps: {},
+  userProps: {
+    flexProps: {
+      flexDirection: "COLUMN_REVERSE"
+    }
+  },
   statusBar: {
     classNames: ".statusBar",
-    userProps: {}
+    userProps: {
+      visible: true
+    }
   },
   headerBar: {
     classNames: ".headerBar .heahderBar-style1 .headerBar-style2",
     userProps: {
-      titleColor: "rgba( 216, 215, 215, 1 )"
+      titleColor: "rgba( 216, 215, 215, 1 )",
+      visible: true
     }
   }
 };
 const $ConfirmPg_ = Page($ConfirmPg);
 
-function $ConfirmContainer(_super, pageInstance) {
+function $Confirmfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "timefl", $ConfirmContainer$$Timefl_, pageInstance);
-  addChild.call(this, "stepcompfl", $ConfirmContainer$$Stepcompfl_, pageInstance);
-  addChild.call(this, "addfl", $ConfirmContainer$$Addfl_, pageInstance);
-  addChild.call(this, "comfirmPlaceHolder", $ConfirmContainer$$ComfirmPlaceHolder_, pageInstance);
+  addChild.call(this, "confirmContainer", $Confirmfl$$ConfirmContainer_, pageInstance);
+  addChild.call(this, "completefl", $Confirmfl$$Completefl_, pageInstance);
+}
+$Confirmfl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1,
+      flexDirection: "COLUMN_REVERSE"
+    },
+    height: null,
+    width: null
+  }
+};
+const $Confirmfl_ = FlexLayout($Confirmfl);
+
+function $Confirmfl$$ConfirmContainer(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "timefl", $Confirmfl$$ConfirmContainer$$Timefl_, pageInstance);
+  addChild.call(this, "stepcompfl", $Confirmfl$$ConfirmContainer$$Stepcompfl_, pageInstance);
+  addChild.call(this, "addfl", $Confirmfl$$ConfirmContainer$$Addfl_, pageInstance);
+  addChild.call(this, "comfirmPlaceHolder", $Confirmfl$$ConfirmContainer$$ComfirmPlaceHolder_, pageInstance);
   pageInstance.confirmContainer = this;
 }
-$ConfirmContainer.$$styleContext = {
+$Confirmfl$$ConfirmContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -75,20 +99,20 @@ $ConfirmContainer.$$styleContext = {
     height: null,
     left: 10,
     right: 10,
-    top: 12.222222222222221,
+    top: 12,
     width: null
   }
 };
-const $ConfirmContainer_ = FlexLayout($ConfirmContainer);
+const $Confirmfl$$ConfirmContainer_ = FlexLayout($Confirmfl$$ConfirmContainer);
 
-function $ConfirmContainer$$Timefl(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Timefl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "compLabel", $ConfirmContainer$$Timefl$$CompLabel_, pageInstance);
-  addChild.call(this, "timeContainer", $ConfirmContainer$$Timefl$$TimeContainer_, pageInstance);
-  addChild.call(this, "line", $ConfirmContainer$$Timefl$$Line_, pageInstance);
+  addChild.call(this, "compLabel", $Confirmfl$$ConfirmContainer$$Timefl$$CompLabel_, pageInstance);
+  addChild.call(this, "timeContainer", $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer_, pageInstance);
+  addChild.call(this, "line", $Confirmfl$$ConfirmContainer$$Timefl$$Line_, pageInstance);
   pageInstance.timefl = this;
 }
-$ConfirmContainer$$Timefl.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Timefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -99,15 +123,15 @@ $ConfirmContainer$$Timefl.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Timefl_ = FlexLayout($ConfirmContainer$$Timefl);
+const $Confirmfl$$ConfirmContainer$$Timefl_ = FlexLayout($Confirmfl$$ConfirmContainer$$Timefl);
 
-function $ConfirmContainer$$Timefl$$CompLabel(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Timefl$$CompLabel(_super, pageInstance) {
   _super(this, {
     text: "Work Order Completed at"
   });
   pageInstance.compLabel = this;
 }
-$ConfirmContainer$$Timefl$$CompLabel.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Timefl$$CompLabel.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -123,14 +147,14 @@ $ConfirmContainer$$Timefl$$CompLabel.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Timefl$$CompLabel_ = Label($ConfirmContainer$$Timefl$$CompLabel);
+const $Confirmfl$$ConfirmContainer$$Timefl$$CompLabel_ = Label($Confirmfl$$ConfirmContainer$$Timefl$$CompLabel);
 
-function $ConfirmContainer$$Timefl$$TimeContainer(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "timeValuefl", $ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl_, pageInstance);
-  addChild.call(this, "datefl", $ConfirmContainer$$Timefl$$TimeContainer$$Datefl_, pageInstance);
+  addChild.call(this, "timeValuefl", $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl_, pageInstance);
+  addChild.call(this, "datefl", $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl_, pageInstance);
 }
-$ConfirmContainer$$Timefl$$TimeContainer.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -142,13 +166,13 @@ $ConfirmContainer$$Timefl$$TimeContainer.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Timefl$$TimeContainer_ = FlexLayout($ConfirmContainer$$Timefl$$TimeContainer);
+const $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer_ = FlexLayout($Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer);
 
-function $ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "timeLabel", $ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel_, pageInstance);
+  addChild.call(this, "timeLabel", $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel_, pageInstance);
 }
-$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -159,15 +183,15 @@ $ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl_ = FlexLayout($ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl);
+const $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl_ = FlexLayout($Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl);
 
-function $ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel(_super, pageInstance) {
   _super(this, {
     text: "6:30 pm"
   });
   pageInstance.timeLabel = this;
 }
-$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -183,13 +207,13 @@ $ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel.$$styleContext 
     width: null
   }
 };
-const $ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel_ = Label($ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel);
+const $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel_ = Label($Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$TimeValuefl$$TimeLabel);
 
-function $ConfirmContainer$$Timefl$$TimeContainer$$Datefl(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "dateLabel", $ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel_, pageInstance);
+  addChild.call(this, "dateLabel", $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel_, pageInstance);
 }
-$ConfirmContainer$$Timefl$$TimeContainer$$Datefl.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -200,15 +224,15 @@ $ConfirmContainer$$Timefl$$TimeContainer$$Datefl.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Timefl$$TimeContainer$$Datefl_ = FlexLayout($ConfirmContainer$$Timefl$$TimeContainer$$Datefl);
+const $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl_ = FlexLayout($Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl);
 
-function $ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel(_super, pageInstance) {
   _super(this, {
     text: "14.09.17"
   });
   pageInstance.dateLabel = this;
 }
-$ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -224,12 +248,12 @@ $ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel_ = Label($ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel);
+const $Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel_ = Label($Confirmfl$$ConfirmContainer$$Timefl$$TimeContainer$$Datefl$$DateLabel);
 
-function $ConfirmContainer$$Timefl$$Line(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Timefl$$Line(_super, pageInstance) {
   _super(this);
 }
-$ConfirmContainer$$Timefl$$Line.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Timefl$$Line.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     alpha: 0.31,
@@ -244,19 +268,19 @@ $ConfirmContainer$$Timefl$$Line.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Timefl$$Line_ = FlexLayout($ConfirmContainer$$Timefl$$Line);
+const $Confirmfl$$ConfirmContainer$$Timefl$$Line_ = FlexLayout($Confirmfl$$ConfirmContainer$$Timefl$$Line);
 
-function $ConfirmContainer$$Stepcompfl(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Stepcompfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "stepTitleLabe", $ConfirmContainer$$Stepcompfl$$StepTitleLabe_, pageInstance);
-  addChild.call(this, "stepLabel1", $ConfirmContainer$$Stepcompfl$$StepLabel1_, pageInstance);
-  addChild.call(this, "stepLabel2", $ConfirmContainer$$Stepcompfl$$StepLabel2_, pageInstance);
-  addChild.call(this, "stepLabel3", $ConfirmContainer$$Stepcompfl$$StepLabel3_, pageInstance);
-  addChild.call(this, "placeHolder", $ConfirmContainer$$Stepcompfl$$PlaceHolder_, pageInstance);
-  addChild.call(this, "line", $ConfirmContainer$$Stepcompfl$$Line_, pageInstance);
+  addChild.call(this, "stepTitleLabe", $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepTitleLabe_, pageInstance);
+  addChild.call(this, "stepLabel1", $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel1_, pageInstance);
+  addChild.call(this, "stepLabel2", $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel2_, pageInstance);
+  addChild.call(this, "stepLabel3", $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel3_, pageInstance);
+  addChild.call(this, "placeHolder", $Confirmfl$$ConfirmContainer$$Stepcompfl$$PlaceHolder_, pageInstance);
+  addChild.call(this, "line", $Confirmfl$$ConfirmContainer$$Stepcompfl$$Line_, pageInstance);
   pageInstance.stepcompfl = this;
 }
-$ConfirmContainer$$Stepcompfl.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Stepcompfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -267,15 +291,15 @@ $ConfirmContainer$$Stepcompfl.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Stepcompfl_ = FlexLayout($ConfirmContainer$$Stepcompfl);
+const $Confirmfl$$ConfirmContainer$$Stepcompfl_ = FlexLayout($Confirmfl$$ConfirmContainer$$Stepcompfl);
 
-function $ConfirmContainer$$Stepcompfl$$StepTitleLabe(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepTitleLabe(_super, pageInstance) {
   _super(this, {
     text: "Step Completed"
   });
   pageInstance.stepTitleLabe = this;
 }
-$ConfirmContainer$$Stepcompfl$$StepTitleLabe.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Stepcompfl$$StepTitleLabe.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -292,15 +316,15 @@ $ConfirmContainer$$Stepcompfl$$StepTitleLabe.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Stepcompfl$$StepTitleLabe_ = Label($ConfirmContainer$$Stepcompfl$$StepTitleLabe);
+const $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepTitleLabe_ = Label($Confirmfl$$ConfirmContainer$$Stepcompfl$$StepTitleLabe);
 
-function $ConfirmContainer$$Stepcompfl$$StepLabel1(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel1(_super, pageInstance) {
   _super(this, {
     text: "Test Closure Time"
   });
   pageInstance.stepLabel1 = this;
 }
-$ConfirmContainer$$Stepcompfl$$StepLabel1.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel1.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -316,15 +340,15 @@ $ConfirmContainer$$Stepcompfl$$StepLabel1.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Stepcompfl$$StepLabel1_ = Label($ConfirmContainer$$Stepcompfl$$StepLabel1);
+const $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel1_ = Label($Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel1);
 
-function $ConfirmContainer$$Stepcompfl$$StepLabel2(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel2(_super, pageInstance) {
   _super(this, {
     text: "Acoustic Test"
   });
   pageInstance.stepLabel2 = this;
 }
-$ConfirmContainer$$Stepcompfl$$StepLabel2.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel2.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -341,15 +365,15 @@ $ConfirmContainer$$Stepcompfl$$StepLabel2.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Stepcompfl$$StepLabel2_ = Label($ConfirmContainer$$Stepcompfl$$StepLabel2);
+const $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel2_ = Label($Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel2);
 
-function $ConfirmContainer$$Stepcompfl$$StepLabel3(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel3(_super, pageInstance) {
   _super(this, {
     text: "Infrared Camera"
   });
   pageInstance.stepLabel3 = this;
 }
-$ConfirmContainer$$Stepcompfl$$StepLabel3.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel3.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -366,12 +390,12 @@ $ConfirmContainer$$Stepcompfl$$StepLabel3.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Stepcompfl$$StepLabel3_ = Label($ConfirmContainer$$Stepcompfl$$StepLabel3);
+const $Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel3_ = Label($Confirmfl$$ConfirmContainer$$Stepcompfl$$StepLabel3);
 
-function $ConfirmContainer$$Stepcompfl$$PlaceHolder(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Stepcompfl$$PlaceHolder(_super, pageInstance) {
   _super(this);
 }
-$ConfirmContainer$$Stepcompfl$$PlaceHolder.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Stepcompfl$$PlaceHolder.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -382,12 +406,12 @@ $ConfirmContainer$$Stepcompfl$$PlaceHolder.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Stepcompfl$$PlaceHolder_ = FlexLayout($ConfirmContainer$$Stepcompfl$$PlaceHolder);
+const $Confirmfl$$ConfirmContainer$$Stepcompfl$$PlaceHolder_ = FlexLayout($Confirmfl$$ConfirmContainer$$Stepcompfl$$PlaceHolder);
 
-function $ConfirmContainer$$Stepcompfl$$Line(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Stepcompfl$$Line(_super, pageInstance) {
   _super(this);
 }
-$ConfirmContainer$$Stepcompfl$$Line.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Stepcompfl$$Line.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     alpha: 0.31,
@@ -399,15 +423,15 @@ $ConfirmContainer$$Stepcompfl$$Line.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Stepcompfl$$Line_ = FlexLayout($ConfirmContainer$$Stepcompfl$$Line);
+const $Confirmfl$$ConfirmContainer$$Stepcompfl$$Line_ = FlexLayout($Confirmfl$$ConfirmContainer$$Stepcompfl$$Line);
 
-function $ConfirmContainer$$Addfl(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "labelfl", $ConfirmContainer$$Addfl$$Labelfl_, pageInstance);
-  addChild.call(this, "buttonfl", $ConfirmContainer$$Addfl$$Buttonfl_, pageInstance);
+  addChild.call(this, "labelfl", $Confirmfl$$ConfirmContainer$$Addfl$$Labelfl_, pageInstance);
+  addChild.call(this, "buttonfl", $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl_, pageInstance);
   pageInstance.addfl = this;
 }
-$ConfirmContainer$$Addfl.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -418,14 +442,14 @@ $ConfirmContainer$$Addfl.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Addfl_ = FlexLayout($ConfirmContainer$$Addfl);
+const $Confirmfl$$ConfirmContainer$$Addfl_ = FlexLayout($Confirmfl$$ConfirmContainer$$Addfl);
 
-function $ConfirmContainer$$Addfl$$Labelfl(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl$$Labelfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "compTitle", $ConfirmContainer$$Addfl$$Labelfl$$CompTitle_, pageInstance);
-  addChild.call(this, "compDescTitle", $ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle_, pageInstance);
+  addChild.call(this, "compTitle", $Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompTitle_, pageInstance);
+  addChild.call(this, "compDescTitle", $Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle_, pageInstance);
 }
-$ConfirmContainer$$Addfl$$Labelfl.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl$$Labelfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -436,15 +460,15 @@ $ConfirmContainer$$Addfl$$Labelfl.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Addfl$$Labelfl_ = FlexLayout($ConfirmContainer$$Addfl$$Labelfl);
+const $Confirmfl$$ConfirmContainer$$Addfl$$Labelfl_ = FlexLayout($Confirmfl$$ConfirmContainer$$Addfl$$Labelfl);
 
-function $ConfirmContainer$$Addfl$$Labelfl$$CompTitle(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompTitle(_super, pageInstance) {
   _super(this, {
     text: "Additional Actions"
   });
   pageInstance.compTitle = this;
 }
-$ConfirmContainer$$Addfl$$Labelfl$$CompTitle.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompTitle.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -460,15 +484,15 @@ $ConfirmContainer$$Addfl$$Labelfl$$CompTitle.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Addfl$$Labelfl$$CompTitle_ = Label($ConfirmContainer$$Addfl$$Labelfl$$CompTitle);
+const $Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompTitle_ = Label($Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompTitle);
 
-function $ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle(_super, pageInstance) {
   _super(this, {
     text: "Do you want to create a new work order for valve cleaning ?"
   });
   pageInstance.compDescTitle = this;
 }
-$ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -486,17 +510,17 @@ $ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle_ = Label($ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle);
+const $Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle_ = Label($Confirmfl$$ConfirmContainer$$Addfl$$Labelfl$$CompDescTitle);
 
-function $ConfirmContainer$$Addfl$$Buttonfl(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "yesButton", $ConfirmContainer$$Addfl$$Buttonfl$$YesButton_, pageInstance);
-  addChild.call(this, "middlePlaceHolder", $ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder_, pageInstance);
-  addChild.call(this, "noButton", $ConfirmContainer$$Addfl$$Buttonfl$$NoButton_, pageInstance);
-  addChild.call(this, "yesfl", $ConfirmContainer$$Addfl$$Buttonfl$$Yesfl_, pageInstance);
-  addChild.call(this, "nofl", $ConfirmContainer$$Addfl$$Buttonfl$$Nofl_, pageInstance);
+  addChild.call(this, "yesButton", $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$YesButton_, pageInstance);
+  addChild.call(this, "middlePlaceHolder", $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder_, pageInstance);
+  addChild.call(this, "noButton", $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$NoButton_, pageInstance);
+  addChild.call(this, "yesfl", $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Yesfl_, pageInstance);
+  addChild.call(this, "nofl", $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Nofl_, pageInstance);
 }
-$ConfirmContainer$$Addfl$$Buttonfl.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -512,15 +536,15 @@ $ConfirmContainer$$Addfl$$Buttonfl.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Addfl$$Buttonfl_ = FlexLayout($ConfirmContainer$$Addfl$$Buttonfl);
+const $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl_ = FlexLayout($Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl);
 
-function $ConfirmContainer$$Addfl$$Buttonfl$$YesButton(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$YesButton(_super, pageInstance) {
   _super(this, {
     text: "Yes"
   });
   pageInstance.yesButton = this;
 }
-$ConfirmContainer$$Addfl$$Buttonfl$$YesButton.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$YesButton.$$styleContext = {
   classNames: ".button",
   userProps: {
     backgroundColor: "rgba( 2, 132, 51, 1 )",
@@ -539,12 +563,12 @@ $ConfirmContainer$$Addfl$$Buttonfl$$YesButton.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Addfl$$Buttonfl$$YesButton_ = Button($ConfirmContainer$$Addfl$$Buttonfl$$YesButton);
+const $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$YesButton_ = Button($Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$YesButton);
 
-function $ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder(_super, pageInstance) {
   _super(this);
 }
-$ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -556,15 +580,15 @@ $ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder_ = FlexLayout($ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder);
+const $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder_ = FlexLayout($Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$MiddlePlaceHolder);
 
-function $ConfirmContainer$$Addfl$$Buttonfl$$NoButton(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$NoButton(_super, pageInstance) {
   _super(this, {
     text: "No"
   });
   pageInstance.noButton = this;
 }
-$ConfirmContainer$$Addfl$$Buttonfl$$NoButton.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$NoButton.$$styleContext = {
   classNames: ".button",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -583,13 +607,13 @@ $ConfirmContainer$$Addfl$$Buttonfl$$NoButton.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$Addfl$$Buttonfl$$NoButton_ = Button($ConfirmContainer$$Addfl$$Buttonfl$$NoButton);
+const $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$NoButton_ = Button($Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$NoButton);
 
-function $ConfirmContainer$$Addfl$$Buttonfl$$Yesfl(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Yesfl(_super, pageInstance) {
   _super(this);
   pageInstance.yesfl = this;
 }
-$ConfirmContainer$$Addfl$$Buttonfl$$Yesfl.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Yesfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -604,13 +628,13 @@ $ConfirmContainer$$Addfl$$Buttonfl$$Yesfl.$$styleContext = {
     width: 80
   }
 };
-const $ConfirmContainer$$Addfl$$Buttonfl$$Yesfl_ = Yesfl($ConfirmContainer$$Addfl$$Buttonfl$$Yesfl);
+const $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Yesfl_ = Yesfl($Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Yesfl);
 
-function $ConfirmContainer$$Addfl$$Buttonfl$$Nofl(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Nofl(_super, pageInstance) {
   _super(this);
   pageInstance.nofl = this;
 }
-$ConfirmContainer$$Addfl$$Buttonfl$$Nofl.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Nofl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -626,12 +650,12 @@ $ConfirmContainer$$Addfl$$Buttonfl$$Nofl.$$styleContext = {
     width: 80
   }
 };
-const $ConfirmContainer$$Addfl$$Buttonfl$$Nofl_ = Nofl($ConfirmContainer$$Addfl$$Buttonfl$$Nofl);
+const $Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Nofl_ = Nofl($Confirmfl$$ConfirmContainer$$Addfl$$Buttonfl$$Nofl);
 
-function $ConfirmContainer$$ComfirmPlaceHolder(_super, pageInstance) {
+function $Confirmfl$$ConfirmContainer$$ComfirmPlaceHolder(_super, pageInstance) {
   _super(this);
 }
-$ConfirmContainer$$ComfirmPlaceHolder.$$styleContext = {
+$Confirmfl$$ConfirmContainer$$ComfirmPlaceHolder.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     alpha: 0,
@@ -644,13 +668,13 @@ $ConfirmContainer$$ComfirmPlaceHolder.$$styleContext = {
     width: null
   }
 };
-const $ConfirmContainer$$ComfirmPlaceHolder_ = FlexLayout($ConfirmContainer$$ComfirmPlaceHolder);
+const $Confirmfl$$ConfirmContainer$$ComfirmPlaceHolder_ = FlexLayout($Confirmfl$$ConfirmContainer$$ComfirmPlaceHolder);
 
-function $Completefl(_super, pageInstance) {
+function $Confirmfl$$Completefl(_super, pageInstance) {
   _super(this);
   pageInstance.completefl = this;
 }
-$Completefl.$$styleContext = {
+$Confirmfl$$Completefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     bottom: 0,
@@ -661,10 +685,11 @@ $Completefl.$$styleContext = {
     height: 70,
     left: 0,
     right: 0,
+    top: 0,
     width: null
   }
 };
-const $Completefl_ = Completefl($Completefl);
+const $Confirmfl$$Completefl_ = Completefl($Confirmfl$$Completefl);
 
 /**
  * @event onShow

@@ -11,6 +11,7 @@ const extend = require('js-base/core/extend');
 const PageBase = require('sf-core/ui/page');
 const Page = extend(PageBase);
 const pageContextPatch = require('@smartface/contx/lib/smartface/pageContextPatch');
+const FlexLayout = extend(require('sf-core/ui/flexlayout'));
 
 const Tab = extend(require("../components/Tab"));
 const NoteContainer = extend(require("../components/NoteContainer"));
@@ -34,10 +35,7 @@ function $Step1Page(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "tab", $Tab_, this);
-  addChild.call(this, "noteContainer", $NoteContainer_, this);
-  addChild.call(this, "completefl", $Completefl_, this);
-  addChild.call(this, "currentProcedureRowfl", $CurrentProcedureRowfl_, this);
+  addChild.call(this, "step1fl", $Step1fl_, this);
   pageContextPatch(this, "step1Page");
 }
 $Step1Page.$$styleContext = {
@@ -56,11 +54,30 @@ $Step1Page.$$styleContext = {
 };
 const $Step1Page_ = Page($Step1Page);
 
-function $Tab(_super, pageInstance) {
+function $Step1fl(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "tab", $Step1fl$$Tab_, pageInstance);
+  addChild.call(this, "noteContainer", $Step1fl$$NoteContainer_, pageInstance);
+  addChild.call(this, "completefl", $Step1fl$$Completefl_, pageInstance);
+  addChild.call(this, "currentProcedureRowfl", $Step1fl$$CurrentProcedureRowfl_, pageInstance);
+}
+$Step1fl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1
+    },
+    height: null,
+    width: null
+  }
+};
+const $Step1fl_ = FlexLayout($Step1fl);
+
+function $Step1fl$$Tab(_super, pageInstance) {
   _super(this);
   pageInstance.tab = this;
 }
-$Tab.$$styleContext = {
+$Step1fl$$Tab.$$styleContext = {
   classNames: ".flexLayout .tabBar-style1 .tabBar-style2",
   userProps: {
     flexProps: {
@@ -73,13 +90,13 @@ $Tab.$$styleContext = {
     width: null
   }
 };
-const $Tab_ = Tab($Tab);
+const $Step1fl$$Tab_ = Tab($Step1fl$$Tab);
 
-function $NoteContainer(_super, pageInstance) {
+function $Step1fl$$NoteContainer(_super, pageInstance) {
   _super(this);
   pageInstance.noteContainer = this;
 }
-$NoteContainer.$$styleContext = {
+$Step1fl$$NoteContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -99,13 +116,13 @@ $NoteContainer.$$styleContext = {
     width: null
   }
 };
-const $NoteContainer_ = NoteContainer($NoteContainer);
+const $Step1fl$$NoteContainer_ = NoteContainer($Step1fl$$NoteContainer);
 
-function $Completefl(_super, pageInstance) {
+function $Step1fl$$Completefl(_super, pageInstance) {
   _super(this);
   pageInstance.completefl = this;
 }
-$Completefl.$$styleContext = {
+$Step1fl$$Completefl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     bottom: 0,
@@ -119,13 +136,13 @@ $Completefl.$$styleContext = {
     width: null
   }
 };
-const $Completefl_ = Completefl($Completefl);
+const $Step1fl$$Completefl_ = Completefl($Step1fl$$Completefl);
 
-function $CurrentProcedureRowfl(_super, pageInstance) {
+function $Step1fl$$CurrentProcedureRowfl(_super, pageInstance) {
   _super(this);
   pageInstance.currentProcedureRowfl = this;
 }
-$CurrentProcedureRowfl.$$styleContext = {
+$Step1fl$$CurrentProcedureRowfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -139,7 +156,7 @@ $CurrentProcedureRowfl.$$styleContext = {
     width: null
   }
 };
-const $CurrentProcedureRowfl_ = CurrentProcedureRowfl($CurrentProcedureRowfl);
+const $Step1fl$$CurrentProcedureRowfl_ = CurrentProcedureRowfl($Step1fl$$CurrentProcedureRowfl);
 
 /**
  * @event onShow

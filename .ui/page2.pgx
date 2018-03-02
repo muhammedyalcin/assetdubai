@@ -1,24 +1,10 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "7761adc8",
 			"initialized": true,
-			"userProps": {
-				"orientation": "PORTRAIT",
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"flexProps": {
-					"alignItems": "CENTER",
-					"justifyContent": "SPACE_AROUND",
-					"flexDirection": "COLUMN",
-					"flexWrap": "NOWRAP",
-					"direction": "INHERIT"
-				}
-			},
-			"className": ".page",
-			"version": "6.6.0",
 			"props": {
-				"name": "page2",
 				"children": [
 					"a829471c",
 					"35f1c1a1",
@@ -29,226 +15,240 @@
 					"9735-d2fb-d3cd-1525",
 					"c6cb-5d6f-350f-b7d9"
 				],
-				"parent": null,
+				"name": "page2",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "SPACE_AROUND",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"direction": "INHERIT"
+				},
 				"orientation": "PORTRAIT"
-			}
+			},
+			"version": "6.6.2"
 		},
 		{
-			"type": "StatusBar",
-			"id": "a829471c",
-			"userProps": {},
 			"className": ".statusBar",
+			"id": "a829471c",
 			"props": {
-				"name": "statusBar",
 				"children": [],
+				"name": "statusBar",
 				"parent": "7761adc8"
-			}
+			},
+			"type": "StatusBar",
+			"userProps": {}
 		},
 		{
-			"type": "HeaderBar",
+			"className": ".headerBar",
 			"id": "35f1c1a1",
+			"props": {
+				"children": [],
+				"name": "headerBar",
+				"parent": "7761adc8",
+				"title": "page2"
+			},
+			"type": "HeaderBar",
 			"userProps": {
 				"title": "page2",
 				"titleColor": "rgba( 0, 0, 0, 1 )",
 				"visible": true
-			},
-			"className": ".headerBar",
-			"props": {
-				"name": "headerBar",
-				"title": "page2",
-				"children": [],
-				"parent": "7761adc8"
 			}
 		},
 		{
-			"type": "Button",
+			"className": ".button",
 			"id": "c5abb100",
-			"userProps": {
-				"height": 60,
+			"props": {
+				"children": [],
+				"name": "btn",
+				"parent": "7761adc8",
 				"text": "Back",
-				"backgroundColor": "rgba( 0, 161, 241, 1 )",
-				"visible": true,
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
 				"alpha": 1,
-				"width": null,
-				"marginLeft": 10,
-				"marginRight": 10,
-				"usePageVariable": true,
-				"maxHeight": 60,
-				"font": {
-					"color": "rgba( 255, 255, 255, 1 )",
-					"size": 16,
-					"family": "Default"
-				},
+				"backgroundColor": "rgba( 0, 161, 241, 1 )",
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"marginLeft": 20,
 					"marginRight": 20,
 					"alignSelf": "STRETCH"
-				}
-			},
-			"className": ".button",
-			"props": {
-				"name": "btn",
+				},
+				"font": {
+					"color": "rgba( 255, 255, 255, 1 )",
+					"size": 16,
+					"family": "Default"
+				},
+				"height": 60,
+				"marginLeft": 10,
+				"marginRight": 10,
+				"maxHeight": 60,
 				"text": "Back",
 				"usePageVariable": true,
-				"children": [],
-				"parent": "7761adc8"
+				"visible": true,
+				"width": null
 			}
 		},
 		{
-			"type": "Label",
+			"className": ".label",
 			"id": "980522a9",
-			"userProps": {
-				"left": null,
-				"top": null,
-				"right": 0,
-				"bottom": 0,
-				"height": 90,
+			"props": {
+				"children": [],
+				"name": "lbl",
+				"parent": "7761adc8",
 				"text": "This is second page",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"alpha": 1,
+				"backgroundColor": "rgba( 0, 0, 0, 0 )",
 				"borderColor": "rgba( 255, 255, 255, 1 )",
 				"borderRadius": 0,
 				"borderWidth": 0,
-				"backgroundColor": "rgba( 0, 0, 0, 0 )",
-				"visible": true,
-				"textAlignment": "MIDCENTER",
-				"alpha": 1,
-				"width": null,
-				"marginLeft": 10,
-				"marginRight": 10,
-				"maxHeight": 90,
-				"usePageVariable": true,
-				"font": {
-					"family": "Default",
-					"size": 16
-				},
+				"bottom": 0,
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "STRETCH",
 					"marginLeft": 20,
 					"marginRight": 20,
 					"flexGrow": 2
-				}
-			},
-			"className": ".label",
-			"props": {
-				"name": "lbl",
+				},
+				"font": {
+					"family": "Default",
+					"size": 16
+				},
+				"height": 90,
+				"left": null,
+				"marginLeft": 10,
+				"marginRight": 10,
+				"maxHeight": 90,
+				"right": 0,
 				"text": "This is second page",
+				"textAlignment": "MIDCENTER",
+				"top": null,
 				"usePageVariable": true,
-				"children": [],
-				"parent": "7761adc8"
+				"visible": true,
+				"width": null
 			}
 		},
 		{
-			"type": "ImageView",
+			"className": ".imageView",
 			"id": "845d2004",
+			"props": {
+				"children": [],
+				"name": "img",
+				"parent": "7761adc8"
+			},
+			"type": "ImageView",
 			"userProps": {
-				"left": null,
-				"top": null,
-				"right": 0,
-				"bottom": 0,
-				"height": 60,
-				"image": "smartface.png",
-				"imageFillType": "ASPECTFIT",
-				"visible": true,
 				"alpha": 1,
-				"width": null,
 				"borderWidth": null,
-				"marginLeft": 10,
-				"marginRight": 10,
-				"maxHeight": 60,
+				"bottom": 0,
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "STRETCH",
 					"marginLeft": 20,
 					"marginRight": 20,
 					"flexGrow": 4
-				}
-			},
-			"className": ".imageView",
-			"props": {
-				"name": "img",
-				"children": [],
-				"parent": "7761adc8"
+				},
+				"height": 60,
+				"image": "smartface.png",
+				"imageFillType": "ASPECTFIT",
+				"left": null,
+				"marginLeft": 10,
+				"marginRight": 10,
+				"maxHeight": 60,
+				"right": 0,
+				"top": null,
+				"visible": true,
+				"width": null
 			}
 		},
 		{
-			"type": "FlexLayout",
-			"id": "fb19-5774-6727-85dc",
+			"className": ".flexLayout",
 			"hiddenComponent": false,
+			"id": "fb19-5774-6727-85dc",
+			"props": {
+				"children": [],
+				"name": "workRow",
+				"parent": "7761adc8"
+			},
 			"source": {
 				"page": "__library__",
 				"type": "workRow",
 				"id": "4876-b1c1-019d-0dd8"
 			},
+			"type": "FlexLayout",
 			"userProps": {
-				"left": 0,
-				"top": 0,
-				"width": 376,
-				"height": 86,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"flexProps": {
 					"positionType": "RELATIVE"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"name": "workRow",
-				"children": [],
-				"parent": "7761adc8"
+				},
+				"height": 86,
+				"left": 0,
+				"top": 0,
+				"width": 376
 			}
 		},
 		{
-			"type": "FlexLayout",
-			"id": "9735-d2fb-d3cd-1525",
+			"className": ".flexLayout",
 			"hiddenComponent": false,
+			"id": "9735-d2fb-d3cd-1525",
+			"props": {
+				"children": [],
+				"name": "wordSummary",
+				"parent": "7761adc8"
+			},
 			"source": {
 				"page": "__library__",
 				"type": "wordSummary",
 				"id": "69c6-654a-8ae8-9cdc"
 			},
+			"type": "FlexLayout",
 			"userProps": {
-				"width": 371.72307194890203,
-				"height": 80.00000103099926,
-				"left": 0,
-				"top": 0,
-				"right": 0,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"flexProps": {
 					"positionType": "RELATIVE"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"name": "wordSummary",
-				"children": [],
-				"parent": "7761adc8"
+				},
+				"height": 80.00000103099926,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"width": 371.72307194890203
 			}
 		},
 		{
-			"type": "FlexLayout",
-			"id": "c6cb-5d6f-350f-b7d9",
+			"className": ".flexLayout",
 			"hiddenComponent": false,
+			"id": "c6cb-5d6f-350f-b7d9",
+			"props": {
+				"children": [],
+				"name": "tab",
+				"parent": "7761adc8"
+			},
 			"source": {
 				"page": "__library__",
 				"type": "tab",
 				"id": "0276-a54a-2096-81f6"
 			},
+			"type": "FlexLayout",
 			"userProps": {
-				"width": 350.48052813555745,
+				"backgroundColor": "rgba( 74, 74, 74, 0.99 )",
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
 				"height": 54.054054054054056,
 				"left": 0,
 				"right": 0,
 				"top": 0,
-				"backgroundColor": "rgba( 74, 74, 74, 0.99 )",
-				"flexProps": {
-					"positionType": "RELATIVE"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"name": "tab",
-				"children": [],
-				"parent": "7761adc8"
+				"width": 350.48052813555745
 			}
 		}
 	]

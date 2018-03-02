@@ -71,6 +71,8 @@ function onShow(superOnShow) {
  */
 function onLoad(superOnLoad) {
   superOnLoad && superOnLoad();
+  
+  this.ios.safeAreaLayoutMode = true;
   Router.sliderDrawer.setLeftItem(this.headerBar);
 
   initCurrentTheme.call(this);

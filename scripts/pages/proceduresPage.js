@@ -92,9 +92,12 @@ var height = 230; //global height
 var globalTop = 20; //global top
 function onLoad(superOnLoad) {
   superOnLoad();
-
-  HeaderBarItem.setCustomHeaderBarItem(this);
+  
   var page = this;
+  page.ios.safeAreaLayoutMode = true;
+  this.layout.backgroundColor = Color.create(61,59,58);
+  HeaderBarItem.setCustomHeaderBarItem(this);
+  
   procedureData = User.currentWorkSummary.procedure;
 
   //Sets scrollview 

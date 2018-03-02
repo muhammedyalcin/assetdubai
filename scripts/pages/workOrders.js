@@ -23,6 +23,7 @@ const System = require('sf-core/device/system');
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 var workOL;
+var self;
 const WorkOrders = extend(WorkOrdersDesign)(
   // Constructor
   function(_super) {
@@ -31,16 +32,22 @@ const WorkOrders = extend(WorkOrdersDesign)(
     // overrides super.onShow method
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     this.onLoad = onLoad.bind(this, this.onLoad);
+    self = this;
   });
 
 var currentUser;
 // overrides super.onLoad method
 function onLoad(pageonLoad) {
   pageonLoad && pageonLoad();
-
+  
+  this.ios.safeAreaLayoutMode = true;
+  this.layout.backgroundColor = Color.create(61,59,58);
   currentUser = User.currentUser;
   //sets pins on the mapview
-  setRedpins.call(this, currentUser.work);
+  this.mapViewfl.workMapView.onCreate = function(){
+    setRedpins.call(self, currentUser.work);
+  };
+  
 
   this.headerBar.titleColor = Color.create("#FFFFFF");
   //Router.sliderDrawer.setLeftItem(this.headerBar);
@@ -171,7 +178,7 @@ function initListview(jsonData) {
 
   workOL.onRowSelected = function(listViewItem, index) {
     Router.sliderDrawer.hideSlider();
-    User.currentWork = jsonData[index]
+    User.currentWork = jsonData[index];
     Router.go("workOrderProcPg");
   };
 
@@ -193,6 +200,7 @@ function initListview(jsonData) {
             workOL.nativeObject.deleteRowIndexAnimation(e.index, 3);
           }
           Items.deleteItem(e.index)
+          deletePin(e.index);
         }
         catch (err) {
           console.log(err.message);
@@ -215,6 +223,17 @@ function initListview(jsonData) {
 
 }
 
+function deletePin(pin){
+  var visiblePins = self.mapViewfl.workMapView.getVisiblePins();
+  for (var i = 0; i < visiblePins.length; i++) {
+    if(JSON.stringify(redpins[pin].location) == JSON.stringify(visiblePins[i].location)){
+      self.mapViewfl.workMapView.removePin(visiblePins[i]);
+      redpins.splice(pin, 1);
+      break;
+    }
+  }
+}
+
 function deleteItem(index, jsonData) {
 
   var confirmAlertView = new AlertView({
@@ -235,6 +254,7 @@ function deleteItem(index, jsonData) {
         workOL.nativeObject.deleteRowIndexAnimation(index, 3);
       }
       Items.deleteItem(index);
+      deletePin(index);
       //afterwards refrest the data and set length of data.
       workOL.itemCount = jsonData.length;
       workOL.refreshData();
@@ -258,13 +278,15 @@ function setRedpins(jsonData) {
         latitude: mapView.centerLocation.latitude + pinX,
         longitude: mapView.centerLocation.longitude + pinY
       },
-      title: "" + jsonData[i].workid1,
-      onPress: function() {
-        User.currentWork = redpins[redpin.id];
-        Router.go("workOrderProcPg");
-      }
+      title: "" + jsonData[i].workid1
     });
+    jsonData[i].location = redpin.location;
     redpins.push(jsonData[i]);
+    redpin.onPress = function(data,index) {
+        User.currentWork = data;
+        Router.go("workOrderProcPg");
+    }.bind(this,jsonData[i],i);
+    
     mapView.addPin(redpin);
     pinY += 0.000523;
     pinX += 0.0020;

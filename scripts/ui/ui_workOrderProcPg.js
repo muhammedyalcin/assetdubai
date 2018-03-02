@@ -30,21 +30,22 @@ function addChild(childName, ChildClass, pageInstance) {
 function $WorkOrderProcPg(_super, props) {
   // initalizes super class for this page scope
   _super(this, Object.assign({}, {
-    onShow: onShow.bind(this)
+    onShow: onShow.bind(this),
+    orientation: PageBase.Orientation.PORTRAIT
   }, props || {}));
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "proButton", $ProButton_, this);
-  addChild.call(this, "contactContainer", $ContactContainer_, this);
-  addChild.call(this, "mapViewfl", $MapViewfl_, this);
-  addChild.call(this, "workOrdersSumfl", $WorkOrdersSumfl_, this);
+  addChild.call(this, "workfl", $Workfl_, this);
   pageContextPatch(this, "workOrderProcPg");
 }
 $WorkOrderProcPg.$$styleContext = {
   classNames: ".page",
   userProps: {
-    backgroundColor: "rgba( 255, 255, 255, 1 )"
+    backgroundColor: "rgba( 255, 255, 255, 1 )",
+    flexProps: {
+      alignContent: "STRETCH"
+    }
   },
   statusBar: {
     classNames: ".statusBar",
@@ -59,14 +60,33 @@ $WorkOrderProcPg.$$styleContext = {
 };
 const $WorkOrderProcPg_ = Page($WorkOrderProcPg);
 
-function $ProButton(_super, pageInstance) {
+function $Workfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "cancelButton", $ProButton$$CancelButton_, pageInstance);
-  addChild.call(this, "placeHolder", $ProButton$$PlaceHolder_, pageInstance);
-  addChild.call(this, "startProButton", $ProButton$$StartProButton_, pageInstance);
+  addChild.call(this, "proButton", $Workfl$$ProButton_, pageInstance);
+  addChild.call(this, "contactContainer", $Workfl$$ContactContainer_, pageInstance);
+  addChild.call(this, "mapViewfl", $Workfl$$MapViewfl_, pageInstance);
+  addChild.call(this, "workOrdersSumfl", $Workfl$$WorkOrdersSumfl_, pageInstance);
+}
+$Workfl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1
+    },
+    height: null,
+    width: null
+  }
+};
+const $Workfl_ = FlexLayout($Workfl);
+
+function $Workfl$$ProButton(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "cancelButton", $Workfl$$ProButton$$CancelButton_, pageInstance);
+  addChild.call(this, "placeHolder", $Workfl$$ProButton$$PlaceHolder_, pageInstance);
+  addChild.call(this, "startProButton", $Workfl$$ProButton$$StartProButton_, pageInstance);
   pageInstance.proButton = this;
 }
-$ProButton.$$styleContext = {
+$Workfl$$ProButton.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 1 )",
@@ -81,15 +101,15 @@ $ProButton.$$styleContext = {
     width: null
   }
 };
-const $ProButton_ = FlexLayout($ProButton);
+const $Workfl$$ProButton_ = FlexLayout($Workfl$$ProButton);
 
-function $ProButton$$CancelButton(_super, pageInstance) {
+function $Workfl$$ProButton$$CancelButton(_super, pageInstance) {
   _super(this, {
     text: "Cancel Work Order"
   });
   pageInstance.cancelButton = this;
 }
-$ProButton$$CancelButton.$$styleContext = {
+$Workfl$$ProButton$$CancelButton.$$styleContext = {
   classNames: ".button",
   userProps: {
     backgroundColor: "rgba( 208, 2, 27, 1 )",
@@ -103,12 +123,12 @@ $ProButton$$CancelButton.$$styleContext = {
     width: null
   }
 };
-const $ProButton$$CancelButton_ = Button($ProButton$$CancelButton);
+const $Workfl$$ProButton$$CancelButton_ = Button($Workfl$$ProButton$$CancelButton);
 
-function $ProButton$$PlaceHolder(_super, pageInstance) {
+function $Workfl$$ProButton$$PlaceHolder(_super, pageInstance) {
   _super(this);
 }
-$ProButton$$PlaceHolder.$$styleContext = {
+$Workfl$$ProButton$$PlaceHolder.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -119,15 +139,15 @@ $ProButton$$PlaceHolder.$$styleContext = {
     width: null
   }
 };
-const $ProButton$$PlaceHolder_ = FlexLayout($ProButton$$PlaceHolder);
+const $Workfl$$ProButton$$PlaceHolder_ = FlexLayout($Workfl$$ProButton$$PlaceHolder);
 
-function $ProButton$$StartProButton(_super, pageInstance) {
+function $Workfl$$ProButton$$StartProButton(_super, pageInstance) {
   _super(this, {
     text: "Start Procedure"
   });
   pageInstance.startProButton = this;
 }
-$ProButton$$StartProButton.$$styleContext = {
+$Workfl$$ProButton$$StartProButton.$$styleContext = {
   classNames: ".button",
   userProps: {
     backgroundColor: "rgba( 2, 132, 51, 1 )",
@@ -141,13 +161,13 @@ $ProButton$$StartProButton.$$styleContext = {
     width: null
   }
 };
-const $ProButton$$StartProButton_ = Button($ProButton$$StartProButton);
+const $Workfl$$ProButton$$StartProButton_ = Button($Workfl$$ProButton$$StartProButton);
 
-function $ContactContainer(_super, pageInstance) {
+function $Workfl$$ContactContainer(_super, pageInstance) {
   _super(this);
   pageInstance.contactContainer = this;
 }
-$ContactContainer.$$styleContext = {
+$Workfl$$ContactContainer.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 1 )",
@@ -162,13 +182,13 @@ $ContactContainer.$$styleContext = {
     width: null
   }
 };
-const $ContactContainer_ = ContactContainer($ContactContainer);
+const $Workfl$$ContactContainer_ = ContactContainer($Workfl$$ContactContainer);
 
-function $MapViewfl(_super, pageInstance) {
+function $Workfl$$MapViewfl(_super, pageInstance) {
   _super(this);
   pageInstance.mapViewfl = this;
 }
-$MapViewfl.$$styleContext = {
+$Workfl$$MapViewfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -183,13 +203,13 @@ $MapViewfl.$$styleContext = {
     width: null
   }
 };
-const $MapViewfl_ = MapViewfl($MapViewfl);
+const $Workfl$$MapViewfl_ = MapViewfl($Workfl$$MapViewfl);
 
-function $WorkOrdersSumfl(_super, pageInstance) {
+function $Workfl$$WorkOrdersSumfl(_super, pageInstance) {
   _super(this);
   pageInstance.workOrdersSumfl = this;
 }
-$WorkOrdersSumfl.$$styleContext = {
+$Workfl$$WorkOrdersSumfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 155, 155, 155, 1 )",
@@ -203,7 +223,7 @@ $WorkOrdersSumfl.$$styleContext = {
     width: null
   }
 };
-const $WorkOrdersSumfl_ = WorkOrdersSumfl($WorkOrdersSumfl);
+const $Workfl$$WorkOrdersSumfl_ = WorkOrdersSumfl($Workfl$$WorkOrdersSumfl);
 
 /**
  * @event onShow

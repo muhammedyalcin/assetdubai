@@ -23,27 +23,36 @@ const Page_ = extend(workOrderProcPgDesign)(
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+
+        this.onSafeAreaPaddingChange = function(e) {
+            console.log("padding object is : " + JSON.stringify(e));
+            // page.layout.paddingLeft = e.bottom;
+
+        };
     });
 
 // Page.onShow -> This event is called when a page appears on the screen (everytime).
 function onShow(superOnShow) {
     superOnShow();
-
+    
+    var currentWork = User.currentWork;
+    
     var page = this;
+    this.headerBar.title = currentWork.workid1;
+    
     this.headerBar.itemColor = Color.create("#D5D4D4");
     this.workOrdersSumfl.lablel1.text = lang["workOrderProcPg.equipmentRequired"];
 
     this.startProButton.text = lang["workOrderProcPg.button.startProcedure"];
     this.cancelButton.text = lang["workOrderProcPg.button.cancelWorkOrder"];
 
-    var currentWork = User.currentWork;
     var workSummary = currentWork.worksummary;
     //sets default one, you can assign according to conditions
     User.currentWorkSummary = workSummary[0];
     this.startProButton.onPress = function() {
         Router.go("proceduresPage");
     }.bind(this);
-    
+
     this.cancelButton.onPress = function() {
         Router.goBack();
     }.bind(this);
@@ -63,6 +72,9 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
     superOnLoad();
 
+    this.ios.safeAreaLayoutMode = true;
+    this.layout.backgroundColor = Color.create(61,59,58);
+    
     var backIconItem = new HeaderBarItem();
     var backIcon = Image.createFromFile("images://backheadericon.png");
     backIconItem.image = backIcon;

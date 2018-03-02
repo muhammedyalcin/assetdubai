@@ -11,8 +11,8 @@ const extend = require('js-base/core/extend');
 const PageBase = require('sf-core/ui/page');
 const Page = extend(PageBase);
 const pageContextPatch = require('@smartface/contx/lib/smartface/pageContextPatch');
-const ImageView = extend(require('sf-core/ui/imageview'));
 const FlexLayout = extend(require('sf-core/ui/flexlayout'));
+const ImageView = extend(require('sf-core/ui/imageview'));
 const ListView = extend(require('sf-core/ui/listview'));
 const ListViewItem = extend(require('sf-core/ui/listviewitem'));
 
@@ -33,9 +33,7 @@ function $DashboardPg(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "backGroundImg", $BackGroundImg_, this);
-  addChild.call(this, "transparentfl", $Transparentfl_, this);
-  addChild.call(this, "dashboardListview", $DashboardListview_, this);
+  addChild.call(this, "dashfl", $Dashfl_, this);
   pageContextPatch(this, "dashboardPg");
 }
 $DashboardPg.$$styleContext = {
@@ -56,10 +54,28 @@ $DashboardPg.$$styleContext = {
 };
 const $DashboardPg_ = Page($DashboardPg);
 
-function $BackGroundImg(_super, pageInstance) {
+function $Dashfl(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "backGroundImg", $Dashfl$$BackGroundImg_, pageInstance);
+  addChild.call(this, "transparentfl", $Dashfl$$Transparentfl_, pageInstance);
+  addChild.call(this, "dashboardListview", $Dashfl$$DashboardListview_, pageInstance);
+}
+$Dashfl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1
+    },
+    height: null,
+    width: null
+  }
+};
+const $Dashfl_ = FlexLayout($Dashfl);
+
+function $Dashfl$$BackGroundImg(_super, pageInstance) {
   _super(this);
 }
-$BackGroundImg.$$styleContext = {
+$Dashfl$$BackGroundImg.$$styleContext = {
   classNames: ".imageView",
   userProps: {
     bottom: 0,
@@ -75,12 +91,12 @@ $BackGroundImg.$$styleContext = {
     width: null
   }
 };
-const $BackGroundImg_ = ImageView($BackGroundImg);
+const $Dashfl$$BackGroundImg_ = ImageView($Dashfl$$BackGroundImg);
 
-function $Transparentfl(_super, pageInstance) {
+function $Dashfl$$Transparentfl(_super, pageInstance) {
   _super(this);
 }
-$Transparentfl.$$styleContext = {
+$Dashfl$$Transparentfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     alpha: 0.8,
@@ -96,9 +112,9 @@ $Transparentfl.$$styleContext = {
     width: null
   }
 };
-const $Transparentfl_ = FlexLayout($Transparentfl);
+const $Dashfl$$Transparentfl_ = FlexLayout($Dashfl$$Transparentfl);
 
-function $DashboardListview(_super, pageInstance) {
+function $Dashfl$$DashboardListview(_super, pageInstance) {
   _super(this, {
     itemCount: NaN,
     rowHeight: 60
@@ -108,7 +124,7 @@ function $DashboardListview(_super, pageInstance) {
   };
   pageInstance.dashboardListview = this;
 }
-$DashboardListview.$$styleContext = {
+$Dashfl$$DashboardListview.$$styleContext = {
   classNames: ".listView",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -116,10 +132,12 @@ $DashboardListview.$$styleContext = {
       flexGrow: 1
     },
     height: null,
+    left: 0,
+    top: 0,
     width: null
   }
 };
-const $DashboardListview_ = ListView($DashboardListview);
+const $Dashfl$$DashboardListview_ = ListView($Dashfl$$DashboardListview);
 
 /**
  * @event onShow

@@ -11,6 +11,7 @@ const extend = require('js-base/core/extend');
 const PageBase = require('sf-core/ui/page');
 const Page = extend(PageBase);
 const pageContextPatch = require('@smartface/contx/lib/smartface/pageContextPatch');
+const FlexLayout = extend(require('sf-core/ui/flexlayout'));
 const ListView = extend(require('sf-core/ui/listview'));
 const ListViewItem = extend(require('sf-core/ui/listviewitem'));
 
@@ -31,7 +32,7 @@ function $AssetPg(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "assetListview", $AssetListview_, this);
+  addChild.call(this, "assetfl", $Assetfl_, this);
   pageContextPatch(this, "assetPg");
 }
 $AssetPg.$$styleContext = {
@@ -44,13 +45,30 @@ $AssetPg.$$styleContext = {
   headerBar: {
     classNames: ".headerBar .heahderBar-style1 .headerBar-style2",
     userProps: {
-      titleColor: "rgba( 216, 215, 215, 1 )"
+      titleColor: "rgba( 216, 215, 215, 1 )",
+      visible: true
     }
   }
 };
 const $AssetPg_ = Page($AssetPg);
 
-function $AssetListview(_super, pageInstance) {
+function $Assetfl(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "assetListview", $Assetfl$$AssetListview_, pageInstance);
+}
+$Assetfl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1
+    },
+    height: null,
+    width: null
+  }
+};
+const $Assetfl_ = FlexLayout($Assetfl);
+
+function $Assetfl$$AssetListview(_super, pageInstance) {
   _super(this, {
     itemCount: NaN,
     rowHeight: 70
@@ -60,7 +78,7 @@ function $AssetListview(_super, pageInstance) {
   };
   pageInstance.assetListview = this;
 }
-$AssetListview.$$styleContext = {
+$Assetfl$$AssetListview.$$styleContext = {
   classNames: ".listView",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -75,7 +93,7 @@ $AssetListview.$$styleContext = {
     width: null
   }
 };
-const $AssetListview_ = ListView($AssetListview);
+const $Assetfl$$AssetListview_ = ListView($Assetfl$$AssetListview);
 
 /**
  * @event onShow

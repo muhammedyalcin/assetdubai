@@ -11,8 +11,8 @@ const extend = require('js-base/core/extend');
 const PageBase = require('sf-core/ui/page');
 const Page = extend(PageBase);
 const pageContextPatch = require('@smartface/contx/lib/smartface/pageContextPatch');
-const ScrollView = extend(require('sf-core/ui/scrollview'));
 const FlexLayout = extend(require('sf-core/ui/flexlayout'));
+const ScrollView = extend(require('sf-core/ui/scrollview'));
 const ActivityIndicator = extend(require('sf-core/ui/activityindicator'));
 const Label = extend(require('sf-core/ui/label'));
 const Button = extend(require('sf-core/ui/button'));
@@ -34,10 +34,7 @@ function $ProceduresPage(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "procedureScroll", $ProcedureScroll_, this);
-  addChild.call(this, "indicatorfl", $Indicatorfl_, this);
-  addChild.call(this, "workIDfl1", $WorkIDfl1_, this);
-  addChild.call(this, "buttonfl", $Buttonfl_, this);
+  addChild.call(this, "procedurefl", $Procedurefl_, this);
   pageContextPatch(this, "proceduresPage");
 }
 $ProceduresPage.$$styleContext = {
@@ -47,7 +44,7 @@ $ProceduresPage.$$styleContext = {
     flexProps: {
       flexDirection: "COLUMN_REVERSE",
       justifyContent: "CENTER",
-      alignItems: "CENTER",
+      alignItems: "STRETCH",
       alignContent: "STRETCH"
     }
   },
@@ -64,11 +61,32 @@ $ProceduresPage.$$styleContext = {
 };
 const $ProceduresPage_ = Page($ProceduresPage);
 
-function $ProcedureScroll(_super, pageInstance) {
+function $Procedurefl(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "procedureScroll", $Procedurefl$$ProcedureScroll_, pageInstance);
+  addChild.call(this, "indicatorfl", $Procedurefl$$Indicatorfl_, pageInstance);
+  addChild.call(this, "workIDfl1", $Procedurefl$$WorkIDfl1_, pageInstance);
+  addChild.call(this, "buttonfl", $Procedurefl$$Buttonfl_, pageInstance);
+}
+$Procedurefl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      positionType: "RELATIVE",
+      flexDirection: "COLUMN_REVERSE",
+      flexGrow: 1
+    },
+    height: null,
+    width: null
+  }
+};
+const $Procedurefl_ = FlexLayout($Procedurefl);
+
+function $Procedurefl$$ProcedureScroll(_super, pageInstance) {
   _super(this);
   pageInstance.procedureScroll = this;
 }
-$ProcedureScroll.$$styleContext = {
+$Procedurefl$$ProcedureScroll.$$styleContext = {
   classNames: ".scrollView",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 1 )",
@@ -85,14 +103,14 @@ $ProcedureScroll.$$styleContext = {
     width: null
   }
 };
-const $ProcedureScroll_ = ScrollView($ProcedureScroll);
+const $Procedurefl$$ProcedureScroll_ = ScrollView($Procedurefl$$ProcedureScroll);
 
-function $Indicatorfl(_super, pageInstance) {
+function $Procedurefl$$Indicatorfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "proInfdicator", $Indicatorfl$$ProInfdicator_, pageInstance);
+  addChild.call(this, "proInfdicator", $Procedurefl$$Indicatorfl$$ProInfdicator_, pageInstance);
   pageInstance.indicatorfl = this;
 }
-$Indicatorfl.$$styleContext = {
+$Procedurefl$$Indicatorfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 1 )",
@@ -110,25 +128,25 @@ $Indicatorfl.$$styleContext = {
     width: null
   }
 };
-const $Indicatorfl_ = FlexLayout($Indicatorfl);
+const $Procedurefl$$Indicatorfl_ = FlexLayout($Procedurefl$$Indicatorfl);
 
-function $Indicatorfl$$ProInfdicator(_super, pageInstance) {
+function $Procedurefl$$Indicatorfl$$ProInfdicator(_super, pageInstance) {
   _super(this);
   pageInstance.proInfdicator = this;
 }
-$Indicatorfl$$ProInfdicator.$$styleContext = {
+$Procedurefl$$Indicatorfl$$ProInfdicator.$$styleContext = {
   classNames: ".activityIndicator",
   userProps: {}
 };
-const $Indicatorfl$$ProInfdicator_ = ActivityIndicator($Indicatorfl$$ProInfdicator);
+const $Procedurefl$$Indicatorfl$$ProInfdicator_ = ActivityIndicator($Procedurefl$$Indicatorfl$$ProInfdicator);
 
-function $WorkIDfl1(_super, pageInstance) {
+function $Procedurefl$$WorkIDfl1(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "workid1", $WorkIDfl1$$Workid1_, pageInstance);
-  addChild.call(this, "workid2", $WorkIDfl1$$Workid2_, pageInstance);
+  addChild.call(this, "workid1", $Procedurefl$$WorkIDfl1$$Workid1_, pageInstance);
+  addChild.call(this, "workid2", $Procedurefl$$WorkIDfl1$$Workid2_, pageInstance);
   pageInstance.workIDfl1 = this;
 }
-$WorkIDfl1.$$styleContext = {
+$Procedurefl$$WorkIDfl1.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 216, 216, 216, 1 )",
@@ -143,15 +161,15 @@ $WorkIDfl1.$$styleContext = {
     width: null
   }
 };
-const $WorkIDfl1_ = FlexLayout($WorkIDfl1);
+const $Procedurefl$$WorkIDfl1_ = FlexLayout($Procedurefl$$WorkIDfl1);
 
-function $WorkIDfl1$$Workid1(_super, pageInstance) {
+function $Procedurefl$$WorkIDfl1$$Workid1(_super, pageInstance) {
   _super(this, {
     text: "Nothing"
   });
   pageInstance.workid1 = this;
 }
-$WorkIDfl1$$Workid1.$$styleContext = {
+$Procedurefl$$WorkIDfl1$$Workid1.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -168,15 +186,15 @@ $WorkIDfl1$$Workid1.$$styleContext = {
     width: null
   }
 };
-const $WorkIDfl1$$Workid1_ = Label($WorkIDfl1$$Workid1);
+const $Procedurefl$$WorkIDfl1$$Workid1_ = Label($Procedurefl$$WorkIDfl1$$Workid1);
 
-function $WorkIDfl1$$Workid2(_super, pageInstance) {
+function $Procedurefl$$WorkIDfl1$$Workid2(_super, pageInstance) {
   _super(this, {
     text: "Nothing"
   });
   pageInstance.workid2 = this;
 }
-$WorkIDfl1$$Workid2.$$styleContext = {
+$Procedurefl$$WorkIDfl1$$Workid2.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -194,15 +212,15 @@ $WorkIDfl1$$Workid2.$$styleContext = {
     width: null
   }
 };
-const $WorkIDfl1$$Workid2_ = Label($WorkIDfl1$$Workid2);
+const $Procedurefl$$WorkIDfl1$$Workid2_ = Label($Procedurefl$$WorkIDfl1$$Workid2);
 
-function $Buttonfl(_super, pageInstance) {
+function $Procedurefl$$Buttonfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "cancelButton", $Buttonfl$$CancelButton_, pageInstance);
-  addChild.call(this, "startButton", $Buttonfl$$StartButton_, pageInstance);
+  addChild.call(this, "cancelButton", $Procedurefl$$Buttonfl$$CancelButton_, pageInstance);
+  addChild.call(this, "startButton", $Procedurefl$$Buttonfl$$StartButton_, pageInstance);
   pageInstance.buttonfl = this;
 }
-$Buttonfl.$$styleContext = {
+$Procedurefl$$Buttonfl.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 74, 144, 226, 1 )",
@@ -214,18 +232,19 @@ $Buttonfl.$$styleContext = {
     height: 70,
     left: 0,
     right: 0,
+    top: 0,
     width: null
   }
 };
-const $Buttonfl_ = FlexLayout($Buttonfl);
+const $Procedurefl$$Buttonfl_ = FlexLayout($Procedurefl$$Buttonfl);
 
-function $Buttonfl$$CancelButton(_super, pageInstance) {
+function $Procedurefl$$Buttonfl$$CancelButton(_super, pageInstance) {
   _super(this, {
     text: "Cancel Work Order"
   });
   pageInstance.cancelButton = this;
 }
-$Buttonfl$$CancelButton.$$styleContext = {
+$Procedurefl$$Buttonfl$$CancelButton.$$styleContext = {
   classNames: ".button",
   userProps: {
     backgroundColor: "rgba( 208, 2, 27, 1 )",
@@ -236,15 +255,15 @@ $Buttonfl$$CancelButton.$$styleContext = {
     width: null
   }
 };
-const $Buttonfl$$CancelButton_ = Button($Buttonfl$$CancelButton);
+const $Procedurefl$$Buttonfl$$CancelButton_ = Button($Procedurefl$$Buttonfl$$CancelButton);
 
-function $Buttonfl$$StartButton(_super, pageInstance) {
+function $Procedurefl$$Buttonfl$$StartButton(_super, pageInstance) {
   _super(this, {
     text: "Start Procedure"
   });
   pageInstance.startButton = this;
 }
-$Buttonfl$$StartButton.$$styleContext = {
+$Procedurefl$$Buttonfl$$StartButton.$$styleContext = {
   classNames: ".button",
   userProps: {
     backgroundColor: "rgba( 2, 132, 51, 1 )",
@@ -255,7 +274,7 @@ $Buttonfl$$StartButton.$$styleContext = {
     width: null
   }
 };
-const $Buttonfl$$StartButton_ = Button($Buttonfl$$StartButton);
+const $Procedurefl$$Buttonfl$$StartButton_ = Button($Procedurefl$$Buttonfl$$StartButton);
 
 /**
  * @event onShow

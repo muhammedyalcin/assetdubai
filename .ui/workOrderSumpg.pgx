@@ -1,133 +1,152 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "837e-ef33-6032-3f7f",
 			"initialized": true,
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )"
-			},
-			"className": ".page",
-			"version": "6.6.0",
 			"props": {
-				"name": "workOrderSumpg",
 				"children": [
 					"11c4-38b2-b750-6515",
 					"7758-9949-aae2-9849",
-					"81f2-fc91-2e85-17f7",
-					"64a8-c40e-64cd-2743"
+					"ad5c-b04c-b3d3-ccc9"
 				],
-				"parent": null,
-				"orientation": "PORTRAIT"
-			}
+				"name": "workOrderSumpg",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )"
+			},
+			"version": "6.6.2"
 		},
 		{
-			"type": "StatusBar",
-			"id": "11c4-38b2-b750-6515",
-			"userProps": {},
 			"className": ".statusBar",
+			"id": "11c4-38b2-b750-6515",
 			"props": {
-				"name": "statusBar",
 				"children": [],
-				"parent": "837e-ef33-6032-3f7f",
-				"isRemovable": false
-			}
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "837e-ef33-6032-3f7f"
+			},
+			"type": "StatusBar",
+			"userProps": {}
 		},
 		{
-			"type": "HeaderBar",
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"id": "7758-9949-aae2-9849",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "837e-ef33-6032-3f7f",
+				"title": "Work Order Summary"
+			},
+			"type": "HeaderBar",
 			"userProps": {
 				"title": "Work Order Summary",
 				"titleColor": "rgba( 216, 215, 215, 1 )"
-			},
-			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
-			"props": {
-				"title": "Work Order Summary",
-				"name": "headerBar",
-				"children": [],
-				"parent": "837e-ef33-6032-3f7f",
-				"isRemovable": false
 			}
 		},
 		{
+			"className": ".flexLayout",
+			"id": "ad5c-b04c-b3d3-ccc9",
+			"props": {
+				"children": [
+					"cd8c-a8ca-fe24-d2e7",
+					"f71c-7324-5acd-3827"
+				],
+				"name": "workOrderfl",
+				"parent": "837e-ef33-6032-3f7f"
+			},
 			"type": "FlexLayout",
-			"id": "81f2-fc91-2e85-17f7",
 			"userProps": {
-				"width": null,
-				"height": 50,
-				"left": 0,
-				"right": 0,
-				"top": 0,
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "cd8c-a8ca-fe24-d2e7",
+			"props": {
+				"children": [
+					"53dd-fccc-6529-831a"
+				],
+				"name": "sumLabelCon",
+				"parent": "ad5c-b04c-b3d3-ccc9"
+			},
+			"type": "FlexLayout",
+			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"alignItems": "STRETCH"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"name": "sumLabelCon",
-				"children": [
-					"7b60-dd5b-082d-82e9"
-				],
-				"parent": "837e-ef33-6032-3f7f"
+				},
+				"height": 50,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"width": null
 			}
 		},
 		{
-			"type": "Label",
-			"id": "7b60-dd5b-082d-82e9",
-			"userProps": {
+			"className": ".label",
+			"id": "53dd-fccc-6529-831a",
+			"props": {
+				"children": [],
+				"name": "sumLabel",
+				"parent": "cd8c-a8ca-fe24-d2e7",
 				"text": "WORK ORDER SUMMARY",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"textAlignment": "MIDLEFT",
-				"marginLeft": 15,
-				"width": null,
-				"height": null,
-				"textColor": "rgba( 151, 151, 151, 1 )",
-				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": 1
+				},
 				"font": {
 					"bold": true,
 					"family": "Lato"
 				},
-				"flexProps": {
-					"flexGrow": 1
-				}
-			},
-			"className": ".label",
-			"props": {
+				"height": null,
+				"marginLeft": 15,
 				"text": "WORK ORDER SUMMARY",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 151, 151, 151, 1 )",
 				"usePageVariable": true,
-				"name": "sumLabel",
-				"children": [],
-				"parent": "81f2-fc91-2e85-17f7"
+				"width": null
 			}
 		},
 		{
-			"type": "ListView",
-			"id": "64a8-c40e-64cd-2743",
-			"userProps": {
-				"width": null,
-				"height": null,
-				"left": 15,
-				"right": 15,
-				"top": 50,
-				"bottom": 5,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"usePageVariable": true,
-				"rowHeight": 70,
-				"itemCount": null,
-				"flexProps": {
-					"positionType": "ABSOLUTE"
-				}
-			},
 			"className": ".listView",
+			"id": "f71c-7324-5acd-3827",
 			"props": {
-				"usePageVariable": true,
-				"rowHeight": 70,
+				"children": [],
 				"itemCount": null,
 				"name": "wordOderSumListview",
-				"children": [],
-				"parent": "837e-ef33-6032-3f7f"
+				"parent": "ad5c-b04c-b3d3-ccc9",
+				"rowHeight": 70,
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 5,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"height": null,
+				"itemCount": null,
+				"left": 15,
+				"right": 15,
+				"rowHeight": 70,
+				"top": 50,
+				"usePageVariable": true,
+				"width": null
 			}
 		}
 	]

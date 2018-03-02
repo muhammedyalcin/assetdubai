@@ -1,111 +1,130 @@
 {
 	"components": [
 		{
-			"type": "Page",
+			"className": ".page",
 			"id": "634f-5a97-13ed-afac",
 			"initialized": true,
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )"
-			},
-			"className": ".page",
-			"version": "6.6.0",
 			"props": {
-				"name": "locationPg",
 				"children": [
 					"3851-5ee8-9124-dbfa",
 					"b377-4d89-f022-f876",
-					"dc01-8ba8-674a-db41",
-					"d85c-0372-0485-b06d"
+					"0b19-0929-b924-6068"
 				],
-				"parent": null,
-				"orientation": "PORTRAIT"
-			}
+				"name": "locationPg",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )"
+			},
+			"version": "6.6.2"
 		},
 		{
-			"type": "StatusBar",
-			"id": "3851-5ee8-9124-dbfa",
-			"userProps": {},
 			"className": ".statusBar",
+			"id": "3851-5ee8-9124-dbfa",
 			"props": {
-				"name": "statusBar",
 				"children": [],
-				"parent": "634f-5a97-13ed-afac",
-				"isRemovable": false
-			}
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "634f-5a97-13ed-afac"
+			},
+			"type": "StatusBar",
+			"userProps": {}
 		},
 		{
-			"type": "HeaderBar",
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
 			"id": "b377-4d89-f022-f876",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "634f-5a97-13ed-afac",
+				"title": "Location Page"
+			},
+			"type": "HeaderBar",
 			"userProps": {
 				"title": "Location Page",
 				"titleColor": "rgba( 216, 215, 215, 1 )"
-			},
-			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
-			"props": {
-				"title": "Location Page",
-				"name": "headerBar",
-				"children": [],
-				"parent": "634f-5a97-13ed-afac",
-				"isRemovable": false
 			}
 		},
 		{
+			"className": ".flexLayout",
+			"id": "0b19-0929-b924-6068",
+			"props": {
+				"children": [
+					"c89b-8794-0574-aa31",
+					"19e0-74e5-0d0f-64d4"
+				],
+				"name": "locationPgfl",
+				"parent": "634f-5a97-13ed-afac"
+			},
 			"type": "FlexLayout",
-			"id": "dc01-8ba8-674a-db41",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
 			"hiddenComponent": false,
+			"id": "c89b-8794-0574-aa31",
+			"props": {
+				"children": [],
+				"name": "contactContainer",
+				"parent": "0b19-0929-b924-6068",
+				"usePageVariable": true
+			},
 			"source": {
 				"page": "__library__",
 				"type": "contactContainer",
 				"id": "fb41-44fc-4982-086e"
 			},
+			"type": "FlexLayout",
 			"userProps": {
-				"width": null,
-				"height": 400,
-				"bottom": 0,
-				"right": 0,
-				"left": 0,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"usePageVariable": true,
+				"bottom": 0,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
+				},
+				"height": 400,
+				"left": 0,
+				"right": 0,
 				"usePageVariable": true,
-				"name": "contactContainer",
-				"children": [],
-				"parent": "634f-5a97-13ed-afac"
+				"width": null
 			}
 		},
 		{
-			"type": "FlexLayout",
-			"id": "d85c-0372-0485-b06d",
+			"className": ".flexLayout",
 			"hiddenComponent": false,
+			"id": "19e0-74e5-0d0f-64d4",
+			"props": {
+				"children": [],
+				"name": "mapViewfl",
+				"parent": "0b19-0929-b924-6068",
+				"usePageVariable": true
+			},
 			"source": {
 				"page": "__library__",
 				"type": "mapViewfl",
 				"id": "36fb-be60-34ab-163f"
 			},
+			"type": "FlexLayout",
 			"userProps": {
-				"width": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 400,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
 				"height": null,
 				"left": 0,
 				"right": 0,
-				"bottom": 400,
 				"top": 0,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"usePageVariable": true,
-				"flexProps": {
-					"positionType": "ABSOLUTE"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"usePageVariable": true,
-				"name": "mapViewfl",
-				"children": [],
-				"parent": "634f-5a97-13ed-afac"
+				"width": null
 			}
 		}
 	]

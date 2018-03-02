@@ -33,8 +33,7 @@ function $WorkOrderSumpg(_super, props) {
   this.children = {};
   this.children["statusBar"] = this.statusBar;
   this.children["headerBar"] = this.headerBar;
-  addChild.call(this, "sumLabelCon", $SumLabelCon_, this);
-  addChild.call(this, "wordOderSumListview", $WordOderSumListview_, this);
+  addChild.call(this, "workOrderfl", $WorkOrderfl_, this);
   pageContextPatch(this, "workOrderSumpg");
 }
 $WorkOrderSumpg.$$styleContext = {
@@ -55,11 +54,28 @@ $WorkOrderSumpg.$$styleContext = {
 };
 const $WorkOrderSumpg_ = Page($WorkOrderSumpg);
 
-function $SumLabelCon(_super, pageInstance) {
+function $WorkOrderfl(_super, pageInstance) {
   _super(this);
-  addChild.call(this, "sumLabel", $SumLabelCon$$SumLabel_, pageInstance);
+  addChild.call(this, "sumLabelCon", $WorkOrderfl$$SumLabelCon_, pageInstance);
+  addChild.call(this, "wordOderSumListview", $WorkOrderfl$$WordOderSumListview_, pageInstance);
 }
-$SumLabelCon.$$styleContext = {
+$WorkOrderfl.$$styleContext = {
+  classNames: ".flexLayout",
+  userProps: {
+    flexProps: {
+      flexGrow: 1
+    },
+    height: null,
+    width: null
+  }
+};
+const $WorkOrderfl_ = FlexLayout($WorkOrderfl);
+
+function $WorkOrderfl$$SumLabelCon(_super, pageInstance) {
+  _super(this);
+  addChild.call(this, "sumLabel", $WorkOrderfl$$SumLabelCon$$SumLabel_, pageInstance);
+}
+$WorkOrderfl$$SumLabelCon.$$styleContext = {
   classNames: ".flexLayout",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -74,15 +90,15 @@ $SumLabelCon.$$styleContext = {
     width: null
   }
 };
-const $SumLabelCon_ = FlexLayout($SumLabelCon);
+const $WorkOrderfl$$SumLabelCon_ = FlexLayout($WorkOrderfl$$SumLabelCon);
 
-function $SumLabelCon$$SumLabel(_super, pageInstance) {
+function $WorkOrderfl$$SumLabelCon$$SumLabel(_super, pageInstance) {
   _super(this, {
     text: "WORK ORDER SUMMARY"
   });
   pageInstance.sumLabel = this;
 }
-$SumLabelCon$$SumLabel.$$styleContext = {
+$WorkOrderfl$$SumLabelCon$$SumLabel.$$styleContext = {
   classNames: ".label",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -100,9 +116,9 @@ $SumLabelCon$$SumLabel.$$styleContext = {
     width: null
   }
 };
-const $SumLabelCon$$SumLabel_ = Label($SumLabelCon$$SumLabel);
+const $WorkOrderfl$$SumLabelCon$$SumLabel_ = Label($WorkOrderfl$$SumLabelCon$$SumLabel);
 
-function $WordOderSumListview(_super, pageInstance) {
+function $WorkOrderfl$$WordOderSumListview(_super, pageInstance) {
   _super(this, {
     itemCount: NaN,
     rowHeight: 70
@@ -112,7 +128,7 @@ function $WordOderSumListview(_super, pageInstance) {
   };
   pageInstance.wordOderSumListview = this;
 }
-$WordOderSumListview.$$styleContext = {
+$WorkOrderfl$$WordOderSumListview.$$styleContext = {
   classNames: ".listView",
   userProps: {
     backgroundColor: "rgba( 255, 255, 255, 0 )",
@@ -127,7 +143,7 @@ $WordOderSumListview.$$styleContext = {
     width: null
   }
 };
-const $WordOderSumListview_ = ListView($WordOderSumListview);
+const $WorkOrderfl$$WordOderSumListview_ = ListView($WorkOrderfl$$WordOderSumListview);
 
 /**
  * @event onShow
