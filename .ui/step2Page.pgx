@@ -1,0 +1,163 @@
+{
+	"components": [
+		{
+			"className": ".page",
+			"id": "ad75-d968-a8d5-7560",
+			"initialized": true,
+			"props": {
+				"children": [
+					"73fd-7409-55c3-a91e",
+					"424f-ffd2-66ed-2495",
+					"492f-73f4-edb0-d8ce"
+				],
+				"name": "step2Page",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {},
+			"version": "6.6.3"
+		},
+		{
+			"className": ".statusBar",
+			"id": "73fd-7409-55c3-a91e",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "ad75-d968-a8d5-7560"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"id": "424f-ffd2-66ed-2495",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "ad75-d968-a8d5-7560",
+				"title": "Step 2"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "Step 2",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "492f-73f4-edb0-d8ce",
+			"props": {
+				"children": [
+					"8b2e-63c9-50c1-03f0",
+					"4e7c-e9ee-18be-979a",
+					"ba8e-1040-26c0-482b"
+				],
+				"name": "step2fl",
+				"parent": "ad75-d968-a8d5-7560"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout .tabBar-style2 .tabBar-style1",
+			"hiddenComponent": false,
+			"id": "8b2e-63c9-50c1-03f0",
+			"props": {
+				"children": [],
+				"name": "tab",
+				"parent": "492f-73f4-edb0-d8ce",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "tab",
+				"id": "0276-a54a-2096-81f6"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 60,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "4e7c-e9ee-18be-979a",
+			"props": {
+				"children": [],
+				"name": "noteContainer",
+				"parent": "492f-73f4-edb0-d8ce",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "noteContainer",
+				"id": "9fcd-e7e9-3587-304b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 100,
+				"flexProps": {
+					"justifyContent": "CENTER",
+					"positionType": "ABSOLUTE",
+					"alignItems": "STRETCH",
+					"alignSelf": "AUTO",
+					"flexGrow": 1
+				},
+				"height": null,
+				"left": 20,
+				"right": 20,
+				"top": 70,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "ba8e-1040-26c0-482b",
+			"props": {
+				"children": [],
+				"name": "completefl",
+				"parent": "492f-73f4-edb0-d8ce",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "completefl",
+				"id": "62a3-2606-2a58-57be"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"bottom": 0,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "ABSOLUTE"
+				},
+				"height": 70,
+				"left": 0,
+				"right": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		}
+	]
+}

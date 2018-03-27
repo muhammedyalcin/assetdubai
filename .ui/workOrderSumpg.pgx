@@ -1,0 +1,153 @@
+{
+	"components": [
+		{
+			"className": ".page",
+			"id": "837e-ef33-6032-3f7f",
+			"initialized": true,
+			"props": {
+				"children": [
+					"11c4-38b2-b750-6515",
+					"7758-9949-aae2-9849",
+					"ad5c-b04c-b3d3-ccc9"
+				],
+				"name": "workOrderSumpg",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )"
+			},
+			"version": "6.6.3"
+		},
+		{
+			"className": ".statusBar",
+			"id": "11c4-38b2-b750-6515",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "837e-ef33-6032-3f7f"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"id": "7758-9949-aae2-9849",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "837e-ef33-6032-3f7f",
+				"title": "Work Order Summary"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "Work Order Summary",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "ad5c-b04c-b3d3-ccc9",
+			"props": {
+				"children": [
+					"cd8c-a8ca-fe24-d2e7",
+					"f71c-7324-5acd-3827"
+				],
+				"name": "workOrderfl",
+				"parent": "837e-ef33-6032-3f7f"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "cd8c-a8ca-fe24-d2e7",
+			"props": {
+				"children": [
+					"53dd-fccc-6529-831a"
+				],
+				"name": "sumLabelCon",
+				"parent": "ad5c-b04c-b3d3-ccc9"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"alignItems": "STRETCH"
+				},
+				"height": 50,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "53dd-fccc-6529-831a",
+			"props": {
+				"children": [],
+				"name": "sumLabel",
+				"parent": "cd8c-a8ca-fe24-d2e7",
+				"text": "WORK ORDER SUMMARY",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"bold": true,
+					"family": "Lato"
+				},
+				"height": null,
+				"marginLeft": 15,
+				"text": "WORK ORDER SUMMARY",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 151, 151, 151, 1 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".listView",
+			"id": "f71c-7324-5acd-3827",
+			"props": {
+				"children": [],
+				"itemCount": null,
+				"name": "wordOderSumListview",
+				"parent": "ad5c-b04c-b3d3-ccc9",
+				"rowHeight": 70,
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 5,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"height": null,
+				"itemCount": null,
+				"left": 15,
+				"right": 15,
+				"rowHeight": 70,
+				"top": 50,
+				"usePageVariable": true,
+				"width": null
+			}
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"config": {
+		"theme": {
+			"currentTheme": "Style1",
+			"baseTheme": "assetmanageTheme",
+			"themes": [
+				"Style1",
+				"Style2",
+				"assetdubaiTheme",
+				"assetmanageTheme",
+				"defaultTheme"
+			]
+		},
+		"paths": {
+			"pgxFolder": ".ui",
+			"uiFolder": "scripts/ui",
+			"pagesFolder": "scripts/pages",
+			"libraryUiFolder": "scripts/node_modules/library",
+			"libraryUserFolder": "scripts/components",
+			"themesFolder": "themes",
+			"themesDistFolder": "scripts/themes"
+		},
+		"version": "6.6.3"
+	}
+}

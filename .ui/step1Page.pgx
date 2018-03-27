@@ -1,0 +1,193 @@
+{
+	"components": [
+		{
+			"className": ".page",
+			"id": "8c37-13c3-56f5-1087",
+			"initialized": true,
+			"props": {
+				"children": [
+					"b262-036e-af5d-752f",
+					"66e0-880e-c3d1-d042",
+					"dea5-5b69-4439-711a"
+				],
+				"name": "step1Page",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {},
+			"version": "6.6.3"
+		},
+		{
+			"className": ".statusBar",
+			"id": "b262-036e-af5d-752f",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "8c37-13c3-56f5-1087"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".headerBar .heahderBar-style1 .headerBar-style2",
+			"id": "66e0-880e-c3d1-d042",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "8c37-13c3-56f5-1087",
+				"title": "Step 1"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "Step 1",
+				"titleColor": "rgba( 216, 215, 215, 1 )"
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "dea5-5b69-4439-711a",
+			"props": {
+				"children": [
+					"667a-ded7-9749-5d81",
+					"5a7e-15ba-d594-e4f5",
+					"bea5-2521-b834-0af2",
+					"406b-eb4c-64a3-d6d9"
+				],
+				"name": "step1fl",
+				"parent": "8c37-13c3-56f5-1087"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout .tabBar-style1 .tabBar-style2",
+			"hiddenComponent": false,
+			"id": "667a-ded7-9749-5d81",
+			"props": {
+				"children": [],
+				"name": "tab",
+				"parent": "dea5-5b69-4439-711a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "tab",
+				"id": "0276-a54a-2096-81f6"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 60,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "5a7e-15ba-d594-e4f5",
+			"props": {
+				"children": [],
+				"name": "noteContainer",
+				"parent": "dea5-5b69-4439-711a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "noteContainer",
+				"id": "9fcd-e7e9-3587-304b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 100,
+				"flexProps": {
+					"justifyContent": "CENTER",
+					"positionType": "ABSOLUTE",
+					"alignItems": "STRETCH",
+					"alignSelf": "AUTO",
+					"flexGrow": 1
+				},
+				"height": null,
+				"left": 20,
+				"right": 20,
+				"top": 70,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "bea5-2521-b834-0af2",
+			"props": {
+				"children": [],
+				"name": "completefl",
+				"parent": "dea5-5b69-4439-711a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "completefl",
+				"id": "62a3-2606-2a58-57be"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"bottom": 0,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "ABSOLUTE"
+				},
+				"height": 70,
+				"left": 0,
+				"right": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "406b-eb4c-64a3-d6d9",
+			"props": {
+				"children": [],
+				"name": "currentProcedureRowfl",
+				"parent": "dea5-5b69-4439-711a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "currentProcedureRowfl",
+				"id": "e1be-285c-5486-f1d3"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 230,
+				"left": 0,
+				"right": 0,
+				"usePageVariable": true,
+				"visible": false,
+				"width": null
+			}
+		}
+	]
+}
