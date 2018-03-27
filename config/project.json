@@ -3,7 +3,7 @@
 		"name": "Asset Management",
 		"company": "Smartface User",
 		"webSite": "https://www.smartface.io",
-		"version": "1.4.1",
+		"version": "1.5.1",
 		"runtimeVersion": "1100",
 		"description": "This is Smartface's default empty project. You can click to Run on Device button to see it on your device."
 	},
@@ -63,7 +63,7 @@
 						"active": false
 					}
 				},
-				"playerPath": "iosplayer.zip"
+				"playerPath": null
 			},
 			"android": {
 				"scripts": "scripts",
@@ -84,7 +84,7 @@
 						"active": false
 					}
 				},
-				"playerPath": "androidplayer.zip"
+				"playerPath": null
 			},
 			"keys": {
 				"project3DesKey": "cBOiTPtJLAKjToIWb7OUt2FqrTyaIQxJ",
