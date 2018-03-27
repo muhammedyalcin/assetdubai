@@ -12,3 +12,4 @@ plugin/*
 node_modules/
 scripts/ui
 scripts/themes
+npm-debug.log

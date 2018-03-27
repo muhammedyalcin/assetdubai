@@ -6,7 +6,7 @@
     "js-base": "1.0.4",
     "mixin-deep": "*",
     "moment": "*",
-    "sf-core": "2.0.9",
+    "sf-core": "^2.0.10-beta.5",
     "sf-extension-utils": "^3.2.2"
   }
 }
